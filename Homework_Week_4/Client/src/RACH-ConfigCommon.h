@@ -12,7 +12,9 @@
 #include <asn_application.h>
 
 /* Including external dependencies */
+#include "PowerRampingParameters.h"
 #include <NativeInteger.h>
+#include "PreambleTransMax.h"
 #include <NativeEnumerated.h>
 #include <constr_SEQUENCE.h>
 
@@ -72,43 +74,6 @@ typedef enum RACH_ConfigCommon__preambleInfo__preamblesGroupAConfig__messagePowe
 	RACH_ConfigCommon__preambleInfo__preamblesGroupAConfig__messagePowerOffsetGroupB_dB15	= 6,
 	RACH_ConfigCommon__preambleInfo__preamblesGroupAConfig__messagePowerOffsetGroupB_dB18	= 7
 } e_RACH_ConfigCommon__preambleInfo__preamblesGroupAConfig__messagePowerOffsetGroupB;
-typedef enum RACH_ConfigCommon__powerRampingParameters__powerRampingStep {
-	RACH_ConfigCommon__powerRampingParameters__powerRampingStep_dB0	= 0,
-	RACH_ConfigCommon__powerRampingParameters__powerRampingStep_dB2	= 1,
-	RACH_ConfigCommon__powerRampingParameters__powerRampingStep_dB4	= 2,
-	RACH_ConfigCommon__powerRampingParameters__powerRampingStep_dB6	= 3
-} e_RACH_ConfigCommon__powerRampingParameters__powerRampingStep;
-typedef enum RACH_ConfigCommon__powerRampingParameters__preambleInitialReceivedTargetPower {
-	RACH_ConfigCommon__powerRampingParameters__preambleInitialReceivedTargetPower_dBm_120	= 0,
-	RACH_ConfigCommon__powerRampingParameters__preambleInitialReceivedTargetPower_dBm_118	= 1,
-	RACH_ConfigCommon__powerRampingParameters__preambleInitialReceivedTargetPower_dBm_116	= 2,
-	RACH_ConfigCommon__powerRampingParameters__preambleInitialReceivedTargetPower_dBm_114	= 3,
-	RACH_ConfigCommon__powerRampingParameters__preambleInitialReceivedTargetPower_dBm_112	= 4,
-	RACH_ConfigCommon__powerRampingParameters__preambleInitialReceivedTargetPower_dBm_110	= 5,
-	RACH_ConfigCommon__powerRampingParameters__preambleInitialReceivedTargetPower_dBm_108	= 6,
-	RACH_ConfigCommon__powerRampingParameters__preambleInitialReceivedTargetPower_dBm_106	= 7,
-	RACH_ConfigCommon__powerRampingParameters__preambleInitialReceivedTargetPower_dBm_104	= 8,
-	RACH_ConfigCommon__powerRampingParameters__preambleInitialReceivedTargetPower_dBm_102	= 9,
-	RACH_ConfigCommon__powerRampingParameters__preambleInitialReceivedTargetPower_dBm_100	= 10,
-	RACH_ConfigCommon__powerRampingParameters__preambleInitialReceivedTargetPower_dBm_98	= 11,
-	RACH_ConfigCommon__powerRampingParameters__preambleInitialReceivedTargetPower_dBm_96	= 12,
-	RACH_ConfigCommon__powerRampingParameters__preambleInitialReceivedTargetPower_dBm_94	= 13,
-	RACH_ConfigCommon__powerRampingParameters__preambleInitialReceivedTargetPower_dBm_92	= 14,
-	RACH_ConfigCommon__powerRampingParameters__preambleInitialReceivedTargetPower_dBm_90	= 15
-} e_RACH_ConfigCommon__powerRampingParameters__preambleInitialReceivedTargetPower;
-typedef enum RACH_ConfigCommon__ra_SupervisionInfo__preambleTransMax {
-	RACH_ConfigCommon__ra_SupervisionInfo__preambleTransMax_n3	= 0,
-	RACH_ConfigCommon__ra_SupervisionInfo__preambleTransMax_n4	= 1,
-	RACH_ConfigCommon__ra_SupervisionInfo__preambleTransMax_n5	= 2,
-	RACH_ConfigCommon__ra_SupervisionInfo__preambleTransMax_n6	= 3,
-	RACH_ConfigCommon__ra_SupervisionInfo__preambleTransMax_n7	= 4,
-	RACH_ConfigCommon__ra_SupervisionInfo__preambleTransMax_n8	= 5,
-	RACH_ConfigCommon__ra_SupervisionInfo__preambleTransMax_n10	= 6,
-	RACH_ConfigCommon__ra_SupervisionInfo__preambleTransMax_n20	= 7,
-	RACH_ConfigCommon__ra_SupervisionInfo__preambleTransMax_n50	= 8,
-	RACH_ConfigCommon__ra_SupervisionInfo__preambleTransMax_n100	= 9,
-	RACH_ConfigCommon__ra_SupervisionInfo__preambleTransMax_n200	= 10
-} e_RACH_ConfigCommon__ra_SupervisionInfo__preambleTransMax;
 typedef enum RACH_ConfigCommon__ra_SupervisionInfo__ra_ResponseWindowSize {
 	RACH_ConfigCommon__ra_SupervisionInfo__ra_ResponseWindowSize_sf2	= 0,
 	RACH_ConfigCommon__ra_SupervisionInfo__ra_ResponseWindowSize_sf3	= 1,
@@ -129,6 +94,12 @@ typedef enum RACH_ConfigCommon__ra_SupervisionInfo__mac_ContentionResolutionTime
 	RACH_ConfigCommon__ra_SupervisionInfo__mac_ContentionResolutionTimer_sf56	= 6,
 	RACH_ConfigCommon__ra_SupervisionInfo__mac_ContentionResolutionTimer_sf64	= 7
 } e_RACH_ConfigCommon__ra_SupervisionInfo__mac_ContentionResolutionTimer;
+typedef enum RACH_ConfigCommon__edt_SmallTBS_Subset_r15 {
+	RACH_ConfigCommon__edt_SmallTBS_Subset_r15_true	= 0
+} e_RACH_ConfigCommon__edt_SmallTBS_Subset_r15;
+
+/* Forward declarations */
+struct RACH_CE_LevelInfoList_r13;
 
 /* RACH-ConfigCommon */
 typedef struct RACH_ConfigCommon {
@@ -150,15 +121,9 @@ typedef struct RACH_ConfigCommon {
 		/* Context for parsing across buffer boundaries */
 		asn_struct_ctx_t _asn_ctx;
 	} preambleInfo;
-	struct RACH_ConfigCommon__powerRampingParameters {
-		long	 powerRampingStep;
-		long	 preambleInitialReceivedTargetPower;
-		
-		/* Context for parsing across buffer boundaries */
-		asn_struct_ctx_t _asn_ctx;
-	} powerRampingParameters;
+	PowerRampingParameters_t	 powerRampingParameters;
 	struct RACH_ConfigCommon__ra_SupervisionInfo {
-		long	 preambleTransMax;
+		PreambleTransMax_t	 preambleTransMax;
 		long	 ra_ResponseWindowSize;
 		long	 mac_ContentionResolutionTimer;
 		
@@ -170,6 +135,9 @@ typedef struct RACH_ConfigCommon {
 	 * This type is extensible,
 	 * possible extensions are below.
 	 */
+	PreambleTransMax_t	*preambleTransMax_CE_r13	/* OPTIONAL */;
+	struct RACH_CE_LevelInfoList_r13	*rach_CE_LevelInfoList_r13	/* OPTIONAL */;
+	long	*edt_SmallTBS_Subset_r15	/* OPTIONAL */;
 	
 	/* Context for parsing across buffer boundaries */
 	asn_struct_ctx_t _asn_ctx;
@@ -180,14 +148,12 @@ typedef struct RACH_ConfigCommon {
 /* extern asn_TYPE_descriptor_t asn_DEF_sizeOfRA_PreamblesGroupA_21;	// (Use -fall-defs-global to expose) */
 /* extern asn_TYPE_descriptor_t asn_DEF_messageSizeGroupA_37;	// (Use -fall-defs-global to expose) */
 /* extern asn_TYPE_descriptor_t asn_DEF_messagePowerOffsetGroupB_42;	// (Use -fall-defs-global to expose) */
-/* extern asn_TYPE_descriptor_t asn_DEF_powerRampingStep_53;	// (Use -fall-defs-global to expose) */
-/* extern asn_TYPE_descriptor_t asn_DEF_preambleInitialReceivedTargetPower_58;	// (Use -fall-defs-global to expose) */
-/* extern asn_TYPE_descriptor_t asn_DEF_preambleTransMax_76;	// (Use -fall-defs-global to expose) */
-/* extern asn_TYPE_descriptor_t asn_DEF_ra_ResponseWindowSize_88;	// (Use -fall-defs-global to expose) */
-/* extern asn_TYPE_descriptor_t asn_DEF_mac_ContentionResolutionTimer_97;	// (Use -fall-defs-global to expose) */
+/* extern asn_TYPE_descriptor_t asn_DEF_ra_ResponseWindowSize_55;	// (Use -fall-defs-global to expose) */
+/* extern asn_TYPE_descriptor_t asn_DEF_mac_ContentionResolutionTimer_64;	// (Use -fall-defs-global to expose) */
+/* extern asn_TYPE_descriptor_t asn_DEF_edt_SmallTBS_Subset_r15_77;	// (Use -fall-defs-global to expose) */
 extern asn_TYPE_descriptor_t asn_DEF_RACH_ConfigCommon;
 extern asn_SEQUENCE_specifics_t asn_SPC_RACH_ConfigCommon_specs_1;
-extern asn_TYPE_member_t asn_MBR_RACH_ConfigCommon_1[4];
+extern asn_TYPE_member_t asn_MBR_RACH_ConfigCommon_1[7];
 
 #ifdef __cplusplus
 }

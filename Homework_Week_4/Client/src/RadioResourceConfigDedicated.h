@@ -12,9 +12,13 @@
 #include <asn_application.h>
 
 /* Including external dependencies */
+#include <NativeInteger.h>
 #include "MAC-MainConfig.h"
 #include <NULL.h>
 #include <constr_CHOICE.h>
+#include <NativeEnumerated.h>
+#include <asn_SEQUENCE_OF.h>
+#include <constr_SEQUENCE_OF.h>
 #include <constr_SEQUENCE.h>
 
 #ifdef __cplusplus
@@ -27,6 +31,20 @@ typedef enum RadioResourceConfigDedicated__mac_MainConfig_PR {
 	RadioResourceConfigDedicated__mac_MainConfig_PR_explicitValue,
 	RadioResourceConfigDedicated__mac_MainConfig_PR_defaultValue
 } RadioResourceConfigDedicated__mac_MainConfig_PR;
+typedef enum RadioResourceConfigDedicated__crs_IntfMitigConfig_r15_PR {
+	RadioResourceConfigDedicated__crs_IntfMitigConfig_r15_PR_NOTHING,	/* No components present */
+	RadioResourceConfigDedicated__crs_IntfMitigConfig_r15_PR_release,
+	RadioResourceConfigDedicated__crs_IntfMitigConfig_r15_PR_setup
+} RadioResourceConfigDedicated__crs_IntfMitigConfig_r15_PR;
+typedef enum RadioResourceConfigDedicated__crs_IntfMitigConfig_r15__setup_PR {
+	RadioResourceConfigDedicated__crs_IntfMitigConfig_r15__setup_PR_NOTHING,	/* No components present */
+	RadioResourceConfigDedicated__crs_IntfMitigConfig_r15__setup_PR_crs_IntfMitigEnabled_15,
+	RadioResourceConfigDedicated__crs_IntfMitigConfig_r15__setup_PR_crs_IntfMitigNumPRBs_r15
+} RadioResourceConfigDedicated__crs_IntfMitigConfig_r15__setup_PR;
+typedef enum RadioResourceConfigDedicated__crs_IntfMitigConfig_r15__setup__crs_IntfMitigNumPRBs_r15 {
+	RadioResourceConfigDedicated__crs_IntfMitigConfig_r15__setup__crs_IntfMitigNumPRBs_r15_n6	= 0,
+	RadioResourceConfigDedicated__crs_IntfMitigConfig_r15__setup__crs_IntfMitigNumPRBs_r15_n24	= 1
+} e_RadioResourceConfigDedicated__crs_IntfMitigConfig_r15__setup__crs_IntfMitigNumPRBs_r15;
 
 /* Forward declarations */
 struct SRB_ToAddModList;
@@ -34,6 +52,19 @@ struct DRB_ToAddModList;
 struct DRB_ToReleaseList;
 struct SPS_Config;
 struct PhysicalConfigDedicated;
+struct RLF_TimersAndConstants_r9;
+struct MeasSubframePatternPCell_r10;
+struct NeighCellsCRS_Info_r11;
+struct NAICS_AssistanceInfo_r12;
+struct NeighCellsCRS_Info_r13;
+struct RLF_TimersAndConstants_r13;
+struct SPS_Config_v1430;
+struct SRB_ToAddModListExt_r15;
+struct SPS_Config_v1530;
+struct NeighCellsCRS_Info_r15;
+struct DRB_ToAddModList_r15;
+struct DRB_ToReleaseList_r15;
+struct SPS_Config_v1540;
 
 /* RadioResourceConfigDedicated */
 typedef struct RadioResourceConfigDedicated {
@@ -56,15 +87,55 @@ typedef struct RadioResourceConfigDedicated {
 	 * This type is extensible,
 	 * possible extensions are below.
 	 */
+	struct RLF_TimersAndConstants_r9	*rlf_TimersAndConstants_r9	/* OPTIONAL */;
+	struct MeasSubframePatternPCell_r10	*measSubframePatternPCell_r10	/* OPTIONAL */;
+	struct NeighCellsCRS_Info_r11	*neighCellsCRS_Info_r11	/* OPTIONAL */;
+	struct NAICS_AssistanceInfo_r12	*naics_Info_r12	/* OPTIONAL */;
+	struct NeighCellsCRS_Info_r13	*neighCellsCRS_Info_r13	/* OPTIONAL */;
+	struct RLF_TimersAndConstants_r13	*rlf_TimersAndConstants_r13	/* OPTIONAL */;
+	struct SPS_Config_v1430	*sps_Config_v1430	/* OPTIONAL */;
+	struct SRB_ToAddModListExt_r15	*srb_ToAddModListExt_r15	/* OPTIONAL */;
+	long	*srb_ToReleaseListExt_r15	/* OPTIONAL */;
+	struct SPS_Config_v1530	*sps_Config_v1530	/* OPTIONAL */;
+	struct RadioResourceConfigDedicated__crs_IntfMitigConfig_r15 {
+		RadioResourceConfigDedicated__crs_IntfMitigConfig_r15_PR present;
+		union RadioResourceConfigDedicated__crs_IntfMitigConfig_r15_u {
+			NULL_t	 release;
+			struct RadioResourceConfigDedicated__crs_IntfMitigConfig_r15__setup {
+				RadioResourceConfigDedicated__crs_IntfMitigConfig_r15__setup_PR present;
+				union RadioResourceConfigDedicated__crs_IntfMitigConfig_r15__setup_u {
+					NULL_t	 crs_IntfMitigEnabled_15;
+					long	 crs_IntfMitigNumPRBs_r15;
+				} choice;
+				
+				/* Context for parsing across buffer boundaries */
+				asn_struct_ctx_t _asn_ctx;
+			} setup;
+		} choice;
+		
+		/* Context for parsing across buffer boundaries */
+		asn_struct_ctx_t _asn_ctx;
+	} *crs_IntfMitigConfig_r15;
+	struct NeighCellsCRS_Info_r15	*neighCellsCRS_Info_r15	/* OPTIONAL */;
+	struct DRB_ToAddModList_r15	*drb_ToAddModList_r15	/* OPTIONAL */;
+	struct DRB_ToReleaseList_r15	*drb_ToReleaseList_r15	/* OPTIONAL */;
+	struct RadioResourceConfigDedicated__dummy {
+		A_SEQUENCE_OF(long) list;
+		
+		/* Context for parsing across buffer boundaries */
+		asn_struct_ctx_t _asn_ctx;
+	} *dummy;
+	struct SPS_Config_v1540	*sps_Config_v1540	/* OPTIONAL */;
 	
 	/* Context for parsing across buffer boundaries */
 	asn_struct_ctx_t _asn_ctx;
 } RadioResourceConfigDedicated_t;
 
 /* Implementation */
+/* extern asn_TYPE_descriptor_t asn_DEF_crs_IntfMitigNumPRBs_r15_25;	// (Use -fall-defs-global to expose) */
 extern asn_TYPE_descriptor_t asn_DEF_RadioResourceConfigDedicated;
 extern asn_SEQUENCE_specifics_t asn_SPC_RadioResourceConfigDedicated_specs_1;
-extern asn_TYPE_member_t asn_MBR_RadioResourceConfigDedicated_1[6];
+extern asn_TYPE_member_t asn_MBR_RadioResourceConfigDedicated_1[22];
 
 #ifdef __cplusplus
 }

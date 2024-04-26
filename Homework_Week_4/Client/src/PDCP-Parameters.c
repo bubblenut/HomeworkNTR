@@ -11,135 +11,12 @@
  * This type is implemented using NativeEnumerated,
  * so here we adjust the DEF accordingly.
  */
-static asn_per_constraints_t asn_PER_type_maxNumberROHC_ContextSessions_constr_12 CC_NOTUSED = {
+static asn_per_constraints_t asn_PER_type_maxNumberROHC_ContextSessions_constr_3 CC_NOTUSED = {
 	{ APC_CONSTRAINED,	 4,  4,  0,  15 }	/* (0..15) */,
 	{ APC_UNCONSTRAINED,	-1, -1,  0,  0 },
 	0, 0	/* No PER value map */
 };
-static asn_TYPE_member_t asn_MBR_supportedROHC_Profiles_2[] = {
-	{ ATF_NOFLAGS, 0, offsetof(struct PDCP_Parameters__supportedROHC_Profiles, profile0x0001),
-		(ASN_TAG_CLASS_CONTEXT | (0 << 2)),
-		-1,	/* IMPLICIT tag at current level */
-		&asn_DEF_BOOLEAN,
-		0,
-		{ 0, 0, 0 },
-		0, 0, /* No default value */
-		"profile0x0001"
-		},
-	{ ATF_NOFLAGS, 0, offsetof(struct PDCP_Parameters__supportedROHC_Profiles, profile0x0002),
-		(ASN_TAG_CLASS_CONTEXT | (1 << 2)),
-		-1,	/* IMPLICIT tag at current level */
-		&asn_DEF_BOOLEAN,
-		0,
-		{ 0, 0, 0 },
-		0, 0, /* No default value */
-		"profile0x0002"
-		},
-	{ ATF_NOFLAGS, 0, offsetof(struct PDCP_Parameters__supportedROHC_Profiles, profile0x0003),
-		(ASN_TAG_CLASS_CONTEXT | (2 << 2)),
-		-1,	/* IMPLICIT tag at current level */
-		&asn_DEF_BOOLEAN,
-		0,
-		{ 0, 0, 0 },
-		0, 0, /* No default value */
-		"profile0x0003"
-		},
-	{ ATF_NOFLAGS, 0, offsetof(struct PDCP_Parameters__supportedROHC_Profiles, profile0x0004),
-		(ASN_TAG_CLASS_CONTEXT | (3 << 2)),
-		-1,	/* IMPLICIT tag at current level */
-		&asn_DEF_BOOLEAN,
-		0,
-		{ 0, 0, 0 },
-		0, 0, /* No default value */
-		"profile0x0004"
-		},
-	{ ATF_NOFLAGS, 0, offsetof(struct PDCP_Parameters__supportedROHC_Profiles, profile0x0006),
-		(ASN_TAG_CLASS_CONTEXT | (4 << 2)),
-		-1,	/* IMPLICIT tag at current level */
-		&asn_DEF_BOOLEAN,
-		0,
-		{ 0, 0, 0 },
-		0, 0, /* No default value */
-		"profile0x0006"
-		},
-	{ ATF_NOFLAGS, 0, offsetof(struct PDCP_Parameters__supportedROHC_Profiles, profile0x0101),
-		(ASN_TAG_CLASS_CONTEXT | (5 << 2)),
-		-1,	/* IMPLICIT tag at current level */
-		&asn_DEF_BOOLEAN,
-		0,
-		{ 0, 0, 0 },
-		0, 0, /* No default value */
-		"profile0x0101"
-		},
-	{ ATF_NOFLAGS, 0, offsetof(struct PDCP_Parameters__supportedROHC_Profiles, profile0x0102),
-		(ASN_TAG_CLASS_CONTEXT | (6 << 2)),
-		-1,	/* IMPLICIT tag at current level */
-		&asn_DEF_BOOLEAN,
-		0,
-		{ 0, 0, 0 },
-		0, 0, /* No default value */
-		"profile0x0102"
-		},
-	{ ATF_NOFLAGS, 0, offsetof(struct PDCP_Parameters__supportedROHC_Profiles, profile0x0103),
-		(ASN_TAG_CLASS_CONTEXT | (7 << 2)),
-		-1,	/* IMPLICIT tag at current level */
-		&asn_DEF_BOOLEAN,
-		0,
-		{ 0, 0, 0 },
-		0, 0, /* No default value */
-		"profile0x0103"
-		},
-	{ ATF_NOFLAGS, 0, offsetof(struct PDCP_Parameters__supportedROHC_Profiles, profile0x0104),
-		(ASN_TAG_CLASS_CONTEXT | (8 << 2)),
-		-1,	/* IMPLICIT tag at current level */
-		&asn_DEF_BOOLEAN,
-		0,
-		{ 0, 0, 0 },
-		0, 0, /* No default value */
-		"profile0x0104"
-		},
-};
-static const ber_tlv_tag_t asn_DEF_supportedROHC_Profiles_tags_2[] = {
-	(ASN_TAG_CLASS_CONTEXT | (0 << 2)),
-	(ASN_TAG_CLASS_UNIVERSAL | (16 << 2))
-};
-static const asn_TYPE_tag2member_t asn_MAP_supportedROHC_Profiles_tag2el_2[] = {
-    { (ASN_TAG_CLASS_CONTEXT | (0 << 2)), 0, 0, 0 }, /* profile0x0001 */
-    { (ASN_TAG_CLASS_CONTEXT | (1 << 2)), 1, 0, 0 }, /* profile0x0002 */
-    { (ASN_TAG_CLASS_CONTEXT | (2 << 2)), 2, 0, 0 }, /* profile0x0003 */
-    { (ASN_TAG_CLASS_CONTEXT | (3 << 2)), 3, 0, 0 }, /* profile0x0004 */
-    { (ASN_TAG_CLASS_CONTEXT | (4 << 2)), 4, 0, 0 }, /* profile0x0006 */
-    { (ASN_TAG_CLASS_CONTEXT | (5 << 2)), 5, 0, 0 }, /* profile0x0101 */
-    { (ASN_TAG_CLASS_CONTEXT | (6 << 2)), 6, 0, 0 }, /* profile0x0102 */
-    { (ASN_TAG_CLASS_CONTEXT | (7 << 2)), 7, 0, 0 }, /* profile0x0103 */
-    { (ASN_TAG_CLASS_CONTEXT | (8 << 2)), 8, 0, 0 } /* profile0x0104 */
-};
-static asn_SEQUENCE_specifics_t asn_SPC_supportedROHC_Profiles_specs_2 = {
-	sizeof(struct PDCP_Parameters__supportedROHC_Profiles),
-	offsetof(struct PDCP_Parameters__supportedROHC_Profiles, _asn_ctx),
-	asn_MAP_supportedROHC_Profiles_tag2el_2,
-	9,	/* Count of tags in the map */
-	0, 0, 0,	/* Optional elements (not needed) */
-	-1,	/* First extension addition */
-};
-static /* Use -fall-defs-global to expose */
-asn_TYPE_descriptor_t asn_DEF_supportedROHC_Profiles_2 = {
-	"supportedROHC-Profiles",
-	"supportedROHC-Profiles",
-	&asn_OP_SEQUENCE,
-	asn_DEF_supportedROHC_Profiles_tags_2,
-	sizeof(asn_DEF_supportedROHC_Profiles_tags_2)
-		/sizeof(asn_DEF_supportedROHC_Profiles_tags_2[0]) - 1, /* 1 */
-	asn_DEF_supportedROHC_Profiles_tags_2,	/* Same as above */
-	sizeof(asn_DEF_supportedROHC_Profiles_tags_2)
-		/sizeof(asn_DEF_supportedROHC_Profiles_tags_2[0]), /* 2 */
-	{ 0, 0, SEQUENCE_constraint },
-	asn_MBR_supportedROHC_Profiles_2,
-	9,	/* Elements count */
-	&asn_SPC_supportedROHC_Profiles_specs_2	/* Additional specs */
-};
-
-static int asn_DFL_12_cmp_4(const void *sptr) {
+static int asn_DFL_3_cmp_4(const void *sptr) {
 	const long *st = sptr;
 	
 	if(!st) {
@@ -149,7 +26,7 @@ static int asn_DFL_12_cmp_4(const void *sptr) {
 	/* Test default value 4 */
 	return (*st != 4);
 }
-static int asn_DFL_12_set_4(void **sptr) {
+static int asn_DFL_3_set_4(void **sptr) {
 	long *st = *sptr;
 	
 	if(!st) {
@@ -161,7 +38,7 @@ static int asn_DFL_12_set_4(void **sptr) {
 	*st = 4;
 	return 0;
 }
-static const asn_INTEGER_enum_map_t asn_MAP_maxNumberROHC_ContextSessions_value2enum_12[] = {
+static const asn_INTEGER_enum_map_t asn_MAP_maxNumberROHC_ContextSessions_value2enum_3[] = {
 	{ 0,	3,	"cs2" },
 	{ 1,	3,	"cs4" },
 	{ 2,	3,	"cs8" },
@@ -179,7 +56,7 @@ static const asn_INTEGER_enum_map_t asn_MAP_maxNumberROHC_ContextSessions_value2
 	{ 14,	6,	"spare2" },
 	{ 15,	6,	"spare1" }
 };
-static const unsigned int asn_MAP_maxNumberROHC_ContextSessions_enum2value_12[] = {
+static const unsigned int asn_MAP_maxNumberROHC_ContextSessions_enum2value_3[] = {
 	12,	/* cs1024(12) */
 	3,	/* cs12(3) */
 	9,	/* cs128(9) */
@@ -197,40 +74,40 @@ static const unsigned int asn_MAP_maxNumberROHC_ContextSessions_enum2value_12[] 
 	15,	/* spare1(15) */
 	14	/* spare2(14) */
 };
-static const asn_INTEGER_specifics_t asn_SPC_maxNumberROHC_ContextSessions_specs_12 = {
-	asn_MAP_maxNumberROHC_ContextSessions_value2enum_12,	/* "tag" => N; sorted by tag */
-	asn_MAP_maxNumberROHC_ContextSessions_enum2value_12,	/* N => "tag"; sorted by N */
+static const asn_INTEGER_specifics_t asn_SPC_maxNumberROHC_ContextSessions_specs_3 = {
+	asn_MAP_maxNumberROHC_ContextSessions_value2enum_3,	/* "tag" => N; sorted by tag */
+	asn_MAP_maxNumberROHC_ContextSessions_enum2value_3,	/* N => "tag"; sorted by N */
 	16,	/* Number of elements in the maps */
 	0,	/* Enumeration is not extensible */
 	1,	/* Strict enumeration */
 	0,	/* Native long size */
 	0
 };
-static const ber_tlv_tag_t asn_DEF_maxNumberROHC_ContextSessions_tags_12[] = {
+static const ber_tlv_tag_t asn_DEF_maxNumberROHC_ContextSessions_tags_3[] = {
 	(ASN_TAG_CLASS_CONTEXT | (1 << 2)),
 	(ASN_TAG_CLASS_UNIVERSAL | (10 << 2))
 };
 static /* Use -fall-defs-global to expose */
-asn_TYPE_descriptor_t asn_DEF_maxNumberROHC_ContextSessions_12 = {
+asn_TYPE_descriptor_t asn_DEF_maxNumberROHC_ContextSessions_3 = {
 	"maxNumberROHC-ContextSessions",
 	"maxNumberROHC-ContextSessions",
 	&asn_OP_NativeEnumerated,
-	asn_DEF_maxNumberROHC_ContextSessions_tags_12,
-	sizeof(asn_DEF_maxNumberROHC_ContextSessions_tags_12)
-		/sizeof(asn_DEF_maxNumberROHC_ContextSessions_tags_12[0]) - 1, /* 1 */
-	asn_DEF_maxNumberROHC_ContextSessions_tags_12,	/* Same as above */
-	sizeof(asn_DEF_maxNumberROHC_ContextSessions_tags_12)
-		/sizeof(asn_DEF_maxNumberROHC_ContextSessions_tags_12[0]), /* 2 */
-	{ 0, &asn_PER_type_maxNumberROHC_ContextSessions_constr_12, NativeEnumerated_constraint },
+	asn_DEF_maxNumberROHC_ContextSessions_tags_3,
+	sizeof(asn_DEF_maxNumberROHC_ContextSessions_tags_3)
+		/sizeof(asn_DEF_maxNumberROHC_ContextSessions_tags_3[0]) - 1, /* 1 */
+	asn_DEF_maxNumberROHC_ContextSessions_tags_3,	/* Same as above */
+	sizeof(asn_DEF_maxNumberROHC_ContextSessions_tags_3)
+		/sizeof(asn_DEF_maxNumberROHC_ContextSessions_tags_3[0]), /* 2 */
+	{ 0, &asn_PER_type_maxNumberROHC_ContextSessions_constr_3, NativeEnumerated_constraint },
 	0, 0,	/* Defined elsewhere */
-	&asn_SPC_maxNumberROHC_ContextSessions_specs_12	/* Additional specs */
+	&asn_SPC_maxNumberROHC_ContextSessions_specs_3	/* Additional specs */
 };
 
 asn_TYPE_member_t asn_MBR_PDCP_Parameters_1[] = {
 	{ ATF_NOFLAGS, 0, offsetof(struct PDCP_Parameters, supportedROHC_Profiles),
 		(ASN_TAG_CLASS_CONTEXT | (0 << 2)),
-		0,
-		&asn_DEF_supportedROHC_Profiles_2,
+		-1,	/* IMPLICIT tag at current level */
+		&asn_DEF_ROHC_ProfileSupportList_r15,
 		0,
 		{ 0, 0, 0 },
 		0, 0, /* No default value */
@@ -239,11 +116,11 @@ asn_TYPE_member_t asn_MBR_PDCP_Parameters_1[] = {
 	{ ATF_POINTER, 1, offsetof(struct PDCP_Parameters, maxNumberROHC_ContextSessions),
 		(ASN_TAG_CLASS_CONTEXT | (1 << 2)),
 		-1,	/* IMPLICIT tag at current level */
-		&asn_DEF_maxNumberROHC_ContextSessions_12,
+		&asn_DEF_maxNumberROHC_ContextSessions_3,
 		0,
 		{ 0, 0, 0 },
-		&asn_DFL_12_cmp_4,	/* Compare DEFAULT 4 */
-		&asn_DFL_12_set_4,	/* Set DEFAULT 4 */
+		&asn_DFL_3_cmp_4,	/* Compare DEFAULT 4 */
+		&asn_DFL_3_set_4,	/* Set DEFAULT 4 */
 		"maxNumberROHC-ContextSessions"
 		},
 };

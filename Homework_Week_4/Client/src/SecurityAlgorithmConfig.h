@@ -12,6 +12,7 @@
 #include <asn_application.h>
 
 /* Including external dependencies */
+#include "CipheringAlgorithm-r12.h"
 #include <NativeEnumerated.h>
 #include <constr_SEQUENCE.h>
 
@@ -20,24 +21,11 @@ extern "C" {
 #endif
 
 /* Dependencies */
-typedef enum SecurityAlgorithmConfig__cipheringAlgorithm {
-	SecurityAlgorithmConfig__cipheringAlgorithm_eea0	= 0,
-	SecurityAlgorithmConfig__cipheringAlgorithm_eea1	= 1,
-	SecurityAlgorithmConfig__cipheringAlgorithm_eea2	= 2,
-	SecurityAlgorithmConfig__cipheringAlgorithm_spare5	= 3,
-	SecurityAlgorithmConfig__cipheringAlgorithm_spare4	= 4,
-	SecurityAlgorithmConfig__cipheringAlgorithm_spare3	= 5,
-	SecurityAlgorithmConfig__cipheringAlgorithm_spare2	= 6,
-	SecurityAlgorithmConfig__cipheringAlgorithm_spare1	= 7
-	/*
-	 * Enumeration is extensible
-	 */
-} e_SecurityAlgorithmConfig__cipheringAlgorithm;
 typedef enum SecurityAlgorithmConfig__integrityProtAlgorithm {
-	SecurityAlgorithmConfig__integrityProtAlgorithm_reserved	= 0,
+	SecurityAlgorithmConfig__integrityProtAlgorithm_eia0_v920	= 0,
 	SecurityAlgorithmConfig__integrityProtAlgorithm_eia1	= 1,
 	SecurityAlgorithmConfig__integrityProtAlgorithm_eia2	= 2,
-	SecurityAlgorithmConfig__integrityProtAlgorithm_spare5	= 3,
+	SecurityAlgorithmConfig__integrityProtAlgorithm_eia3_v1130	= 3,
 	SecurityAlgorithmConfig__integrityProtAlgorithm_spare4	= 4,
 	SecurityAlgorithmConfig__integrityProtAlgorithm_spare3	= 5,
 	SecurityAlgorithmConfig__integrityProtAlgorithm_spare2	= 6,
@@ -49,7 +37,7 @@ typedef enum SecurityAlgorithmConfig__integrityProtAlgorithm {
 
 /* SecurityAlgorithmConfig */
 typedef struct SecurityAlgorithmConfig {
-	long	 cipheringAlgorithm;
+	CipheringAlgorithm_r12_t	 cipheringAlgorithm;
 	long	 integrityProtAlgorithm;
 	
 	/* Context for parsing across buffer boundaries */
@@ -57,8 +45,7 @@ typedef struct SecurityAlgorithmConfig {
 } SecurityAlgorithmConfig_t;
 
 /* Implementation */
-/* extern asn_TYPE_descriptor_t asn_DEF_cipheringAlgorithm_2;	// (Use -fall-defs-global to expose) */
-/* extern asn_TYPE_descriptor_t asn_DEF_integrityProtAlgorithm_12;	// (Use -fall-defs-global to expose) */
+/* extern asn_TYPE_descriptor_t asn_DEF_integrityProtAlgorithm_3;	// (Use -fall-defs-global to expose) */
 extern asn_TYPE_descriptor_t asn_DEF_SecurityAlgorithmConfig;
 extern asn_SEQUENCE_specifics_t asn_SPC_SecurityAlgorithmConfig_specs_1;
 extern asn_TYPE_member_t asn_MBR_SecurityAlgorithmConfig_1[2];

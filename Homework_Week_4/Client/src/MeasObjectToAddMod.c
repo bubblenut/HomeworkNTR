@@ -49,12 +49,32 @@ static asn_TYPE_member_t asn_MBR_measObject_3[] = {
 		0, 0, /* No default value */
 		"measObjectCDMA2000"
 		},
+	{ ATF_NOFLAGS, 0, offsetof(struct MeasObjectToAddMod__measObject, choice.measObjectWLAN_r13),
+		(ASN_TAG_CLASS_CONTEXT | (4 << 2)),
+		-1,	/* IMPLICIT tag at current level */
+		&asn_DEF_MeasObjectWLAN_r13,
+		0,
+		{ 0, 0, 0 },
+		0, 0, /* No default value */
+		"measObjectWLAN-r13"
+		},
+	{ ATF_NOFLAGS, 0, offsetof(struct MeasObjectToAddMod__measObject, choice.measObjectNR_r15),
+		(ASN_TAG_CLASS_CONTEXT | (5 << 2)),
+		-1,	/* IMPLICIT tag at current level */
+		&asn_DEF_MeasObjectNR_r15,
+		0,
+		{ 0, 0, 0 },
+		0, 0, /* No default value */
+		"measObjectNR-r15"
+		},
 };
 static const asn_TYPE_tag2member_t asn_MAP_measObject_tag2el_3[] = {
     { (ASN_TAG_CLASS_CONTEXT | (0 << 2)), 0, 0, 0 }, /* measObjectEUTRA */
     { (ASN_TAG_CLASS_CONTEXT | (1 << 2)), 1, 0, 0 }, /* measObjectUTRA */
     { (ASN_TAG_CLASS_CONTEXT | (2 << 2)), 2, 0, 0 }, /* measObjectGERAN */
-    { (ASN_TAG_CLASS_CONTEXT | (3 << 2)), 3, 0, 0 } /* measObjectCDMA2000 */
+    { (ASN_TAG_CLASS_CONTEXT | (3 << 2)), 3, 0, 0 }, /* measObjectCDMA2000 */
+    { (ASN_TAG_CLASS_CONTEXT | (4 << 2)), 4, 0, 0 }, /* measObjectWLAN-r13 */
+    { (ASN_TAG_CLASS_CONTEXT | (5 << 2)), 5, 0, 0 } /* measObjectNR-r15 */
 };
 static asn_CHOICE_specifics_t asn_SPC_measObject_specs_3 = {
 	sizeof(struct MeasObjectToAddMod__measObject),
@@ -62,7 +82,7 @@ static asn_CHOICE_specifics_t asn_SPC_measObject_specs_3 = {
 	offsetof(struct MeasObjectToAddMod__measObject, present),
 	sizeof(((struct MeasObjectToAddMod__measObject *)0)->present),
 	asn_MAP_measObject_tag2el_3,
-	4,	/* Count of tags in the map */
+	6,	/* Count of tags in the map */
 	0, 0,
 	4	/* Extensions start */
 };
@@ -77,7 +97,7 @@ asn_TYPE_descriptor_t asn_DEF_measObject_3 = {
 	0,	/* No tags (count) */
 	{ 0, &asn_PER_type_measObject_constr_3, CHOICE_constraint },
 	asn_MBR_measObject_3,
-	4,	/* Elements count */
+	6,	/* Elements count */
 	&asn_SPC_measObject_specs_3	/* Additional specs */
 };
 

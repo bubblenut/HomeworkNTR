@@ -651,7 +651,7 @@ static const asn_INTEGER_enum_map_t asn_MAP_drx_InactivityTimer_value2enum_21[] 
 	{ 19,	7,	"psf1280" },
 	{ 20,	7,	"psf1920" },
 	{ 21,	7,	"psf2560" },
-	{ 22,	7,	"spare10" },
+	{ 22,	10,	"psf0-v1020" },
 	{ 23,	6,	"spare9" },
 	{ 24,	6,	"spare8" },
 	{ 25,	6,	"spare7" },
@@ -663,6 +663,7 @@ static const asn_INTEGER_enum_map_t asn_MAP_drx_InactivityTimer_value2enum_21[] 
 	{ 31,	6,	"spare1" }
 };
 static const unsigned int asn_MAP_drx_InactivityTimer_enum2value_21[] = {
+	22,	/* psf0-v1020(22) */
 	0,	/* psf1(0) */
 	7,	/* psf10(7) */
 	14,	/* psf100(14) */
@@ -686,7 +687,6 @@ static const unsigned int asn_MAP_drx_InactivityTimer_enum2value_21[] = {
 	6,	/* psf8(6) */
 	13,	/* psf80(13) */
 	31,	/* spare1(31) */
-	22,	/* spare10(22) */
 	30,	/* spare2(30) */
 	29,	/* spare3(29) */
 	28,	/* spare4(28) */

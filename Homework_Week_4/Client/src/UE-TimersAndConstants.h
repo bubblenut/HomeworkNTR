@@ -78,6 +78,40 @@ typedef enum UE_TimersAndConstants__n311 {
 	UE_TimersAndConstants__n311_n8	= 6,
 	UE_TimersAndConstants__n311_n10	= 7
 } e_UE_TimersAndConstants__n311;
+typedef enum UE_TimersAndConstants__t300_v1310 {
+	UE_TimersAndConstants__t300_v1310_ms2500	= 0,
+	UE_TimersAndConstants__t300_v1310_ms3000	= 1,
+	UE_TimersAndConstants__t300_v1310_ms3500	= 2,
+	UE_TimersAndConstants__t300_v1310_ms4000	= 3,
+	UE_TimersAndConstants__t300_v1310_ms5000	= 4,
+	UE_TimersAndConstants__t300_v1310_ms6000	= 5,
+	UE_TimersAndConstants__t300_v1310_ms8000	= 6,
+	UE_TimersAndConstants__t300_v1310_ms10000	= 7
+} e_UE_TimersAndConstants__t300_v1310;
+typedef enum UE_TimersAndConstants__t301_v1310 {
+	UE_TimersAndConstants__t301_v1310_ms2500	= 0,
+	UE_TimersAndConstants__t301_v1310_ms3000	= 1,
+	UE_TimersAndConstants__t301_v1310_ms3500	= 2,
+	UE_TimersAndConstants__t301_v1310_ms4000	= 3,
+	UE_TimersAndConstants__t301_v1310_ms5000	= 4,
+	UE_TimersAndConstants__t301_v1310_ms6000	= 5,
+	UE_TimersAndConstants__t301_v1310_ms8000	= 6,
+	UE_TimersAndConstants__t301_v1310_ms10000	= 7
+} e_UE_TimersAndConstants__t301_v1310;
+typedef enum UE_TimersAndConstants__t310_v1330 {
+	UE_TimersAndConstants__t310_v1330_ms4000	= 0,
+	UE_TimersAndConstants__t310_v1330_ms6000	= 1
+} e_UE_TimersAndConstants__t310_v1330;
+typedef enum UE_TimersAndConstants__t300_r15 {
+	UE_TimersAndConstants__t300_r15_ms4000	= 0,
+	UE_TimersAndConstants__t300_r15_ms6000	= 1,
+	UE_TimersAndConstants__t300_r15_ms8000	= 2,
+	UE_TimersAndConstants__t300_r15_ms10000	= 3,
+	UE_TimersAndConstants__t300_r15_ms15000	= 4,
+	UE_TimersAndConstants__t300_r15_ms25000	= 5,
+	UE_TimersAndConstants__t300_r15_ms40000	= 6,
+	UE_TimersAndConstants__t300_r15_ms60000	= 7
+} e_UE_TimersAndConstants__t300_r15;
 
 /* UE-TimersAndConstants */
 typedef struct UE_TimersAndConstants {
@@ -91,6 +125,10 @@ typedef struct UE_TimersAndConstants {
 	 * This type is extensible,
 	 * possible extensions are below.
 	 */
+	long	*t300_v1310	/* OPTIONAL */;
+	long	*t301_v1310	/* OPTIONAL */;
+	long	*t310_v1330	/* OPTIONAL */;
+	long	*t300_r15	/* OPTIONAL */;
 	
 	/* Context for parsing across buffer boundaries */
 	asn_struct_ctx_t _asn_ctx;
@@ -103,9 +141,13 @@ typedef struct UE_TimersAndConstants {
 /* extern asn_TYPE_descriptor_t asn_DEF_n310_28;	// (Use -fall-defs-global to expose) */
 /* extern asn_TYPE_descriptor_t asn_DEF_t311_37;	// (Use -fall-defs-global to expose) */
 /* extern asn_TYPE_descriptor_t asn_DEF_n311_45;	// (Use -fall-defs-global to expose) */
+/* extern asn_TYPE_descriptor_t asn_DEF_t300_v1310_55;	// (Use -fall-defs-global to expose) */
+/* extern asn_TYPE_descriptor_t asn_DEF_t301_v1310_64;	// (Use -fall-defs-global to expose) */
+/* extern asn_TYPE_descriptor_t asn_DEF_t310_v1330_73;	// (Use -fall-defs-global to expose) */
+/* extern asn_TYPE_descriptor_t asn_DEF_t300_r15_76;	// (Use -fall-defs-global to expose) */
 extern asn_TYPE_descriptor_t asn_DEF_UE_TimersAndConstants;
 extern asn_SEQUENCE_specifics_t asn_SPC_UE_TimersAndConstants_specs_1;
-extern asn_TYPE_member_t asn_MBR_UE_TimersAndConstants_1[6];
+extern asn_TYPE_member_t asn_MBR_UE_TimersAndConstants_1[10];
 
 #ifdef __cplusplus
 }

@@ -18,13 +18,12 @@
 extern "C" {
 #endif
 
+/* Forward declarations */
+struct SecurityModeFailure_v8a0_IEs;
+
 /* SecurityModeFailure-r8-IEs */
 typedef struct SecurityModeFailure_r8_IEs {
-	struct SecurityModeFailure_r8_IEs__nonCriticalExtension {
-		
-		/* Context for parsing across buffer boundaries */
-		asn_struct_ctx_t _asn_ctx;
-	} *nonCriticalExtension;
+	struct SecurityModeFailure_v8a0_IEs	*nonCriticalExtension	/* OPTIONAL */;
 	
 	/* Context for parsing across buffer boundaries */
 	asn_struct_ctx_t _asn_ctx;

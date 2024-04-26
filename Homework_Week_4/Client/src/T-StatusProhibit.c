@@ -73,12 +73,12 @@ static const asn_INTEGER_enum_map_t asn_MAP_T_StatusProhibit_value2enum_1[] = {
 	{ 53,	5,	"ms400" },
 	{ 54,	5,	"ms450" },
 	{ 55,	5,	"ms500" },
-	{ 56,	6,	"spare8" },
-	{ 57,	6,	"spare7" },
-	{ 58,	6,	"spare6" },
-	{ 59,	6,	"spare5" },
-	{ 60,	6,	"spare4" },
-	{ 61,	6,	"spare3" },
+	{ 56,	11,	"ms800-v1310" },
+	{ 57,	12,	"ms1000-v1310" },
+	{ 58,	12,	"ms1200-v1310" },
+	{ 59,	12,	"ms1600-v1310" },
+	{ 60,	12,	"ms2000-v1310" },
+	{ 61,	12,	"ms2400-v1310" },
 	{ 62,	6,	"spare2" },
 	{ 63,	6,	"spare1" }
 };
@@ -86,10 +86,12 @@ static const unsigned int asn_MAP_T_StatusProhibit_enum2value_1[] = {
 	0,	/* ms0(0) */
 	2,	/* ms10(2) */
 	20,	/* ms100(20) */
+	57,	/* ms1000-v1310(57) */
 	21,	/* ms105(21) */
 	22,	/* ms110(22) */
 	23,	/* ms115(23) */
 	24,	/* ms120(24) */
+	58,	/* ms1200-v1310(58) */
 	25,	/* ms125(25) */
 	26,	/* ms130(26) */
 	27,	/* ms135(27) */
@@ -99,6 +101,7 @@ static const unsigned int asn_MAP_T_StatusProhibit_enum2value_1[] = {
 	30,	/* ms150(30) */
 	31,	/* ms155(31) */
 	32,	/* ms160(32) */
+	59,	/* ms1600-v1310(59) */
 	33,	/* ms165(33) */
 	34,	/* ms170(34) */
 	35,	/* ms175(35) */
@@ -108,6 +111,7 @@ static const unsigned int asn_MAP_T_StatusProhibit_enum2value_1[] = {
 	39,	/* ms195(39) */
 	4,	/* ms20(4) */
 	40,	/* ms200(40) */
+	60,	/* ms2000-v1310(60) */
 	41,	/* ms205(41) */
 	42,	/* ms210(42) */
 	43,	/* ms215(43) */
@@ -116,6 +120,7 @@ static const unsigned int asn_MAP_T_StatusProhibit_enum2value_1[] = {
 	46,	/* ms230(46) */
 	47,	/* ms235(47) */
 	48,	/* ms240(48) */
+	61,	/* ms2400-v1310(61) */
 	49,	/* ms245(49) */
 	5,	/* ms25(5) */
 	50,	/* ms250(50) */
@@ -136,17 +141,12 @@ static const unsigned int asn_MAP_T_StatusProhibit_enum2value_1[] = {
 	14,	/* ms70(14) */
 	15,	/* ms75(15) */
 	16,	/* ms80(16) */
+	56,	/* ms800-v1310(56) */
 	17,	/* ms85(17) */
 	18,	/* ms90(18) */
 	19,	/* ms95(19) */
 	63,	/* spare1(63) */
-	62,	/* spare2(62) */
-	61,	/* spare3(61) */
-	60,	/* spare4(60) */
-	59,	/* spare5(59) */
-	58,	/* spare6(58) */
-	57,	/* spare7(57) */
-	56	/* spare8(56) */
+	62	/* spare2(62) */
 };
 const asn_INTEGER_specifics_t asn_SPC_T_StatusProhibit_specs_1 = {
 	asn_MAP_T_StatusProhibit_value2enum_1,	/* "tag" => N; sorted by tag */

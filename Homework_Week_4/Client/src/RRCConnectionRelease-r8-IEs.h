@@ -22,17 +22,14 @@ extern "C" {
 /* Forward declarations */
 struct RedirectedCarrierInfo;
 struct IdleModeMobilityControlInfo;
+struct RRCConnectionRelease_v890_IEs;
 
 /* RRCConnectionRelease-r8-IEs */
 typedef struct RRCConnectionRelease_r8_IEs {
 	ReleaseCause_t	 releaseCause;
 	struct RedirectedCarrierInfo	*redirectedCarrierInfo	/* OPTIONAL */;
 	struct IdleModeMobilityControlInfo	*idleModeMobilityControlInfo	/* OPTIONAL */;
-	struct RRCConnectionRelease_r8_IEs__nonCriticalExtension {
-		
-		/* Context for parsing across buffer boundaries */
-		asn_struct_ctx_t _asn_ctx;
-	} *nonCriticalExtension;
+	struct RRCConnectionRelease_v890_IEs	*nonCriticalExtension	/* OPTIONAL */;
 	
 	/* Context for parsing across buffer boundaries */
 	asn_struct_ctx_t _asn_ctx;

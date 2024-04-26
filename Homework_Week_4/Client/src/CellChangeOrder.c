@@ -66,17 +66,17 @@ static const asn_INTEGER_enum_map_t asn_MAP_t304_value2enum_2[] = {
 	{ 4,	6,	"ms2000" },
 	{ 5,	6,	"ms4000" },
 	{ 6,	6,	"ms8000" },
-	{ 7,	6,	"spare1" }
+	{ 7,	13,	"ms10000-v1310" }
 };
 static const unsigned int asn_MAP_t304_enum2value_2[] = {
 	0,	/* ms100(0) */
 	3,	/* ms1000(3) */
+	7,	/* ms10000-v1310(7) */
 	1,	/* ms200(1) */
 	4,	/* ms2000(4) */
 	5,	/* ms4000(5) */
 	2,	/* ms500(2) */
-	6,	/* ms8000(6) */
-	7	/* spare1(7) */
+	6	/* ms8000(6) */
 };
 static const asn_INTEGER_specifics_t asn_SPC_t304_specs_2 = {
 	asn_MAP_t304_value2enum_2,	/* "tag" => N; sorted by tag */

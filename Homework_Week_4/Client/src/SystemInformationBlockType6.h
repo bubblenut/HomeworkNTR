@@ -13,6 +13,9 @@
 
 /* Including external dependencies */
 #include "T-Reselection.h"
+#include <OCTET_STRING.h>
+#include <asn_SEQUENCE_OF.h>
+#include <constr_SEQUENCE_OF.h>
 #include <constr_SEQUENCE.h>
 
 #ifdef __cplusplus
@@ -23,6 +26,9 @@ extern "C" {
 struct CarrierFreqListUTRA_FDD;
 struct CarrierFreqListUTRA_TDD;
 struct SpeedStateScaleFactors;
+struct CarrierFreqListUTRA_FDD_Ext_r12;
+struct CarrierFreqListUTRA_TDD_Ext_r12;
+struct CarrierFreqInfoUTRA_v1250;
 
 /* SystemInformationBlockType6 */
 typedef struct SystemInformationBlockType6 {
@@ -34,6 +40,21 @@ typedef struct SystemInformationBlockType6 {
 	 * This type is extensible,
 	 * possible extensions are below.
 	 */
+	OCTET_STRING_t	*lateNonCriticalExtension	/* OPTIONAL */;
+	struct SystemInformationBlockType6__carrierFreqListUTRA_FDD_v1250 {
+		A_SEQUENCE_OF(struct CarrierFreqInfoUTRA_v1250) list;
+		
+		/* Context for parsing across buffer boundaries */
+		asn_struct_ctx_t _asn_ctx;
+	} *carrierFreqListUTRA_FDD_v1250;
+	struct SystemInformationBlockType6__carrierFreqListUTRA_TDD_v1250 {
+		A_SEQUENCE_OF(struct CarrierFreqInfoUTRA_v1250) list;
+		
+		/* Context for parsing across buffer boundaries */
+		asn_struct_ctx_t _asn_ctx;
+	} *carrierFreqListUTRA_TDD_v1250;
+	struct CarrierFreqListUTRA_FDD_Ext_r12	*carrierFreqListUTRA_FDD_Ext_r12	/* OPTIONAL */;
+	struct CarrierFreqListUTRA_TDD_Ext_r12	*carrierFreqListUTRA_TDD_Ext_r12	/* OPTIONAL */;
 	
 	/* Context for parsing across buffer boundaries */
 	asn_struct_ctx_t _asn_ctx;
@@ -42,7 +63,7 @@ typedef struct SystemInformationBlockType6 {
 /* Implementation */
 extern asn_TYPE_descriptor_t asn_DEF_SystemInformationBlockType6;
 extern asn_SEQUENCE_specifics_t asn_SPC_SystemInformationBlockType6_specs_1;
-extern asn_TYPE_member_t asn_MBR_SystemInformationBlockType6_1[4];
+extern asn_TYPE_member_t asn_MBR_SystemInformationBlockType6_1[9];
 
 #ifdef __cplusplus
 }

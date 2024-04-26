@@ -7,10 +7,6 @@
 
 #include "UplinkPowerControlCommon.h"
 
-/*
- * This type is implemented using NativeEnumerated,
- * so here we adjust the DEF accordingly.
- */
 static int
 memb_p0_NominalPUSCH_constraint_1(const asn_TYPE_descriptor_t *td, const void *sptr,
 			asn_app_constraint_failed_f *ctfailcb, void *app_key) {
@@ -86,75 +82,21 @@ memb_deltaPreambleMsg3_constraint_1(const asn_TYPE_descriptor_t *td, const void 
 	}
 }
 
-static asn_per_constraints_t asn_PER_type_alpha_constr_3 CC_NOTUSED = {
-	{ APC_CONSTRAINED,	 3,  3,  0,  7 }	/* (0..7) */,
-	{ APC_UNCONSTRAINED,	-1, -1,  0,  0 },
-	0, 0	/* No PER value map */
-};
 static asn_per_constraints_t asn_PER_memb_p0_NominalPUSCH_constr_2 CC_NOTUSED = {
 	{ APC_CONSTRAINED,	 8,  8, -126,  24 }	/* (-126..24) */,
 	{ APC_UNCONSTRAINED,	-1, -1,  0,  0 },
 	0, 0	/* No PER value map */
 };
-static asn_per_constraints_t asn_PER_memb_p0_NominalPUCCH_constr_12 CC_NOTUSED = {
+static asn_per_constraints_t asn_PER_memb_p0_NominalPUCCH_constr_4 CC_NOTUSED = {
 	{ APC_CONSTRAINED,	 5,  5, -127, -96 }	/* (-127..-96) */,
 	{ APC_UNCONSTRAINED,	-1, -1,  0,  0 },
 	0, 0	/* No PER value map */
 };
-static asn_per_constraints_t asn_PER_memb_deltaPreambleMsg3_constr_14 CC_NOTUSED = {
+static asn_per_constraints_t asn_PER_memb_deltaPreambleMsg3_constr_6 CC_NOTUSED = {
 	{ APC_CONSTRAINED,	 3,  3, -1,  6 }	/* (-1..6) */,
 	{ APC_UNCONSTRAINED,	-1, -1,  0,  0 },
 	0, 0	/* No PER value map */
 };
-static const asn_INTEGER_enum_map_t asn_MAP_alpha_value2enum_3[] = {
-	{ 0,	3,	"al0" },
-	{ 1,	4,	"al04" },
-	{ 2,	4,	"al05" },
-	{ 3,	4,	"al06" },
-	{ 4,	4,	"al07" },
-	{ 5,	4,	"al08" },
-	{ 6,	4,	"al09" },
-	{ 7,	3,	"al1" }
-};
-static const unsigned int asn_MAP_alpha_enum2value_3[] = {
-	0,	/* al0(0) */
-	1,	/* al04(1) */
-	2,	/* al05(2) */
-	3,	/* al06(3) */
-	4,	/* al07(4) */
-	5,	/* al08(5) */
-	6,	/* al09(6) */
-	7	/* al1(7) */
-};
-static const asn_INTEGER_specifics_t asn_SPC_alpha_specs_3 = {
-	asn_MAP_alpha_value2enum_3,	/* "tag" => N; sorted by tag */
-	asn_MAP_alpha_enum2value_3,	/* N => "tag"; sorted by N */
-	8,	/* Number of elements in the maps */
-	0,	/* Enumeration is not extensible */
-	1,	/* Strict enumeration */
-	0,	/* Native long size */
-	0
-};
-static const ber_tlv_tag_t asn_DEF_alpha_tags_3[] = {
-	(ASN_TAG_CLASS_CONTEXT | (1 << 2)),
-	(ASN_TAG_CLASS_UNIVERSAL | (10 << 2))
-};
-static /* Use -fall-defs-global to expose */
-asn_TYPE_descriptor_t asn_DEF_alpha_3 = {
-	"alpha",
-	"alpha",
-	&asn_OP_NativeEnumerated,
-	asn_DEF_alpha_tags_3,
-	sizeof(asn_DEF_alpha_tags_3)
-		/sizeof(asn_DEF_alpha_tags_3[0]) - 1, /* 1 */
-	asn_DEF_alpha_tags_3,	/* Same as above */
-	sizeof(asn_DEF_alpha_tags_3)
-		/sizeof(asn_DEF_alpha_tags_3[0]), /* 2 */
-	{ 0, &asn_PER_type_alpha_constr_3, NativeEnumerated_constraint },
-	0, 0,	/* Defined elsewhere */
-	&asn_SPC_alpha_specs_3	/* Additional specs */
-};
-
 asn_TYPE_member_t asn_MBR_UplinkPowerControlCommon_1[] = {
 	{ ATF_NOFLAGS, 0, offsetof(struct UplinkPowerControlCommon, p0_NominalPUSCH),
 		(ASN_TAG_CLASS_CONTEXT | (0 << 2)),
@@ -168,7 +110,7 @@ asn_TYPE_member_t asn_MBR_UplinkPowerControlCommon_1[] = {
 	{ ATF_NOFLAGS, 0, offsetof(struct UplinkPowerControlCommon, alpha),
 		(ASN_TAG_CLASS_CONTEXT | (1 << 2)),
 		-1,	/* IMPLICIT tag at current level */
-		&asn_DEF_alpha_3,
+		&asn_DEF_Alpha_r12,
 		0,
 		{ 0, 0, 0 },
 		0, 0, /* No default value */
@@ -179,7 +121,7 @@ asn_TYPE_member_t asn_MBR_UplinkPowerControlCommon_1[] = {
 		-1,	/* IMPLICIT tag at current level */
 		&asn_DEF_NativeInteger,
 		0,
-		{ 0, &asn_PER_memb_p0_NominalPUCCH_constr_12,  memb_p0_NominalPUCCH_constraint_1 },
+		{ 0, &asn_PER_memb_p0_NominalPUCCH_constr_4,  memb_p0_NominalPUCCH_constraint_1 },
 		0, 0, /* No default value */
 		"p0-NominalPUCCH"
 		},
@@ -197,7 +139,7 @@ asn_TYPE_member_t asn_MBR_UplinkPowerControlCommon_1[] = {
 		-1,	/* IMPLICIT tag at current level */
 		&asn_DEF_NativeInteger,
 		0,
-		{ 0, &asn_PER_memb_deltaPreambleMsg3_constr_14,  memb_deltaPreambleMsg3_constraint_1 },
+		{ 0, &asn_PER_memb_deltaPreambleMsg3_constr_6,  memb_deltaPreambleMsg3_constraint_1 },
 		0, 0, /* No default value */
 		"deltaPreambleMsg3"
 		},

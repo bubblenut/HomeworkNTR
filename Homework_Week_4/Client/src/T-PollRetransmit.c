@@ -72,10 +72,10 @@ static const asn_INTEGER_enum_map_t asn_MAP_T_PollRetransmit_value2enum_1[] = {
 	{ 52,	5,	"ms400" },
 	{ 53,	5,	"ms450" },
 	{ 54,	5,	"ms500" },
-	{ 55,	6,	"spare9" },
-	{ 56,	6,	"spare8" },
-	{ 57,	6,	"spare7" },
-	{ 58,	6,	"spare6" },
+	{ 55,	11,	"ms800-v1310" },
+	{ 56,	12,	"ms1000-v1310" },
+	{ 57,	12,	"ms2000-v1310" },
+	{ 58,	12,	"ms4000-v1310" },
 	{ 59,	6,	"spare5" },
 	{ 60,	6,	"spare4" },
 	{ 61,	6,	"spare3" },
@@ -85,6 +85,7 @@ static const asn_INTEGER_enum_map_t asn_MAP_T_PollRetransmit_value2enum_1[] = {
 static const unsigned int asn_MAP_T_PollRetransmit_enum2value_1[] = {
 	1,	/* ms10(1) */
 	19,	/* ms100(19) */
+	56,	/* ms1000-v1310(56) */
 	20,	/* ms105(20) */
 	21,	/* ms110(21) */
 	22,	/* ms115(22) */
@@ -107,6 +108,7 @@ static const unsigned int asn_MAP_T_PollRetransmit_enum2value_1[] = {
 	38,	/* ms195(38) */
 	3,	/* ms20(3) */
 	39,	/* ms200(39) */
+	57,	/* ms2000-v1310(57) */
 	40,	/* ms205(40) */
 	41,	/* ms210(41) */
 	42,	/* ms215(42) */
@@ -124,6 +126,7 @@ static const unsigned int asn_MAP_T_PollRetransmit_enum2value_1[] = {
 	51,	/* ms350(51) */
 	7,	/* ms40(7) */
 	52,	/* ms400(52) */
+	58,	/* ms4000-v1310(58) */
 	8,	/* ms45(8) */
 	53,	/* ms450(53) */
 	0,	/* ms5(0) */
@@ -135,6 +138,7 @@ static const unsigned int asn_MAP_T_PollRetransmit_enum2value_1[] = {
 	13,	/* ms70(13) */
 	14,	/* ms75(14) */
 	15,	/* ms80(15) */
+	55,	/* ms800-v1310(55) */
 	16,	/* ms85(16) */
 	17,	/* ms90(17) */
 	18,	/* ms95(18) */
@@ -142,11 +146,7 @@ static const unsigned int asn_MAP_T_PollRetransmit_enum2value_1[] = {
 	62,	/* spare2(62) */
 	61,	/* spare3(61) */
 	60,	/* spare4(60) */
-	59,	/* spare5(59) */
-	58,	/* spare6(58) */
-	57,	/* spare7(57) */
-	56,	/* spare8(56) */
-	55	/* spare9(55) */
+	59	/* spare5(59) */
 };
 const asn_INTEGER_specifics_t asn_SPC_T_PollRetransmit_specs_1 = {
 	asn_MAP_T_PollRetransmit_value2enum_1,	/* "tag" => N; sorted by tag */

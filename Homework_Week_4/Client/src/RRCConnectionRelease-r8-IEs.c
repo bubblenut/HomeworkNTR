@@ -9,34 +9,7 @@
 
 #include "RedirectedCarrierInfo.h"
 #include "IdleModeMobilityControlInfo.h"
-static const ber_tlv_tag_t asn_DEF_nonCriticalExtension_tags_5[] = {
-	(ASN_TAG_CLASS_CONTEXT | (3 << 2)),
-	(ASN_TAG_CLASS_UNIVERSAL | (16 << 2))
-};
-static asn_SEQUENCE_specifics_t asn_SPC_nonCriticalExtension_specs_5 = {
-	sizeof(struct RRCConnectionRelease_r8_IEs__nonCriticalExtension),
-	offsetof(struct RRCConnectionRelease_r8_IEs__nonCriticalExtension, _asn_ctx),
-	0,	/* No top level tags */
-	0,	/* No tags in the map */
-	0, 0, 0,	/* Optional elements (not needed) */
-	-1,	/* First extension addition */
-};
-static /* Use -fall-defs-global to expose */
-asn_TYPE_descriptor_t asn_DEF_nonCriticalExtension_5 = {
-	"nonCriticalExtension",
-	"nonCriticalExtension",
-	&asn_OP_SEQUENCE,
-	asn_DEF_nonCriticalExtension_tags_5,
-	sizeof(asn_DEF_nonCriticalExtension_tags_5)
-		/sizeof(asn_DEF_nonCriticalExtension_tags_5[0]) - 1, /* 1 */
-	asn_DEF_nonCriticalExtension_tags_5,	/* Same as above */
-	sizeof(asn_DEF_nonCriticalExtension_tags_5)
-		/sizeof(asn_DEF_nonCriticalExtension_tags_5[0]), /* 2 */
-	{ 0, 0, SEQUENCE_constraint },
-	0, 0,	/* No members */
-	&asn_SPC_nonCriticalExtension_specs_5	/* Additional specs */
-};
-
+#include "RRCConnectionRelease-v890-IEs.h"
 asn_TYPE_member_t asn_MBR_RRCConnectionRelease_r8_IEs_1[] = {
 	{ ATF_NOFLAGS, 0, offsetof(struct RRCConnectionRelease_r8_IEs, releaseCause),
 		(ASN_TAG_CLASS_CONTEXT | (0 << 2)),
@@ -67,8 +40,8 @@ asn_TYPE_member_t asn_MBR_RRCConnectionRelease_r8_IEs_1[] = {
 		},
 	{ ATF_POINTER, 1, offsetof(struct RRCConnectionRelease_r8_IEs, nonCriticalExtension),
 		(ASN_TAG_CLASS_CONTEXT | (3 << 2)),
-		0,
-		&asn_DEF_nonCriticalExtension_5,
+		-1,	/* IMPLICIT tag at current level */
+		&asn_DEF_RRCConnectionRelease_v890_IEs,
 		0,
 		{ 0, 0, 0 },
 		0, 0, /* No default value */

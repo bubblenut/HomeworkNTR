@@ -19,14 +19,13 @@
 extern "C" {
 #endif
 
+/* Forward declarations */
+struct CounterCheckResponse_v8a0_IEs;
+
 /* CounterCheckResponse-r8-IEs */
 typedef struct CounterCheckResponse_r8_IEs {
 	DRB_CountInfoList_t	 drb_CountInfoList;
-	struct CounterCheckResponse_r8_IEs__nonCriticalExtension {
-		
-		/* Context for parsing across buffer boundaries */
-		asn_struct_ctx_t _asn_ctx;
-	} *nonCriticalExtension;
+	struct CounterCheckResponse_v8a0_IEs	*nonCriticalExtension	/* OPTIONAL */;
 	
 	/* Context for parsing across buffer boundaries */
 	asn_struct_ctx_t _asn_ctx;

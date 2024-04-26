@@ -18,13 +18,12 @@
 extern "C" {
 #endif
 
+/* Forward declarations */
+struct RRCConnectionReestablishmentReject_v8a0_IEs;
+
 /* RRCConnectionReestablishmentReject-r8-IEs */
 typedef struct RRCConnectionReestablishmentReject_r8_IEs {
-	struct RRCConnectionReestablishmentReject_r8_IEs__nonCriticalExtension {
-		
-		/* Context for parsing across buffer boundaries */
-		asn_struct_ctx_t _asn_ctx;
-	} *nonCriticalExtension;
+	struct RRCConnectionReestablishmentReject_v8a0_IEs	*nonCriticalExtension	/* OPTIONAL */;
 	
 	/* Context for parsing across buffer boundaries */
 	asn_struct_ctx_t _asn_ctx;

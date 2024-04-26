@@ -19,14 +19,13 @@
 extern "C" {
 #endif
 
+/* Forward declarations */
+struct MeasurementReport_v8a0_IEs;
+
 /* MeasurementReport-r8-IEs */
 typedef struct MeasurementReport_r8_IEs {
 	MeasResults_t	 measResults;
-	struct MeasurementReport_r8_IEs__nonCriticalExtension {
-		
-		/* Context for parsing across buffer boundaries */
-		asn_struct_ctx_t _asn_ctx;
-	} *nonCriticalExtension;
+	struct MeasurementReport_v8a0_IEs	*nonCriticalExtension	/* OPTIONAL */;
 	
 	/* Context for parsing across buffer boundaries */
 	asn_struct_ctx_t _asn_ctx;

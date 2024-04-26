@@ -25,8 +25,8 @@ typedef enum RAT_Type {
 	RAT_Type_geran_cs	= 2,
 	RAT_Type_geran_ps	= 3,
 	RAT_Type_cdma2000_1XRTT	= 4,
-	RAT_Type_spare3	= 5,
-	RAT_Type_spare2	= 6,
+	RAT_Type_nr	= 5,
+	RAT_Type_eutra_nr	= 6,
 	RAT_Type_spare1	= 7
 	/*
 	 * Enumeration is extensible

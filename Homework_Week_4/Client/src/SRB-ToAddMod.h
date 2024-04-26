@@ -13,6 +13,7 @@
 
 /* Including external dependencies */
 #include <NativeInteger.h>
+#include <NativeEnumerated.h>
 #include "RLC-Config.h"
 #include <NULL.h>
 #include <constr_CHOICE.h>
@@ -34,6 +35,14 @@ typedef enum SRB_ToAddMod__logicalChannelConfig_PR {
 	SRB_ToAddMod__logicalChannelConfig_PR_explicitValue,
 	SRB_ToAddMod__logicalChannelConfig_PR_defaultValue
 } SRB_ToAddMod__logicalChannelConfig_PR;
+typedef enum SRB_ToAddMod__pdcp_verChange_r15 {
+	SRB_ToAddMod__pdcp_verChange_r15_true	= 0
+} e_SRB_ToAddMod__pdcp_verChange_r15;
+
+/* Forward declarations */
+struct RLC_Config_v1530;
+struct RLC_BearerConfig_r15;
+struct RLC_Config_v1510;
 
 /* SRB-ToAddMod */
 typedef struct SRB_ToAddMod {
@@ -62,15 +71,21 @@ typedef struct SRB_ToAddMod {
 	 * This type is extensible,
 	 * possible extensions are below.
 	 */
+	long	*pdcp_verChange_r15	/* OPTIONAL */;
+	struct RLC_Config_v1530	*rlc_Config_v1530	/* OPTIONAL */;
+	struct RLC_BearerConfig_r15	*rlc_BearerConfigSecondary_r15	/* OPTIONAL */;
+	long	*srb_Identity_v1530	/* OPTIONAL */;
+	struct RLC_Config_v1510	*rlc_Config_v1560	/* OPTIONAL */;
 	
 	/* Context for parsing across buffer boundaries */
 	asn_struct_ctx_t _asn_ctx;
 } SRB_ToAddMod_t;
 
 /* Implementation */
+/* extern asn_TYPE_descriptor_t asn_DEF_pdcp_verChange_r15_10;	// (Use -fall-defs-global to expose) */
 extern asn_TYPE_descriptor_t asn_DEF_SRB_ToAddMod;
 extern asn_SEQUENCE_specifics_t asn_SPC_SRB_ToAddMod_specs_1;
-extern asn_TYPE_member_t asn_MBR_SRB_ToAddMod_1[3];
+extern asn_TYPE_member_t asn_MBR_SRB_ToAddMod_1[8];
 
 #ifdef __cplusplus
 }

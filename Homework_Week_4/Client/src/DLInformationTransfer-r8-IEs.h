@@ -29,6 +29,9 @@ typedef enum DLInformationTransfer_r8_IEs__dedicatedInfoType_PR {
 	DLInformationTransfer_r8_IEs__dedicatedInfoType_PR_dedicatedInfoCDMA2000_HRPD
 } DLInformationTransfer_r8_IEs__dedicatedInfoType_PR;
 
+/* Forward declarations */
+struct DLInformationTransfer_v8a0_IEs;
+
 /* DLInformationTransfer-r8-IEs */
 typedef struct DLInformationTransfer_r8_IEs {
 	struct DLInformationTransfer_r8_IEs__dedicatedInfoType {
@@ -42,11 +45,7 @@ typedef struct DLInformationTransfer_r8_IEs {
 		/* Context for parsing across buffer boundaries */
 		asn_struct_ctx_t _asn_ctx;
 	} dedicatedInfoType;
-	struct DLInformationTransfer_r8_IEs__nonCriticalExtension {
-		
-		/* Context for parsing across buffer boundaries */
-		asn_struct_ctx_t _asn_ctx;
-	} *nonCriticalExtension;
+	struct DLInformationTransfer_v8a0_IEs	*nonCriticalExtension	/* OPTIONAL */;
 	
 	/* Context for parsing across buffer boundaries */
 	asn_struct_ctx_t _asn_ctx;

@@ -22,8 +22,8 @@ extern "C" {
 typedef enum ReleaseCause {
 	ReleaseCause_loadBalancingTAUrequired	= 0,
 	ReleaseCause_other	= 1,
-	ReleaseCause_spare2	= 2,
-	ReleaseCause_spare1	= 3
+	ReleaseCause_cs_FallbackHighPriority_v1020	= 2,
+	ReleaseCause_rrc_Suspend_v1320	= 3
 } e_ReleaseCause;
 
 /* ReleaseCause */

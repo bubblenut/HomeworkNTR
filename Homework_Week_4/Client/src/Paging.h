@@ -29,17 +29,14 @@ typedef enum Paging__etws_Indication {
 
 /* Forward declarations */
 struct PagingRecordList;
+struct Paging_v890_IEs;
 
 /* Paging */
 typedef struct Paging {
 	struct PagingRecordList	*pagingRecordList	/* OPTIONAL */;
 	long	*systemInfoModification	/* OPTIONAL */;
 	long	*etws_Indication	/* OPTIONAL */;
-	struct Paging__nonCriticalExtension {
-		
-		/* Context for parsing across buffer boundaries */
-		asn_struct_ctx_t _asn_ctx;
-	} *nonCriticalExtension;
+	struct Paging_v890_IEs	*nonCriticalExtension	/* OPTIONAL */;
 	
 	/* Context for parsing across buffer boundaries */
 	asn_struct_ctx_t _asn_ctx;

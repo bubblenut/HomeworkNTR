@@ -12,6 +12,10 @@
 #include <asn_application.h>
 
 /* Including external dependencies */
+#include <OCTET_STRING.h>
+#include "Q-QualMin-r9.h"
+#include "ReselectionThresholdQ-r9.h"
+#include "T-ReselectionEUTRA-CE-r13.h"
 #include <NativeEnumerated.h>
 #include "MobilityStateParameters.h"
 #include <constr_SEQUENCE.h>
@@ -59,8 +63,19 @@ typedef enum SystemInformationBlockType3__cellReselectionInfoCommon__speedStateR
 	SystemInformationBlockType3__cellReselectionInfoCommon__speedStateReselectionPars__q_HystSF__sf_High_dB_2	= 2,
 	SystemInformationBlockType3__cellReselectionInfoCommon__speedStateReselectionPars__q_HystSF__sf_High_dB0	= 3
 } e_SystemInformationBlockType3__cellReselectionInfoCommon__speedStateReselectionPars__q_HystSF__sf_High;
+typedef enum SystemInformationBlockType3__crs_IntfMitigNeighCellsCE_r15 {
+	SystemInformationBlockType3__crs_IntfMitigNeighCellsCE_r15_enabled	= 0
+} e_SystemInformationBlockType3__crs_IntfMitigNeighCellsCE_r15;
 
 /* Forward declarations */
+struct CellReselectionServingFreqInfo_v1310;
+struct RedistributionServingInfo_r13;
+struct CellSelectionInfoCE_r13;
+struct CellSelectionInfoCE1_r13;
+struct CellSelectionInfoCE1_v1360;
+struct CellReselectionInfoCommon_v1460;
+struct CellReselectionInfoHSDN_r15;
+struct CellSelectionInfoCE_v1530;
 struct SpeedStateScaleFactors;
 
 /* SystemInformationBlockType3 */
@@ -109,6 +124,35 @@ typedef struct SystemInformationBlockType3 {
 	 * This type is extensible,
 	 * possible extensions are below.
 	 */
+	OCTET_STRING_t	*lateNonCriticalExtension	/* OPTIONAL */;
+	struct SystemInformationBlockType3__s_IntraSearch_v920 {
+		ReselectionThreshold_t	 s_IntraSearchP_r9;
+		ReselectionThresholdQ_r9_t	 s_IntraSearchQ_r9;
+		
+		/* Context for parsing across buffer boundaries */
+		asn_struct_ctx_t _asn_ctx;
+	} *s_IntraSearch_v920;
+	struct SystemInformationBlockType3__s_NonIntraSearch_v920 {
+		ReselectionThreshold_t	 s_NonIntraSearchP_r9;
+		ReselectionThresholdQ_r9_t	 s_NonIntraSearchQ_r9;
+		
+		/* Context for parsing across buffer boundaries */
+		asn_struct_ctx_t _asn_ctx;
+	} *s_NonIntraSearch_v920;
+	Q_QualMin_r9_t	*q_QualMin_r9	/* OPTIONAL */;
+	ReselectionThresholdQ_r9_t	*threshServingLowQ_r9	/* OPTIONAL */;
+	Q_QualMin_r9_t	*q_QualMinWB_r11	/* OPTIONAL */;
+	Q_QualMin_r9_t	*q_QualMinRSRQ_OnAllSymbols_r12	/* OPTIONAL */;
+	struct CellReselectionServingFreqInfo_v1310	*cellReselectionServingFreqInfo_v1310	/* OPTIONAL */;
+	struct RedistributionServingInfo_r13	*redistributionServingInfo_r13	/* OPTIONAL */;
+	struct CellSelectionInfoCE_r13	*cellSelectionInfoCE_r13	/* OPTIONAL */;
+	T_ReselectionEUTRA_CE_r13_t	*t_ReselectionEUTRA_CE_r13	/* OPTIONAL */;
+	struct CellSelectionInfoCE1_r13	*cellSelectionInfoCE1_r13	/* OPTIONAL */;
+	struct CellSelectionInfoCE1_v1360	*cellSelectionInfoCE1_v1360	/* OPTIONAL */;
+	struct CellReselectionInfoCommon_v1460	*cellReselectionInfoCommon_v1460	/* OPTIONAL */;
+	struct CellReselectionInfoHSDN_r15	*cellReselectionInfoHSDN_r15	/* OPTIONAL */;
+	struct CellSelectionInfoCE_v1530	*cellSelectionInfoCE_v1530	/* OPTIONAL */;
+	long	*crs_IntfMitigNeighCellsCE_r15	/* OPTIONAL */;
 	
 	/* Context for parsing across buffer boundaries */
 	asn_struct_ctx_t _asn_ctx;
@@ -118,9 +162,10 @@ typedef struct SystemInformationBlockType3 {
 /* extern asn_TYPE_descriptor_t asn_DEF_q_Hyst_3;	// (Use -fall-defs-global to expose) */
 /* extern asn_TYPE_descriptor_t asn_DEF_sf_Medium_23;	// (Use -fall-defs-global to expose) */
 /* extern asn_TYPE_descriptor_t asn_DEF_sf_High_28;	// (Use -fall-defs-global to expose) */
+/* extern asn_TYPE_descriptor_t asn_DEF_crs_IntfMitigNeighCellsCE_r15_67;	// (Use -fall-defs-global to expose) */
 extern asn_TYPE_descriptor_t asn_DEF_SystemInformationBlockType3;
 extern asn_SEQUENCE_specifics_t asn_SPC_SystemInformationBlockType3_specs_1;
-extern asn_TYPE_member_t asn_MBR_SystemInformationBlockType3_1[3];
+extern asn_TYPE_member_t asn_MBR_SystemInformationBlockType3_1[20];
 
 #ifdef __cplusplus
 }

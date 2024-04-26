@@ -19,14 +19,14 @@ asn_per_constraints_t asn_PER_type_ReleaseCause_constr_1 CC_NOTUSED = {
 static const asn_INTEGER_enum_map_t asn_MAP_ReleaseCause_value2enum_1[] = {
 	{ 0,	24,	"loadBalancingTAUrequired" },
 	{ 1,	5,	"other" },
-	{ 2,	6,	"spare2" },
-	{ 3,	6,	"spare1" }
+	{ 2,	29,	"cs-FallbackHighPriority-v1020" },
+	{ 3,	17,	"rrc-Suspend-v1320" }
 };
 static const unsigned int asn_MAP_ReleaseCause_enum2value_1[] = {
+	2,	/* cs-FallbackHighPriority-v1020(2) */
 	0,	/* loadBalancingTAUrequired(0) */
 	1,	/* other(1) */
-	3,	/* spare1(3) */
-	2	/* spare2(2) */
+	3	/* rrc-Suspend-v1320(3) */
 };
 const asn_INTEGER_specifics_t asn_SPC_ReleaseCause_specs_1 = {
 	asn_MAP_ReleaseCause_value2enum_1,	/* "tag" => N; sorted by tag */

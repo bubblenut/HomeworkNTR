@@ -38,6 +38,10 @@ struct FreqPriorityListUTRA_FDD;
 struct FreqPriorityListUTRA_TDD;
 struct BandClassPriorityListHRPD;
 struct BandClassPriorityList1XRTT;
+struct FreqPriorityListExtEUTRA_r12;
+struct FreqPriorityListEUTRA_v1310;
+struct FreqPriorityListExtEUTRA_v1310;
+struct FreqPriorityListNR_r15;
 
 /* IdleModeMobilityControlInfo */
 typedef struct IdleModeMobilityControlInfo {
@@ -52,6 +56,10 @@ typedef struct IdleModeMobilityControlInfo {
 	 * This type is extensible,
 	 * possible extensions are below.
 	 */
+	struct FreqPriorityListExtEUTRA_r12	*freqPriorityListExtEUTRA_r12	/* OPTIONAL */;
+	struct FreqPriorityListEUTRA_v1310	*freqPriorityListEUTRA_v1310	/* OPTIONAL */;
+	struct FreqPriorityListExtEUTRA_v1310	*freqPriorityListExtEUTRA_v1310	/* OPTIONAL */;
+	struct FreqPriorityListNR_r15	*freqPriorityListNR_r15	/* OPTIONAL */;
 	
 	/* Context for parsing across buffer boundaries */
 	asn_struct_ctx_t _asn_ctx;
@@ -61,7 +69,7 @@ typedef struct IdleModeMobilityControlInfo {
 /* extern asn_TYPE_descriptor_t asn_DEF_t320_8;	// (Use -fall-defs-global to expose) */
 extern asn_TYPE_descriptor_t asn_DEF_IdleModeMobilityControlInfo;
 extern asn_SEQUENCE_specifics_t asn_SPC_IdleModeMobilityControlInfo_specs_1;
-extern asn_TYPE_member_t asn_MBR_IdleModeMobilityControlInfo_1[7];
+extern asn_TYPE_member_t asn_MBR_IdleModeMobilityControlInfo_1[11];
 
 #ifdef __cplusplus
 }

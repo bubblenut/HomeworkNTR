@@ -26,6 +26,7 @@ struct MeasConfig;
 struct MobilityControlInfo;
 struct RadioResourceConfigDedicated;
 struct SecurityConfigHO;
+struct RRCConnectionReconfiguration_v890_IEs;
 
 /* RRCConnectionReconfiguration-r8-IEs */
 typedef struct RRCConnectionReconfiguration_r8_IEs {
@@ -39,11 +40,7 @@ typedef struct RRCConnectionReconfiguration_r8_IEs {
 	} *dedicatedInfoNASList;
 	struct RadioResourceConfigDedicated	*radioResourceConfigDedicated	/* OPTIONAL */;
 	struct SecurityConfigHO	*securityConfigHO	/* OPTIONAL */;
-	struct RRCConnectionReconfiguration_r8_IEs__nonCriticalExtension {
-		
-		/* Context for parsing across buffer boundaries */
-		asn_struct_ctx_t _asn_ctx;
-	} *nonCriticalExtension;
+	struct RRCConnectionReconfiguration_v890_IEs	*nonCriticalExtension	/* OPTIONAL */;
 	
 	/* Context for parsing across buffer boundaries */
 	asn_struct_ctx_t _asn_ctx;

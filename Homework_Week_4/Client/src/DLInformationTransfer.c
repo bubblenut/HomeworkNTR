@@ -27,14 +27,14 @@ static asn_TYPE_member_t asn_MBR_c1_4[] = {
 		0, 0, /* No default value */
 		"dlInformationTransfer-r8"
 		},
-	{ ATF_NOFLAGS, 0, offsetof(struct DLInformationTransfer__criticalExtensions__c1, choice.spare3),
+	{ ATF_NOFLAGS, 0, offsetof(struct DLInformationTransfer__criticalExtensions__c1, choice.dlInformationTransfer_r15),
 		(ASN_TAG_CLASS_CONTEXT | (1 << 2)),
 		-1,	/* IMPLICIT tag at current level */
-		&asn_DEF_NULL,
+		&asn_DEF_DLInformationTransfer_r15_IEs,
 		0,
 		{ 0, 0, 0 },
 		0, 0, /* No default value */
-		"spare3"
+		"dlInformationTransfer-r15"
 		},
 	{ ATF_NOFLAGS, 0, offsetof(struct DLInformationTransfer__criticalExtensions__c1, choice.spare2),
 		(ASN_TAG_CLASS_CONTEXT | (2 << 2)),
@@ -57,7 +57,7 @@ static asn_TYPE_member_t asn_MBR_c1_4[] = {
 };
 static const asn_TYPE_tag2member_t asn_MAP_c1_tag2el_4[] = {
     { (ASN_TAG_CLASS_CONTEXT | (0 << 2)), 0, 0, 0 }, /* dlInformationTransfer-r8 */
-    { (ASN_TAG_CLASS_CONTEXT | (1 << 2)), 1, 0, 0 }, /* spare3 */
+    { (ASN_TAG_CLASS_CONTEXT | (1 << 2)), 1, 0, 0 }, /* dlInformationTransfer-r15 */
     { (ASN_TAG_CLASS_CONTEXT | (2 << 2)), 2, 0, 0 }, /* spare2 */
     { (ASN_TAG_CLASS_CONTEXT | (3 << 2)), 3, 0, 0 } /* spare1 */
 };

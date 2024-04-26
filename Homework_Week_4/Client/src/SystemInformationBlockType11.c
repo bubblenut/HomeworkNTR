@@ -232,7 +232,7 @@ asn_TYPE_member_t asn_MBR_SystemInformationBlockType11_1[] = {
 		0, 0, /* No default value */
 		"warningMessageSegment"
 		},
-	{ ATF_POINTER, 1, offsetof(struct SystemInformationBlockType11, dataCodingScheme),
+	{ ATF_POINTER, 2, offsetof(struct SystemInformationBlockType11, dataCodingScheme),
 		(ASN_TAG_CLASS_CONTEXT | (5 << 2)),
 		-1,	/* IMPLICIT tag at current level */
 		&asn_DEF_OCTET_STRING,
@@ -241,8 +241,17 @@ asn_TYPE_member_t asn_MBR_SystemInformationBlockType11_1[] = {
 		0, 0, /* No default value */
 		"dataCodingScheme"
 		},
+	{ ATF_POINTER, 1, offsetof(struct SystemInformationBlockType11, lateNonCriticalExtension),
+		(ASN_TAG_CLASS_CONTEXT | (6 << 2)),
+		-1,	/* IMPLICIT tag at current level */
+		&asn_DEF_OCTET_STRING,
+		0,
+		{ 0, 0, 0 },
+		0, 0, /* No default value */
+		"lateNonCriticalExtension"
+		},
 };
-static const int asn_MAP_SystemInformationBlockType11_oms_1[] = { 5 };
+static const int asn_MAP_SystemInformationBlockType11_oms_1[] = { 5, 6 };
 static const ber_tlv_tag_t asn_DEF_SystemInformationBlockType11_tags_1[] = {
 	(ASN_TAG_CLASS_UNIVERSAL | (16 << 2))
 };
@@ -252,15 +261,16 @@ static const asn_TYPE_tag2member_t asn_MAP_SystemInformationBlockType11_tag2el_1
     { (ASN_TAG_CLASS_CONTEXT | (2 << 2)), 2, 0, 0 }, /* warningMessageSegmentType */
     { (ASN_TAG_CLASS_CONTEXT | (3 << 2)), 3, 0, 0 }, /* warningMessageSegmentNumber */
     { (ASN_TAG_CLASS_CONTEXT | (4 << 2)), 4, 0, 0 }, /* warningMessageSegment */
-    { (ASN_TAG_CLASS_CONTEXT | (5 << 2)), 5, 0, 0 } /* dataCodingScheme */
+    { (ASN_TAG_CLASS_CONTEXT | (5 << 2)), 5, 0, 0 }, /* dataCodingScheme */
+    { (ASN_TAG_CLASS_CONTEXT | (6 << 2)), 6, 0, 0 } /* lateNonCriticalExtension */
 };
 asn_SEQUENCE_specifics_t asn_SPC_SystemInformationBlockType11_specs_1 = {
 	sizeof(struct SystemInformationBlockType11),
 	offsetof(struct SystemInformationBlockType11, _asn_ctx),
 	asn_MAP_SystemInformationBlockType11_tag2el_1,
-	6,	/* Count of tags in the map */
+	7,	/* Count of tags in the map */
 	asn_MAP_SystemInformationBlockType11_oms_1,	/* Optional members */
-	1, 0,	/* Root/Additions */
+	1, 1,	/* Root/Additions */
 	6,	/* First extension addition */
 };
 asn_TYPE_descriptor_t asn_DEF_SystemInformationBlockType11 = {
@@ -275,7 +285,7 @@ asn_TYPE_descriptor_t asn_DEF_SystemInformationBlockType11 = {
 		/sizeof(asn_DEF_SystemInformationBlockType11_tags_1[0]), /* 1 */
 	{ 0, 0, SEQUENCE_constraint },
 	asn_MBR_SystemInformationBlockType11_1,
-	6,	/* Elements count */
+	7,	/* Elements count */
 	&asn_SPC_SystemInformationBlockType11_specs_1	/* Additional specs */
 };
 

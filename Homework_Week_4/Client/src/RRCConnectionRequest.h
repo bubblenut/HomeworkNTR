@@ -13,8 +13,9 @@
 
 /* Including external dependencies */
 #include "RRCConnectionRequest-r8-IEs.h"
-#include <constr_SEQUENCE.h>
+#include "RRCConnectionRequest-5GC-r15-IEs.h"
 #include <constr_CHOICE.h>
+#include <constr_SEQUENCE.h>
 
 #ifdef __cplusplus
 extern "C" {
@@ -24,7 +25,7 @@ extern "C" {
 typedef enum RRCConnectionRequest__criticalExtensions_PR {
 	RRCConnectionRequest__criticalExtensions_PR_NOTHING,	/* No components present */
 	RRCConnectionRequest__criticalExtensions_PR_rrcConnectionRequest_r8,
-	RRCConnectionRequest__criticalExtensions_PR_criticalExtensionsFuture
+	RRCConnectionRequest__criticalExtensions_PR_rrcConnectionRequest_r15
 } RRCConnectionRequest__criticalExtensions_PR;
 
 /* RRCConnectionRequest */
@@ -33,11 +34,7 @@ typedef struct RRCConnectionRequest {
 		RRCConnectionRequest__criticalExtensions_PR present;
 		union RRCConnectionRequest__criticalExtensions_u {
 			RRCConnectionRequest_r8_IEs_t	 rrcConnectionRequest_r8;
-			struct RRCConnectionRequest__criticalExtensions__criticalExtensionsFuture {
-				
-				/* Context for parsing across buffer boundaries */
-				asn_struct_ctx_t _asn_ctx;
-			} criticalExtensionsFuture;
+			RRCConnectionRequest_5GC_r15_IEs_t	 rrcConnectionRequest_r15;
 		} choice;
 		
 		/* Context for parsing across buffer boundaries */

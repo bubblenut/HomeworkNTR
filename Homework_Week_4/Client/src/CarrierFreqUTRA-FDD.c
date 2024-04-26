@@ -97,6 +97,59 @@ static asn_per_constraints_t asn_PER_memb_q_QualMin_constr_8 CC_NOTUSED = {
 	{ APC_UNCONSTRAINED,	-1, -1,  0,  0 },
 	0, 0	/* No PER value map */
 };
+static asn_TYPE_member_t asn_MBR_threshX_Q_r9_10[] = {
+	{ ATF_NOFLAGS, 0, offsetof(struct CarrierFreqUTRA_FDD__threshX_Q_r9, threshX_HighQ_r9),
+		(ASN_TAG_CLASS_CONTEXT | (0 << 2)),
+		-1,	/* IMPLICIT tag at current level */
+		&asn_DEF_ReselectionThresholdQ_r9,
+		0,
+		{ 0, 0, 0 },
+		0, 0, /* No default value */
+		"threshX-HighQ-r9"
+		},
+	{ ATF_NOFLAGS, 0, offsetof(struct CarrierFreqUTRA_FDD__threshX_Q_r9, threshX_LowQ_r9),
+		(ASN_TAG_CLASS_CONTEXT | (1 << 2)),
+		-1,	/* IMPLICIT tag at current level */
+		&asn_DEF_ReselectionThresholdQ_r9,
+		0,
+		{ 0, 0, 0 },
+		0, 0, /* No default value */
+		"threshX-LowQ-r9"
+		},
+};
+static const ber_tlv_tag_t asn_DEF_threshX_Q_r9_tags_10[] = {
+	(ASN_TAG_CLASS_CONTEXT | (7 << 2)),
+	(ASN_TAG_CLASS_UNIVERSAL | (16 << 2))
+};
+static const asn_TYPE_tag2member_t asn_MAP_threshX_Q_r9_tag2el_10[] = {
+    { (ASN_TAG_CLASS_CONTEXT | (0 << 2)), 0, 0, 0 }, /* threshX-HighQ-r9 */
+    { (ASN_TAG_CLASS_CONTEXT | (1 << 2)), 1, 0, 0 } /* threshX-LowQ-r9 */
+};
+static asn_SEQUENCE_specifics_t asn_SPC_threshX_Q_r9_specs_10 = {
+	sizeof(struct CarrierFreqUTRA_FDD__threshX_Q_r9),
+	offsetof(struct CarrierFreqUTRA_FDD__threshX_Q_r9, _asn_ctx),
+	asn_MAP_threshX_Q_r9_tag2el_10,
+	2,	/* Count of tags in the map */
+	0, 0, 0,	/* Optional elements (not needed) */
+	-1,	/* First extension addition */
+};
+static /* Use -fall-defs-global to expose */
+asn_TYPE_descriptor_t asn_DEF_threshX_Q_r9_10 = {
+	"threshX-Q-r9",
+	"threshX-Q-r9",
+	&asn_OP_SEQUENCE,
+	asn_DEF_threshX_Q_r9_tags_10,
+	sizeof(asn_DEF_threshX_Q_r9_tags_10)
+		/sizeof(asn_DEF_threshX_Q_r9_tags_10[0]) - 1, /* 1 */
+	asn_DEF_threshX_Q_r9_tags_10,	/* Same as above */
+	sizeof(asn_DEF_threshX_Q_r9_tags_10)
+		/sizeof(asn_DEF_threshX_Q_r9_tags_10[0]), /* 2 */
+	{ 0, 0, SEQUENCE_constraint },
+	asn_MBR_threshX_Q_r9_10,
+	2,	/* Elements count */
+	&asn_SPC_threshX_Q_r9_specs_10	/* Additional specs */
+};
+
 asn_TYPE_member_t asn_MBR_CarrierFreqUTRA_FDD_1[] = {
 	{ ATF_NOFLAGS, 0, offsetof(struct CarrierFreqUTRA_FDD, carrierFreq),
 		(ASN_TAG_CLASS_CONTEXT | (0 << 2)),
@@ -161,8 +214,17 @@ asn_TYPE_member_t asn_MBR_CarrierFreqUTRA_FDD_1[] = {
 		0, 0, /* No default value */
 		"q-QualMin"
 		},
+	{ ATF_POINTER, 1, offsetof(struct CarrierFreqUTRA_FDD, threshX_Q_r9),
+		(ASN_TAG_CLASS_CONTEXT | (7 << 2)),
+		0,
+		&asn_DEF_threshX_Q_r9_10,
+		0,
+		{ 0, 0, 0 },
+		0, 0, /* No default value */
+		"threshX-Q-r9"
+		},
 };
-static const int asn_MAP_CarrierFreqUTRA_FDD_oms_1[] = { 1 };
+static const int asn_MAP_CarrierFreqUTRA_FDD_oms_1[] = { 1, 7 };
 static const ber_tlv_tag_t asn_DEF_CarrierFreqUTRA_FDD_tags_1[] = {
 	(ASN_TAG_CLASS_UNIVERSAL | (16 << 2))
 };
@@ -173,15 +235,16 @@ static const asn_TYPE_tag2member_t asn_MAP_CarrierFreqUTRA_FDD_tag2el_1[] = {
     { (ASN_TAG_CLASS_CONTEXT | (3 << 2)), 3, 0, 0 }, /* threshX-Low */
     { (ASN_TAG_CLASS_CONTEXT | (4 << 2)), 4, 0, 0 }, /* q-RxLevMin */
     { (ASN_TAG_CLASS_CONTEXT | (5 << 2)), 5, 0, 0 }, /* p-MaxUTRA */
-    { (ASN_TAG_CLASS_CONTEXT | (6 << 2)), 6, 0, 0 } /* q-QualMin */
+    { (ASN_TAG_CLASS_CONTEXT | (6 << 2)), 6, 0, 0 }, /* q-QualMin */
+    { (ASN_TAG_CLASS_CONTEXT | (7 << 2)), 7, 0, 0 } /* threshX-Q-r9 */
 };
 asn_SEQUENCE_specifics_t asn_SPC_CarrierFreqUTRA_FDD_specs_1 = {
 	sizeof(struct CarrierFreqUTRA_FDD),
 	offsetof(struct CarrierFreqUTRA_FDD, _asn_ctx),
 	asn_MAP_CarrierFreqUTRA_FDD_tag2el_1,
-	7,	/* Count of tags in the map */
+	8,	/* Count of tags in the map */
 	asn_MAP_CarrierFreqUTRA_FDD_oms_1,	/* Optional members */
-	1, 0,	/* Root/Additions */
+	1, 1,	/* Root/Additions */
 	7,	/* First extension addition */
 };
 asn_TYPE_descriptor_t asn_DEF_CarrierFreqUTRA_FDD = {
@@ -196,7 +259,7 @@ asn_TYPE_descriptor_t asn_DEF_CarrierFreqUTRA_FDD = {
 		/sizeof(asn_DEF_CarrierFreqUTRA_FDD_tags_1[0]), /* 1 */
 	{ 0, 0, SEQUENCE_constraint },
 	asn_MBR_CarrierFreqUTRA_FDD_1,
-	7,	/* Elements count */
+	8,	/* Elements count */
 	&asn_SPC_CarrierFreqUTRA_FDD_specs_1	/* Additional specs */
 };
 

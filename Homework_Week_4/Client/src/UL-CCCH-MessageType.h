@@ -15,6 +15,9 @@
 #include "RRCConnectionReestablishmentRequest.h"
 #include "RRCConnectionRequest.h"
 #include <constr_CHOICE.h>
+#include "RRCConnectionResumeRequest-r13.h"
+#include "RRCEarlyDataRequest-r15.h"
+#include <NULL.h>
 #include <constr_SEQUENCE.h>
 
 #ifdef __cplusplus
@@ -32,6 +35,27 @@ typedef enum UL_CCCH_MessageType__c1_PR {
 	UL_CCCH_MessageType__c1_PR_rrcConnectionReestablishmentRequest,
 	UL_CCCH_MessageType__c1_PR_rrcConnectionRequest
 } UL_CCCH_MessageType__c1_PR;
+typedef enum UL_CCCH_MessageType__messageClassExtension_PR {
+	UL_CCCH_MessageType__messageClassExtension_PR_NOTHING,	/* No components present */
+	UL_CCCH_MessageType__messageClassExtension_PR_c2,
+	UL_CCCH_MessageType__messageClassExtension_PR_messageClassExtensionFuture_r13
+} UL_CCCH_MessageType__messageClassExtension_PR;
+typedef enum UL_CCCH_MessageType__messageClassExtension__c2_PR {
+	UL_CCCH_MessageType__messageClassExtension__c2_PR_NOTHING,	/* No components present */
+	UL_CCCH_MessageType__messageClassExtension__c2_PR_rrcConnectionResumeRequest_r13
+} UL_CCCH_MessageType__messageClassExtension__c2_PR;
+typedef enum UL_CCCH_MessageType__messageClassExtension__messageClassExtensionFuture_r13_PR {
+	UL_CCCH_MessageType__messageClassExtension__messageClassExtensionFuture_r13_PR_NOTHING,	/* No components present */
+	UL_CCCH_MessageType__messageClassExtension__messageClassExtensionFuture_r13_PR_c3,
+	UL_CCCH_MessageType__messageClassExtension__messageClassExtensionFuture_r13_PR_messageClassExtensionFuture_r15
+} UL_CCCH_MessageType__messageClassExtension__messageClassExtensionFuture_r13_PR;
+typedef enum UL_CCCH_MessageType__messageClassExtension__messageClassExtensionFuture_r13__c3_PR {
+	UL_CCCH_MessageType__messageClassExtension__messageClassExtensionFuture_r13__c3_PR_NOTHING,	/* No components present */
+	UL_CCCH_MessageType__messageClassExtension__messageClassExtensionFuture_r13__c3_PR_rrcEarlyDataRequest_r15,
+	UL_CCCH_MessageType__messageClassExtension__messageClassExtensionFuture_r13__c3_PR_spare3,
+	UL_CCCH_MessageType__messageClassExtension__messageClassExtensionFuture_r13__c3_PR_spare2,
+	UL_CCCH_MessageType__messageClassExtension__messageClassExtensionFuture_r13__c3_PR_spare1
+} UL_CCCH_MessageType__messageClassExtension__messageClassExtensionFuture_r13__c3_PR;
 
 /* UL-CCCH-MessageType */
 typedef struct UL_CCCH_MessageType {
@@ -48,6 +72,43 @@ typedef struct UL_CCCH_MessageType {
 			asn_struct_ctx_t _asn_ctx;
 		} c1;
 		struct UL_CCCH_MessageType__messageClassExtension {
+			UL_CCCH_MessageType__messageClassExtension_PR present;
+			union UL_CCCH_MessageType__messageClassExtension_u {
+				struct UL_CCCH_MessageType__messageClassExtension__c2 {
+					UL_CCCH_MessageType__messageClassExtension__c2_PR present;
+					union UL_CCCH_MessageType__messageClassExtension__c2_u {
+						RRCConnectionResumeRequest_r13_t	 rrcConnectionResumeRequest_r13;
+					} choice;
+					
+					/* Context for parsing across buffer boundaries */
+					asn_struct_ctx_t _asn_ctx;
+				} c2;
+				struct UL_CCCH_MessageType__messageClassExtension__messageClassExtensionFuture_r13 {
+					UL_CCCH_MessageType__messageClassExtension__messageClassExtensionFuture_r13_PR present;
+					union UL_CCCH_MessageType__messageClassExtension__messageClassExtensionFuture_r13_u {
+						struct UL_CCCH_MessageType__messageClassExtension__messageClassExtensionFuture_r13__c3 {
+							UL_CCCH_MessageType__messageClassExtension__messageClassExtensionFuture_r13__c3_PR present;
+							union UL_CCCH_MessageType__messageClassExtension__messageClassExtensionFuture_r13__c3_u {
+								RRCEarlyDataRequest_r15_t	 rrcEarlyDataRequest_r15;
+								NULL_t	 spare3;
+								NULL_t	 spare2;
+								NULL_t	 spare1;
+							} choice;
+							
+							/* Context for parsing across buffer boundaries */
+							asn_struct_ctx_t _asn_ctx;
+						} c3;
+						struct UL_CCCH_MessageType__messageClassExtension__messageClassExtensionFuture_r13__messageClassExtensionFuture_r15 {
+							
+							/* Context for parsing across buffer boundaries */
+							asn_struct_ctx_t _asn_ctx;
+						} messageClassExtensionFuture_r15;
+					} choice;
+					
+					/* Context for parsing across buffer boundaries */
+					asn_struct_ctx_t _asn_ctx;
+				} messageClassExtensionFuture_r13;
+			} choice;
 			
 			/* Context for parsing across buffer boundaries */
 			asn_struct_ctx_t _asn_ctx;

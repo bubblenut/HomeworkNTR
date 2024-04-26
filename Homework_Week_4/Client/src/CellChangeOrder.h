@@ -32,7 +32,7 @@ typedef enum CellChangeOrder__t304 {
 	CellChangeOrder__t304_ms2000	= 4,
 	CellChangeOrder__t304_ms4000	= 5,
 	CellChangeOrder__t304_ms8000	= 6,
-	CellChangeOrder__t304_spare1	= 7
+	CellChangeOrder__t304_ms10000_v1310	= 7
 } e_CellChangeOrder__t304;
 typedef enum CellChangeOrder__targetRAT_Type_PR {
 	CellChangeOrder__targetRAT_Type_PR_NOTHING,	/* No components present */

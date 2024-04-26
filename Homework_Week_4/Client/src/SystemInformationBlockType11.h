@@ -40,6 +40,7 @@ typedef struct SystemInformationBlockType11 {
 	 * This type is extensible,
 	 * possible extensions are below.
 	 */
+	OCTET_STRING_t	*lateNonCriticalExtension	/* OPTIONAL */;
 	
 	/* Context for parsing across buffer boundaries */
 	asn_struct_ctx_t _asn_ctx;
@@ -49,7 +50,7 @@ typedef struct SystemInformationBlockType11 {
 /* extern asn_TYPE_descriptor_t asn_DEF_warningMessageSegmentType_4;	// (Use -fall-defs-global to expose) */
 extern asn_TYPE_descriptor_t asn_DEF_SystemInformationBlockType11;
 extern asn_SEQUENCE_specifics_t asn_SPC_SystemInformationBlockType11_specs_1;
-extern asn_TYPE_member_t asn_MBR_SystemInformationBlockType11_1[6];
+extern asn_TYPE_member_t asn_MBR_SystemInformationBlockType11_1[7];
 
 #ifdef __cplusplus
 }

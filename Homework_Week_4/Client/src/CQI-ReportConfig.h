@@ -12,7 +12,7 @@
 #include <asn_application.h>
 
 /* Including external dependencies */
-#include <NativeEnumerated.h>
+#include "CQI-ReportModeAperiodic.h"
 #include <NativeInteger.h>
 #include <constr_SEQUENCE.h>
 
@@ -20,24 +20,12 @@
 extern "C" {
 #endif
 
-/* Dependencies */
-typedef enum CQI_ReportConfig__cqi_ReportModeAperiodic {
-	CQI_ReportConfig__cqi_ReportModeAperiodic_rm12	= 0,
-	CQI_ReportConfig__cqi_ReportModeAperiodic_rm20	= 1,
-	CQI_ReportConfig__cqi_ReportModeAperiodic_rm22	= 2,
-	CQI_ReportConfig__cqi_ReportModeAperiodic_rm30	= 3,
-	CQI_ReportConfig__cqi_ReportModeAperiodic_rm31	= 4,
-	CQI_ReportConfig__cqi_ReportModeAperiodic_spare3	= 5,
-	CQI_ReportConfig__cqi_ReportModeAperiodic_spare2	= 6,
-	CQI_ReportConfig__cqi_ReportModeAperiodic_spare1	= 7
-} e_CQI_ReportConfig__cqi_ReportModeAperiodic;
-
 /* Forward declarations */
 struct CQI_ReportPeriodic;
 
 /* CQI-ReportConfig */
 typedef struct CQI_ReportConfig {
-	long	*cqi_ReportModeAperiodic	/* OPTIONAL */;
+	CQI_ReportModeAperiodic_t	*cqi_ReportModeAperiodic	/* OPTIONAL */;
 	long	 nomPDSCH_RS_EPRE_Offset;
 	struct CQI_ReportPeriodic	*cqi_ReportPeriodic	/* OPTIONAL */;
 	
@@ -46,7 +34,6 @@ typedef struct CQI_ReportConfig {
 } CQI_ReportConfig_t;
 
 /* Implementation */
-/* extern asn_TYPE_descriptor_t asn_DEF_cqi_ReportModeAperiodic_2;	// (Use -fall-defs-global to expose) */
 extern asn_TYPE_descriptor_t asn_DEF_CQI_ReportConfig;
 extern asn_SEQUENCE_specifics_t asn_SPC_CQI_ReportConfig_specs_1;
 extern asn_TYPE_member_t asn_MBR_CQI_ReportConfig_1[3];

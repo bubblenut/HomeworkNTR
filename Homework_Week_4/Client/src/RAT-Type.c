@@ -22,19 +22,19 @@ static const asn_INTEGER_enum_map_t asn_MAP_RAT_Type_value2enum_1[] = {
 	{ 2,	8,	"geran-cs" },
 	{ 3,	8,	"geran-ps" },
 	{ 4,	14,	"cdma2000-1XRTT" },
-	{ 5,	6,	"spare3" },
-	{ 6,	6,	"spare2" },
+	{ 5,	2,	"nr" },
+	{ 6,	8,	"eutra-nr" },
 	{ 7,	6,	"spare1" }
 	/* This list is extensible */
 };
 static const unsigned int asn_MAP_RAT_Type_enum2value_1[] = {
 	4,	/* cdma2000-1XRTT(4) */
 	0,	/* eutra(0) */
+	6,	/* eutra-nr(6) */
 	2,	/* geran-cs(2) */
 	3,	/* geran-ps(3) */
+	5,	/* nr(5) */
 	7,	/* spare1(7) */
-	6,	/* spare2(6) */
-	5,	/* spare3(5) */
 	1	/* utra(1) */
 	/* This list is extensible */
 };

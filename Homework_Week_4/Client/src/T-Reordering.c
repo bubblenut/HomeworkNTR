@@ -48,7 +48,7 @@ static const asn_INTEGER_enum_map_t asn_MAP_T_Reordering_value2enum_1[] = {
 	{ 28,	5,	"ms180" },
 	{ 29,	5,	"ms190" },
 	{ 30,	5,	"ms200" },
-	{ 31,	6,	"spare1" }
+	{ 31,	12,	"ms1600-v1310" }
 };
 static const unsigned int asn_MAP_T_Reordering_enum2value_1[] = {
 	0,	/* ms0(0) */
@@ -61,6 +61,7 @@ static const unsigned int asn_MAP_T_Reordering_enum2value_1[] = {
 	3,	/* ms15(3) */
 	25,	/* ms150(25) */
 	26,	/* ms160(26) */
+	31,	/* ms1600-v1310(31) */
 	27,	/* ms170(27) */
 	28,	/* ms180(28) */
 	29,	/* ms190(29) */
@@ -81,8 +82,7 @@ static const unsigned int asn_MAP_T_Reordering_enum2value_1[] = {
 	16,	/* ms80(16) */
 	17,	/* ms85(17) */
 	18,	/* ms90(18) */
-	19,	/* ms95(19) */
-	31	/* spare1(31) */
+	19	/* ms95(19) */
 };
 const asn_INTEGER_specifics_t asn_SPC_T_Reordering_specs_1 = {
 	asn_MAP_T_Reordering_value2enum_1,	/* "tag" => N; sorted by tag */

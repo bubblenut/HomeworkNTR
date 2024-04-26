@@ -23,8 +23,24 @@
 #include "ULHandoverPreparationTransfer.h"
 #include "ULInformationTransfer.h"
 #include "CounterCheckResponse.h"
-#include <NULL.h>
+#include "UEInformationResponse-r9.h"
+#include "ProximityIndication-r9.h"
+#include "RNReconfigurationComplete-r10.h"
+#include "MBMSCountingResponse-r10.h"
+#include "InterFreqRSTDMeasurementIndication-r10.h"
 #include <constr_CHOICE.h>
+#include "UEAssistanceInformation-r11.h"
+#include "InDeviceCoexIndication-r11.h"
+#include "MBMSInterestIndication-r11.h"
+#include "SCGFailureInformation-r12.h"
+#include "SidelinkUEInformation-r12.h"
+#include "WLANConnectionStatusReport-r13.h"
+#include "RRCConnectionResumeComplete-r13.h"
+#include "ULInformationTransferMRDC-r15.h"
+#include "SCGFailureInformationNR-r15.h"
+#include "MeasReportAppLayer-r15.h"
+#include "FailureInformation-r15.h"
+#include <NULL.h>
 #include <constr_SEQUENCE.h>
 
 #ifdef __cplusplus
@@ -50,12 +66,36 @@ typedef enum UL_DCCH_MessageType__c1_PR {
 	UL_DCCH_MessageType__c1_PR_ulHandoverPreparationTransfer,
 	UL_DCCH_MessageType__c1_PR_ulInformationTransfer,
 	UL_DCCH_MessageType__c1_PR_counterCheckResponse,
-	UL_DCCH_MessageType__c1_PR_spare5,
-	UL_DCCH_MessageType__c1_PR_spare4,
-	UL_DCCH_MessageType__c1_PR_spare3,
-	UL_DCCH_MessageType__c1_PR_spare2,
-	UL_DCCH_MessageType__c1_PR_spare1
+	UL_DCCH_MessageType__c1_PR_ueInformationResponse_r9,
+	UL_DCCH_MessageType__c1_PR_proximityIndication_r9,
+	UL_DCCH_MessageType__c1_PR_rnReconfigurationComplete_r10,
+	UL_DCCH_MessageType__c1_PR_mbmsCountingResponse_r10,
+	UL_DCCH_MessageType__c1_PR_interFreqRSTDMeasurementIndication_r10
 } UL_DCCH_MessageType__c1_PR;
+typedef enum UL_DCCH_MessageType__messageClassExtension_PR {
+	UL_DCCH_MessageType__messageClassExtension_PR_NOTHING,	/* No components present */
+	UL_DCCH_MessageType__messageClassExtension_PR_c2,
+	UL_DCCH_MessageType__messageClassExtension_PR_messageClassExtensionFuture_r11
+} UL_DCCH_MessageType__messageClassExtension_PR;
+typedef enum UL_DCCH_MessageType__messageClassExtension__c2_PR {
+	UL_DCCH_MessageType__messageClassExtension__c2_PR_NOTHING,	/* No components present */
+	UL_DCCH_MessageType__messageClassExtension__c2_PR_ueAssistanceInformation_r11,
+	UL_DCCH_MessageType__messageClassExtension__c2_PR_inDeviceCoexIndication_r11,
+	UL_DCCH_MessageType__messageClassExtension__c2_PR_mbmsInterestIndication_r11,
+	UL_DCCH_MessageType__messageClassExtension__c2_PR_scgFailureInformation_r12,
+	UL_DCCH_MessageType__messageClassExtension__c2_PR_sidelinkUEInformation_r12,
+	UL_DCCH_MessageType__messageClassExtension__c2_PR_wlanConnectionStatusReport_r13,
+	UL_DCCH_MessageType__messageClassExtension__c2_PR_rrcConnectionResumeComplete_r13,
+	UL_DCCH_MessageType__messageClassExtension__c2_PR_ulInformationTransferMRDC_r15,
+	UL_DCCH_MessageType__messageClassExtension__c2_PR_scgFailureInformationNR_r15,
+	UL_DCCH_MessageType__messageClassExtension__c2_PR_measReportAppLayer_r15,
+	UL_DCCH_MessageType__messageClassExtension__c2_PR_failureInformation_r15,
+	UL_DCCH_MessageType__messageClassExtension__c2_PR_spare5,
+	UL_DCCH_MessageType__messageClassExtension__c2_PR_spare4,
+	UL_DCCH_MessageType__messageClassExtension__c2_PR_spare3,
+	UL_DCCH_MessageType__messageClassExtension__c2_PR_spare2,
+	UL_DCCH_MessageType__messageClassExtension__c2_PR_spare1
+} UL_DCCH_MessageType__messageClassExtension__c2_PR;
 
 /* UL-DCCH-MessageType */
 typedef struct UL_DCCH_MessageType {
@@ -75,17 +115,49 @@ typedef struct UL_DCCH_MessageType {
 				ULHandoverPreparationTransfer_t	 ulHandoverPreparationTransfer;
 				ULInformationTransfer_t	 ulInformationTransfer;
 				CounterCheckResponse_t	 counterCheckResponse;
-				NULL_t	 spare5;
-				NULL_t	 spare4;
-				NULL_t	 spare3;
-				NULL_t	 spare2;
-				NULL_t	 spare1;
+				UEInformationResponse_r9_t	 ueInformationResponse_r9;
+				ProximityIndication_r9_t	 proximityIndication_r9;
+				RNReconfigurationComplete_r10_t	 rnReconfigurationComplete_r10;
+				MBMSCountingResponse_r10_t	 mbmsCountingResponse_r10;
+				InterFreqRSTDMeasurementIndication_r10_t	 interFreqRSTDMeasurementIndication_r10;
 			} choice;
 			
 			/* Context for parsing across buffer boundaries */
 			asn_struct_ctx_t _asn_ctx;
 		} c1;
 		struct UL_DCCH_MessageType__messageClassExtension {
+			UL_DCCH_MessageType__messageClassExtension_PR present;
+			union UL_DCCH_MessageType__messageClassExtension_u {
+				struct UL_DCCH_MessageType__messageClassExtension__c2 {
+					UL_DCCH_MessageType__messageClassExtension__c2_PR present;
+					union UL_DCCH_MessageType__messageClassExtension__c2_u {
+						UEAssistanceInformation_r11_t	 ueAssistanceInformation_r11;
+						InDeviceCoexIndication_r11_t	 inDeviceCoexIndication_r11;
+						MBMSInterestIndication_r11_t	 mbmsInterestIndication_r11;
+						SCGFailureInformation_r12_t	 scgFailureInformation_r12;
+						SidelinkUEInformation_r12_t	 sidelinkUEInformation_r12;
+						WLANConnectionStatusReport_r13_t	 wlanConnectionStatusReport_r13;
+						RRCConnectionResumeComplete_r13_t	 rrcConnectionResumeComplete_r13;
+						ULInformationTransferMRDC_r15_t	 ulInformationTransferMRDC_r15;
+						SCGFailureInformationNR_r15_t	 scgFailureInformationNR_r15;
+						MeasReportAppLayer_r15_t	 measReportAppLayer_r15;
+						FailureInformation_r15_t	 failureInformation_r15;
+						NULL_t	 spare5;
+						NULL_t	 spare4;
+						NULL_t	 spare3;
+						NULL_t	 spare2;
+						NULL_t	 spare1;
+					} choice;
+					
+					/* Context for parsing across buffer boundaries */
+					asn_struct_ctx_t _asn_ctx;
+				} c2;
+				struct UL_DCCH_MessageType__messageClassExtension__messageClassExtensionFuture_r11 {
+					
+					/* Context for parsing across buffer boundaries */
+					asn_struct_ctx_t _asn_ctx;
+				} messageClassExtensionFuture_r11;
+			} choice;
 			
 			/* Context for parsing across buffer boundaries */
 			asn_struct_ctx_t _asn_ctx;

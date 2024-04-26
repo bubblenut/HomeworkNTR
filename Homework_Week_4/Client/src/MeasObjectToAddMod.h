@@ -17,6 +17,8 @@
 #include "MeasObjectUTRA.h"
 #include "MeasObjectGERAN.h"
 #include "MeasObjectCDMA2000.h"
+#include "MeasObjectWLAN-r13.h"
+#include "MeasObjectNR-r15.h"
 #include <constr_CHOICE.h>
 #include <constr_SEQUENCE.h>
 
@@ -30,9 +32,10 @@ typedef enum MeasObjectToAddMod__measObject_PR {
 	MeasObjectToAddMod__measObject_PR_measObjectEUTRA,
 	MeasObjectToAddMod__measObject_PR_measObjectUTRA,
 	MeasObjectToAddMod__measObject_PR_measObjectGERAN,
-	MeasObjectToAddMod__measObject_PR_measObjectCDMA2000
+	MeasObjectToAddMod__measObject_PR_measObjectCDMA2000,
 	/* Extensions may appear below */
-	
+	MeasObjectToAddMod__measObject_PR_measObjectWLAN_r13,
+	MeasObjectToAddMod__measObject_PR_measObjectNR_r15
 } MeasObjectToAddMod__measObject_PR;
 
 /* MeasObjectToAddMod */
@@ -49,6 +52,8 @@ typedef struct MeasObjectToAddMod {
 			 * This type is extensible,
 			 * possible extensions are below.
 			 */
+			MeasObjectWLAN_r13_t	 measObjectWLAN_r13;
+			MeasObjectNR_r15_t	 measObjectNR_r15;
 		} choice;
 		
 		/* Context for parsing across buffer boundaries */

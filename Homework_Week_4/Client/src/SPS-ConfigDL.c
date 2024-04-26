@@ -41,6 +41,11 @@ static asn_per_constraints_t asn_PER_type_semiPersistSchedIntervalDL_constr_4 CC
 	{ APC_UNCONSTRAINED,	-1, -1,  0,  0 },
 	0, 0	/* No PER value map */
 };
+static asn_per_constraints_t asn_PER_type_twoAntennaPortActivated_r10_constr_24 CC_NOTUSED = {
+	{ APC_CONSTRAINED,	 1,  1,  0,  1 }	/* (0..1) */,
+	{ APC_UNCONSTRAINED,	-1, -1,  0,  0 },
+	0, 0	/* No PER value map */
+};
 static asn_per_constraints_t asn_PER_memb_numberOfConfSPS_Processes_constr_21 CC_NOTUSED = {
 	{ APC_CONSTRAINED,	 3,  3,  1,  8 }	/* (1..8) */,
 	{ APC_UNCONSTRAINED,	-1, -1,  0,  0 },
@@ -116,6 +121,98 @@ asn_TYPE_descriptor_t asn_DEF_semiPersistSchedIntervalDL_4 = {
 	&asn_SPC_semiPersistSchedIntervalDL_specs_4	/* Additional specs */
 };
 
+static asn_TYPE_member_t asn_MBR_setup_26[] = {
+	{ ATF_NOFLAGS, 0, offsetof(struct SPS_ConfigDL__setup__twoAntennaPortActivated_r10__setup, n1PUCCH_AN_PersistentListP1_r10),
+		(ASN_TAG_CLASS_CONTEXT | (0 << 2)),
+		-1,	/* IMPLICIT tag at current level */
+		&asn_DEF_N1PUCCH_AN_PersistentList,
+		0,
+		{ 0, 0, 0 },
+		0, 0, /* No default value */
+		"n1PUCCH-AN-PersistentListP1-r10"
+		},
+};
+static const ber_tlv_tag_t asn_DEF_setup_tags_26[] = {
+	(ASN_TAG_CLASS_CONTEXT | (1 << 2)),
+	(ASN_TAG_CLASS_UNIVERSAL | (16 << 2))
+};
+static const asn_TYPE_tag2member_t asn_MAP_setup_tag2el_26[] = {
+    { (ASN_TAG_CLASS_CONTEXT | (0 << 2)), 0, 0, 0 } /* n1PUCCH-AN-PersistentListP1-r10 */
+};
+static asn_SEQUENCE_specifics_t asn_SPC_setup_specs_26 = {
+	sizeof(struct SPS_ConfigDL__setup__twoAntennaPortActivated_r10__setup),
+	offsetof(struct SPS_ConfigDL__setup__twoAntennaPortActivated_r10__setup, _asn_ctx),
+	asn_MAP_setup_tag2el_26,
+	1,	/* Count of tags in the map */
+	0, 0, 0,	/* Optional elements (not needed) */
+	-1,	/* First extension addition */
+};
+static /* Use -fall-defs-global to expose */
+asn_TYPE_descriptor_t asn_DEF_setup_26 = {
+	"setup",
+	"setup",
+	&asn_OP_SEQUENCE,
+	asn_DEF_setup_tags_26,
+	sizeof(asn_DEF_setup_tags_26)
+		/sizeof(asn_DEF_setup_tags_26[0]) - 1, /* 1 */
+	asn_DEF_setup_tags_26,	/* Same as above */
+	sizeof(asn_DEF_setup_tags_26)
+		/sizeof(asn_DEF_setup_tags_26[0]), /* 2 */
+	{ 0, 0, SEQUENCE_constraint },
+	asn_MBR_setup_26,
+	1,	/* Elements count */
+	&asn_SPC_setup_specs_26	/* Additional specs */
+};
+
+static asn_TYPE_member_t asn_MBR_twoAntennaPortActivated_r10_24[] = {
+	{ ATF_NOFLAGS, 0, offsetof(struct SPS_ConfigDL__setup__twoAntennaPortActivated_r10, choice.release),
+		(ASN_TAG_CLASS_CONTEXT | (0 << 2)),
+		-1,	/* IMPLICIT tag at current level */
+		&asn_DEF_NULL,
+		0,
+		{ 0, 0, 0 },
+		0, 0, /* No default value */
+		"release"
+		},
+	{ ATF_NOFLAGS, 0, offsetof(struct SPS_ConfigDL__setup__twoAntennaPortActivated_r10, choice.setup),
+		(ASN_TAG_CLASS_CONTEXT | (1 << 2)),
+		0,
+		&asn_DEF_setup_26,
+		0,
+		{ 0, 0, 0 },
+		0, 0, /* No default value */
+		"setup"
+		},
+};
+static const asn_TYPE_tag2member_t asn_MAP_twoAntennaPortActivated_r10_tag2el_24[] = {
+    { (ASN_TAG_CLASS_CONTEXT | (0 << 2)), 0, 0, 0 }, /* release */
+    { (ASN_TAG_CLASS_CONTEXT | (1 << 2)), 1, 0, 0 } /* setup */
+};
+static asn_CHOICE_specifics_t asn_SPC_twoAntennaPortActivated_r10_specs_24 = {
+	sizeof(struct SPS_ConfigDL__setup__twoAntennaPortActivated_r10),
+	offsetof(struct SPS_ConfigDL__setup__twoAntennaPortActivated_r10, _asn_ctx),
+	offsetof(struct SPS_ConfigDL__setup__twoAntennaPortActivated_r10, present),
+	sizeof(((struct SPS_ConfigDL__setup__twoAntennaPortActivated_r10 *)0)->present),
+	asn_MAP_twoAntennaPortActivated_r10_tag2el_24,
+	2,	/* Count of tags in the map */
+	0, 0,
+	-1	/* Extensions start */
+};
+static /* Use -fall-defs-global to expose */
+asn_TYPE_descriptor_t asn_DEF_twoAntennaPortActivated_r10_24 = {
+	"twoAntennaPortActivated-r10",
+	"twoAntennaPortActivated-r10",
+	&asn_OP_CHOICE,
+	0,	/* No effective tags (pointer) */
+	0,	/* No effective tags (count) */
+	0,	/* No tags (pointer) */
+	0,	/* No tags (count) */
+	{ 0, &asn_PER_type_twoAntennaPortActivated_r10_constr_24, CHOICE_constraint },
+	asn_MBR_twoAntennaPortActivated_r10_24,
+	2,	/* Elements count */
+	&asn_SPC_twoAntennaPortActivated_r10_specs_24	/* Additional specs */
+};
+
 static asn_TYPE_member_t asn_MBR_setup_3[] = {
 	{ ATF_NOFLAGS, 0, offsetof(struct SPS_ConfigDL__setup, semiPersistSchedIntervalDL),
 		(ASN_TAG_CLASS_CONTEXT | (0 << 2)),
@@ -135,16 +232,26 @@ static asn_TYPE_member_t asn_MBR_setup_3[] = {
 		0, 0, /* No default value */
 		"numberOfConfSPS-Processes"
 		},
-	{ ATF_NOFLAGS, 0, offsetof(struct SPS_ConfigDL__setup, n1_PUCCH_AN_PersistentList),
+	{ ATF_NOFLAGS, 0, offsetof(struct SPS_ConfigDL__setup, n1PUCCH_AN_PersistentList),
 		(ASN_TAG_CLASS_CONTEXT | (2 << 2)),
 		-1,	/* IMPLICIT tag at current level */
-		&asn_DEF_N1_PUCCH_AN_PersistentList,
+		&asn_DEF_N1PUCCH_AN_PersistentList,
 		0,
 		{ 0, 0, 0 },
 		0, 0, /* No default value */
-		"n1-PUCCH-AN-PersistentList"
+		"n1PUCCH-AN-PersistentList"
+		},
+	{ ATF_POINTER, 1, offsetof(struct SPS_ConfigDL__setup, twoAntennaPortActivated_r10),
+		(ASN_TAG_CLASS_CONTEXT | (3 << 2)),
+		+1,	/* EXPLICIT tag at current level */
+		&asn_DEF_twoAntennaPortActivated_r10_24,
+		0,
+		{ 0, 0, 0 },
+		0, 0, /* No default value */
+		"twoAntennaPortActivated-r10"
 		},
 };
+static const int asn_MAP_setup_oms_3[] = { 3 };
 static const ber_tlv_tag_t asn_DEF_setup_tags_3[] = {
 	(ASN_TAG_CLASS_CONTEXT | (1 << 2)),
 	(ASN_TAG_CLASS_UNIVERSAL | (16 << 2))
@@ -152,14 +259,16 @@ static const ber_tlv_tag_t asn_DEF_setup_tags_3[] = {
 static const asn_TYPE_tag2member_t asn_MAP_setup_tag2el_3[] = {
     { (ASN_TAG_CLASS_CONTEXT | (0 << 2)), 0, 0, 0 }, /* semiPersistSchedIntervalDL */
     { (ASN_TAG_CLASS_CONTEXT | (1 << 2)), 1, 0, 0 }, /* numberOfConfSPS-Processes */
-    { (ASN_TAG_CLASS_CONTEXT | (2 << 2)), 2, 0, 0 } /* n1-PUCCH-AN-PersistentList */
+    { (ASN_TAG_CLASS_CONTEXT | (2 << 2)), 2, 0, 0 }, /* n1PUCCH-AN-PersistentList */
+    { (ASN_TAG_CLASS_CONTEXT | (3 << 2)), 3, 0, 0 } /* twoAntennaPortActivated-r10 */
 };
 static asn_SEQUENCE_specifics_t asn_SPC_setup_specs_3 = {
 	sizeof(struct SPS_ConfigDL__setup),
 	offsetof(struct SPS_ConfigDL__setup, _asn_ctx),
 	asn_MAP_setup_tag2el_3,
-	3,	/* Count of tags in the map */
-	0, 0, 0,	/* Optional elements (not needed) */
+	4,	/* Count of tags in the map */
+	asn_MAP_setup_oms_3,	/* Optional members */
+	0, 1,	/* Root/Additions */
 	3,	/* First extension addition */
 };
 static /* Use -fall-defs-global to expose */
@@ -175,7 +284,7 @@ asn_TYPE_descriptor_t asn_DEF_setup_3 = {
 		/sizeof(asn_DEF_setup_tags_3[0]), /* 2 */
 	{ 0, 0, SEQUENCE_constraint },
 	asn_MBR_setup_3,
-	3,	/* Elements count */
+	4,	/* Elements count */
 	&asn_SPC_setup_specs_3	/* Additional specs */
 };
 

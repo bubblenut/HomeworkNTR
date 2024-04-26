@@ -19,14 +19,13 @@
 extern "C" {
 #endif
 
+/* Forward declarations */
+struct SecurityModeCommand_v8a0_IEs;
+
 /* SecurityModeCommand-r8-IEs */
 typedef struct SecurityModeCommand_r8_IEs {
 	SecurityConfigSMC_t	 securityConfigSMC;
-	struct SecurityModeCommand_r8_IEs__nonCriticalExtension {
-		
-		/* Context for parsing across buffer boundaries */
-		asn_struct_ctx_t _asn_ctx;
-	} *nonCriticalExtension;
+	struct SecurityModeCommand_v8a0_IEs	*nonCriticalExtension	/* OPTIONAL */;
 	
 	/* Context for parsing across buffer boundaries */
 	asn_struct_ctx_t _asn_ctx;

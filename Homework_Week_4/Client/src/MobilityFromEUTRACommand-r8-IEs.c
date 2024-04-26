@@ -7,6 +7,7 @@
 
 #include "MobilityFromEUTRACommand-r8-IEs.h"
 
+#include "MobilityFromEUTRACommand-v8a0-IEs.h"
 static asn_per_constraints_t asn_PER_type_purpose_constr_3 CC_NOTUSED = {
 	{ APC_CONSTRAINED,	 1,  1,  0,  1 }	/* (0..1) */,
 	{ APC_UNCONSTRAINED,	-1, -1,  0,  0 },
@@ -61,34 +62,6 @@ asn_TYPE_descriptor_t asn_DEF_purpose_3 = {
 	&asn_SPC_purpose_specs_3	/* Additional specs */
 };
 
-static const ber_tlv_tag_t asn_DEF_nonCriticalExtension_tags_6[] = {
-	(ASN_TAG_CLASS_CONTEXT | (2 << 2)),
-	(ASN_TAG_CLASS_UNIVERSAL | (16 << 2))
-};
-static asn_SEQUENCE_specifics_t asn_SPC_nonCriticalExtension_specs_6 = {
-	sizeof(struct MobilityFromEUTRACommand_r8_IEs__nonCriticalExtension),
-	offsetof(struct MobilityFromEUTRACommand_r8_IEs__nonCriticalExtension, _asn_ctx),
-	0,	/* No top level tags */
-	0,	/* No tags in the map */
-	0, 0, 0,	/* Optional elements (not needed) */
-	-1,	/* First extension addition */
-};
-static /* Use -fall-defs-global to expose */
-asn_TYPE_descriptor_t asn_DEF_nonCriticalExtension_6 = {
-	"nonCriticalExtension",
-	"nonCriticalExtension",
-	&asn_OP_SEQUENCE,
-	asn_DEF_nonCriticalExtension_tags_6,
-	sizeof(asn_DEF_nonCriticalExtension_tags_6)
-		/sizeof(asn_DEF_nonCriticalExtension_tags_6[0]) - 1, /* 1 */
-	asn_DEF_nonCriticalExtension_tags_6,	/* Same as above */
-	sizeof(asn_DEF_nonCriticalExtension_tags_6)
-		/sizeof(asn_DEF_nonCriticalExtension_tags_6[0]), /* 2 */
-	{ 0, 0, SEQUENCE_constraint },
-	0, 0,	/* No members */
-	&asn_SPC_nonCriticalExtension_specs_6	/* Additional specs */
-};
-
 asn_TYPE_member_t asn_MBR_MobilityFromEUTRACommand_r8_IEs_1[] = {
 	{ ATF_NOFLAGS, 0, offsetof(struct MobilityFromEUTRACommand_r8_IEs, cs_FallbackIndicator),
 		(ASN_TAG_CLASS_CONTEXT | (0 << 2)),
@@ -110,8 +83,8 @@ asn_TYPE_member_t asn_MBR_MobilityFromEUTRACommand_r8_IEs_1[] = {
 		},
 	{ ATF_POINTER, 1, offsetof(struct MobilityFromEUTRACommand_r8_IEs, nonCriticalExtension),
 		(ASN_TAG_CLASS_CONTEXT | (2 << 2)),
-		0,
-		&asn_DEF_nonCriticalExtension_6,
+		-1,	/* IMPLICIT tag at current level */
+		&asn_DEF_MobilityFromEUTRACommand_v8a0_IEs,
 		0,
 		{ 0, 0, 0 },
 		0, 0, /* No default value */

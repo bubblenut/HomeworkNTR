@@ -12,7 +12,7 @@
 #include <asn_application.h>
 
 /* Including external dependencies */
-#include <NativeInteger.h>
+#include "FreqBandIndicator.h"
 #include <BOOLEAN.h>
 #include <constr_SEQUENCE.h>
 
@@ -22,7 +22,7 @@ extern "C" {
 
 /* SupportedBandEUTRA */
 typedef struct SupportedBandEUTRA {
-	long	 bandEUTRA;
+	FreqBandIndicator_t	 bandEUTRA;
 	BOOLEAN_t	 halfDuplex;
 	
 	/* Context for parsing across buffer boundaries */

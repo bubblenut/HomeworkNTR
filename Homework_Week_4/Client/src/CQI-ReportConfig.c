@@ -8,10 +8,6 @@
 #include "CQI-ReportConfig.h"
 
 #include "CQI-ReportPeriodic.h"
-/*
- * This type is implemented using NativeEnumerated,
- * so here we adjust the DEF accordingly.
- */
 static int
 memb_nomPDSCH_RS_EPRE_Offset_constraint_1(const asn_TYPE_descriptor_t *td, const void *sptr,
 			asn_app_constraint_failed_f *ctfailcb, void *app_key) {
@@ -37,70 +33,16 @@ memb_nomPDSCH_RS_EPRE_Offset_constraint_1(const asn_TYPE_descriptor_t *td, const
 	}
 }
 
-static asn_per_constraints_t asn_PER_type_cqi_ReportModeAperiodic_constr_2 CC_NOTUSED = {
-	{ APC_CONSTRAINED,	 3,  3,  0,  7 }	/* (0..7) */,
-	{ APC_UNCONSTRAINED,	-1, -1,  0,  0 },
-	0, 0	/* No PER value map */
-};
-static asn_per_constraints_t asn_PER_memb_nomPDSCH_RS_EPRE_Offset_constr_11 CC_NOTUSED = {
+static asn_per_constraints_t asn_PER_memb_nomPDSCH_RS_EPRE_Offset_constr_3 CC_NOTUSED = {
 	{ APC_CONSTRAINED,	 3,  3, -1,  6 }	/* (-1..6) */,
 	{ APC_UNCONSTRAINED,	-1, -1,  0,  0 },
 	0, 0	/* No PER value map */
 };
-static const asn_INTEGER_enum_map_t asn_MAP_cqi_ReportModeAperiodic_value2enum_2[] = {
-	{ 0,	4,	"rm12" },
-	{ 1,	4,	"rm20" },
-	{ 2,	4,	"rm22" },
-	{ 3,	4,	"rm30" },
-	{ 4,	4,	"rm31" },
-	{ 5,	6,	"spare3" },
-	{ 6,	6,	"spare2" },
-	{ 7,	6,	"spare1" }
-};
-static const unsigned int asn_MAP_cqi_ReportModeAperiodic_enum2value_2[] = {
-	0,	/* rm12(0) */
-	1,	/* rm20(1) */
-	2,	/* rm22(2) */
-	3,	/* rm30(3) */
-	4,	/* rm31(4) */
-	7,	/* spare1(7) */
-	6,	/* spare2(6) */
-	5	/* spare3(5) */
-};
-static const asn_INTEGER_specifics_t asn_SPC_cqi_ReportModeAperiodic_specs_2 = {
-	asn_MAP_cqi_ReportModeAperiodic_value2enum_2,	/* "tag" => N; sorted by tag */
-	asn_MAP_cqi_ReportModeAperiodic_enum2value_2,	/* N => "tag"; sorted by N */
-	8,	/* Number of elements in the maps */
-	0,	/* Enumeration is not extensible */
-	1,	/* Strict enumeration */
-	0,	/* Native long size */
-	0
-};
-static const ber_tlv_tag_t asn_DEF_cqi_ReportModeAperiodic_tags_2[] = {
-	(ASN_TAG_CLASS_CONTEXT | (0 << 2)),
-	(ASN_TAG_CLASS_UNIVERSAL | (10 << 2))
-};
-static /* Use -fall-defs-global to expose */
-asn_TYPE_descriptor_t asn_DEF_cqi_ReportModeAperiodic_2 = {
-	"cqi-ReportModeAperiodic",
-	"cqi-ReportModeAperiodic",
-	&asn_OP_NativeEnumerated,
-	asn_DEF_cqi_ReportModeAperiodic_tags_2,
-	sizeof(asn_DEF_cqi_ReportModeAperiodic_tags_2)
-		/sizeof(asn_DEF_cqi_ReportModeAperiodic_tags_2[0]) - 1, /* 1 */
-	asn_DEF_cqi_ReportModeAperiodic_tags_2,	/* Same as above */
-	sizeof(asn_DEF_cqi_ReportModeAperiodic_tags_2)
-		/sizeof(asn_DEF_cqi_ReportModeAperiodic_tags_2[0]), /* 2 */
-	{ 0, &asn_PER_type_cqi_ReportModeAperiodic_constr_2, NativeEnumerated_constraint },
-	0, 0,	/* Defined elsewhere */
-	&asn_SPC_cqi_ReportModeAperiodic_specs_2	/* Additional specs */
-};
-
 asn_TYPE_member_t asn_MBR_CQI_ReportConfig_1[] = {
 	{ ATF_POINTER, 1, offsetof(struct CQI_ReportConfig, cqi_ReportModeAperiodic),
 		(ASN_TAG_CLASS_CONTEXT | (0 << 2)),
 		-1,	/* IMPLICIT tag at current level */
-		&asn_DEF_cqi_ReportModeAperiodic_2,
+		&asn_DEF_CQI_ReportModeAperiodic,
 		0,
 		{ 0, 0, 0 },
 		0, 0, /* No default value */
@@ -111,7 +53,7 @@ asn_TYPE_member_t asn_MBR_CQI_ReportConfig_1[] = {
 		-1,	/* IMPLICIT tag at current level */
 		&asn_DEF_NativeInteger,
 		0,
-		{ 0, &asn_PER_memb_nomPDSCH_RS_EPRE_Offset_constr_11,  memb_nomPDSCH_RS_EPRE_Offset_constraint_1 },
+		{ 0, &asn_PER_memb_nomPDSCH_RS_EPRE_Offset_constr_3,  memb_nomPDSCH_RS_EPRE_Offset_constraint_1 },
 		0, 0, /* No default value */
 		"nomPDSCH-RS-EPRE-Offset"
 		},

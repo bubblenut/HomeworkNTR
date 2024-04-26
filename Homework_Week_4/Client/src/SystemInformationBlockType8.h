@@ -13,6 +13,9 @@
 
 /* Including external dependencies */
 #include <NativeInteger.h>
+#include <OCTET_STRING.h>
+#include <BOOLEAN.h>
+#include <NativeEnumerated.h>
 #include "PreRegistrationInfoHRPD.h"
 #include <constr_SEQUENCE.h>
 #include <BIT_STRING.h>
@@ -21,8 +24,17 @@
 extern "C" {
 #endif
 
+/* Dependencies */
+typedef enum SystemInformationBlockType8__csfb_DualRxTxSupport_r10 {
+	SystemInformationBlockType8__csfb_DualRxTxSupport_r10_true	= 0
+} e_SystemInformationBlockType8__csfb_DualRxTxSupport_r10;
+
 /* Forward declarations */
 struct SystemTimeInfoCDMA2000;
+struct CellReselectionParametersCDMA2000_v920;
+struct CSFB_RegistrationParam1XRTT_v920;
+struct AC_BarringConfig1XRTT_r9;
+struct SIB8_PerPLMN_List_r11;
 struct CellReselectionParametersCDMA2000;
 struct CSFB_RegistrationParam1XRTT;
 
@@ -49,15 +61,24 @@ typedef struct SystemInformationBlockType8 {
 	 * This type is extensible,
 	 * possible extensions are below.
 	 */
+	OCTET_STRING_t	*lateNonCriticalExtension	/* OPTIONAL */;
+	BOOLEAN_t	*csfb_SupportForDualRxUEs_r9	/* OPTIONAL */;
+	struct CellReselectionParametersCDMA2000_v920	*cellReselectionParametersHRPD_v920	/* OPTIONAL */;
+	struct CellReselectionParametersCDMA2000_v920	*cellReselectionParameters1XRTT_v920	/* OPTIONAL */;
+	struct CSFB_RegistrationParam1XRTT_v920	*csfb_RegistrationParam1XRTT_v920	/* OPTIONAL */;
+	struct AC_BarringConfig1XRTT_r9	*ac_BarringConfig1XRTT_r9	/* OPTIONAL */;
+	long	*csfb_DualRxTxSupport_r10	/* OPTIONAL */;
+	struct SIB8_PerPLMN_List_r11	*sib8_PerPLMN_List_r11	/* OPTIONAL */;
 	
 	/* Context for parsing across buffer boundaries */
 	asn_struct_ctx_t _asn_ctx;
 } SystemInformationBlockType8_t;
 
 /* Implementation */
+/* extern asn_TYPE_descriptor_t asn_DEF_csfb_DualRxTxSupport_r10_18;	// (Use -fall-defs-global to expose) */
 extern asn_TYPE_descriptor_t asn_DEF_SystemInformationBlockType8;
 extern asn_SEQUENCE_specifics_t asn_SPC_SystemInformationBlockType8_specs_1;
-extern asn_TYPE_member_t asn_MBR_SystemInformationBlockType8_1[4];
+extern asn_TYPE_member_t asn_MBR_SystemInformationBlockType8_1[12];
 
 #ifdef __cplusplus
 }

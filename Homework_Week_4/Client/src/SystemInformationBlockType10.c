@@ -96,7 +96,7 @@ memb_warningType_constraint_1(const asn_TYPE_descriptor_t *td, const void *sptr,
 }
 
 static int
-memb_warningSecurityInfo_constraint_1(const asn_TYPE_descriptor_t *td, const void *sptr,
+memb_dummy_constraint_1(const asn_TYPE_descriptor_t *td, const void *sptr,
 			asn_app_constraint_failed_f *ctfailcb, void *app_key) {
 	const OCTET_STRING_t *st = (const OCTET_STRING_t *)sptr;
 	size_t size;
@@ -136,7 +136,7 @@ static asn_per_constraints_t asn_PER_memb_warningType_constr_4 CC_NOTUSED = {
 	{ APC_CONSTRAINED,	 0,  0,  2,  2 }	/* (SIZE(2..2)) */,
 	0, 0	/* No PER value map */
 };
-static asn_per_constraints_t asn_PER_memb_warningSecurityInfo_constr_5 CC_NOTUSED = {
+static asn_per_constraints_t asn_PER_memb_dummy_constr_5 CC_NOTUSED = {
 	{ APC_UNCONSTRAINED,	-1, -1,  0,  0 },
 	{ APC_CONSTRAINED,	 0,  0,  50,  50 }	/* (SIZE(50..50)) */,
 	0, 0	/* No PER value map */
@@ -169,17 +169,26 @@ asn_TYPE_member_t asn_MBR_SystemInformationBlockType10_1[] = {
 		0, 0, /* No default value */
 		"warningType"
 		},
-	{ ATF_POINTER, 1, offsetof(struct SystemInformationBlockType10, warningSecurityInfo),
+	{ ATF_POINTER, 2, offsetof(struct SystemInformationBlockType10, dummy),
 		(ASN_TAG_CLASS_CONTEXT | (3 << 2)),
 		-1,	/* IMPLICIT tag at current level */
 		&asn_DEF_OCTET_STRING,
 		0,
-		{ 0, &asn_PER_memb_warningSecurityInfo_constr_5,  memb_warningSecurityInfo_constraint_1 },
+		{ 0, &asn_PER_memb_dummy_constr_5,  memb_dummy_constraint_1 },
 		0, 0, /* No default value */
-		"warningSecurityInfo"
+		"dummy"
+		},
+	{ ATF_POINTER, 1, offsetof(struct SystemInformationBlockType10, lateNonCriticalExtension),
+		(ASN_TAG_CLASS_CONTEXT | (4 << 2)),
+		-1,	/* IMPLICIT tag at current level */
+		&asn_DEF_OCTET_STRING,
+		0,
+		{ 0, 0, 0 },
+		0, 0, /* No default value */
+		"lateNonCriticalExtension"
 		},
 };
-static const int asn_MAP_SystemInformationBlockType10_oms_1[] = { 3 };
+static const int asn_MAP_SystemInformationBlockType10_oms_1[] = { 3, 4 };
 static const ber_tlv_tag_t asn_DEF_SystemInformationBlockType10_tags_1[] = {
 	(ASN_TAG_CLASS_UNIVERSAL | (16 << 2))
 };
@@ -187,15 +196,16 @@ static const asn_TYPE_tag2member_t asn_MAP_SystemInformationBlockType10_tag2el_1
     { (ASN_TAG_CLASS_CONTEXT | (0 << 2)), 0, 0, 0 }, /* messageIdentifier */
     { (ASN_TAG_CLASS_CONTEXT | (1 << 2)), 1, 0, 0 }, /* serialNumber */
     { (ASN_TAG_CLASS_CONTEXT | (2 << 2)), 2, 0, 0 }, /* warningType */
-    { (ASN_TAG_CLASS_CONTEXT | (3 << 2)), 3, 0, 0 } /* warningSecurityInfo */
+    { (ASN_TAG_CLASS_CONTEXT | (3 << 2)), 3, 0, 0 }, /* dummy */
+    { (ASN_TAG_CLASS_CONTEXT | (4 << 2)), 4, 0, 0 } /* lateNonCriticalExtension */
 };
 asn_SEQUENCE_specifics_t asn_SPC_SystemInformationBlockType10_specs_1 = {
 	sizeof(struct SystemInformationBlockType10),
 	offsetof(struct SystemInformationBlockType10, _asn_ctx),
 	asn_MAP_SystemInformationBlockType10_tag2el_1,
-	4,	/* Count of tags in the map */
+	5,	/* Count of tags in the map */
 	asn_MAP_SystemInformationBlockType10_oms_1,	/* Optional members */
-	1, 0,	/* Root/Additions */
+	1, 1,	/* Root/Additions */
 	4,	/* First extension addition */
 };
 asn_TYPE_descriptor_t asn_DEF_SystemInformationBlockType10 = {
@@ -210,7 +220,7 @@ asn_TYPE_descriptor_t asn_DEF_SystemInformationBlockType10 = {
 		/sizeof(asn_DEF_SystemInformationBlockType10_tags_1[0]), /* 1 */
 	{ 0, 0, SEQUENCE_constraint },
 	asn_MBR_SystemInformationBlockType10_1,
-	4,	/* Elements count */
+	5,	/* Elements count */
 	&asn_SPC_SystemInformationBlockType10_specs_1	/* Additional specs */
 };
 

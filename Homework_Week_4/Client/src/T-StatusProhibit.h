@@ -76,12 +76,12 @@ typedef enum T_StatusProhibit {
 	T_StatusProhibit_ms400	= 53,
 	T_StatusProhibit_ms450	= 54,
 	T_StatusProhibit_ms500	= 55,
-	T_StatusProhibit_spare8	= 56,
-	T_StatusProhibit_spare7	= 57,
-	T_StatusProhibit_spare6	= 58,
-	T_StatusProhibit_spare5	= 59,
-	T_StatusProhibit_spare4	= 60,
-	T_StatusProhibit_spare3	= 61,
+	T_StatusProhibit_ms800_v1310	= 56,
+	T_StatusProhibit_ms1000_v1310	= 57,
+	T_StatusProhibit_ms1200_v1310	= 58,
+	T_StatusProhibit_ms1600_v1310	= 59,
+	T_StatusProhibit_ms2000_v1310	= 60,
+	T_StatusProhibit_ms2400_v1310	= 61,
 	T_StatusProhibit_spare2	= 62,
 	T_StatusProhibit_spare1	= 63
 } e_T_StatusProhibit;

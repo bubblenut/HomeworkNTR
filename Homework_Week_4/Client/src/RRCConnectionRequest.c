@@ -12,34 +12,6 @@ static asn_per_constraints_t asn_PER_type_criticalExtensions_constr_2 CC_NOTUSED
 	{ APC_UNCONSTRAINED,	-1, -1,  0,  0 },
 	0, 0	/* No PER value map */
 };
-static const ber_tlv_tag_t asn_DEF_criticalExtensionsFuture_tags_4[] = {
-	(ASN_TAG_CLASS_CONTEXT | (1 << 2)),
-	(ASN_TAG_CLASS_UNIVERSAL | (16 << 2))
-};
-static asn_SEQUENCE_specifics_t asn_SPC_criticalExtensionsFuture_specs_4 = {
-	sizeof(struct RRCConnectionRequest__criticalExtensions__criticalExtensionsFuture),
-	offsetof(struct RRCConnectionRequest__criticalExtensions__criticalExtensionsFuture, _asn_ctx),
-	0,	/* No top level tags */
-	0,	/* No tags in the map */
-	0, 0, 0,	/* Optional elements (not needed) */
-	-1,	/* First extension addition */
-};
-static /* Use -fall-defs-global to expose */
-asn_TYPE_descriptor_t asn_DEF_criticalExtensionsFuture_4 = {
-	"criticalExtensionsFuture",
-	"criticalExtensionsFuture",
-	&asn_OP_SEQUENCE,
-	asn_DEF_criticalExtensionsFuture_tags_4,
-	sizeof(asn_DEF_criticalExtensionsFuture_tags_4)
-		/sizeof(asn_DEF_criticalExtensionsFuture_tags_4[0]) - 1, /* 1 */
-	asn_DEF_criticalExtensionsFuture_tags_4,	/* Same as above */
-	sizeof(asn_DEF_criticalExtensionsFuture_tags_4)
-		/sizeof(asn_DEF_criticalExtensionsFuture_tags_4[0]), /* 2 */
-	{ 0, 0, SEQUENCE_constraint },
-	0, 0,	/* No members */
-	&asn_SPC_criticalExtensionsFuture_specs_4	/* Additional specs */
-};
-
 static asn_TYPE_member_t asn_MBR_criticalExtensions_2[] = {
 	{ ATF_NOFLAGS, 0, offsetof(struct RRCConnectionRequest__criticalExtensions, choice.rrcConnectionRequest_r8),
 		(ASN_TAG_CLASS_CONTEXT | (0 << 2)),
@@ -50,19 +22,19 @@ static asn_TYPE_member_t asn_MBR_criticalExtensions_2[] = {
 		0, 0, /* No default value */
 		"rrcConnectionRequest-r8"
 		},
-	{ ATF_NOFLAGS, 0, offsetof(struct RRCConnectionRequest__criticalExtensions, choice.criticalExtensionsFuture),
+	{ ATF_NOFLAGS, 0, offsetof(struct RRCConnectionRequest__criticalExtensions, choice.rrcConnectionRequest_r15),
 		(ASN_TAG_CLASS_CONTEXT | (1 << 2)),
-		0,
-		&asn_DEF_criticalExtensionsFuture_4,
+		-1,	/* IMPLICIT tag at current level */
+		&asn_DEF_RRCConnectionRequest_5GC_r15_IEs,
 		0,
 		{ 0, 0, 0 },
 		0, 0, /* No default value */
-		"criticalExtensionsFuture"
+		"rrcConnectionRequest-r15"
 		},
 };
 static const asn_TYPE_tag2member_t asn_MAP_criticalExtensions_tag2el_2[] = {
     { (ASN_TAG_CLASS_CONTEXT | (0 << 2)), 0, 0, 0 }, /* rrcConnectionRequest-r8 */
-    { (ASN_TAG_CLASS_CONTEXT | (1 << 2)), 1, 0, 0 } /* criticalExtensionsFuture */
+    { (ASN_TAG_CLASS_CONTEXT | (1 << 2)), 1, 0, 0 } /* rrcConnectionRequest-r15 */
 };
 static asn_CHOICE_specifics_t asn_SPC_criticalExtensions_specs_2 = {
 	sizeof(struct RRCConnectionRequest__criticalExtensions),

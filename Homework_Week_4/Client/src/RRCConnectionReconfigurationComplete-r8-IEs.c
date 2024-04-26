@@ -7,39 +7,12 @@
 
 #include "RRCConnectionReconfigurationComplete-r8-IEs.h"
 
-static const ber_tlv_tag_t asn_DEF_nonCriticalExtension_tags_2[] = {
-	(ASN_TAG_CLASS_CONTEXT | (0 << 2)),
-	(ASN_TAG_CLASS_UNIVERSAL | (16 << 2))
-};
-static asn_SEQUENCE_specifics_t asn_SPC_nonCriticalExtension_specs_2 = {
-	sizeof(struct RRCConnectionReconfigurationComplete_r8_IEs__nonCriticalExtension),
-	offsetof(struct RRCConnectionReconfigurationComplete_r8_IEs__nonCriticalExtension, _asn_ctx),
-	0,	/* No top level tags */
-	0,	/* No tags in the map */
-	0, 0, 0,	/* Optional elements (not needed) */
-	-1,	/* First extension addition */
-};
-static /* Use -fall-defs-global to expose */
-asn_TYPE_descriptor_t asn_DEF_nonCriticalExtension_2 = {
-	"nonCriticalExtension",
-	"nonCriticalExtension",
-	&asn_OP_SEQUENCE,
-	asn_DEF_nonCriticalExtension_tags_2,
-	sizeof(asn_DEF_nonCriticalExtension_tags_2)
-		/sizeof(asn_DEF_nonCriticalExtension_tags_2[0]) - 1, /* 1 */
-	asn_DEF_nonCriticalExtension_tags_2,	/* Same as above */
-	sizeof(asn_DEF_nonCriticalExtension_tags_2)
-		/sizeof(asn_DEF_nonCriticalExtension_tags_2[0]), /* 2 */
-	{ 0, 0, SEQUENCE_constraint },
-	0, 0,	/* No members */
-	&asn_SPC_nonCriticalExtension_specs_2	/* Additional specs */
-};
-
+#include "RRCConnectionReconfigurationComplete-v8a0-IEs.h"
 asn_TYPE_member_t asn_MBR_RRCConnectionReconfigurationComplete_r8_IEs_1[] = {
 	{ ATF_POINTER, 1, offsetof(struct RRCConnectionReconfigurationComplete_r8_IEs, nonCriticalExtension),
 		(ASN_TAG_CLASS_CONTEXT | (0 << 2)),
-		0,
-		&asn_DEF_nonCriticalExtension_2,
+		-1,	/* IMPLICIT tag at current level */
+		&asn_DEF_RRCConnectionReconfigurationComplete_v8a0_IEs,
 		0,
 		{ 0, 0, 0 },
 		0, 0, /* No default value */

@@ -31,7 +31,7 @@ typedef enum AntennaInfoDedicated__transmissionMode {
 	AntennaInfoDedicated__transmissionMode_tm5	= 4,
 	AntennaInfoDedicated__transmissionMode_tm6	= 5,
 	AntennaInfoDedicated__transmissionMode_tm7	= 6,
-	AntennaInfoDedicated__transmissionMode_spare1	= 7
+	AntennaInfoDedicated__transmissionMode_tm8_v920	= 7
 } e_AntennaInfoDedicated__transmissionMode;
 typedef enum AntennaInfoDedicated__codebookSubsetRestriction_PR {
 	AntennaInfoDedicated__codebookSubsetRestriction_PR_NOTHING,	/* No components present */

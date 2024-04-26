@@ -12,6 +12,7 @@
 #include <asn_application.h>
 
 /* Including external dependencies */
+#include <OCTET_STRING.h>
 #include <constr_SEQUENCE.h>
 
 #ifdef __cplusplus
@@ -22,6 +23,7 @@ extern "C" {
 struct IntraFreqNeighCellList;
 struct IntraFreqBlackCellList;
 struct PhysCellIdRange;
+struct IntraFreqNeighHSDN_CellList_r15;
 
 /* SystemInformationBlockType4 */
 typedef struct SystemInformationBlockType4 {
@@ -32,6 +34,8 @@ typedef struct SystemInformationBlockType4 {
 	 * This type is extensible,
 	 * possible extensions are below.
 	 */
+	OCTET_STRING_t	*lateNonCriticalExtension	/* OPTIONAL */;
+	struct IntraFreqNeighHSDN_CellList_r15	*intraFreqNeighHSDN_CellList_r15	/* OPTIONAL */;
 	
 	/* Context for parsing across buffer boundaries */
 	asn_struct_ctx_t _asn_ctx;
@@ -40,7 +44,7 @@ typedef struct SystemInformationBlockType4 {
 /* Implementation */
 extern asn_TYPE_descriptor_t asn_DEF_SystemInformationBlockType4;
 extern asn_SEQUENCE_specifics_t asn_SPC_SystemInformationBlockType4_specs_1;
-extern asn_TYPE_member_t asn_MBR_SystemInformationBlockType4_1[3];
+extern asn_TYPE_member_t asn_MBR_SystemInformationBlockType4_1[5];
 
 #ifdef __cplusplus
 }

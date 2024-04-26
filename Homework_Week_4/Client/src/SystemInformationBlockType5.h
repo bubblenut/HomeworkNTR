@@ -13,11 +13,26 @@
 
 /* Including external dependencies */
 #include "InterFreqCarrierFreqList.h"
+#include <OCTET_STRING.h>
+#include <NativeInteger.h>
 #include <constr_SEQUENCE.h>
 
 #ifdef __cplusplus
 extern "C" {
 #endif
+
+/* Forward declarations */
+struct InterFreqCarrierFreqList_v1250;
+struct InterFreqCarrierFreqListExt_r12;
+struct InterFreqCarrierFreqListExt_v1280;
+struct InterFreqCarrierFreqList_v1310;
+struct InterFreqCarrierFreqListExt_v1310;
+struct InterFreqCarrierFreqList_v1350;
+struct InterFreqCarrierFreqListExt_v1350;
+struct InterFreqCarrierFreqListExt_v1360;
+struct InterFreqCarrierFreqList_v1530;
+struct InterFreqCarrierFreqListExt_v1530;
+struct MeasIdleConfigSIB_r15;
 
 /* SystemInformationBlockType5 */
 typedef struct SystemInformationBlockType5 {
@@ -26,6 +41,19 @@ typedef struct SystemInformationBlockType5 {
 	 * This type is extensible,
 	 * possible extensions are below.
 	 */
+	OCTET_STRING_t	*lateNonCriticalExtension	/* OPTIONAL */;
+	struct InterFreqCarrierFreqList_v1250	*interFreqCarrierFreqList_v1250	/* OPTIONAL */;
+	struct InterFreqCarrierFreqListExt_r12	*interFreqCarrierFreqListExt_r12	/* OPTIONAL */;
+	struct InterFreqCarrierFreqListExt_v1280	*interFreqCarrierFreqListExt_v1280	/* OPTIONAL */;
+	struct InterFreqCarrierFreqList_v1310	*interFreqCarrierFreqList_v1310	/* OPTIONAL */;
+	struct InterFreqCarrierFreqListExt_v1310	*interFreqCarrierFreqListExt_v1310	/* OPTIONAL */;
+	struct InterFreqCarrierFreqList_v1350	*interFreqCarrierFreqList_v1350	/* OPTIONAL */;
+	struct InterFreqCarrierFreqListExt_v1350	*interFreqCarrierFreqListExt_v1350	/* OPTIONAL */;
+	struct InterFreqCarrierFreqListExt_v1360	*interFreqCarrierFreqListExt_v1360	/* OPTIONAL */;
+	long	*scptm_FreqOffset_r14	/* OPTIONAL */;
+	struct InterFreqCarrierFreqList_v1530	*interFreqCarrierFreqList_v1530	/* OPTIONAL */;
+	struct InterFreqCarrierFreqListExt_v1530	*interFreqCarrierFreqListExt_v1530	/* OPTIONAL */;
+	struct MeasIdleConfigSIB_r15	*measIdleConfigSIB_r15	/* OPTIONAL */;
 	
 	/* Context for parsing across buffer boundaries */
 	asn_struct_ctx_t _asn_ctx;
@@ -34,7 +62,7 @@ typedef struct SystemInformationBlockType5 {
 /* Implementation */
 extern asn_TYPE_descriptor_t asn_DEF_SystemInformationBlockType5;
 extern asn_SEQUENCE_specifics_t asn_SPC_SystemInformationBlockType5_specs_1;
-extern asn_TYPE_member_t asn_MBR_SystemInformationBlockType5_1[1];
+extern asn_TYPE_member_t asn_MBR_SystemInformationBlockType5_1[14];
 
 #ifdef __cplusplus
 }

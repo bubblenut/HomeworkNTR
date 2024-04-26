@@ -13,11 +13,14 @@
 
 /* Including external dependencies */
 #include "RSRP-Range.h"
+#include <BOOLEAN.h>
 #include <NULL.h>
 #include "MobilityStateParameters.h"
 #include "SpeedStateScaleFactors.h"
 #include <constr_SEQUENCE.h>
 #include <constr_CHOICE.h>
+#include "MeasScaleFactor-r12.h"
+#include <NativeInteger.h>
 
 #ifdef __cplusplus
 extern "C" {
@@ -29,6 +32,16 @@ typedef enum MeasConfig__speedStatePars_PR {
 	MeasConfig__speedStatePars_PR_release,
 	MeasConfig__speedStatePars_PR_setup
 } MeasConfig__speedStatePars_PR;
+typedef enum MeasConfig__measScaleFactor_r12_PR {
+	MeasConfig__measScaleFactor_r12_PR_NOTHING,	/* No components present */
+	MeasConfig__measScaleFactor_r12_PR_release,
+	MeasConfig__measScaleFactor_r12_PR_setup
+} MeasConfig__measScaleFactor_r12_PR;
+typedef enum MeasConfig__heightThreshRef_r15_PR {
+	MeasConfig__heightThreshRef_r15_PR_NOTHING,	/* No components present */
+	MeasConfig__heightThreshRef_r15_PR_release,
+	MeasConfig__heightThreshRef_r15_PR_setup
+} MeasConfig__heightThreshRef_r15_PR;
 
 /* Forward declarations */
 struct MeasObjectToRemoveList;
@@ -40,6 +53,16 @@ struct MeasIdToAddModList;
 struct QuantityConfig;
 struct MeasGapConfig;
 struct PreRegistrationInfoHRPD;
+struct MeasObjectToAddModList_v9e0;
+struct MeasIdToRemoveListExt_r12;
+struct MeasIdToAddModListExt_r12;
+struct MeasObjectToRemoveListExt_r13;
+struct MeasObjectToAddModListExt_r13;
+struct MeasIdToAddModList_v1310;
+struct MeasIdToAddModListExt_v1310;
+struct MeasGapConfigPerCC_List_r14;
+struct MeasGapSharingConfig_r14;
+struct MeasGapConfigDensePRS_r15;
 
 /* MeasConfig */
 typedef struct MeasConfig {
@@ -73,6 +96,40 @@ typedef struct MeasConfig {
 	 * This type is extensible,
 	 * possible extensions are below.
 	 */
+	struct MeasObjectToAddModList_v9e0	*measObjectToAddModList_v9e0	/* OPTIONAL */;
+	BOOLEAN_t	*allowInterruptions_r11	/* OPTIONAL */;
+	struct MeasConfig__measScaleFactor_r12 {
+		MeasConfig__measScaleFactor_r12_PR present;
+		union MeasConfig__measScaleFactor_r12_u {
+			NULL_t	 release;
+			MeasScaleFactor_r12_t	 setup;
+		} choice;
+		
+		/* Context for parsing across buffer boundaries */
+		asn_struct_ctx_t _asn_ctx;
+	} *measScaleFactor_r12;
+	struct MeasIdToRemoveListExt_r12	*measIdToRemoveListExt_r12	/* OPTIONAL */;
+	struct MeasIdToAddModListExt_r12	*measIdToAddModListExt_r12	/* OPTIONAL */;
+	BOOLEAN_t	*measRSRQ_OnAllSymbols_r12	/* OPTIONAL */;
+	struct MeasObjectToRemoveListExt_r13	*measObjectToRemoveListExt_r13	/* OPTIONAL */;
+	struct MeasObjectToAddModListExt_r13	*measObjectToAddModListExt_r13	/* OPTIONAL */;
+	struct MeasIdToAddModList_v1310	*measIdToAddModList_v1310	/* OPTIONAL */;
+	struct MeasIdToAddModListExt_v1310	*measIdToAddModListExt_v1310	/* OPTIONAL */;
+	struct MeasGapConfigPerCC_List_r14	*measGapConfigPerCC_List_r14	/* OPTIONAL */;
+	struct MeasGapSharingConfig_r14	*measGapSharingConfig_r14	/* OPTIONAL */;
+	BOOLEAN_t	*fr1_Gap_r15	/* OPTIONAL */;
+	BOOLEAN_t	*mgta_r15	/* OPTIONAL */;
+	struct MeasGapConfigDensePRS_r15	*measGapConfigDensePRS_r15	/* OPTIONAL */;
+	struct MeasConfig__heightThreshRef_r15 {
+		MeasConfig__heightThreshRef_r15_PR present;
+		union MeasConfig__heightThreshRef_r15_u {
+			NULL_t	 release;
+			long	 setup;
+		} choice;
+		
+		/* Context for parsing across buffer boundaries */
+		asn_struct_ctx_t _asn_ctx;
+	} *heightThreshRef_r15;
 	
 	/* Context for parsing across buffer boundaries */
 	asn_struct_ctx_t _asn_ctx;
@@ -81,7 +138,7 @@ typedef struct MeasConfig {
 /* Implementation */
 extern asn_TYPE_descriptor_t asn_DEF_MeasConfig;
 extern asn_SEQUENCE_specifics_t asn_SPC_MeasConfig_specs_1;
-extern asn_TYPE_member_t asn_MBR_MeasConfig_1[11];
+extern asn_TYPE_member_t asn_MBR_MeasConfig_1[27];
 
 #ifdef __cplusplus
 }

@@ -13,6 +13,7 @@
 
 /* Including external dependencies */
 #include "T-Reselection.h"
+#include <OCTET_STRING.h>
 #include <constr_SEQUENCE.h>
 
 #ifdef __cplusplus
@@ -32,6 +33,7 @@ typedef struct SystemInformationBlockType7 {
 	 * This type is extensible,
 	 * possible extensions are below.
 	 */
+	OCTET_STRING_t	*lateNonCriticalExtension	/* OPTIONAL */;
 	
 	/* Context for parsing across buffer boundaries */
 	asn_struct_ctx_t _asn_ctx;
@@ -40,7 +42,7 @@ typedef struct SystemInformationBlockType7 {
 /* Implementation */
 extern asn_TYPE_descriptor_t asn_DEF_SystemInformationBlockType7;
 extern asn_SEQUENCE_specifics_t asn_SPC_SystemInformationBlockType7_specs_1;
-extern asn_TYPE_member_t asn_MBR_SystemInformationBlockType7_1[3];
+extern asn_TYPE_member_t asn_MBR_SystemInformationBlockType7_1[4];
 
 #ifdef __cplusplus
 }

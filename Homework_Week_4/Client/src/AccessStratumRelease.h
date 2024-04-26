@@ -21,13 +21,13 @@ extern "C" {
 /* Dependencies */
 typedef enum AccessStratumRelease {
 	AccessStratumRelease_rel8	= 0,
-	AccessStratumRelease_spare7	= 1,
-	AccessStratumRelease_spare6	= 2,
-	AccessStratumRelease_spare5	= 3,
-	AccessStratumRelease_spare4	= 4,
-	AccessStratumRelease_spare3	= 5,
-	AccessStratumRelease_spare2	= 6,
-	AccessStratumRelease_spare1	= 7
+	AccessStratumRelease_rel9	= 1,
+	AccessStratumRelease_rel10	= 2,
+	AccessStratumRelease_rel11	= 3,
+	AccessStratumRelease_rel12	= 4,
+	AccessStratumRelease_rel13	= 5,
+	AccessStratumRelease_rel14	= 6,
+	AccessStratumRelease_rel15	= 7
 	/*
 	 * Enumeration is extensible
 	 */

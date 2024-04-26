@@ -7,6 +7,7 @@
 
 #include "SystemInformation-r8-IEs.h"
 
+#include "SystemInformation-v8a0-IEs.h"
 static int
 memb_sib_TypeAndInfo_constraint_1(const asn_TYPE_descriptor_t *td, const void *sptr,
 			asn_app_constraint_failed_f *ctfailcb, void *app_key) {
@@ -139,6 +140,123 @@ static asn_TYPE_member_t asn_MBR_Member_3[] = {
 		0, 0, /* No default value */
 		"sib11"
 		},
+	{ ATF_NOFLAGS, 0, offsetof(struct SystemInformation_r8_IEs__sib_TypeAndInfo__Member, choice.sib12_v920),
+		(ASN_TAG_CLASS_CONTEXT | (10 << 2)),
+		-1,	/* IMPLICIT tag at current level */
+		&asn_DEF_SystemInformationBlockType12_r9,
+		0,
+		{ 0, 0, 0 },
+		0, 0, /* No default value */
+		"sib12-v920"
+		},
+	{ ATF_NOFLAGS, 0, offsetof(struct SystemInformation_r8_IEs__sib_TypeAndInfo__Member, choice.sib13_v920),
+		(ASN_TAG_CLASS_CONTEXT | (11 << 2)),
+		-1,	/* IMPLICIT tag at current level */
+		&asn_DEF_SystemInformationBlockType13_r9,
+		0,
+		{ 0, 0, 0 },
+		0, 0, /* No default value */
+		"sib13-v920"
+		},
+	{ ATF_NOFLAGS, 0, offsetof(struct SystemInformation_r8_IEs__sib_TypeAndInfo__Member, choice.sib14_v1130),
+		(ASN_TAG_CLASS_CONTEXT | (12 << 2)),
+		-1,	/* IMPLICIT tag at current level */
+		&asn_DEF_SystemInformationBlockType14_r11,
+		0,
+		{ 0, 0, 0 },
+		0, 0, /* No default value */
+		"sib14-v1130"
+		},
+	{ ATF_NOFLAGS, 0, offsetof(struct SystemInformation_r8_IEs__sib_TypeAndInfo__Member, choice.sib15_v1130),
+		(ASN_TAG_CLASS_CONTEXT | (13 << 2)),
+		-1,	/* IMPLICIT tag at current level */
+		&asn_DEF_SystemInformationBlockType15_r11,
+		0,
+		{ 0, 0, 0 },
+		0, 0, /* No default value */
+		"sib15-v1130"
+		},
+	{ ATF_NOFLAGS, 0, offsetof(struct SystemInformation_r8_IEs__sib_TypeAndInfo__Member, choice.sib16_v1130),
+		(ASN_TAG_CLASS_CONTEXT | (14 << 2)),
+		-1,	/* IMPLICIT tag at current level */
+		&asn_DEF_SystemInformationBlockType16_r11,
+		0,
+		{ 0, 0, 0 },
+		0, 0, /* No default value */
+		"sib16-v1130"
+		},
+	{ ATF_NOFLAGS, 0, offsetof(struct SystemInformation_r8_IEs__sib_TypeAndInfo__Member, choice.sib17_v1250),
+		(ASN_TAG_CLASS_CONTEXT | (15 << 2)),
+		-1,	/* IMPLICIT tag at current level */
+		&asn_DEF_SystemInformationBlockType17_r12,
+		0,
+		{ 0, 0, 0 },
+		0, 0, /* No default value */
+		"sib17-v1250"
+		},
+	{ ATF_NOFLAGS, 0, offsetof(struct SystemInformation_r8_IEs__sib_TypeAndInfo__Member, choice.sib18_v1250),
+		(ASN_TAG_CLASS_CONTEXT | (16 << 2)),
+		-1,	/* IMPLICIT tag at current level */
+		&asn_DEF_SystemInformationBlockType18_r12,
+		0,
+		{ 0, 0, 0 },
+		0, 0, /* No default value */
+		"sib18-v1250"
+		},
+	{ ATF_NOFLAGS, 0, offsetof(struct SystemInformation_r8_IEs__sib_TypeAndInfo__Member, choice.sib19_v1250),
+		(ASN_TAG_CLASS_CONTEXT | (17 << 2)),
+		-1,	/* IMPLICIT tag at current level */
+		&asn_DEF_SystemInformationBlockType19_r12,
+		0,
+		{ 0, 0, 0 },
+		0, 0, /* No default value */
+		"sib19-v1250"
+		},
+	{ ATF_NOFLAGS, 0, offsetof(struct SystemInformation_r8_IEs__sib_TypeAndInfo__Member, choice.sib20_v1310),
+		(ASN_TAG_CLASS_CONTEXT | (18 << 2)),
+		-1,	/* IMPLICIT tag at current level */
+		&asn_DEF_SystemInformationBlockType20_r13,
+		0,
+		{ 0, 0, 0 },
+		0, 0, /* No default value */
+		"sib20-v1310"
+		},
+	{ ATF_NOFLAGS, 0, offsetof(struct SystemInformation_r8_IEs__sib_TypeAndInfo__Member, choice.sib21_v1430),
+		(ASN_TAG_CLASS_CONTEXT | (19 << 2)),
+		-1,	/* IMPLICIT tag at current level */
+		&asn_DEF_SystemInformationBlockType21_r14,
+		0,
+		{ 0, 0, 0 },
+		0, 0, /* No default value */
+		"sib21-v1430"
+		},
+	{ ATF_NOFLAGS, 0, offsetof(struct SystemInformation_r8_IEs__sib_TypeAndInfo__Member, choice.sib24_v1530),
+		(ASN_TAG_CLASS_CONTEXT | (20 << 2)),
+		-1,	/* IMPLICIT tag at current level */
+		&asn_DEF_SystemInformationBlockType24_r15,
+		0,
+		{ 0, 0, 0 },
+		0, 0, /* No default value */
+		"sib24-v1530"
+		},
+	{ ATF_NOFLAGS, 0, offsetof(struct SystemInformation_r8_IEs__sib_TypeAndInfo__Member, choice.sib25_v1530),
+		(ASN_TAG_CLASS_CONTEXT | (21 << 2)),
+		-1,	/* IMPLICIT tag at current level */
+		&asn_DEF_SystemInformationBlockType25_r15,
+		0,
+		{ 0, 0, 0 },
+		0, 0, /* No default value */
+		"sib25-v1530"
+		},
+	{ ATF_NOFLAGS, 0, offsetof(struct SystemInformation_r8_IEs__sib_TypeAndInfo__Member, choice.sib26_v1530),
+		(ASN_TAG_CLASS_CONTEXT | (22 << 2)),
+		-1,	/* IMPLICIT tag at current level */
+		&asn_DEF_SystemInformationBlockType26_r15,
+		0,
+		{ 0, 0, 0 },
+		0, 0, /* No default value */
+		"sib26-v1530"
+		},
 };
 static const asn_TYPE_tag2member_t asn_MAP_Member_tag2el_3[] = {
     { (ASN_TAG_CLASS_CONTEXT | (0 << 2)), 0, 0, 0 }, /* sib2 */
@@ -150,7 +268,20 @@ static const asn_TYPE_tag2member_t asn_MAP_Member_tag2el_3[] = {
     { (ASN_TAG_CLASS_CONTEXT | (6 << 2)), 6, 0, 0 }, /* sib8 */
     { (ASN_TAG_CLASS_CONTEXT | (7 << 2)), 7, 0, 0 }, /* sib9 */
     { (ASN_TAG_CLASS_CONTEXT | (8 << 2)), 8, 0, 0 }, /* sib10 */
-    { (ASN_TAG_CLASS_CONTEXT | (9 << 2)), 9, 0, 0 } /* sib11 */
+    { (ASN_TAG_CLASS_CONTEXT | (9 << 2)), 9, 0, 0 }, /* sib11 */
+    { (ASN_TAG_CLASS_CONTEXT | (10 << 2)), 10, 0, 0 }, /* sib12-v920 */
+    { (ASN_TAG_CLASS_CONTEXT | (11 << 2)), 11, 0, 0 }, /* sib13-v920 */
+    { (ASN_TAG_CLASS_CONTEXT | (12 << 2)), 12, 0, 0 }, /* sib14-v1130 */
+    { (ASN_TAG_CLASS_CONTEXT | (13 << 2)), 13, 0, 0 }, /* sib15-v1130 */
+    { (ASN_TAG_CLASS_CONTEXT | (14 << 2)), 14, 0, 0 }, /* sib16-v1130 */
+    { (ASN_TAG_CLASS_CONTEXT | (15 << 2)), 15, 0, 0 }, /* sib17-v1250 */
+    { (ASN_TAG_CLASS_CONTEXT | (16 << 2)), 16, 0, 0 }, /* sib18-v1250 */
+    { (ASN_TAG_CLASS_CONTEXT | (17 << 2)), 17, 0, 0 }, /* sib19-v1250 */
+    { (ASN_TAG_CLASS_CONTEXT | (18 << 2)), 18, 0, 0 }, /* sib20-v1310 */
+    { (ASN_TAG_CLASS_CONTEXT | (19 << 2)), 19, 0, 0 }, /* sib21-v1430 */
+    { (ASN_TAG_CLASS_CONTEXT | (20 << 2)), 20, 0, 0 }, /* sib24-v1530 */
+    { (ASN_TAG_CLASS_CONTEXT | (21 << 2)), 21, 0, 0 }, /* sib25-v1530 */
+    { (ASN_TAG_CLASS_CONTEXT | (22 << 2)), 22, 0, 0 } /* sib26-v1530 */
 };
 static asn_CHOICE_specifics_t asn_SPC_Member_specs_3 = {
 	sizeof(struct SystemInformation_r8_IEs__sib_TypeAndInfo__Member),
@@ -158,7 +289,7 @@ static asn_CHOICE_specifics_t asn_SPC_Member_specs_3 = {
 	offsetof(struct SystemInformation_r8_IEs__sib_TypeAndInfo__Member, present),
 	sizeof(((struct SystemInformation_r8_IEs__sib_TypeAndInfo__Member *)0)->present),
 	asn_MAP_Member_tag2el_3,
-	10,	/* Count of tags in the map */
+	23,	/* Count of tags in the map */
 	0, 0,
 	10	/* Extensions start */
 };
@@ -173,7 +304,7 @@ asn_TYPE_descriptor_t asn_DEF_Member_3 = {
 	0,	/* No tags (count) */
 	{ 0, &asn_PER_type_Member_constr_3, CHOICE_constraint },
 	asn_MBR_Member_3,
-	10,	/* Elements count */
+	23,	/* Elements count */
 	&asn_SPC_Member_specs_3	/* Additional specs */
 };
 
@@ -214,34 +345,6 @@ asn_TYPE_descriptor_t asn_DEF_sib_TypeAndInfo_2 = {
 	&asn_SPC_sib_TypeAndInfo_specs_2	/* Additional specs */
 };
 
-static const ber_tlv_tag_t asn_DEF_nonCriticalExtension_tags_15[] = {
-	(ASN_TAG_CLASS_CONTEXT | (1 << 2)),
-	(ASN_TAG_CLASS_UNIVERSAL | (16 << 2))
-};
-static asn_SEQUENCE_specifics_t asn_SPC_nonCriticalExtension_specs_15 = {
-	sizeof(struct SystemInformation_r8_IEs__nonCriticalExtension),
-	offsetof(struct SystemInformation_r8_IEs__nonCriticalExtension, _asn_ctx),
-	0,	/* No top level tags */
-	0,	/* No tags in the map */
-	0, 0, 0,	/* Optional elements (not needed) */
-	-1,	/* First extension addition */
-};
-static /* Use -fall-defs-global to expose */
-asn_TYPE_descriptor_t asn_DEF_nonCriticalExtension_15 = {
-	"nonCriticalExtension",
-	"nonCriticalExtension",
-	&asn_OP_SEQUENCE,
-	asn_DEF_nonCriticalExtension_tags_15,
-	sizeof(asn_DEF_nonCriticalExtension_tags_15)
-		/sizeof(asn_DEF_nonCriticalExtension_tags_15[0]) - 1, /* 1 */
-	asn_DEF_nonCriticalExtension_tags_15,	/* Same as above */
-	sizeof(asn_DEF_nonCriticalExtension_tags_15)
-		/sizeof(asn_DEF_nonCriticalExtension_tags_15[0]), /* 2 */
-	{ 0, 0, SEQUENCE_constraint },
-	0, 0,	/* No members */
-	&asn_SPC_nonCriticalExtension_specs_15	/* Additional specs */
-};
-
 asn_TYPE_member_t asn_MBR_SystemInformation_r8_IEs_1[] = {
 	{ ATF_NOFLAGS, 0, offsetof(struct SystemInformation_r8_IEs, sib_TypeAndInfo),
 		(ASN_TAG_CLASS_CONTEXT | (0 << 2)),
@@ -254,8 +357,8 @@ asn_TYPE_member_t asn_MBR_SystemInformation_r8_IEs_1[] = {
 		},
 	{ ATF_POINTER, 1, offsetof(struct SystemInformation_r8_IEs, nonCriticalExtension),
 		(ASN_TAG_CLASS_CONTEXT | (1 << 2)),
-		0,
-		&asn_DEF_nonCriticalExtension_15,
+		-1,	/* IMPLICIT tag at current level */
+		&asn_DEF_SystemInformation_v8a0_IEs,
 		0,
 		{ 0, 0, 0 },
 		0, 0, /* No default value */

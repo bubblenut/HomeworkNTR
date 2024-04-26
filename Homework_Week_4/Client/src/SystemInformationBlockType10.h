@@ -25,11 +25,12 @@ typedef struct SystemInformationBlockType10 {
 	BIT_STRING_t	 messageIdentifier;
 	BIT_STRING_t	 serialNumber;
 	OCTET_STRING_t	 warningType;
-	OCTET_STRING_t	*warningSecurityInfo	/* OPTIONAL */;
+	OCTET_STRING_t	*dummy	/* OPTIONAL */;
 	/*
 	 * This type is extensible,
 	 * possible extensions are below.
 	 */
+	OCTET_STRING_t	*lateNonCriticalExtension	/* OPTIONAL */;
 	
 	/* Context for parsing across buffer boundaries */
 	asn_struct_ctx_t _asn_ctx;
@@ -38,7 +39,7 @@ typedef struct SystemInformationBlockType10 {
 /* Implementation */
 extern asn_TYPE_descriptor_t asn_DEF_SystemInformationBlockType10;
 extern asn_SEQUENCE_specifics_t asn_SPC_SystemInformationBlockType10_specs_1;
-extern asn_TYPE_member_t asn_MBR_SystemInformationBlockType10_1[4];
+extern asn_TYPE_member_t asn_MBR_SystemInformationBlockType10_1[5];
 
 #ifdef __cplusplus
 }

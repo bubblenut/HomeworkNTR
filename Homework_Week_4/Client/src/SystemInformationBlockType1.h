@@ -13,14 +13,15 @@
 
 /* Including external dependencies */
 #include "P-Max.h"
-#include <NativeInteger.h>
+#include "FreqBandIndicator.h"
 #include "SchedulingInfoList.h"
 #include <NativeEnumerated.h>
+#include <NativeInteger.h>
 #include "PLMN-IdentityList.h"
 #include "TrackingAreaCode.h"
 #include "CellIdentity.h"
 #include <BOOLEAN.h>
-#include <BIT_STRING.h>
+#include "CSG-Identity.h"
 #include <constr_SEQUENCE.h>
 #include "Q-RxLevMin.h"
 
@@ -49,6 +50,7 @@ typedef enum SystemInformationBlockType1__si_WindowLength {
 
 /* Forward declarations */
 struct TDD_Config;
+struct SystemInformationBlockType1_v890_IEs;
 
 /* SystemInformationBlockType1 */
 typedef struct SystemInformationBlockType1 {
@@ -59,7 +61,7 @@ typedef struct SystemInformationBlockType1 {
 		long	 cellBarred;
 		long	 intraFreqReselection;
 		BOOLEAN_t	 csg_Indication;
-		BIT_STRING_t	*csg_Identity	/* OPTIONAL */;
+		CSG_Identity_t	*csg_Identity	/* OPTIONAL */;
 		
 		/* Context for parsing across buffer boundaries */
 		asn_struct_ctx_t _asn_ctx;
@@ -72,16 +74,12 @@ typedef struct SystemInformationBlockType1 {
 		asn_struct_ctx_t _asn_ctx;
 	} cellSelectionInfo;
 	P_Max_t	*p_Max	/* OPTIONAL */;
-	long	 freqBandIndicator;
+	FreqBandIndicator_t	 freqBandIndicator;
 	SchedulingInfoList_t	 schedulingInfoList;
 	struct TDD_Config	*tdd_Config	/* OPTIONAL */;
 	long	 si_WindowLength;
 	long	 systemInfoValueTag;
-	struct SystemInformationBlockType1__nonCriticalExtension {
-		
-		/* Context for parsing across buffer boundaries */
-		asn_struct_ctx_t _asn_ctx;
-	} *nonCriticalExtension;
+	struct SystemInformationBlockType1_v890_IEs	*nonCriticalExtension	/* OPTIONAL */;
 	
 	/* Context for parsing across buffer boundaries */
 	asn_struct_ctx_t _asn_ctx;

@@ -21,16 +21,15 @@
 extern "C" {
 #endif
 
+/* Forward declarations */
+struct HandoverFromEUTRAPreparationRequest_v890_IEs;
+
 /* HandoverFromEUTRAPreparationRequest-r8-IEs */
 typedef struct HandoverFromEUTRAPreparationRequest_r8_IEs {
 	CDMA2000_Type_t	 cdma2000_Type;
 	RAND_CDMA2000_t	*rand	/* OPTIONAL */;
 	MobilityParametersCDMA2000_t	*mobilityParameters	/* OPTIONAL */;
-	struct HandoverFromEUTRAPreparationRequest_r8_IEs__nonCriticalExtension {
-		
-		/* Context for parsing across buffer boundaries */
-		asn_struct_ctx_t _asn_ctx;
-	} *nonCriticalExtension;
+	struct HandoverFromEUTRAPreparationRequest_v890_IEs	*nonCriticalExtension	/* OPTIONAL */;
 	
 	/* Context for parsing across buffer boundaries */
 	asn_struct_ctx_t _asn_ctx;
