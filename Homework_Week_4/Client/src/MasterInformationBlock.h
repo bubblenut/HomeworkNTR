@@ -15,6 +15,8 @@
 #include <NativeEnumerated.h>
 #include "PHICH-Config.h"
 #include <BIT_STRING.h>
+#include <NativeInteger.h>
+#include <BOOLEAN.h>
 #include <constr_SEQUENCE.h>
 
 #ifdef __cplusplus
@@ -36,6 +38,8 @@ typedef struct MasterInformationBlock {
 	long	 dl_Bandwidth;
 	PHICH_Config_t	 phich_Config;
 	BIT_STRING_t	 systemFrameNumber;
+	long	 schedulingInfoSIB1_BR_r13;
+	BOOLEAN_t	 systemInfoUnchanged_BR_r15;
 	BIT_STRING_t	 spare;
 	
 	/* Context for parsing across buffer boundaries */
@@ -46,7 +50,7 @@ typedef struct MasterInformationBlock {
 /* extern asn_TYPE_descriptor_t asn_DEF_dl_Bandwidth_2;	// (Use -fall-defs-global to expose) */
 extern asn_TYPE_descriptor_t asn_DEF_MasterInformationBlock;
 extern asn_SEQUENCE_specifics_t asn_SPC_MasterInformationBlock_specs_1;
-extern asn_TYPE_member_t asn_MBR_MasterInformationBlock_1[4];
+extern asn_TYPE_member_t asn_MBR_MasterInformationBlock_1[6];
 
 #ifdef __cplusplus
 }

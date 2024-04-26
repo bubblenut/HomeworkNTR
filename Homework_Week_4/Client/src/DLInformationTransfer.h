@@ -14,6 +14,7 @@
 /* Including external dependencies */
 #include "RRC-TransactionIdentifier.h"
 #include "DLInformationTransfer-r8-IEs.h"
+#include "DLInformationTransfer-r15-IEs.h"
 #include <NULL.h>
 #include <constr_CHOICE.h>
 #include <constr_SEQUENCE.h>
@@ -31,7 +32,7 @@ typedef enum DLInformationTransfer__criticalExtensions_PR {
 typedef enum DLInformationTransfer__criticalExtensions__c1_PR {
 	DLInformationTransfer__criticalExtensions__c1_PR_NOTHING,	/* No components present */
 	DLInformationTransfer__criticalExtensions__c1_PR_dlInformationTransfer_r8,
-	DLInformationTransfer__criticalExtensions__c1_PR_spare3,
+	DLInformationTransfer__criticalExtensions__c1_PR_dlInformationTransfer_r15,
 	DLInformationTransfer__criticalExtensions__c1_PR_spare2,
 	DLInformationTransfer__criticalExtensions__c1_PR_spare1
 } DLInformationTransfer__criticalExtensions__c1_PR;
@@ -46,7 +47,7 @@ typedef struct DLInformationTransfer {
 				DLInformationTransfer__criticalExtensions__c1_PR present;
 				union DLInformationTransfer__criticalExtensions__c1_u {
 					DLInformationTransfer_r8_IEs_t	 dlInformationTransfer_r8;
-					NULL_t	 spare3;
+					DLInformationTransfer_r15_IEs_t	 dlInformationTransfer_r15;
 					NULL_t	 spare2;
 					NULL_t	 spare1;
 				} choice;

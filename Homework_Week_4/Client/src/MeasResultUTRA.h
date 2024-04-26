@@ -19,6 +19,7 @@
 #include <BIT_STRING.h>
 #include <constr_SEQUENCE.h>
 #include <NativeInteger.h>
+#include <NativeEnumerated.h>
 
 #ifdef __cplusplus
 extern "C" {
@@ -30,9 +31,13 @@ typedef enum MeasResultUTRA__physCellId_PR {
 	MeasResultUTRA__physCellId_PR_fdd,
 	MeasResultUTRA__physCellId_PR_tdd
 } MeasResultUTRA__physCellId_PR;
+typedef enum MeasResultUTRA__measResult__primaryPLMN_Suitable_r12 {
+	MeasResultUTRA__measResult__primaryPLMN_Suitable_r12_true	= 0
+} e_MeasResultUTRA__measResult__primaryPLMN_Suitable_r12;
 
 /* Forward declarations */
 struct PLMN_IdentityList2;
+struct AdditionalSI_Info_r9;
 
 /* MeasResultUTRA */
 typedef struct MeasResultUTRA {
@@ -62,6 +67,8 @@ typedef struct MeasResultUTRA {
 		 * This type is extensible,
 		 * possible extensions are below.
 		 */
+		struct AdditionalSI_Info_r9	*additionalSI_Info_r9	/* OPTIONAL */;
+		long	*primaryPLMN_Suitable_r12	/* OPTIONAL */;
 		
 		/* Context for parsing across buffer boundaries */
 		asn_struct_ctx_t _asn_ctx;
@@ -72,6 +79,7 @@ typedef struct MeasResultUTRA {
 } MeasResultUTRA_t;
 
 /* Implementation */
+/* extern asn_TYPE_descriptor_t asn_DEF_primaryPLMN_Suitable_r12_15;	// (Use -fall-defs-global to expose) */
 extern asn_TYPE_descriptor_t asn_DEF_MeasResultUTRA;
 extern asn_SEQUENCE_specifics_t asn_SPC_MeasResultUTRA_specs_1;
 extern asn_TYPE_member_t asn_MBR_MeasResultUTRA_1[3];

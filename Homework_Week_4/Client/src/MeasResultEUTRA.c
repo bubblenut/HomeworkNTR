@@ -8,6 +8,63 @@
 #include "MeasResultEUTRA.h"
 
 #include "PLMN-IdentityList2.h"
+#include "AdditionalSI-Info-r9.h"
+#include "MultiBandInfoList-r11.h"
+#include "CellAccessRelatedInfo-5GC-r15.h"
+/*
+ * This type is implemented using NativeEnumerated,
+ * so here we adjust the DEF accordingly.
+ */
+/*
+ * This type is implemented using NativeEnumerated,
+ * so here we adjust the DEF accordingly.
+ */
+static int
+memb_cgi_Info_5GC_r15_constraint_7(const asn_TYPE_descriptor_t *td, const void *sptr,
+			asn_app_constraint_failed_f *ctfailcb, void *app_key) {
+	size_t size;
+	
+	if(!sptr) {
+		ASN__CTFAIL(app_key, td, sptr,
+			"%s: value not given (%s:%d)",
+			td->name, __FILE__, __LINE__);
+		return -1;
+	}
+	
+	/* Determine the number of elements */
+	size = _A_CSEQUENCE_FROM_VOID(sptr)->count;
+	
+	if((size >= 1 && size <= 6)) {
+		/* Perform validation of the inner elements */
+		return SEQUENCE_OF_constraint(td, sptr, ctfailcb, app_key);
+	} else {
+		ASN__CTFAIL(app_key, td, sptr,
+			"%s: constraint failed (%s:%d)",
+			td->name, __FILE__, __LINE__);
+		return -1;
+	}
+}
+
+static asn_per_constraints_t asn_PER_type_primaryPLMN_Suitable_r12_constr_12 CC_NOTUSED = {
+	{ APC_CONSTRAINED,	 0,  0,  0,  0 }	/* (0..0) */,
+	{ APC_UNCONSTRAINED,	-1, -1,  0,  0 },
+	0, 0	/* No PER value map */
+};
+static asn_per_constraints_t asn_PER_type_freqBandIndicatorPriority_r13_constr_19 CC_NOTUSED = {
+	{ APC_CONSTRAINED,	 0,  0,  0,  0 }	/* (0..0) */,
+	{ APC_UNCONSTRAINED,	-1, -1,  0,  0 },
+	0, 0	/* No PER value map */
+};
+static asn_per_constraints_t asn_PER_type_cgi_Info_5GC_r15_constr_22 CC_NOTUSED = {
+	{ APC_UNCONSTRAINED,	-1, -1,  0,  0 },
+	{ APC_CONSTRAINED,	 3,  3,  1,  6 }	/* (SIZE(1..6)) */,
+	0, 0	/* No PER value map */
+};
+static asn_per_constraints_t asn_PER_memb_cgi_Info_5GC_r15_constr_22 CC_NOTUSED = {
+	{ APC_UNCONSTRAINED,	-1, -1,  0,  0 },
+	{ APC_CONSTRAINED,	 3,  3,  1,  6 }	/* (SIZE(1..6)) */,
+	0, 0	/* No PER value map */
+};
 static asn_TYPE_member_t asn_MBR_cgi_Info_3[] = {
 	{ ATF_NOFLAGS, 0, offsetof(struct MeasResultEUTRA__cgi_Info, cellGlobalId),
 		(ASN_TAG_CLASS_CONTEXT | (0 << 2)),
@@ -73,8 +130,180 @@ asn_TYPE_descriptor_t asn_DEF_cgi_Info_3 = {
 	&asn_SPC_cgi_Info_specs_3	/* Additional specs */
 };
 
+static const asn_INTEGER_enum_map_t asn_MAP_primaryPLMN_Suitable_r12_value2enum_12[] = {
+	{ 0,	4,	"true" }
+};
+static const unsigned int asn_MAP_primaryPLMN_Suitable_r12_enum2value_12[] = {
+	0	/* true(0) */
+};
+static const asn_INTEGER_specifics_t asn_SPC_primaryPLMN_Suitable_r12_specs_12 = {
+	asn_MAP_primaryPLMN_Suitable_r12_value2enum_12,	/* "tag" => N; sorted by tag */
+	asn_MAP_primaryPLMN_Suitable_r12_enum2value_12,	/* N => "tag"; sorted by N */
+	1,	/* Number of elements in the maps */
+	0,	/* Enumeration is not extensible */
+	1,	/* Strict enumeration */
+	0,	/* Native long size */
+	0
+};
+static const ber_tlv_tag_t asn_DEF_primaryPLMN_Suitable_r12_tags_12[] = {
+	(ASN_TAG_CLASS_CONTEXT | (3 << 2)),
+	(ASN_TAG_CLASS_UNIVERSAL | (10 << 2))
+};
+static /* Use -fall-defs-global to expose */
+asn_TYPE_descriptor_t asn_DEF_primaryPLMN_Suitable_r12_12 = {
+	"primaryPLMN-Suitable-r12",
+	"primaryPLMN-Suitable-r12",
+	&asn_OP_NativeEnumerated,
+	asn_DEF_primaryPLMN_Suitable_r12_tags_12,
+	sizeof(asn_DEF_primaryPLMN_Suitable_r12_tags_12)
+		/sizeof(asn_DEF_primaryPLMN_Suitable_r12_tags_12[0]) - 1, /* 1 */
+	asn_DEF_primaryPLMN_Suitable_r12_tags_12,	/* Same as above */
+	sizeof(asn_DEF_primaryPLMN_Suitable_r12_tags_12)
+		/sizeof(asn_DEF_primaryPLMN_Suitable_r12_tags_12[0]), /* 2 */
+	{ 0, &asn_PER_type_primaryPLMN_Suitable_r12_constr_12, NativeEnumerated_constraint },
+	0, 0,	/* Defined elsewhere */
+	&asn_SPC_primaryPLMN_Suitable_r12_specs_12	/* Additional specs */
+};
+
+static const asn_INTEGER_enum_map_t asn_MAP_freqBandIndicatorPriority_r13_value2enum_19[] = {
+	{ 0,	4,	"true" }
+};
+static const unsigned int asn_MAP_freqBandIndicatorPriority_r13_enum2value_19[] = {
+	0	/* true(0) */
+};
+static const asn_INTEGER_specifics_t asn_SPC_freqBandIndicatorPriority_r13_specs_19 = {
+	asn_MAP_freqBandIndicatorPriority_r13_value2enum_19,	/* "tag" => N; sorted by tag */
+	asn_MAP_freqBandIndicatorPriority_r13_enum2value_19,	/* N => "tag"; sorted by N */
+	1,	/* Number of elements in the maps */
+	0,	/* Enumeration is not extensible */
+	1,	/* Strict enumeration */
+	0,	/* Native long size */
+	0
+};
+static const ber_tlv_tag_t asn_DEF_freqBandIndicatorPriority_r13_tags_19[] = {
+	(ASN_TAG_CLASS_CONTEXT | (2 << 2)),
+	(ASN_TAG_CLASS_UNIVERSAL | (10 << 2))
+};
+static /* Use -fall-defs-global to expose */
+asn_TYPE_descriptor_t asn_DEF_freqBandIndicatorPriority_r13_19 = {
+	"freqBandIndicatorPriority-r13",
+	"freqBandIndicatorPriority-r13",
+	&asn_OP_NativeEnumerated,
+	asn_DEF_freqBandIndicatorPriority_r13_tags_19,
+	sizeof(asn_DEF_freqBandIndicatorPriority_r13_tags_19)
+		/sizeof(asn_DEF_freqBandIndicatorPriority_r13_tags_19[0]) - 1, /* 1 */
+	asn_DEF_freqBandIndicatorPriority_r13_tags_19,	/* Same as above */
+	sizeof(asn_DEF_freqBandIndicatorPriority_r13_tags_19)
+		/sizeof(asn_DEF_freqBandIndicatorPriority_r13_tags_19[0]), /* 2 */
+	{ 0, &asn_PER_type_freqBandIndicatorPriority_r13_constr_19, NativeEnumerated_constraint },
+	0, 0,	/* Defined elsewhere */
+	&asn_SPC_freqBandIndicatorPriority_r13_specs_19	/* Additional specs */
+};
+
+static asn_TYPE_member_t asn_MBR_cgi_Info_v1310_16[] = {
+	{ ATF_POINTER, 3, offsetof(struct MeasResultEUTRA__measResult__cgi_Info_v1310, freqBandIndicator_r13),
+		(ASN_TAG_CLASS_CONTEXT | (0 << 2)),
+		-1,	/* IMPLICIT tag at current level */
+		&asn_DEF_FreqBandIndicator_r11,
+		0,
+		{ 0, 0, 0 },
+		0, 0, /* No default value */
+		"freqBandIndicator-r13"
+		},
+	{ ATF_POINTER, 2, offsetof(struct MeasResultEUTRA__measResult__cgi_Info_v1310, multiBandInfoList_r13),
+		(ASN_TAG_CLASS_CONTEXT | (1 << 2)),
+		-1,	/* IMPLICIT tag at current level */
+		&asn_DEF_MultiBandInfoList_r11,
+		0,
+		{ 0, 0, 0 },
+		0, 0, /* No default value */
+		"multiBandInfoList-r13"
+		},
+	{ ATF_POINTER, 1, offsetof(struct MeasResultEUTRA__measResult__cgi_Info_v1310, freqBandIndicatorPriority_r13),
+		(ASN_TAG_CLASS_CONTEXT | (2 << 2)),
+		-1,	/* IMPLICIT tag at current level */
+		&asn_DEF_freqBandIndicatorPriority_r13_19,
+		0,
+		{ 0, 0, 0 },
+		0, 0, /* No default value */
+		"freqBandIndicatorPriority-r13"
+		},
+};
+static const int asn_MAP_cgi_Info_v1310_oms_16[] = { 0, 1, 2 };
+static const ber_tlv_tag_t asn_DEF_cgi_Info_v1310_tags_16[] = {
+	(ASN_TAG_CLASS_CONTEXT | (6 << 2)),
+	(ASN_TAG_CLASS_UNIVERSAL | (16 << 2))
+};
+static const asn_TYPE_tag2member_t asn_MAP_cgi_Info_v1310_tag2el_16[] = {
+    { (ASN_TAG_CLASS_CONTEXT | (0 << 2)), 0, 0, 0 }, /* freqBandIndicator-r13 */
+    { (ASN_TAG_CLASS_CONTEXT | (1 << 2)), 1, 0, 0 }, /* multiBandInfoList-r13 */
+    { (ASN_TAG_CLASS_CONTEXT | (2 << 2)), 2, 0, 0 } /* freqBandIndicatorPriority-r13 */
+};
+static asn_SEQUENCE_specifics_t asn_SPC_cgi_Info_v1310_specs_16 = {
+	sizeof(struct MeasResultEUTRA__measResult__cgi_Info_v1310),
+	offsetof(struct MeasResultEUTRA__measResult__cgi_Info_v1310, _asn_ctx),
+	asn_MAP_cgi_Info_v1310_tag2el_16,
+	3,	/* Count of tags in the map */
+	asn_MAP_cgi_Info_v1310_oms_16,	/* Optional members */
+	3, 0,	/* Root/Additions */
+	-1,	/* First extension addition */
+};
+static /* Use -fall-defs-global to expose */
+asn_TYPE_descriptor_t asn_DEF_cgi_Info_v1310_16 = {
+	"cgi-Info-v1310",
+	"cgi-Info-v1310",
+	&asn_OP_SEQUENCE,
+	asn_DEF_cgi_Info_v1310_tags_16,
+	sizeof(asn_DEF_cgi_Info_v1310_tags_16)
+		/sizeof(asn_DEF_cgi_Info_v1310_tags_16[0]) - 1, /* 1 */
+	asn_DEF_cgi_Info_v1310_tags_16,	/* Same as above */
+	sizeof(asn_DEF_cgi_Info_v1310_tags_16)
+		/sizeof(asn_DEF_cgi_Info_v1310_tags_16[0]), /* 2 */
+	{ 0, 0, SEQUENCE_constraint },
+	asn_MBR_cgi_Info_v1310_16,
+	3,	/* Elements count */
+	&asn_SPC_cgi_Info_v1310_specs_16	/* Additional specs */
+};
+
+static asn_TYPE_member_t asn_MBR_cgi_Info_5GC_r15_22[] = {
+	{ ATF_POINTER, 0, 0,
+		(ASN_TAG_CLASS_UNIVERSAL | (16 << 2)),
+		0,
+		&asn_DEF_CellAccessRelatedInfo_5GC_r15,
+		0,
+		{ 0, 0, 0 },
+		0, 0, /* No default value */
+		""
+		},
+};
+static const ber_tlv_tag_t asn_DEF_cgi_Info_5GC_r15_tags_22[] = {
+	(ASN_TAG_CLASS_CONTEXT | (8 << 2)),
+	(ASN_TAG_CLASS_UNIVERSAL | (16 << 2))
+};
+static asn_SET_OF_specifics_t asn_SPC_cgi_Info_5GC_r15_specs_22 = {
+	sizeof(struct MeasResultEUTRA__measResult__cgi_Info_5GC_r15),
+	offsetof(struct MeasResultEUTRA__measResult__cgi_Info_5GC_r15, _asn_ctx),
+	0,	/* XER encoding is XMLDelimitedItemList */
+};
+static /* Use -fall-defs-global to expose */
+asn_TYPE_descriptor_t asn_DEF_cgi_Info_5GC_r15_22 = {
+	"cgi-Info-5GC-r15",
+	"cgi-Info-5GC-r15",
+	&asn_OP_SEQUENCE_OF,
+	asn_DEF_cgi_Info_5GC_r15_tags_22,
+	sizeof(asn_DEF_cgi_Info_5GC_r15_tags_22)
+		/sizeof(asn_DEF_cgi_Info_5GC_r15_tags_22[0]) - 1, /* 1 */
+	asn_DEF_cgi_Info_5GC_r15_tags_22,	/* Same as above */
+	sizeof(asn_DEF_cgi_Info_5GC_r15_tags_22)
+		/sizeof(asn_DEF_cgi_Info_5GC_r15_tags_22[0]), /* 2 */
+	{ 0, &asn_PER_type_cgi_Info_5GC_r15_constr_22, SEQUENCE_OF_constraint },
+	asn_MBR_cgi_Info_5GC_r15_22,
+	1,	/* Single element */
+	&asn_SPC_cgi_Info_5GC_r15_specs_22	/* Additional specs */
+};
+
 static asn_TYPE_member_t asn_MBR_measResult_7[] = {
-	{ ATF_POINTER, 2, offsetof(struct MeasResultEUTRA__measResult, rsrpResult),
+	{ ATF_POINTER, 9, offsetof(struct MeasResultEUTRA__measResult, rsrpResult),
 		(ASN_TAG_CLASS_CONTEXT | (0 << 2)),
 		-1,	/* IMPLICIT tag at current level */
 		&asn_DEF_RSRP_Range,
@@ -83,7 +312,7 @@ static asn_TYPE_member_t asn_MBR_measResult_7[] = {
 		0, 0, /* No default value */
 		"rsrpResult"
 		},
-	{ ATF_POINTER, 1, offsetof(struct MeasResultEUTRA__measResult, rsrqResult),
+	{ ATF_POINTER, 8, offsetof(struct MeasResultEUTRA__measResult, rsrqResult),
 		(ASN_TAG_CLASS_CONTEXT | (1 << 2)),
 		-1,	/* IMPLICIT tag at current level */
 		&asn_DEF_RSRQ_Range,
@@ -92,23 +321,93 @@ static asn_TYPE_member_t asn_MBR_measResult_7[] = {
 		0, 0, /* No default value */
 		"rsrqResult"
 		},
+	{ ATF_POINTER, 7, offsetof(struct MeasResultEUTRA__measResult, additionalSI_Info_r9),
+		(ASN_TAG_CLASS_CONTEXT | (2 << 2)),
+		-1,	/* IMPLICIT tag at current level */
+		&asn_DEF_AdditionalSI_Info_r9,
+		0,
+		{ 0, 0, 0 },
+		0, 0, /* No default value */
+		"additionalSI-Info-r9"
+		},
+	{ ATF_POINTER, 6, offsetof(struct MeasResultEUTRA__measResult, primaryPLMN_Suitable_r12),
+		(ASN_TAG_CLASS_CONTEXT | (3 << 2)),
+		-1,	/* IMPLICIT tag at current level */
+		&asn_DEF_primaryPLMN_Suitable_r12_12,
+		0,
+		{ 0, 0, 0 },
+		0, 0, /* No default value */
+		"primaryPLMN-Suitable-r12"
+		},
+	{ ATF_POINTER, 5, offsetof(struct MeasResultEUTRA__measResult, measResult_v1250),
+		(ASN_TAG_CLASS_CONTEXT | (4 << 2)),
+		-1,	/* IMPLICIT tag at current level */
+		&asn_DEF_RSRQ_Range_v1250,
+		0,
+		{ 0, 0, 0 },
+		0, 0, /* No default value */
+		"measResult-v1250"
+		},
+	{ ATF_POINTER, 4, offsetof(struct MeasResultEUTRA__measResult, rs_sinr_Result_r13),
+		(ASN_TAG_CLASS_CONTEXT | (5 << 2)),
+		-1,	/* IMPLICIT tag at current level */
+		&asn_DEF_RS_SINR_Range_r13,
+		0,
+		{ 0, 0, 0 },
+		0, 0, /* No default value */
+		"rs-sinr-Result-r13"
+		},
+	{ ATF_POINTER, 3, offsetof(struct MeasResultEUTRA__measResult, cgi_Info_v1310),
+		(ASN_TAG_CLASS_CONTEXT | (6 << 2)),
+		0,
+		&asn_DEF_cgi_Info_v1310_16,
+		0,
+		{ 0, 0, 0 },
+		0, 0, /* No default value */
+		"cgi-Info-v1310"
+		},
+	{ ATF_POINTER, 2, offsetof(struct MeasResultEUTRA__measResult, measResult_v1360),
+		(ASN_TAG_CLASS_CONTEXT | (7 << 2)),
+		-1,	/* IMPLICIT tag at current level */
+		&asn_DEF_RSRP_Range_v1360,
+		0,
+		{ 0, 0, 0 },
+		0, 0, /* No default value */
+		"measResult-v1360"
+		},
+	{ ATF_POINTER, 1, offsetof(struct MeasResultEUTRA__measResult, cgi_Info_5GC_r15),
+		(ASN_TAG_CLASS_CONTEXT | (8 << 2)),
+		0,
+		&asn_DEF_cgi_Info_5GC_r15_22,
+		0,
+		{ 0, &asn_PER_memb_cgi_Info_5GC_r15_constr_22,  memb_cgi_Info_5GC_r15_constraint_7 },
+		0, 0, /* No default value */
+		"cgi-Info-5GC-r15"
+		},
 };
-static const int asn_MAP_measResult_oms_7[] = { 0, 1 };
+static const int asn_MAP_measResult_oms_7[] = { 0, 1, 2, 3, 4, 5, 6, 7, 8 };
 static const ber_tlv_tag_t asn_DEF_measResult_tags_7[] = {
 	(ASN_TAG_CLASS_CONTEXT | (2 << 2)),
 	(ASN_TAG_CLASS_UNIVERSAL | (16 << 2))
 };
 static const asn_TYPE_tag2member_t asn_MAP_measResult_tag2el_7[] = {
     { (ASN_TAG_CLASS_CONTEXT | (0 << 2)), 0, 0, 0 }, /* rsrpResult */
-    { (ASN_TAG_CLASS_CONTEXT | (1 << 2)), 1, 0, 0 } /* rsrqResult */
+    { (ASN_TAG_CLASS_CONTEXT | (1 << 2)), 1, 0, 0 }, /* rsrqResult */
+    { (ASN_TAG_CLASS_CONTEXT | (2 << 2)), 2, 0, 0 }, /* additionalSI-Info-r9 */
+    { (ASN_TAG_CLASS_CONTEXT | (3 << 2)), 3, 0, 0 }, /* primaryPLMN-Suitable-r12 */
+    { (ASN_TAG_CLASS_CONTEXT | (4 << 2)), 4, 0, 0 }, /* measResult-v1250 */
+    { (ASN_TAG_CLASS_CONTEXT | (5 << 2)), 5, 0, 0 }, /* rs-sinr-Result-r13 */
+    { (ASN_TAG_CLASS_CONTEXT | (6 << 2)), 6, 0, 0 }, /* cgi-Info-v1310 */
+    { (ASN_TAG_CLASS_CONTEXT | (7 << 2)), 7, 0, 0 }, /* measResult-v1360 */
+    { (ASN_TAG_CLASS_CONTEXT | (8 << 2)), 8, 0, 0 } /* cgi-Info-5GC-r15 */
 };
 static asn_SEQUENCE_specifics_t asn_SPC_measResult_specs_7 = {
 	sizeof(struct MeasResultEUTRA__measResult),
 	offsetof(struct MeasResultEUTRA__measResult, _asn_ctx),
 	asn_MAP_measResult_tag2el_7,
-	2,	/* Count of tags in the map */
+	9,	/* Count of tags in the map */
 	asn_MAP_measResult_oms_7,	/* Optional members */
-	2, 0,	/* Root/Additions */
+	2, 7,	/* Root/Additions */
 	2,	/* First extension addition */
 };
 static /* Use -fall-defs-global to expose */
@@ -124,7 +423,7 @@ asn_TYPE_descriptor_t asn_DEF_measResult_7 = {
 		/sizeof(asn_DEF_measResult_tags_7[0]), /* 2 */
 	{ 0, 0, SEQUENCE_constraint },
 	asn_MBR_measResult_7,
-	2,	/* Elements count */
+	9,	/* Elements count */
 	&asn_SPC_measResult_specs_7	/* Additional specs */
 };
 

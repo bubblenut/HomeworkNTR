@@ -7,6 +7,7 @@
 
 #include "UE-EUTRA-Capability.h"
 
+#include "UE-EUTRA-Capability-v920-IEs.h"
 #include "IRAT-ParametersUTRA-FDD.h"
 #include "IRAT-ParametersUTRA-TDD128.h"
 #include "IRAT-ParametersUTRA-TDD384.h"
@@ -185,34 +186,6 @@ asn_TYPE_descriptor_t asn_DEF_interRAT_Parameters_9 = {
 	&asn_SPC_interRAT_Parameters_specs_9	/* Additional specs */
 };
 
-static const ber_tlv_tag_t asn_DEF_nonCriticalExtension_tags_17[] = {
-	(ASN_TAG_CLASS_CONTEXT | (8 << 2)),
-	(ASN_TAG_CLASS_UNIVERSAL | (16 << 2))
-};
-static asn_SEQUENCE_specifics_t asn_SPC_nonCriticalExtension_specs_17 = {
-	sizeof(struct UE_EUTRA_Capability__nonCriticalExtension),
-	offsetof(struct UE_EUTRA_Capability__nonCriticalExtension, _asn_ctx),
-	0,	/* No top level tags */
-	0,	/* No tags in the map */
-	0, 0, 0,	/* Optional elements (not needed) */
-	-1,	/* First extension addition */
-};
-static /* Use -fall-defs-global to expose */
-asn_TYPE_descriptor_t asn_DEF_nonCriticalExtension_17 = {
-	"nonCriticalExtension",
-	"nonCriticalExtension",
-	&asn_OP_SEQUENCE,
-	asn_DEF_nonCriticalExtension_tags_17,
-	sizeof(asn_DEF_nonCriticalExtension_tags_17)
-		/sizeof(asn_DEF_nonCriticalExtension_tags_17[0]) - 1, /* 1 */
-	asn_DEF_nonCriticalExtension_tags_17,	/* Same as above */
-	sizeof(asn_DEF_nonCriticalExtension_tags_17)
-		/sizeof(asn_DEF_nonCriticalExtension_tags_17[0]), /* 2 */
-	{ 0, 0, SEQUENCE_constraint },
-	0, 0,	/* No members */
-	&asn_SPC_nonCriticalExtension_specs_17	/* Additional specs */
-};
-
 static asn_TYPE_member_t asn_MBR_UE_EUTRA_Capability_1[] = {
 	{ ATF_NOFLAGS, 0, offsetof(struct UE_EUTRA_Capability, accessStratumRelease),
 		(ASN_TAG_CLASS_CONTEXT | (0 << 2)),
@@ -288,8 +261,8 @@ static asn_TYPE_member_t asn_MBR_UE_EUTRA_Capability_1[] = {
 		},
 	{ ATF_POINTER, 1, offsetof(struct UE_EUTRA_Capability, nonCriticalExtension),
 		(ASN_TAG_CLASS_CONTEXT | (8 << 2)),
-		0,
-		&asn_DEF_nonCriticalExtension_17,
+		-1,	/* IMPLICIT tag at current level */
+		&asn_DEF_UE_EUTRA_Capability_v920_IEs,
 		0,
 		{ 0, 0, 0 },
 		0, 0, /* No default value */

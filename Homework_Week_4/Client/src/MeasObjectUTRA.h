@@ -14,6 +14,7 @@
 /* Including external dependencies */
 #include "ARFCN-ValueUTRA.h"
 #include "Q-OffsetRangeInterRAT.h"
+#include <BOOLEAN.h>
 #include "CellsToAddModListUTRA-FDD.h"
 #include "CellsToAddModListUTRA-TDD.h"
 #include <constr_CHOICE.h>
@@ -39,6 +40,7 @@ typedef enum MeasObjectUTRA__cellForWhichToReportCGI_PR {
 
 /* Forward declarations */
 struct CellIndexList;
+struct CSG_AllowedReportingCells_r9;
 
 /* MeasObjectUTRA */
 typedef struct MeasObjectUTRA {
@@ -69,6 +71,8 @@ typedef struct MeasObjectUTRA {
 	 * This type is extensible,
 	 * possible extensions are below.
 	 */
+	struct CSG_AllowedReportingCells_r9	*csg_allowedReportingCells_v930	/* OPTIONAL */;
+	BOOLEAN_t	*reducedMeasPerformance_r12	/* OPTIONAL */;
 	
 	/* Context for parsing across buffer boundaries */
 	asn_struct_ctx_t _asn_ctx;
@@ -77,7 +81,7 @@ typedef struct MeasObjectUTRA {
 /* Implementation */
 extern asn_TYPE_descriptor_t asn_DEF_MeasObjectUTRA;
 extern asn_SEQUENCE_specifics_t asn_SPC_MeasObjectUTRA_specs_1;
-extern asn_TYPE_member_t asn_MBR_MeasObjectUTRA_1[5];
+extern asn_TYPE_member_t asn_MBR_MeasObjectUTRA_1[7];
 
 #ifdef __cplusplus
 }

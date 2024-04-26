@@ -39,7 +39,7 @@ static asn_per_constraints_t asn_PER_memb_hnb_Name_constr_2 CC_NOTUSED = {
 	0, 0	/* No PER value map */
 };
 asn_TYPE_member_t asn_MBR_SystemInformationBlockType9_1[] = {
-	{ ATF_POINTER, 1, offsetof(struct SystemInformationBlockType9, hnb_Name),
+	{ ATF_POINTER, 2, offsetof(struct SystemInformationBlockType9, hnb_Name),
 		(ASN_TAG_CLASS_CONTEXT | (0 << 2)),
 		-1,	/* IMPLICIT tag at current level */
 		&asn_DEF_OCTET_STRING,
@@ -48,21 +48,31 @@ asn_TYPE_member_t asn_MBR_SystemInformationBlockType9_1[] = {
 		0, 0, /* No default value */
 		"hnb-Name"
 		},
+	{ ATF_POINTER, 1, offsetof(struct SystemInformationBlockType9, lateNonCriticalExtension),
+		(ASN_TAG_CLASS_CONTEXT | (1 << 2)),
+		-1,	/* IMPLICIT tag at current level */
+		&asn_DEF_OCTET_STRING,
+		0,
+		{ 0, 0, 0 },
+		0, 0, /* No default value */
+		"lateNonCriticalExtension"
+		},
 };
-static const int asn_MAP_SystemInformationBlockType9_oms_1[] = { 0 };
+static const int asn_MAP_SystemInformationBlockType9_oms_1[] = { 0, 1 };
 static const ber_tlv_tag_t asn_DEF_SystemInformationBlockType9_tags_1[] = {
 	(ASN_TAG_CLASS_UNIVERSAL | (16 << 2))
 };
 static const asn_TYPE_tag2member_t asn_MAP_SystemInformationBlockType9_tag2el_1[] = {
-    { (ASN_TAG_CLASS_CONTEXT | (0 << 2)), 0, 0, 0 } /* hnb-Name */
+    { (ASN_TAG_CLASS_CONTEXT | (0 << 2)), 0, 0, 0 }, /* hnb-Name */
+    { (ASN_TAG_CLASS_CONTEXT | (1 << 2)), 1, 0, 0 } /* lateNonCriticalExtension */
 };
 asn_SEQUENCE_specifics_t asn_SPC_SystemInformationBlockType9_specs_1 = {
 	sizeof(struct SystemInformationBlockType9),
 	offsetof(struct SystemInformationBlockType9, _asn_ctx),
 	asn_MAP_SystemInformationBlockType9_tag2el_1,
-	1,	/* Count of tags in the map */
+	2,	/* Count of tags in the map */
 	asn_MAP_SystemInformationBlockType9_oms_1,	/* Optional members */
-	1, 0,	/* Root/Additions */
+	1, 1,	/* Root/Additions */
 	1,	/* First extension addition */
 };
 asn_TYPE_descriptor_t asn_DEF_SystemInformationBlockType9 = {
@@ -77,7 +87,7 @@ asn_TYPE_descriptor_t asn_DEF_SystemInformationBlockType9 = {
 		/sizeof(asn_DEF_SystemInformationBlockType9_tags_1[0]), /* 1 */
 	{ 0, 0, SEQUENCE_constraint },
 	asn_MBR_SystemInformationBlockType9_1,
-	1,	/* Elements count */
+	2,	/* Elements count */
 	&asn_SPC_SystemInformationBlockType9_specs_1	/* Additional specs */
 };
 

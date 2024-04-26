@@ -8,6 +8,7 @@
 #include "Paging.h"
 
 #include "PagingRecordList.h"
+#include "Paging-v890-IEs.h"
 /*
  * This type is implemented using NativeEnumerated,
  * so here we adjust the DEF accordingly.
@@ -96,34 +97,6 @@ asn_TYPE_descriptor_t asn_DEF_etws_Indication_5 = {
 	&asn_SPC_etws_Indication_specs_5	/* Additional specs */
 };
 
-static const ber_tlv_tag_t asn_DEF_nonCriticalExtension_tags_7[] = {
-	(ASN_TAG_CLASS_CONTEXT | (3 << 2)),
-	(ASN_TAG_CLASS_UNIVERSAL | (16 << 2))
-};
-static asn_SEQUENCE_specifics_t asn_SPC_nonCriticalExtension_specs_7 = {
-	sizeof(struct Paging__nonCriticalExtension),
-	offsetof(struct Paging__nonCriticalExtension, _asn_ctx),
-	0,	/* No top level tags */
-	0,	/* No tags in the map */
-	0, 0, 0,	/* Optional elements (not needed) */
-	-1,	/* First extension addition */
-};
-static /* Use -fall-defs-global to expose */
-asn_TYPE_descriptor_t asn_DEF_nonCriticalExtension_7 = {
-	"nonCriticalExtension",
-	"nonCriticalExtension",
-	&asn_OP_SEQUENCE,
-	asn_DEF_nonCriticalExtension_tags_7,
-	sizeof(asn_DEF_nonCriticalExtension_tags_7)
-		/sizeof(asn_DEF_nonCriticalExtension_tags_7[0]) - 1, /* 1 */
-	asn_DEF_nonCriticalExtension_tags_7,	/* Same as above */
-	sizeof(asn_DEF_nonCriticalExtension_tags_7)
-		/sizeof(asn_DEF_nonCriticalExtension_tags_7[0]), /* 2 */
-	{ 0, 0, SEQUENCE_constraint },
-	0, 0,	/* No members */
-	&asn_SPC_nonCriticalExtension_specs_7	/* Additional specs */
-};
-
 asn_TYPE_member_t asn_MBR_Paging_1[] = {
 	{ ATF_POINTER, 4, offsetof(struct Paging, pagingRecordList),
 		(ASN_TAG_CLASS_CONTEXT | (0 << 2)),
@@ -154,8 +127,8 @@ asn_TYPE_member_t asn_MBR_Paging_1[] = {
 		},
 	{ ATF_POINTER, 1, offsetof(struct Paging, nonCriticalExtension),
 		(ASN_TAG_CLASS_CONTEXT | (3 << 2)),
-		0,
-		&asn_DEF_nonCriticalExtension_7,
+		-1,	/* IMPLICIT tag at current level */
+		&asn_DEF_Paging_v890_IEs,
 		0,
 		{ 0, 0, 0 },
 		0, 0, /* No default value */

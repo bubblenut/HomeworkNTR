@@ -26,8 +26,8 @@ typedef enum Handover__targetRAT_Type {
 	Handover__targetRAT_Type_geran	= 1,
 	Handover__targetRAT_Type_cdma2000_1XRTT	= 2,
 	Handover__targetRAT_Type_cdma2000_HRPD	= 3,
-	Handover__targetRAT_Type_spare4	= 4,
-	Handover__targetRAT_Type_spare3	= 5,
+	Handover__targetRAT_Type_nr	= 4,
+	Handover__targetRAT_Type_eutra	= 5,
 	Handover__targetRAT_Type_spare2	= 6,
 	Handover__targetRAT_Type_spare1	= 7
 	/*

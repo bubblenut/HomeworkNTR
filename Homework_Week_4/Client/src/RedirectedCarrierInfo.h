@@ -16,6 +16,8 @@
 #include "CarrierFreqsGERAN.h"
 #include "ARFCN-ValueUTRA.h"
 #include "CarrierFreqCDMA2000.h"
+#include "CarrierFreqListUTRA-TDD-r10.h"
+#include "CarrierInfoNR-r15.h"
 #include <constr_CHOICE.h>
 
 #ifdef __cplusplus
@@ -30,9 +32,10 @@ typedef enum RedirectedCarrierInfo_PR {
 	RedirectedCarrierInfo_PR_utra_FDD,
 	RedirectedCarrierInfo_PR_utra_TDD,
 	RedirectedCarrierInfo_PR_cdma2000_HRPD,
-	RedirectedCarrierInfo_PR_cdma2000_1xRTT
+	RedirectedCarrierInfo_PR_cdma2000_1xRTT,
 	/* Extensions may appear below */
-	
+	RedirectedCarrierInfo_PR_utra_TDD_r10,
+	RedirectedCarrierInfo_PR_nr_r15
 } RedirectedCarrierInfo_PR;
 
 /* RedirectedCarrierInfo */
@@ -49,6 +52,8 @@ typedef struct RedirectedCarrierInfo {
 		 * This type is extensible,
 		 * possible extensions are below.
 		 */
+		CarrierFreqListUTRA_TDD_r10_t	 utra_TDD_r10;
+		CarrierInfoNR_r15_t	 nr_r15;
 	} choice;
 	
 	/* Context for parsing across buffer boundaries */
@@ -58,7 +63,7 @@ typedef struct RedirectedCarrierInfo {
 /* Implementation */
 extern asn_TYPE_descriptor_t asn_DEF_RedirectedCarrierInfo;
 extern asn_CHOICE_specifics_t asn_SPC_RedirectedCarrierInfo_specs_1;
-extern asn_TYPE_member_t asn_MBR_RedirectedCarrierInfo_1[6];
+extern asn_TYPE_member_t asn_MBR_RedirectedCarrierInfo_1[8];
 extern asn_per_constraints_t asn_PER_type_RedirectedCarrierInfo_constr_1;
 
 #ifdef __cplusplus

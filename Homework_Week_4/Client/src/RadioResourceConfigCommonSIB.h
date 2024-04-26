@@ -28,6 +28,27 @@
 extern "C" {
 #endif
 
+/* Forward declarations */
+struct UplinkPowerControlCommon_v1020;
+struct RACH_ConfigCommon_v1250;
+struct PUSCH_ConfigCommon_v1270;
+struct BCCH_Config_v1310;
+struct PCCH_Config_v1310;
+struct FreqHoppingParameters_r13;
+struct PDSCH_ConfigCommon_v1310;
+struct PUSCH_ConfigCommon_v1310;
+struct PRACH_ConfigSIB_v1310;
+struct PUCCH_ConfigCommon_v1310;
+struct HighSpeedConfig_r14;
+struct PRACH_Config_v1430;
+struct PUCCH_ConfigCommon_v1430;
+struct PRACH_ConfigSIB_v1530;
+struct RSS_Config_r15;
+struct WUS_Config_r15;
+struct HighSpeedConfig_v1530;
+struct UplinkPowerControlCommon_v1530;
+struct WUS_Config_v1560;
+
 /* RadioResourceConfigCommonSIB */
 typedef struct RadioResourceConfigCommonSIB {
 	RACH_ConfigCommon_t	 rach_ConfigCommon;
@@ -44,6 +65,25 @@ typedef struct RadioResourceConfigCommonSIB {
 	 * This type is extensible,
 	 * possible extensions are below.
 	 */
+	struct UplinkPowerControlCommon_v1020	*uplinkPowerControlCommon_v1020	/* OPTIONAL */;
+	struct RACH_ConfigCommon_v1250	*rach_ConfigCommon_v1250	/* OPTIONAL */;
+	struct PUSCH_ConfigCommon_v1270	*pusch_ConfigCommon_v1270	/* OPTIONAL */;
+	struct BCCH_Config_v1310	*bcch_Config_v1310	/* OPTIONAL */;
+	struct PCCH_Config_v1310	*pcch_Config_v1310	/* OPTIONAL */;
+	struct FreqHoppingParameters_r13	*freqHoppingParameters_r13	/* OPTIONAL */;
+	struct PDSCH_ConfigCommon_v1310	*pdsch_ConfigCommon_v1310	/* OPTIONAL */;
+	struct PUSCH_ConfigCommon_v1310	*pusch_ConfigCommon_v1310	/* OPTIONAL */;
+	struct PRACH_ConfigSIB_v1310	*prach_ConfigCommon_v1310	/* OPTIONAL */;
+	struct PUCCH_ConfigCommon_v1310	*pucch_ConfigCommon_v1310	/* OPTIONAL */;
+	struct HighSpeedConfig_r14	*highSpeedConfig_r14	/* OPTIONAL */;
+	struct PRACH_Config_v1430	*prach_Config_v1430	/* OPTIONAL */;
+	struct PUCCH_ConfigCommon_v1430	*pucch_ConfigCommon_v1430	/* OPTIONAL */;
+	struct PRACH_ConfigSIB_v1530	*prach_Config_v1530	/* OPTIONAL */;
+	struct RSS_Config_r15	*ce_RSS_Config_r15	/* OPTIONAL */;
+	struct WUS_Config_r15	*wus_Config_r15	/* OPTIONAL */;
+	struct HighSpeedConfig_v1530	*highSpeedConfig_v1530	/* OPTIONAL */;
+	struct UplinkPowerControlCommon_v1530	*uplinkPowerControlCommon_v1540	/* OPTIONAL */;
+	struct WUS_Config_v1560	*wus_Config_v1560	/* OPTIONAL */;
 	
 	/* Context for parsing across buffer boundaries */
 	asn_struct_ctx_t _asn_ctx;
@@ -52,7 +92,7 @@ typedef struct RadioResourceConfigCommonSIB {
 /* Implementation */
 extern asn_TYPE_descriptor_t asn_DEF_RadioResourceConfigCommonSIB;
 extern asn_SEQUENCE_specifics_t asn_SPC_RadioResourceConfigCommonSIB_specs_1;
-extern asn_TYPE_member_t asn_MBR_RadioResourceConfigCommonSIB_1[10];
+extern asn_TYPE_member_t asn_MBR_RadioResourceConfigCommonSIB_1[29];
 
 #ifdef __cplusplus
 }

@@ -51,7 +51,7 @@ typedef enum T_Reordering {
 	T_Reordering_ms180	= 28,
 	T_Reordering_ms190	= 29,
 	T_Reordering_ms200	= 30,
-	T_Reordering_spare1	= 31
+	T_Reordering_ms1600_v1310	= 31
 } e_T_Reordering;
 
 /* T-Reordering */

@@ -43,6 +43,31 @@ memb_systemFrameNumber_constraint_1(const asn_TYPE_descriptor_t *td, const void 
 }
 
 static int
+memb_schedulingInfoSIB1_BR_r13_constraint_1(const asn_TYPE_descriptor_t *td, const void *sptr,
+			asn_app_constraint_failed_f *ctfailcb, void *app_key) {
+	long value;
+	
+	if(!sptr) {
+		ASN__CTFAIL(app_key, td, sptr,
+			"%s: value not given (%s:%d)",
+			td->name, __FILE__, __LINE__);
+		return -1;
+	}
+	
+	value = *(const long *)sptr;
+	
+	if((value >= 0 && value <= 31)) {
+		/* Constraint check succeeded */
+		return 0;
+	} else {
+		ASN__CTFAIL(app_key, td, sptr,
+			"%s: constraint failed (%s:%d)",
+			td->name, __FILE__, __LINE__);
+		return -1;
+	}
+}
+
+static int
 memb_spare_constraint_1(const asn_TYPE_descriptor_t *td, const void *sptr,
 			asn_app_constraint_failed_f *ctfailcb, void *app_key) {
 	const BIT_STRING_t *st = (const BIT_STRING_t *)sptr;
@@ -62,7 +87,7 @@ memb_spare_constraint_1(const asn_TYPE_descriptor_t *td, const void *sptr,
 		size = 0;
 	}
 	
-	if((size == 10)) {
+	if((size == 4)) {
 		/* Constraint check succeeded */
 		return 0;
 	} else {
@@ -83,9 +108,14 @@ static asn_per_constraints_t asn_PER_memb_systemFrameNumber_constr_10 CC_NOTUSED
 	{ APC_CONSTRAINED,	 0,  0,  8,  8 }	/* (SIZE(8..8)) */,
 	0, 0	/* No PER value map */
 };
-static asn_per_constraints_t asn_PER_memb_spare_constr_11 CC_NOTUSED = {
+static asn_per_constraints_t asn_PER_memb_schedulingInfoSIB1_BR_r13_constr_11 CC_NOTUSED = {
+	{ APC_CONSTRAINED,	 5,  5,  0,  31 }	/* (0..31) */,
 	{ APC_UNCONSTRAINED,	-1, -1,  0,  0 },
-	{ APC_CONSTRAINED,	 0,  0,  10,  10 }	/* (SIZE(10..10)) */,
+	0, 0	/* No PER value map */
+};
+static asn_per_constraints_t asn_PER_memb_spare_constr_13 CC_NOTUSED = {
+	{ APC_UNCONSTRAINED,	-1, -1,  0,  0 },
+	{ APC_CONSTRAINED,	 0,  0,  4,  4 }	/* (SIZE(4..4)) */,
 	0, 0	/* No PER value map */
 };
 static const asn_INTEGER_enum_map_t asn_MAP_dl_Bandwidth_value2enum_2[] = {
@@ -161,12 +191,30 @@ asn_TYPE_member_t asn_MBR_MasterInformationBlock_1[] = {
 		0, 0, /* No default value */
 		"systemFrameNumber"
 		},
-	{ ATF_NOFLAGS, 0, offsetof(struct MasterInformationBlock, spare),
+	{ ATF_NOFLAGS, 0, offsetof(struct MasterInformationBlock, schedulingInfoSIB1_BR_r13),
 		(ASN_TAG_CLASS_CONTEXT | (3 << 2)),
+		-1,	/* IMPLICIT tag at current level */
+		&asn_DEF_NativeInteger,
+		0,
+		{ 0, &asn_PER_memb_schedulingInfoSIB1_BR_r13_constr_11,  memb_schedulingInfoSIB1_BR_r13_constraint_1 },
+		0, 0, /* No default value */
+		"schedulingInfoSIB1-BR-r13"
+		},
+	{ ATF_NOFLAGS, 0, offsetof(struct MasterInformationBlock, systemInfoUnchanged_BR_r15),
+		(ASN_TAG_CLASS_CONTEXT | (4 << 2)),
+		-1,	/* IMPLICIT tag at current level */
+		&asn_DEF_BOOLEAN,
+		0,
+		{ 0, 0, 0 },
+		0, 0, /* No default value */
+		"systemInfoUnchanged-BR-r15"
+		},
+	{ ATF_NOFLAGS, 0, offsetof(struct MasterInformationBlock, spare),
+		(ASN_TAG_CLASS_CONTEXT | (5 << 2)),
 		-1,	/* IMPLICIT tag at current level */
 		&asn_DEF_BIT_STRING,
 		0,
-		{ 0, &asn_PER_memb_spare_constr_11,  memb_spare_constraint_1 },
+		{ 0, &asn_PER_memb_spare_constr_13,  memb_spare_constraint_1 },
 		0, 0, /* No default value */
 		"spare"
 		},
@@ -178,13 +226,15 @@ static const asn_TYPE_tag2member_t asn_MAP_MasterInformationBlock_tag2el_1[] = {
     { (ASN_TAG_CLASS_CONTEXT | (0 << 2)), 0, 0, 0 }, /* dl-Bandwidth */
     { (ASN_TAG_CLASS_CONTEXT | (1 << 2)), 1, 0, 0 }, /* phich-Config */
     { (ASN_TAG_CLASS_CONTEXT | (2 << 2)), 2, 0, 0 }, /* systemFrameNumber */
-    { (ASN_TAG_CLASS_CONTEXT | (3 << 2)), 3, 0, 0 } /* spare */
+    { (ASN_TAG_CLASS_CONTEXT | (3 << 2)), 3, 0, 0 }, /* schedulingInfoSIB1-BR-r13 */
+    { (ASN_TAG_CLASS_CONTEXT | (4 << 2)), 4, 0, 0 }, /* systemInfoUnchanged-BR-r15 */
+    { (ASN_TAG_CLASS_CONTEXT | (5 << 2)), 5, 0, 0 } /* spare */
 };
 asn_SEQUENCE_specifics_t asn_SPC_MasterInformationBlock_specs_1 = {
 	sizeof(struct MasterInformationBlock),
 	offsetof(struct MasterInformationBlock, _asn_ctx),
 	asn_MAP_MasterInformationBlock_tag2el_1,
-	4,	/* Count of tags in the map */
+	6,	/* Count of tags in the map */
 	0, 0, 0,	/* Optional elements (not needed) */
 	-1,	/* First extension addition */
 };
@@ -200,7 +250,7 @@ asn_TYPE_descriptor_t asn_DEF_MasterInformationBlock = {
 		/sizeof(asn_DEF_MasterInformationBlock_tags_1[0]), /* 1 */
 	{ 0, 0, SEQUENCE_constraint },
 	asn_MBR_MasterInformationBlock_1,
-	4,	/* Elements count */
+	6,	/* Elements count */
 	&asn_SPC_MasterInformationBlock_specs_1	/* Additional specs */
 };
 

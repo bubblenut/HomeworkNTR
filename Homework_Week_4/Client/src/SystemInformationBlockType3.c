@@ -7,6 +7,14 @@
 
 #include "SystemInformationBlockType3.h"
 
+#include "CellReselectionServingFreqInfo-v1310.h"
+#include "RedistributionServingInfo-r13.h"
+#include "CellSelectionInfoCE-r13.h"
+#include "CellSelectionInfoCE1-r13.h"
+#include "CellSelectionInfoCE1-v1360.h"
+#include "CellReselectionInfoCommon-v1460.h"
+#include "CellReselectionInfoHSDN-r15.h"
+#include "CellSelectionInfoCE-v1530.h"
 #include "SpeedStateScaleFactors.h"
 /*
  * This type is implemented using NativeEnumerated,
@@ -20,6 +28,31 @@
  * This type is implemented using NativeEnumerated,
  * so here we adjust the DEF accordingly.
  */
+/*
+ * This type is implemented using NativeEnumerated,
+ * so here we adjust the DEF accordingly.
+ */
+static int
+memb_lateNonCriticalExtension_constraint_1(const asn_TYPE_descriptor_t *td, const void *sptr,
+			asn_app_constraint_failed_f *ctfailcb, void *app_key) {
+	const OCTET_STRING_t *st = (const OCTET_STRING_t *)sptr;
+	
+	if(!sptr) {
+		ASN__CTFAIL(app_key, td, sptr,
+			"%s: value not given (%s:%d)",
+			td->name, __FILE__, __LINE__);
+		return -1;
+	}
+	
+	
+	if(1 /* No applicable constraints whatsoever */) {
+		(void)st; /* Unused variable */
+		/* Nothing is here. See below */
+	}
+	
+	return td->encoding_constraints.general_constraints(td, sptr, ctfailcb, app_key);
+}
+
 static asn_per_constraints_t asn_PER_type_q_Hyst_constr_3 CC_NOTUSED = {
 	{ APC_CONSTRAINED,	 4,  4,  0,  15 }	/* (0..15) */,
 	{ APC_UNCONSTRAINED,	-1, -1,  0,  0 },
@@ -33,6 +66,16 @@ static asn_per_constraints_t asn_PER_type_sf_Medium_constr_23 CC_NOTUSED = {
 static asn_per_constraints_t asn_PER_type_sf_High_constr_28 CC_NOTUSED = {
 	{ APC_CONSTRAINED,	 2,  2,  0,  3 }	/* (0..3) */,
 	{ APC_UNCONSTRAINED,	-1, -1,  0,  0 },
+	0, 0	/* No PER value map */
+};
+static asn_per_constraints_t asn_PER_type_crs_IntfMitigNeighCellsCE_r15_constr_67 CC_NOTUSED = {
+	{ APC_CONSTRAINED,	 0,  0,  0,  0 }	/* (0..0) */,
+	{ APC_UNCONSTRAINED,	-1, -1,  0,  0 },
+	0, 0	/* No PER value map */
+};
+static asn_per_constraints_t asn_PER_memb_lateNonCriticalExtension_constr_47 CC_NOTUSED = {
+	{ APC_UNCONSTRAINED,	-1, -1,  0,  0 },
+	{ APC_SEMI_CONSTRAINED,	-1, -1,  0,  0 }	/* (SIZE(0..MAX)) */,
 	0, 0	/* No PER value map */
 };
 static const asn_INTEGER_enum_map_t asn_MAP_q_Hyst_value2enum_3[] = {
@@ -523,6 +566,147 @@ asn_TYPE_descriptor_t asn_DEF_intraFreqCellReselectionInfo_37 = {
 	&asn_SPC_intraFreqCellReselectionInfo_specs_37	/* Additional specs */
 };
 
+static asn_TYPE_member_t asn_MBR_s_IntraSearch_v920_48[] = {
+	{ ATF_NOFLAGS, 0, offsetof(struct SystemInformationBlockType3__s_IntraSearch_v920, s_IntraSearchP_r9),
+		(ASN_TAG_CLASS_CONTEXT | (0 << 2)),
+		-1,	/* IMPLICIT tag at current level */
+		&asn_DEF_ReselectionThreshold,
+		0,
+		{ 0, 0, 0 },
+		0, 0, /* No default value */
+		"s-IntraSearchP-r9"
+		},
+	{ ATF_NOFLAGS, 0, offsetof(struct SystemInformationBlockType3__s_IntraSearch_v920, s_IntraSearchQ_r9),
+		(ASN_TAG_CLASS_CONTEXT | (1 << 2)),
+		-1,	/* IMPLICIT tag at current level */
+		&asn_DEF_ReselectionThresholdQ_r9,
+		0,
+		{ 0, 0, 0 },
+		0, 0, /* No default value */
+		"s-IntraSearchQ-r9"
+		},
+};
+static const ber_tlv_tag_t asn_DEF_s_IntraSearch_v920_tags_48[] = {
+	(ASN_TAG_CLASS_CONTEXT | (4 << 2)),
+	(ASN_TAG_CLASS_UNIVERSAL | (16 << 2))
+};
+static const asn_TYPE_tag2member_t asn_MAP_s_IntraSearch_v920_tag2el_48[] = {
+    { (ASN_TAG_CLASS_CONTEXT | (0 << 2)), 0, 0, 0 }, /* s-IntraSearchP-r9 */
+    { (ASN_TAG_CLASS_CONTEXT | (1 << 2)), 1, 0, 0 } /* s-IntraSearchQ-r9 */
+};
+static asn_SEQUENCE_specifics_t asn_SPC_s_IntraSearch_v920_specs_48 = {
+	sizeof(struct SystemInformationBlockType3__s_IntraSearch_v920),
+	offsetof(struct SystemInformationBlockType3__s_IntraSearch_v920, _asn_ctx),
+	asn_MAP_s_IntraSearch_v920_tag2el_48,
+	2,	/* Count of tags in the map */
+	0, 0, 0,	/* Optional elements (not needed) */
+	-1,	/* First extension addition */
+};
+static /* Use -fall-defs-global to expose */
+asn_TYPE_descriptor_t asn_DEF_s_IntraSearch_v920_48 = {
+	"s-IntraSearch-v920",
+	"s-IntraSearch-v920",
+	&asn_OP_SEQUENCE,
+	asn_DEF_s_IntraSearch_v920_tags_48,
+	sizeof(asn_DEF_s_IntraSearch_v920_tags_48)
+		/sizeof(asn_DEF_s_IntraSearch_v920_tags_48[0]) - 1, /* 1 */
+	asn_DEF_s_IntraSearch_v920_tags_48,	/* Same as above */
+	sizeof(asn_DEF_s_IntraSearch_v920_tags_48)
+		/sizeof(asn_DEF_s_IntraSearch_v920_tags_48[0]), /* 2 */
+	{ 0, 0, SEQUENCE_constraint },
+	asn_MBR_s_IntraSearch_v920_48,
+	2,	/* Elements count */
+	&asn_SPC_s_IntraSearch_v920_specs_48	/* Additional specs */
+};
+
+static asn_TYPE_member_t asn_MBR_s_NonIntraSearch_v920_51[] = {
+	{ ATF_NOFLAGS, 0, offsetof(struct SystemInformationBlockType3__s_NonIntraSearch_v920, s_NonIntraSearchP_r9),
+		(ASN_TAG_CLASS_CONTEXT | (0 << 2)),
+		-1,	/* IMPLICIT tag at current level */
+		&asn_DEF_ReselectionThreshold,
+		0,
+		{ 0, 0, 0 },
+		0, 0, /* No default value */
+		"s-NonIntraSearchP-r9"
+		},
+	{ ATF_NOFLAGS, 0, offsetof(struct SystemInformationBlockType3__s_NonIntraSearch_v920, s_NonIntraSearchQ_r9),
+		(ASN_TAG_CLASS_CONTEXT | (1 << 2)),
+		-1,	/* IMPLICIT tag at current level */
+		&asn_DEF_ReselectionThresholdQ_r9,
+		0,
+		{ 0, 0, 0 },
+		0, 0, /* No default value */
+		"s-NonIntraSearchQ-r9"
+		},
+};
+static const ber_tlv_tag_t asn_DEF_s_NonIntraSearch_v920_tags_51[] = {
+	(ASN_TAG_CLASS_CONTEXT | (5 << 2)),
+	(ASN_TAG_CLASS_UNIVERSAL | (16 << 2))
+};
+static const asn_TYPE_tag2member_t asn_MAP_s_NonIntraSearch_v920_tag2el_51[] = {
+    { (ASN_TAG_CLASS_CONTEXT | (0 << 2)), 0, 0, 0 }, /* s-NonIntraSearchP-r9 */
+    { (ASN_TAG_CLASS_CONTEXT | (1 << 2)), 1, 0, 0 } /* s-NonIntraSearchQ-r9 */
+};
+static asn_SEQUENCE_specifics_t asn_SPC_s_NonIntraSearch_v920_specs_51 = {
+	sizeof(struct SystemInformationBlockType3__s_NonIntraSearch_v920),
+	offsetof(struct SystemInformationBlockType3__s_NonIntraSearch_v920, _asn_ctx),
+	asn_MAP_s_NonIntraSearch_v920_tag2el_51,
+	2,	/* Count of tags in the map */
+	0, 0, 0,	/* Optional elements (not needed) */
+	-1,	/* First extension addition */
+};
+static /* Use -fall-defs-global to expose */
+asn_TYPE_descriptor_t asn_DEF_s_NonIntraSearch_v920_51 = {
+	"s-NonIntraSearch-v920",
+	"s-NonIntraSearch-v920",
+	&asn_OP_SEQUENCE,
+	asn_DEF_s_NonIntraSearch_v920_tags_51,
+	sizeof(asn_DEF_s_NonIntraSearch_v920_tags_51)
+		/sizeof(asn_DEF_s_NonIntraSearch_v920_tags_51[0]) - 1, /* 1 */
+	asn_DEF_s_NonIntraSearch_v920_tags_51,	/* Same as above */
+	sizeof(asn_DEF_s_NonIntraSearch_v920_tags_51)
+		/sizeof(asn_DEF_s_NonIntraSearch_v920_tags_51[0]), /* 2 */
+	{ 0, 0, SEQUENCE_constraint },
+	asn_MBR_s_NonIntraSearch_v920_51,
+	2,	/* Elements count */
+	&asn_SPC_s_NonIntraSearch_v920_specs_51	/* Additional specs */
+};
+
+static const asn_INTEGER_enum_map_t asn_MAP_crs_IntfMitigNeighCellsCE_r15_value2enum_67[] = {
+	{ 0,	7,	"enabled" }
+};
+static const unsigned int asn_MAP_crs_IntfMitigNeighCellsCE_r15_enum2value_67[] = {
+	0	/* enabled(0) */
+};
+static const asn_INTEGER_specifics_t asn_SPC_crs_IntfMitigNeighCellsCE_r15_specs_67 = {
+	asn_MAP_crs_IntfMitigNeighCellsCE_r15_value2enum_67,	/* "tag" => N; sorted by tag */
+	asn_MAP_crs_IntfMitigNeighCellsCE_r15_enum2value_67,	/* N => "tag"; sorted by N */
+	1,	/* Number of elements in the maps */
+	0,	/* Enumeration is not extensible */
+	1,	/* Strict enumeration */
+	0,	/* Native long size */
+	0
+};
+static const ber_tlv_tag_t asn_DEF_crs_IntfMitigNeighCellsCE_r15_tags_67[] = {
+	(ASN_TAG_CLASS_CONTEXT | (19 << 2)),
+	(ASN_TAG_CLASS_UNIVERSAL | (10 << 2))
+};
+static /* Use -fall-defs-global to expose */
+asn_TYPE_descriptor_t asn_DEF_crs_IntfMitigNeighCellsCE_r15_67 = {
+	"crs-IntfMitigNeighCellsCE-r15",
+	"crs-IntfMitigNeighCellsCE-r15",
+	&asn_OP_NativeEnumerated,
+	asn_DEF_crs_IntfMitigNeighCellsCE_r15_tags_67,
+	sizeof(asn_DEF_crs_IntfMitigNeighCellsCE_r15_tags_67)
+		/sizeof(asn_DEF_crs_IntfMitigNeighCellsCE_r15_tags_67[0]) - 1, /* 1 */
+	asn_DEF_crs_IntfMitigNeighCellsCE_r15_tags_67,	/* Same as above */
+	sizeof(asn_DEF_crs_IntfMitigNeighCellsCE_r15_tags_67)
+		/sizeof(asn_DEF_crs_IntfMitigNeighCellsCE_r15_tags_67[0]), /* 2 */
+	{ 0, &asn_PER_type_crs_IntfMitigNeighCellsCE_r15_constr_67, NativeEnumerated_constraint },
+	0, 0,	/* Defined elsewhere */
+	&asn_SPC_crs_IntfMitigNeighCellsCE_r15_specs_67	/* Additional specs */
+};
+
 asn_TYPE_member_t asn_MBR_SystemInformationBlockType3_1[] = {
 	{ ATF_NOFLAGS, 0, offsetof(struct SystemInformationBlockType3, cellReselectionInfoCommon),
 		(ASN_TAG_CLASS_CONTEXT | (0 << 2)),
@@ -551,21 +735,193 @@ asn_TYPE_member_t asn_MBR_SystemInformationBlockType3_1[] = {
 		0, 0, /* No default value */
 		"intraFreqCellReselectionInfo"
 		},
+	{ ATF_POINTER, 17, offsetof(struct SystemInformationBlockType3, lateNonCriticalExtension),
+		(ASN_TAG_CLASS_CONTEXT | (3 << 2)),
+		-1,	/* IMPLICIT tag at current level */
+		&asn_DEF_OCTET_STRING,
+		0,
+		{ 0, &asn_PER_memb_lateNonCriticalExtension_constr_47,  memb_lateNonCriticalExtension_constraint_1 },
+		0, 0, /* No default value */
+		"lateNonCriticalExtension"
+		},
+	{ ATF_POINTER, 16, offsetof(struct SystemInformationBlockType3, s_IntraSearch_v920),
+		(ASN_TAG_CLASS_CONTEXT | (4 << 2)),
+		0,
+		&asn_DEF_s_IntraSearch_v920_48,
+		0,
+		{ 0, 0, 0 },
+		0, 0, /* No default value */
+		"s-IntraSearch-v920"
+		},
+	{ ATF_POINTER, 15, offsetof(struct SystemInformationBlockType3, s_NonIntraSearch_v920),
+		(ASN_TAG_CLASS_CONTEXT | (5 << 2)),
+		0,
+		&asn_DEF_s_NonIntraSearch_v920_51,
+		0,
+		{ 0, 0, 0 },
+		0, 0, /* No default value */
+		"s-NonIntraSearch-v920"
+		},
+	{ ATF_POINTER, 14, offsetof(struct SystemInformationBlockType3, q_QualMin_r9),
+		(ASN_TAG_CLASS_CONTEXT | (6 << 2)),
+		-1,	/* IMPLICIT tag at current level */
+		&asn_DEF_Q_QualMin_r9,
+		0,
+		{ 0, 0, 0 },
+		0, 0, /* No default value */
+		"q-QualMin-r9"
+		},
+	{ ATF_POINTER, 13, offsetof(struct SystemInformationBlockType3, threshServingLowQ_r9),
+		(ASN_TAG_CLASS_CONTEXT | (7 << 2)),
+		-1,	/* IMPLICIT tag at current level */
+		&asn_DEF_ReselectionThresholdQ_r9,
+		0,
+		{ 0, 0, 0 },
+		0, 0, /* No default value */
+		"threshServingLowQ-r9"
+		},
+	{ ATF_POINTER, 12, offsetof(struct SystemInformationBlockType3, q_QualMinWB_r11),
+		(ASN_TAG_CLASS_CONTEXT | (8 << 2)),
+		-1,	/* IMPLICIT tag at current level */
+		&asn_DEF_Q_QualMin_r9,
+		0,
+		{ 0, 0, 0 },
+		0, 0, /* No default value */
+		"q-QualMinWB-r11"
+		},
+	{ ATF_POINTER, 11, offsetof(struct SystemInformationBlockType3, q_QualMinRSRQ_OnAllSymbols_r12),
+		(ASN_TAG_CLASS_CONTEXT | (9 << 2)),
+		-1,	/* IMPLICIT tag at current level */
+		&asn_DEF_Q_QualMin_r9,
+		0,
+		{ 0, 0, 0 },
+		0, 0, /* No default value */
+		"q-QualMinRSRQ-OnAllSymbols-r12"
+		},
+	{ ATF_POINTER, 10, offsetof(struct SystemInformationBlockType3, cellReselectionServingFreqInfo_v1310),
+		(ASN_TAG_CLASS_CONTEXT | (10 << 2)),
+		-1,	/* IMPLICIT tag at current level */
+		&asn_DEF_CellReselectionServingFreqInfo_v1310,
+		0,
+		{ 0, 0, 0 },
+		0, 0, /* No default value */
+		"cellReselectionServingFreqInfo-v1310"
+		},
+	{ ATF_POINTER, 9, offsetof(struct SystemInformationBlockType3, redistributionServingInfo_r13),
+		(ASN_TAG_CLASS_CONTEXT | (11 << 2)),
+		-1,	/* IMPLICIT tag at current level */
+		&asn_DEF_RedistributionServingInfo_r13,
+		0,
+		{ 0, 0, 0 },
+		0, 0, /* No default value */
+		"redistributionServingInfo-r13"
+		},
+	{ ATF_POINTER, 8, offsetof(struct SystemInformationBlockType3, cellSelectionInfoCE_r13),
+		(ASN_TAG_CLASS_CONTEXT | (12 << 2)),
+		-1,	/* IMPLICIT tag at current level */
+		&asn_DEF_CellSelectionInfoCE_r13,
+		0,
+		{ 0, 0, 0 },
+		0, 0, /* No default value */
+		"cellSelectionInfoCE-r13"
+		},
+	{ ATF_POINTER, 7, offsetof(struct SystemInformationBlockType3, t_ReselectionEUTRA_CE_r13),
+		(ASN_TAG_CLASS_CONTEXT | (13 << 2)),
+		-1,	/* IMPLICIT tag at current level */
+		&asn_DEF_T_ReselectionEUTRA_CE_r13,
+		0,
+		{ 0, 0, 0 },
+		0, 0, /* No default value */
+		"t-ReselectionEUTRA-CE-r13"
+		},
+	{ ATF_POINTER, 6, offsetof(struct SystemInformationBlockType3, cellSelectionInfoCE1_r13),
+		(ASN_TAG_CLASS_CONTEXT | (14 << 2)),
+		-1,	/* IMPLICIT tag at current level */
+		&asn_DEF_CellSelectionInfoCE1_r13,
+		0,
+		{ 0, 0, 0 },
+		0, 0, /* No default value */
+		"cellSelectionInfoCE1-r13"
+		},
+	{ ATF_POINTER, 5, offsetof(struct SystemInformationBlockType3, cellSelectionInfoCE1_v1360),
+		(ASN_TAG_CLASS_CONTEXT | (15 << 2)),
+		-1,	/* IMPLICIT tag at current level */
+		&asn_DEF_CellSelectionInfoCE1_v1360,
+		0,
+		{ 0, 0, 0 },
+		0, 0, /* No default value */
+		"cellSelectionInfoCE1-v1360"
+		},
+	{ ATF_POINTER, 4, offsetof(struct SystemInformationBlockType3, cellReselectionInfoCommon_v1460),
+		(ASN_TAG_CLASS_CONTEXT | (16 << 2)),
+		-1,	/* IMPLICIT tag at current level */
+		&asn_DEF_CellReselectionInfoCommon_v1460,
+		0,
+		{ 0, 0, 0 },
+		0, 0, /* No default value */
+		"cellReselectionInfoCommon-v1460"
+		},
+	{ ATF_POINTER, 3, offsetof(struct SystemInformationBlockType3, cellReselectionInfoHSDN_r15),
+		(ASN_TAG_CLASS_CONTEXT | (17 << 2)),
+		-1,	/* IMPLICIT tag at current level */
+		&asn_DEF_CellReselectionInfoHSDN_r15,
+		0,
+		{ 0, 0, 0 },
+		0, 0, /* No default value */
+		"cellReselectionInfoHSDN-r15"
+		},
+	{ ATF_POINTER, 2, offsetof(struct SystemInformationBlockType3, cellSelectionInfoCE_v1530),
+		(ASN_TAG_CLASS_CONTEXT | (18 << 2)),
+		-1,	/* IMPLICIT tag at current level */
+		&asn_DEF_CellSelectionInfoCE_v1530,
+		0,
+		{ 0, 0, 0 },
+		0, 0, /* No default value */
+		"cellSelectionInfoCE-v1530"
+		},
+	{ ATF_POINTER, 1, offsetof(struct SystemInformationBlockType3, crs_IntfMitigNeighCellsCE_r15),
+		(ASN_TAG_CLASS_CONTEXT | (19 << 2)),
+		-1,	/* IMPLICIT tag at current level */
+		&asn_DEF_crs_IntfMitigNeighCellsCE_r15_67,
+		0,
+		{ 0, 0, 0 },
+		0, 0, /* No default value */
+		"crs-IntfMitigNeighCellsCE-r15"
+		},
 };
+static const int asn_MAP_SystemInformationBlockType3_oms_1[] = { 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19 };
 static const ber_tlv_tag_t asn_DEF_SystemInformationBlockType3_tags_1[] = {
 	(ASN_TAG_CLASS_UNIVERSAL | (16 << 2))
 };
 static const asn_TYPE_tag2member_t asn_MAP_SystemInformationBlockType3_tag2el_1[] = {
     { (ASN_TAG_CLASS_CONTEXT | (0 << 2)), 0, 0, 0 }, /* cellReselectionInfoCommon */
     { (ASN_TAG_CLASS_CONTEXT | (1 << 2)), 1, 0, 0 }, /* cellReselectionServingFreqInfo */
-    { (ASN_TAG_CLASS_CONTEXT | (2 << 2)), 2, 0, 0 } /* intraFreqCellReselectionInfo */
+    { (ASN_TAG_CLASS_CONTEXT | (2 << 2)), 2, 0, 0 }, /* intraFreqCellReselectionInfo */
+    { (ASN_TAG_CLASS_CONTEXT | (3 << 2)), 3, 0, 0 }, /* lateNonCriticalExtension */
+    { (ASN_TAG_CLASS_CONTEXT | (4 << 2)), 4, 0, 0 }, /* s-IntraSearch-v920 */
+    { (ASN_TAG_CLASS_CONTEXT | (5 << 2)), 5, 0, 0 }, /* s-NonIntraSearch-v920 */
+    { (ASN_TAG_CLASS_CONTEXT | (6 << 2)), 6, 0, 0 }, /* q-QualMin-r9 */
+    { (ASN_TAG_CLASS_CONTEXT | (7 << 2)), 7, 0, 0 }, /* threshServingLowQ-r9 */
+    { (ASN_TAG_CLASS_CONTEXT | (8 << 2)), 8, 0, 0 }, /* q-QualMinWB-r11 */
+    { (ASN_TAG_CLASS_CONTEXT | (9 << 2)), 9, 0, 0 }, /* q-QualMinRSRQ-OnAllSymbols-r12 */
+    { (ASN_TAG_CLASS_CONTEXT | (10 << 2)), 10, 0, 0 }, /* cellReselectionServingFreqInfo-v1310 */
+    { (ASN_TAG_CLASS_CONTEXT | (11 << 2)), 11, 0, 0 }, /* redistributionServingInfo-r13 */
+    { (ASN_TAG_CLASS_CONTEXT | (12 << 2)), 12, 0, 0 }, /* cellSelectionInfoCE-r13 */
+    { (ASN_TAG_CLASS_CONTEXT | (13 << 2)), 13, 0, 0 }, /* t-ReselectionEUTRA-CE-r13 */
+    { (ASN_TAG_CLASS_CONTEXT | (14 << 2)), 14, 0, 0 }, /* cellSelectionInfoCE1-r13 */
+    { (ASN_TAG_CLASS_CONTEXT | (15 << 2)), 15, 0, 0 }, /* cellSelectionInfoCE1-v1360 */
+    { (ASN_TAG_CLASS_CONTEXT | (16 << 2)), 16, 0, 0 }, /* cellReselectionInfoCommon-v1460 */
+    { (ASN_TAG_CLASS_CONTEXT | (17 << 2)), 17, 0, 0 }, /* cellReselectionInfoHSDN-r15 */
+    { (ASN_TAG_CLASS_CONTEXT | (18 << 2)), 18, 0, 0 }, /* cellSelectionInfoCE-v1530 */
+    { (ASN_TAG_CLASS_CONTEXT | (19 << 2)), 19, 0, 0 } /* crs-IntfMitigNeighCellsCE-r15 */
 };
 asn_SEQUENCE_specifics_t asn_SPC_SystemInformationBlockType3_specs_1 = {
 	sizeof(struct SystemInformationBlockType3),
 	offsetof(struct SystemInformationBlockType3, _asn_ctx),
 	asn_MAP_SystemInformationBlockType3_tag2el_1,
-	3,	/* Count of tags in the map */
-	0, 0, 0,	/* Optional elements (not needed) */
+	20,	/* Count of tags in the map */
+	asn_MAP_SystemInformationBlockType3_oms_1,	/* Optional members */
+	0, 17,	/* Root/Additions */
 	3,	/* First extension addition */
 };
 asn_TYPE_descriptor_t asn_DEF_SystemInformationBlockType3 = {
@@ -580,7 +936,7 @@ asn_TYPE_descriptor_t asn_DEF_SystemInformationBlockType3 = {
 		/sizeof(asn_DEF_SystemInformationBlockType3_tags_1[0]), /* 1 */
 	{ 0, 0, SEQUENCE_constraint },
 	asn_MBR_SystemInformationBlockType3_1,
-	3,	/* Elements count */
+	20,	/* Elements count */
 	&asn_SPC_SystemInformationBlockType3_specs_1	/* Additional specs */
 };
 

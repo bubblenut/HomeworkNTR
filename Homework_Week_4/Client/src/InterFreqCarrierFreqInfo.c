@@ -32,6 +32,59 @@ static int asn_DFL_13_set_15(void **sptr) {
 	*st = 15;
 	return 0;
 }
+static asn_TYPE_member_t asn_MBR_threshX_Q_r9_18[] = {
+	{ ATF_NOFLAGS, 0, offsetof(struct InterFreqCarrierFreqInfo__threshX_Q_r9, threshX_HighQ_r9),
+		(ASN_TAG_CLASS_CONTEXT | (0 << 2)),
+		-1,	/* IMPLICIT tag at current level */
+		&asn_DEF_ReselectionThresholdQ_r9,
+		0,
+		{ 0, 0, 0 },
+		0, 0, /* No default value */
+		"threshX-HighQ-r9"
+		},
+	{ ATF_NOFLAGS, 0, offsetof(struct InterFreqCarrierFreqInfo__threshX_Q_r9, threshX_LowQ_r9),
+		(ASN_TAG_CLASS_CONTEXT | (1 << 2)),
+		-1,	/* IMPLICIT tag at current level */
+		&asn_DEF_ReselectionThresholdQ_r9,
+		0,
+		{ 0, 0, 0 },
+		0, 0, /* No default value */
+		"threshX-LowQ-r9"
+		},
+};
+static const ber_tlv_tag_t asn_DEF_threshX_Q_r9_tags_18[] = {
+	(ASN_TAG_CLASS_CONTEXT | (15 << 2)),
+	(ASN_TAG_CLASS_UNIVERSAL | (16 << 2))
+};
+static const asn_TYPE_tag2member_t asn_MAP_threshX_Q_r9_tag2el_18[] = {
+    { (ASN_TAG_CLASS_CONTEXT | (0 << 2)), 0, 0, 0 }, /* threshX-HighQ-r9 */
+    { (ASN_TAG_CLASS_CONTEXT | (1 << 2)), 1, 0, 0 } /* threshX-LowQ-r9 */
+};
+static asn_SEQUENCE_specifics_t asn_SPC_threshX_Q_r9_specs_18 = {
+	sizeof(struct InterFreqCarrierFreqInfo__threshX_Q_r9),
+	offsetof(struct InterFreqCarrierFreqInfo__threshX_Q_r9, _asn_ctx),
+	asn_MAP_threshX_Q_r9_tag2el_18,
+	2,	/* Count of tags in the map */
+	0, 0, 0,	/* Optional elements (not needed) */
+	-1,	/* First extension addition */
+};
+static /* Use -fall-defs-global to expose */
+asn_TYPE_descriptor_t asn_DEF_threshX_Q_r9_18 = {
+	"threshX-Q-r9",
+	"threshX-Q-r9",
+	&asn_OP_SEQUENCE,
+	asn_DEF_threshX_Q_r9_tags_18,
+	sizeof(asn_DEF_threshX_Q_r9_tags_18)
+		/sizeof(asn_DEF_threshX_Q_r9_tags_18[0]) - 1, /* 1 */
+	asn_DEF_threshX_Q_r9_tags_18,	/* Same as above */
+	sizeof(asn_DEF_threshX_Q_r9_tags_18)
+		/sizeof(asn_DEF_threshX_Q_r9_tags_18[0]), /* 2 */
+	{ 0, 0, SEQUENCE_constraint },
+	asn_MBR_threshX_Q_r9_18,
+	2,	/* Elements count */
+	&asn_SPC_threshX_Q_r9_specs_18	/* Additional specs */
+};
+
 asn_TYPE_member_t asn_MBR_InterFreqCarrierFreqInfo_1[] = {
 	{ ATF_NOFLAGS, 0, offsetof(struct InterFreqCarrierFreqInfo, dl_CarrierFreq),
 		(ASN_TAG_CLASS_CONTEXT | (0 << 2)),
@@ -132,7 +185,7 @@ asn_TYPE_member_t asn_MBR_InterFreqCarrierFreqInfo_1[] = {
 		0, 0, /* No default value */
 		"neighCellConfig"
 		},
-	{ ATF_POINTER, 3, offsetof(struct InterFreqCarrierFreqInfo, q_OffsetFreq),
+	{ ATF_POINTER, 6, offsetof(struct InterFreqCarrierFreqInfo, q_OffsetFreq),
 		(ASN_TAG_CLASS_CONTEXT | (11 << 2)),
 		-1,	/* IMPLICIT tag at current level */
 		&asn_DEF_Q_OffsetRange,
@@ -142,7 +195,7 @@ asn_TYPE_member_t asn_MBR_InterFreqCarrierFreqInfo_1[] = {
 		&asn_DFL_13_set_15,	/* Set DEFAULT 15 */
 		"q-OffsetFreq"
 		},
-	{ ATF_POINTER, 2, offsetof(struct InterFreqCarrierFreqInfo, interFreqNeighCellList),
+	{ ATF_POINTER, 5, offsetof(struct InterFreqCarrierFreqInfo, interFreqNeighCellList),
 		(ASN_TAG_CLASS_CONTEXT | (12 << 2)),
 		-1,	/* IMPLICIT tag at current level */
 		&asn_DEF_InterFreqNeighCellList,
@@ -151,7 +204,7 @@ asn_TYPE_member_t asn_MBR_InterFreqCarrierFreqInfo_1[] = {
 		0, 0, /* No default value */
 		"interFreqNeighCellList"
 		},
-	{ ATF_POINTER, 1, offsetof(struct InterFreqCarrierFreqInfo, interFreqBlackCellList),
+	{ ATF_POINTER, 4, offsetof(struct InterFreqCarrierFreqInfo, interFreqBlackCellList),
 		(ASN_TAG_CLASS_CONTEXT | (13 << 2)),
 		-1,	/* IMPLICIT tag at current level */
 		&asn_DEF_InterFreqBlackCellList,
@@ -160,8 +213,35 @@ asn_TYPE_member_t asn_MBR_InterFreqCarrierFreqInfo_1[] = {
 		0, 0, /* No default value */
 		"interFreqBlackCellList"
 		},
+	{ ATF_POINTER, 3, offsetof(struct InterFreqCarrierFreqInfo, q_QualMin_r9),
+		(ASN_TAG_CLASS_CONTEXT | (14 << 2)),
+		-1,	/* IMPLICIT tag at current level */
+		&asn_DEF_Q_QualMin_r9,
+		0,
+		{ 0, 0, 0 },
+		0, 0, /* No default value */
+		"q-QualMin-r9"
+		},
+	{ ATF_POINTER, 2, offsetof(struct InterFreqCarrierFreqInfo, threshX_Q_r9),
+		(ASN_TAG_CLASS_CONTEXT | (15 << 2)),
+		0,
+		&asn_DEF_threshX_Q_r9_18,
+		0,
+		{ 0, 0, 0 },
+		0, 0, /* No default value */
+		"threshX-Q-r9"
+		},
+	{ ATF_POINTER, 1, offsetof(struct InterFreqCarrierFreqInfo, q_QualMinWB_r11),
+		(ASN_TAG_CLASS_CONTEXT | (16 << 2)),
+		-1,	/* IMPLICIT tag at current level */
+		&asn_DEF_Q_QualMin_r9,
+		0,
+		{ 0, 0, 0 },
+		0, 0, /* No default value */
+		"q-QualMinWB-r11"
+		},
 };
-static const int asn_MAP_InterFreqCarrierFreqInfo_oms_1[] = { 2, 4, 9, 11, 12, 13 };
+static const int asn_MAP_InterFreqCarrierFreqInfo_oms_1[] = { 2, 4, 9, 11, 12, 13, 14, 15, 16 };
 static const ber_tlv_tag_t asn_DEF_InterFreqCarrierFreqInfo_tags_1[] = {
 	(ASN_TAG_CLASS_UNIVERSAL | (16 << 2))
 };
@@ -179,15 +259,18 @@ static const asn_TYPE_tag2member_t asn_MAP_InterFreqCarrierFreqInfo_tag2el_1[] =
     { (ASN_TAG_CLASS_CONTEXT | (10 << 2)), 10, 0, 0 }, /* neighCellConfig */
     { (ASN_TAG_CLASS_CONTEXT | (11 << 2)), 11, 0, 0 }, /* q-OffsetFreq */
     { (ASN_TAG_CLASS_CONTEXT | (12 << 2)), 12, 0, 0 }, /* interFreqNeighCellList */
-    { (ASN_TAG_CLASS_CONTEXT | (13 << 2)), 13, 0, 0 } /* interFreqBlackCellList */
+    { (ASN_TAG_CLASS_CONTEXT | (13 << 2)), 13, 0, 0 }, /* interFreqBlackCellList */
+    { (ASN_TAG_CLASS_CONTEXT | (14 << 2)), 14, 0, 0 }, /* q-QualMin-r9 */
+    { (ASN_TAG_CLASS_CONTEXT | (15 << 2)), 15, 0, 0 }, /* threshX-Q-r9 */
+    { (ASN_TAG_CLASS_CONTEXT | (16 << 2)), 16, 0, 0 } /* q-QualMinWB-r11 */
 };
 asn_SEQUENCE_specifics_t asn_SPC_InterFreqCarrierFreqInfo_specs_1 = {
 	sizeof(struct InterFreqCarrierFreqInfo),
 	offsetof(struct InterFreqCarrierFreqInfo, _asn_ctx),
 	asn_MAP_InterFreqCarrierFreqInfo_tag2el_1,
-	14,	/* Count of tags in the map */
+	17,	/* Count of tags in the map */
 	asn_MAP_InterFreqCarrierFreqInfo_oms_1,	/* Optional members */
-	6, 0,	/* Root/Additions */
+	6, 3,	/* Root/Additions */
 	14,	/* First extension addition */
 };
 asn_TYPE_descriptor_t asn_DEF_InterFreqCarrierFreqInfo = {
@@ -202,7 +285,7 @@ asn_TYPE_descriptor_t asn_DEF_InterFreqCarrierFreqInfo = {
 		/sizeof(asn_DEF_InterFreqCarrierFreqInfo_tags_1[0]), /* 1 */
 	{ 0, 0, SEQUENCE_constraint },
 	asn_MBR_InterFreqCarrierFreqInfo_1,
-	14,	/* Elements count */
+	17,	/* Elements count */
 	&asn_SPC_InterFreqCarrierFreqInfo_specs_1	/* Additional specs */
 };
 

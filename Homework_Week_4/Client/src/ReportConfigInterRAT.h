@@ -15,6 +15,7 @@
 #include <NativeInteger.h>
 #include "ReportInterval.h"
 #include <NativeEnumerated.h>
+#include <BOOLEAN.h>
 #include "Hysteresis.h"
 #include "TimeToTrigger.h"
 #include "ThresholdUTRA.h"
@@ -23,6 +24,10 @@
 #include <constr_CHOICE.h>
 #include <constr_SEQUENCE.h>
 #include "ThresholdEUTRA.h"
+#include "WLAN-RSSI-Range-r13.h"
+#include "ThresholdNR-r15.h"
+#include <NULL.h>
+#include "RSRQ-Range-v1250.h"
 
 #ifdef __cplusplus
 extern "C" {
@@ -37,9 +42,13 @@ typedef enum ReportConfigInterRAT__triggerType_PR {
 typedef enum ReportConfigInterRAT__triggerType__event__eventId_PR {
 	ReportConfigInterRAT__triggerType__event__eventId_PR_NOTHING,	/* No components present */
 	ReportConfigInterRAT__triggerType__event__eventId_PR_eventB1,
-	ReportConfigInterRAT__triggerType__event__eventId_PR_eventB2
+	ReportConfigInterRAT__triggerType__event__eventId_PR_eventB2,
 	/* Extensions may appear below */
-	
+	ReportConfigInterRAT__triggerType__event__eventId_PR_eventW1_r13,
+	ReportConfigInterRAT__triggerType__event__eventId_PR_eventW2_r13,
+	ReportConfigInterRAT__triggerType__event__eventId_PR_eventW3_r13,
+	ReportConfigInterRAT__triggerType__event__eventId_PR_eventB1_NR_r15,
+	ReportConfigInterRAT__triggerType__event__eventId_PR_eventB2_NR_r15
 } ReportConfigInterRAT__triggerType__event__eventId_PR;
 typedef enum ReportConfigInterRAT__triggerType__event__eventId__eventB1__b1_Threshold_PR {
 	ReportConfigInterRAT__triggerType__event__eventId__eventB1__b1_Threshold_PR_NOTHING,	/* No components present */
@@ -68,6 +77,25 @@ typedef enum ReportConfigInterRAT__reportAmount {
 	ReportConfigInterRAT__reportAmount_r64	= 6,
 	ReportConfigInterRAT__reportAmount_infinity	= 7
 } e_ReportConfigInterRAT__reportAmount;
+typedef enum ReportConfigInterRAT__si_RequestForHO_r9 {
+	ReportConfigInterRAT__si_RequestForHO_r9_setup	= 0
+} e_ReportConfigInterRAT__si_RequestForHO_r9;
+typedef enum ReportConfigInterRAT__reportQuantityUTRA_FDD_r10 {
+	ReportConfigInterRAT__reportQuantityUTRA_FDD_r10_both	= 0
+} e_ReportConfigInterRAT__reportQuantityUTRA_FDD_r10;
+typedef enum ReportConfigInterRAT__b2_Threshold1_v1250_PR {
+	ReportConfigInterRAT__b2_Threshold1_v1250_PR_NOTHING,	/* No components present */
+	ReportConfigInterRAT__b2_Threshold1_v1250_PR_release,
+	ReportConfigInterRAT__b2_Threshold1_v1250_PR_setup
+} ReportConfigInterRAT__b2_Threshold1_v1250_PR;
+typedef enum ReportConfigInterRAT__reportSFTD_Meas_r15 {
+	ReportConfigInterRAT__reportSFTD_Meas_r15_pSCell	= 0,
+	ReportConfigInterRAT__reportSFTD_Meas_r15_neighborCells	= 1
+} e_ReportConfigInterRAT__reportSFTD_Meas_r15;
+
+/* Forward declarations */
+struct ReportQuantityWLAN_r13;
+struct ReportQuantityNR_r15;
 
 /* ReportConfigInterRAT */
 typedef struct ReportConfigInterRAT {
@@ -115,6 +143,40 @@ typedef struct ReportConfigInterRAT {
 						 * This type is extensible,
 						 * possible extensions are below.
 						 */
+						struct ReportConfigInterRAT__triggerType__event__eventId__eventW1_r13 {
+							WLAN_RSSI_Range_r13_t	 w1_Threshold_r13;
+							
+							/* Context for parsing across buffer boundaries */
+							asn_struct_ctx_t _asn_ctx;
+						} eventW1_r13;
+						struct ReportConfigInterRAT__triggerType__event__eventId__eventW2_r13 {
+							WLAN_RSSI_Range_r13_t	 w2_Threshold1_r13;
+							WLAN_RSSI_Range_r13_t	 w2_Threshold2_r13;
+							
+							/* Context for parsing across buffer boundaries */
+							asn_struct_ctx_t _asn_ctx;
+						} eventW2_r13;
+						struct ReportConfigInterRAT__triggerType__event__eventId__eventW3_r13 {
+							WLAN_RSSI_Range_r13_t	 w3_Threshold_r13;
+							
+							/* Context for parsing across buffer boundaries */
+							asn_struct_ctx_t _asn_ctx;
+						} eventW3_r13;
+						struct ReportConfigInterRAT__triggerType__event__eventId__eventB1_NR_r15 {
+							ThresholdNR_r15_t	 b1_ThresholdNR_r15;
+							BOOLEAN_t	 reportOnLeave_r15;
+							
+							/* Context for parsing across buffer boundaries */
+							asn_struct_ctx_t _asn_ctx;
+						} eventB1_NR_r15;
+						struct ReportConfigInterRAT__triggerType__event__eventId__eventB2_NR_r15 {
+							ThresholdEUTRA_t	 b2_Threshold1_r15;
+							ThresholdNR_r15_t	 b2_Threshold2NR_r15;
+							BOOLEAN_t	 reportOnLeave_r15;
+							
+							/* Context for parsing across buffer boundaries */
+							asn_struct_ctx_t _asn_ctx;
+						} eventB2_NR_r15;
 					} choice;
 					
 					/* Context for parsing across buffer boundaries */
@@ -144,17 +206,40 @@ typedef struct ReportConfigInterRAT {
 	 * This type is extensible,
 	 * possible extensions are below.
 	 */
+	long	*si_RequestForHO_r9	/* OPTIONAL */;
+	long	*reportQuantityUTRA_FDD_r10	/* OPTIONAL */;
+	BOOLEAN_t	*includeLocationInfo_r11	/* OPTIONAL */;
+	struct ReportConfigInterRAT__b2_Threshold1_v1250 {
+		ReportConfigInterRAT__b2_Threshold1_v1250_PR present;
+		union ReportConfigInterRAT__b2_Threshold1_v1250_u {
+			NULL_t	 release;
+			RSRQ_Range_v1250_t	 setup;
+		} choice;
+		
+		/* Context for parsing across buffer boundaries */
+		asn_struct_ctx_t _asn_ctx;
+	} *b2_Threshold1_v1250;
+	struct ReportQuantityWLAN_r13	*reportQuantityWLAN_r13	/* OPTIONAL */;
+	BOOLEAN_t	*reportAnyWLAN_r14	/* OPTIONAL */;
+	struct ReportQuantityNR_r15	*reportQuantityCellNR_r15	/* OPTIONAL */;
+	long	*maxReportRS_Index_r15	/* OPTIONAL */;
+	struct ReportQuantityNR_r15	*reportQuantityRS_IndexNR_r15	/* OPTIONAL */;
+	BOOLEAN_t	*reportRS_IndexResultsNR	/* OPTIONAL */;
+	long	*reportSFTD_Meas_r15	/* OPTIONAL */;
 	
 	/* Context for parsing across buffer boundaries */
 	asn_struct_ctx_t _asn_ctx;
 } ReportConfigInterRAT_t;
 
 /* Implementation */
-/* extern asn_TYPE_descriptor_t asn_DEF_purpose_20;	// (Use -fall-defs-global to expose) */
-/* extern asn_TYPE_descriptor_t asn_DEF_reportAmount_26;	// (Use -fall-defs-global to expose) */
+/* extern asn_TYPE_descriptor_t asn_DEF_purpose_34;	// (Use -fall-defs-global to expose) */
+/* extern asn_TYPE_descriptor_t asn_DEF_reportAmount_40;	// (Use -fall-defs-global to expose) */
+/* extern asn_TYPE_descriptor_t asn_DEF_si_RequestForHO_r9_50;	// (Use -fall-defs-global to expose) */
+/* extern asn_TYPE_descriptor_t asn_DEF_reportQuantityUTRA_FDD_r10_52;	// (Use -fall-defs-global to expose) */
+/* extern asn_TYPE_descriptor_t asn_DEF_reportSFTD_Meas_r15_64;	// (Use -fall-defs-global to expose) */
 extern asn_TYPE_descriptor_t asn_DEF_ReportConfigInterRAT;
 extern asn_SEQUENCE_specifics_t asn_SPC_ReportConfigInterRAT_specs_1;
-extern asn_TYPE_member_t asn_MBR_ReportConfigInterRAT_1[4];
+extern asn_TYPE_member_t asn_MBR_ReportConfigInterRAT_1[15];
 
 #ifdef __cplusplus
 }

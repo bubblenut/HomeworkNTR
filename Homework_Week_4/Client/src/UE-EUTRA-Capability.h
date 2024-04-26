@@ -26,6 +26,7 @@ extern "C" {
 #endif
 
 /* Forward declarations */
+struct UE_EUTRA_Capability_v920_IEs;
 struct IRAT_ParametersUTRA_FDD;
 struct IRAT_ParametersUTRA_TDD128;
 struct IRAT_ParametersUTRA_TDD384;
@@ -55,11 +56,7 @@ typedef struct UE_EUTRA_Capability {
 		/* Context for parsing across buffer boundaries */
 		asn_struct_ctx_t _asn_ctx;
 	} interRAT_Parameters;
-	struct UE_EUTRA_Capability__nonCriticalExtension {
-		
-		/* Context for parsing across buffer boundaries */
-		asn_struct_ctx_t _asn_ctx;
-	} *nonCriticalExtension;
+	struct UE_EUTRA_Capability_v920_IEs	*nonCriticalExtension	/* OPTIONAL */;
 	
 	/* Context for parsing across buffer boundaries */
 	asn_struct_ctx_t _asn_ctx;

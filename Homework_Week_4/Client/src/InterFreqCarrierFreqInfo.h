@@ -22,6 +22,8 @@
 #include "CellReselectionPriority.h"
 #include "NeighCellConfig.h"
 #include "Q-OffsetRange.h"
+#include "Q-QualMin-r9.h"
+#include "ReselectionThresholdQ-r9.h"
 #include <constr_SEQUENCE.h>
 
 #ifdef __cplusplus
@@ -53,6 +55,15 @@ typedef struct InterFreqCarrierFreqInfo {
 	 * This type is extensible,
 	 * possible extensions are below.
 	 */
+	Q_QualMin_r9_t	*q_QualMin_r9	/* OPTIONAL */;
+	struct InterFreqCarrierFreqInfo__threshX_Q_r9 {
+		ReselectionThresholdQ_r9_t	 threshX_HighQ_r9;
+		ReselectionThresholdQ_r9_t	 threshX_LowQ_r9;
+		
+		/* Context for parsing across buffer boundaries */
+		asn_struct_ctx_t _asn_ctx;
+	} *threshX_Q_r9;
+	Q_QualMin_r9_t	*q_QualMinWB_r11	/* OPTIONAL */;
 	
 	/* Context for parsing across buffer boundaries */
 	asn_struct_ctx_t _asn_ctx;
@@ -61,7 +72,7 @@ typedef struct InterFreqCarrierFreqInfo {
 /* Implementation */
 extern asn_TYPE_descriptor_t asn_DEF_InterFreqCarrierFreqInfo;
 extern asn_SEQUENCE_specifics_t asn_SPC_InterFreqCarrierFreqInfo_specs_1;
-extern asn_TYPE_member_t asn_MBR_InterFreqCarrierFreqInfo_1[14];
+extern asn_TYPE_member_t asn_MBR_InterFreqCarrierFreqInfo_1[17];
 
 #ifdef __cplusplus
 }

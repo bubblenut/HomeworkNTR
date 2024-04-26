@@ -29,16 +29,22 @@ typedef enum SIB_Type {
 	SIB_Type_sibType9	= 6,
 	SIB_Type_sibType10	= 7,
 	SIB_Type_sibType11	= 8,
-	SIB_Type_spare7	= 9,
-	SIB_Type_spare6	= 10,
-	SIB_Type_spare5	= 11,
-	SIB_Type_spare4	= 12,
-	SIB_Type_spare3	= 13,
-	SIB_Type_spare2	= 14,
-	SIB_Type_spare1	= 15
+	SIB_Type_sibType12_v920	= 9,
+	SIB_Type_sibType13_v920	= 10,
+	SIB_Type_sibType14_v1130	= 11,
+	SIB_Type_sibType15_v1130	= 12,
+	SIB_Type_sibType16_v1130	= 13,
+	SIB_Type_sibType17_v1250	= 14,
+	SIB_Type_sibType18_v1250	= 15,
 	/*
 	 * Enumeration is extensible
 	 */
+	SIB_Type_sibType19_v1250	= 16,
+	SIB_Type_sibType20_v1310	= 17,
+	SIB_Type_sibType21_v1430	= 18,
+	SIB_Type_sibType24_v1530	= 19,
+	SIB_Type_sibType25_v1530	= 20,
+	SIB_Type_sibType26_v1530	= 21
 } e_SIB_Type;
 
 /* SIB-Type */

@@ -8,6 +8,7 @@
 #include "RRCConnectionSetupComplete-r8-IEs.h"
 
 #include "RegisteredMME.h"
+#include "RRCConnectionSetupComplete-v8a0-IEs.h"
 static int
 memb_selectedPLMN_Identity_constraint_1(const asn_TYPE_descriptor_t *td, const void *sptr,
 			asn_app_constraint_failed_f *ctfailcb, void *app_key) {
@@ -38,34 +39,6 @@ static asn_per_constraints_t asn_PER_memb_selectedPLMN_Identity_constr_2 CC_NOTU
 	{ APC_UNCONSTRAINED,	-1, -1,  0,  0 },
 	0, 0	/* No PER value map */
 };
-static const ber_tlv_tag_t asn_DEF_nonCriticalExtension_tags_5[] = {
-	(ASN_TAG_CLASS_CONTEXT | (3 << 2)),
-	(ASN_TAG_CLASS_UNIVERSAL | (16 << 2))
-};
-static asn_SEQUENCE_specifics_t asn_SPC_nonCriticalExtension_specs_5 = {
-	sizeof(struct RRCConnectionSetupComplete_r8_IEs__nonCriticalExtension),
-	offsetof(struct RRCConnectionSetupComplete_r8_IEs__nonCriticalExtension, _asn_ctx),
-	0,	/* No top level tags */
-	0,	/* No tags in the map */
-	0, 0, 0,	/* Optional elements (not needed) */
-	-1,	/* First extension addition */
-};
-static /* Use -fall-defs-global to expose */
-asn_TYPE_descriptor_t asn_DEF_nonCriticalExtension_5 = {
-	"nonCriticalExtension",
-	"nonCriticalExtension",
-	&asn_OP_SEQUENCE,
-	asn_DEF_nonCriticalExtension_tags_5,
-	sizeof(asn_DEF_nonCriticalExtension_tags_5)
-		/sizeof(asn_DEF_nonCriticalExtension_tags_5[0]) - 1, /* 1 */
-	asn_DEF_nonCriticalExtension_tags_5,	/* Same as above */
-	sizeof(asn_DEF_nonCriticalExtension_tags_5)
-		/sizeof(asn_DEF_nonCriticalExtension_tags_5[0]), /* 2 */
-	{ 0, 0, SEQUENCE_constraint },
-	0, 0,	/* No members */
-	&asn_SPC_nonCriticalExtension_specs_5	/* Additional specs */
-};
-
 asn_TYPE_member_t asn_MBR_RRCConnectionSetupComplete_r8_IEs_1[] = {
 	{ ATF_NOFLAGS, 0, offsetof(struct RRCConnectionSetupComplete_r8_IEs, selectedPLMN_Identity),
 		(ASN_TAG_CLASS_CONTEXT | (0 << 2)),
@@ -96,8 +69,8 @@ asn_TYPE_member_t asn_MBR_RRCConnectionSetupComplete_r8_IEs_1[] = {
 		},
 	{ ATF_POINTER, 1, offsetof(struct RRCConnectionSetupComplete_r8_IEs, nonCriticalExtension),
 		(ASN_TAG_CLASS_CONTEXT | (3 << 2)),
-		0,
-		&asn_DEF_nonCriticalExtension_5,
+		-1,	/* IMPLICIT tag at current level */
+		&asn_DEF_RRCConnectionSetupComplete_v8a0_IEs,
 		0,
 		{ 0, 0, 0 },
 		0, 0, /* No default value */

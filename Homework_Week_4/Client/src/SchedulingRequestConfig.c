@@ -50,7 +50,7 @@ memb_sr_ConfigIndex_constraint_3(const asn_TYPE_descriptor_t *td, const void *sp
 	
 	value = *(const long *)sptr;
 	
-	if((value >= 0 && value <= 155)) {
+	if((value >= 0 && value <= 157)) {
 		/* Constraint check succeeded */
 		return 0;
 	} else {
@@ -72,7 +72,7 @@ static asn_per_constraints_t asn_PER_memb_sr_PUCCH_ResourceIndex_constr_4 CC_NOT
 	0, 0	/* No PER value map */
 };
 static asn_per_constraints_t asn_PER_memb_sr_ConfigIndex_constr_5 CC_NOTUSED = {
-	{ APC_CONSTRAINED,	 8,  8,  0,  155 }	/* (0..155) */,
+	{ APC_CONSTRAINED,	 8,  8,  0,  157 }	/* (0..157) */,
 	{ APC_UNCONSTRAINED,	-1, -1,  0,  0 },
 	0, 0	/* No PER value map */
 };

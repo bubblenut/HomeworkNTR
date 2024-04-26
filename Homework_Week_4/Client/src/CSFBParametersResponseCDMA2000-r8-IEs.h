@@ -20,15 +20,14 @@
 extern "C" {
 #endif
 
+/* Forward declarations */
+struct CSFBParametersResponseCDMA2000_v8a0_IEs;
+
 /* CSFBParametersResponseCDMA2000-r8-IEs */
 typedef struct CSFBParametersResponseCDMA2000_r8_IEs {
 	RAND_CDMA2000_t	 rand;
 	MobilityParametersCDMA2000_t	 mobilityParameters;
-	struct CSFBParametersResponseCDMA2000_r8_IEs__nonCriticalExtension {
-		
-		/* Context for parsing across buffer boundaries */
-		asn_struct_ctx_t _asn_ctx;
-	} *nonCriticalExtension;
+	struct CSFBParametersResponseCDMA2000_v8a0_IEs	*nonCriticalExtension	/* OPTIONAL */;
 	
 	/* Context for parsing across buffer boundaries */
 	asn_struct_ctx_t _asn_ctx;

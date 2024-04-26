@@ -14,6 +14,8 @@
 /* Including external dependencies */
 #include "S-TMSI.h"
 #include "IMSI.h"
+#include "NG-5G-S-TMSI-r15.h"
+#include "I-RNTI-r15.h"
 #include <constr_CHOICE.h>
 
 #ifdef __cplusplus
@@ -24,9 +26,10 @@ extern "C" {
 typedef enum PagingUE_Identity_PR {
 	PagingUE_Identity_PR_NOTHING,	/* No components present */
 	PagingUE_Identity_PR_s_TMSI,
-	PagingUE_Identity_PR_imsi
+	PagingUE_Identity_PR_imsi,
 	/* Extensions may appear below */
-	
+	PagingUE_Identity_PR_ng_5G_S_TMSI_r15,
+	PagingUE_Identity_PR_fullI_RNTI_r15
 } PagingUE_Identity_PR;
 
 /* PagingUE-Identity */
@@ -39,6 +42,8 @@ typedef struct PagingUE_Identity {
 		 * This type is extensible,
 		 * possible extensions are below.
 		 */
+		NG_5G_S_TMSI_r15_t	 ng_5G_S_TMSI_r15;
+		I_RNTI_r15_t	 fullI_RNTI_r15;
 	} choice;
 	
 	/* Context for parsing across buffer boundaries */
@@ -48,7 +53,7 @@ typedef struct PagingUE_Identity {
 /* Implementation */
 extern asn_TYPE_descriptor_t asn_DEF_PagingUE_Identity;
 extern asn_CHOICE_specifics_t asn_SPC_PagingUE_Identity_specs_1;
-extern asn_TYPE_member_t asn_MBR_PagingUE_Identity_1[2];
+extern asn_TYPE_member_t asn_MBR_PagingUE_Identity_1[4];
 extern asn_per_constraints_t asn_PER_type_PagingUE_Identity_constr_1;
 
 #ifdef __cplusplus

@@ -10,8 +10,9 @@
 #include "IntraFreqNeighCellList.h"
 #include "IntraFreqBlackCellList.h"
 #include "PhysCellIdRange.h"
+#include "IntraFreqNeighHSDN-CellList-r15.h"
 asn_TYPE_member_t asn_MBR_SystemInformationBlockType4_1[] = {
-	{ ATF_POINTER, 3, offsetof(struct SystemInformationBlockType4, intraFreqNeighCellList),
+	{ ATF_POINTER, 5, offsetof(struct SystemInformationBlockType4, intraFreqNeighCellList),
 		(ASN_TAG_CLASS_CONTEXT | (0 << 2)),
 		-1,	/* IMPLICIT tag at current level */
 		&asn_DEF_IntraFreqNeighCellList,
@@ -20,7 +21,7 @@ asn_TYPE_member_t asn_MBR_SystemInformationBlockType4_1[] = {
 		0, 0, /* No default value */
 		"intraFreqNeighCellList"
 		},
-	{ ATF_POINTER, 2, offsetof(struct SystemInformationBlockType4, intraFreqBlackCellList),
+	{ ATF_POINTER, 4, offsetof(struct SystemInformationBlockType4, intraFreqBlackCellList),
 		(ASN_TAG_CLASS_CONTEXT | (1 << 2)),
 		-1,	/* IMPLICIT tag at current level */
 		&asn_DEF_IntraFreqBlackCellList,
@@ -29,7 +30,7 @@ asn_TYPE_member_t asn_MBR_SystemInformationBlockType4_1[] = {
 		0, 0, /* No default value */
 		"intraFreqBlackCellList"
 		},
-	{ ATF_POINTER, 1, offsetof(struct SystemInformationBlockType4, csg_PhysCellIdRange),
+	{ ATF_POINTER, 3, offsetof(struct SystemInformationBlockType4, csg_PhysCellIdRange),
 		(ASN_TAG_CLASS_CONTEXT | (2 << 2)),
 		-1,	/* IMPLICIT tag at current level */
 		&asn_DEF_PhysCellIdRange,
@@ -38,23 +39,43 @@ asn_TYPE_member_t asn_MBR_SystemInformationBlockType4_1[] = {
 		0, 0, /* No default value */
 		"csg-PhysCellIdRange"
 		},
+	{ ATF_POINTER, 2, offsetof(struct SystemInformationBlockType4, lateNonCriticalExtension),
+		(ASN_TAG_CLASS_CONTEXT | (3 << 2)),
+		-1,	/* IMPLICIT tag at current level */
+		&asn_DEF_OCTET_STRING,
+		0,
+		{ 0, 0, 0 },
+		0, 0, /* No default value */
+		"lateNonCriticalExtension"
+		},
+	{ ATF_POINTER, 1, offsetof(struct SystemInformationBlockType4, intraFreqNeighHSDN_CellList_r15),
+		(ASN_TAG_CLASS_CONTEXT | (4 << 2)),
+		-1,	/* IMPLICIT tag at current level */
+		&asn_DEF_IntraFreqNeighHSDN_CellList_r15,
+		0,
+		{ 0, 0, 0 },
+		0, 0, /* No default value */
+		"intraFreqNeighHSDN-CellList-r15"
+		},
 };
-static const int asn_MAP_SystemInformationBlockType4_oms_1[] = { 0, 1, 2 };
+static const int asn_MAP_SystemInformationBlockType4_oms_1[] = { 0, 1, 2, 3, 4 };
 static const ber_tlv_tag_t asn_DEF_SystemInformationBlockType4_tags_1[] = {
 	(ASN_TAG_CLASS_UNIVERSAL | (16 << 2))
 };
 static const asn_TYPE_tag2member_t asn_MAP_SystemInformationBlockType4_tag2el_1[] = {
     { (ASN_TAG_CLASS_CONTEXT | (0 << 2)), 0, 0, 0 }, /* intraFreqNeighCellList */
     { (ASN_TAG_CLASS_CONTEXT | (1 << 2)), 1, 0, 0 }, /* intraFreqBlackCellList */
-    { (ASN_TAG_CLASS_CONTEXT | (2 << 2)), 2, 0, 0 } /* csg-PhysCellIdRange */
+    { (ASN_TAG_CLASS_CONTEXT | (2 << 2)), 2, 0, 0 }, /* csg-PhysCellIdRange */
+    { (ASN_TAG_CLASS_CONTEXT | (3 << 2)), 3, 0, 0 }, /* lateNonCriticalExtension */
+    { (ASN_TAG_CLASS_CONTEXT | (4 << 2)), 4, 0, 0 } /* intraFreqNeighHSDN-CellList-r15 */
 };
 asn_SEQUENCE_specifics_t asn_SPC_SystemInformationBlockType4_specs_1 = {
 	sizeof(struct SystemInformationBlockType4),
 	offsetof(struct SystemInformationBlockType4, _asn_ctx),
 	asn_MAP_SystemInformationBlockType4_tag2el_1,
-	3,	/* Count of tags in the map */
+	5,	/* Count of tags in the map */
 	asn_MAP_SystemInformationBlockType4_oms_1,	/* Optional members */
-	3, 0,	/* Root/Additions */
+	3, 2,	/* Root/Additions */
 	3,	/* First extension addition */
 };
 asn_TYPE_descriptor_t asn_DEF_SystemInformationBlockType4 = {
@@ -69,7 +90,7 @@ asn_TYPE_descriptor_t asn_DEF_SystemInformationBlockType4 = {
 		/sizeof(asn_DEF_SystemInformationBlockType4_tags_1[0]), /* 1 */
 	{ 0, 0, SEQUENCE_constraint },
 	asn_MBR_SystemInformationBlockType4_1,
-	3,	/* Elements count */
+	5,	/* Elements count */
 	&asn_SPC_SystemInformationBlockType4_specs_1	/* Additional specs */
 };
 

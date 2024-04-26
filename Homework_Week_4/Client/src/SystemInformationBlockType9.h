@@ -26,6 +26,7 @@ typedef struct SystemInformationBlockType9 {
 	 * This type is extensible,
 	 * possible extensions are below.
 	 */
+	OCTET_STRING_t	*lateNonCriticalExtension	/* OPTIONAL */;
 	
 	/* Context for parsing across buffer boundaries */
 	asn_struct_ctx_t _asn_ctx;
@@ -34,7 +35,7 @@ typedef struct SystemInformationBlockType9 {
 /* Implementation */
 extern asn_TYPE_descriptor_t asn_DEF_SystemInformationBlockType9;
 extern asn_SEQUENCE_specifics_t asn_SPC_SystemInformationBlockType9_specs_1;
-extern asn_TYPE_member_t asn_MBR_SystemInformationBlockType9_1[1];
+extern asn_TYPE_member_t asn_MBR_SystemInformationBlockType9_1[2];
 
 #ifdef __cplusplus
 }

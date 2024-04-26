@@ -22,17 +22,14 @@ extern "C" {
 
 /* Forward declarations */
 struct RegisteredMME;
+struct RRCConnectionSetupComplete_v8a0_IEs;
 
 /* RRCConnectionSetupComplete-r8-IEs */
 typedef struct RRCConnectionSetupComplete_r8_IEs {
 	long	 selectedPLMN_Identity;
 	struct RegisteredMME	*registeredMME	/* OPTIONAL */;
 	DedicatedInfoNAS_t	 dedicatedInfoNAS;
-	struct RRCConnectionSetupComplete_r8_IEs__nonCriticalExtension {
-		
-		/* Context for parsing across buffer boundaries */
-		asn_struct_ctx_t _asn_ctx;
-	} *nonCriticalExtension;
+	struct RRCConnectionSetupComplete_v8a0_IEs	*nonCriticalExtension	/* OPTIONAL */;
 	
 	/* Context for parsing across buffer boundaries */
 	asn_struct_ctx_t _asn_ctx;

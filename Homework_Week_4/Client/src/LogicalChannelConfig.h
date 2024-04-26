@@ -12,9 +12,13 @@
 #include <asn_application.h>
 
 /* Including external dependencies */
-#include <NativeInteger.h>
 #include <NativeEnumerated.h>
+#include <BOOLEAN.h>
+#include <BIT_STRING.h>
+#include <NativeInteger.h>
 #include <constr_SEQUENCE.h>
+#include <NULL.h>
+#include <constr_CHOICE.h>
 
 #ifdef __cplusplus
 extern "C" {
@@ -30,9 +34,9 @@ typedef enum LogicalChannelConfig__ul_SpecificParameters__prioritisedBitRate {
 	LogicalChannelConfig__ul_SpecificParameters__prioritisedBitRate_kBps128	= 5,
 	LogicalChannelConfig__ul_SpecificParameters__prioritisedBitRate_kBps256	= 6,
 	LogicalChannelConfig__ul_SpecificParameters__prioritisedBitRate_infinity	= 7,
-	LogicalChannelConfig__ul_SpecificParameters__prioritisedBitRate_spare8	= 8,
-	LogicalChannelConfig__ul_SpecificParameters__prioritisedBitRate_spare7	= 9,
-	LogicalChannelConfig__ul_SpecificParameters__prioritisedBitRate_spare6	= 10,
+	LogicalChannelConfig__ul_SpecificParameters__prioritisedBitRate_kBps512_v1020	= 8,
+	LogicalChannelConfig__ul_SpecificParameters__prioritisedBitRate_kBps1024_v1020	= 9,
+	LogicalChannelConfig__ul_SpecificParameters__prioritisedBitRate_kBps2048_v1020	= 10,
 	LogicalChannelConfig__ul_SpecificParameters__prioritisedBitRate_spare5	= 11,
 	LogicalChannelConfig__ul_SpecificParameters__prioritisedBitRate_spare4	= 12,
 	LogicalChannelConfig__ul_SpecificParameters__prioritisedBitRate_spare3	= 13,
@@ -49,6 +53,38 @@ typedef enum LogicalChannelConfig__ul_SpecificParameters__bucketSizeDuration {
 	LogicalChannelConfig__ul_SpecificParameters__bucketSizeDuration_spare2	= 6,
 	LogicalChannelConfig__ul_SpecificParameters__bucketSizeDuration_spare1	= 7
 } e_LogicalChannelConfig__ul_SpecificParameters__bucketSizeDuration;
+typedef enum LogicalChannelConfig__logicalChannelSR_Mask_r9 {
+	LogicalChannelConfig__logicalChannelSR_Mask_r9_setup	= 0
+} e_LogicalChannelConfig__logicalChannelSR_Mask_r9;
+typedef enum LogicalChannelConfig__bitRateQueryProhibitTimer_r14 {
+	LogicalChannelConfig__bitRateQueryProhibitTimer_r14_s0	= 0,
+	LogicalChannelConfig__bitRateQueryProhibitTimer_r14_s0dot4	= 1,
+	LogicalChannelConfig__bitRateQueryProhibitTimer_r14_s0dot8	= 2,
+	LogicalChannelConfig__bitRateQueryProhibitTimer_r14_s1dot6	= 3,
+	LogicalChannelConfig__bitRateQueryProhibitTimer_r14_s3	= 4,
+	LogicalChannelConfig__bitRateQueryProhibitTimer_r14_s6	= 5,
+	LogicalChannelConfig__bitRateQueryProhibitTimer_r14_s12	= 6,
+	LogicalChannelConfig__bitRateQueryProhibitTimer_r14_s30	= 7
+} e_LogicalChannelConfig__bitRateQueryProhibitTimer_r14;
+typedef enum LogicalChannelConfig__allowedTTI_Lengths_r15_PR {
+	LogicalChannelConfig__allowedTTI_Lengths_r15_PR_NOTHING,	/* No components present */
+	LogicalChannelConfig__allowedTTI_Lengths_r15_PR_release,
+	LogicalChannelConfig__allowedTTI_Lengths_r15_PR_setup
+} LogicalChannelConfig__allowedTTI_Lengths_r15_PR;
+typedef enum LogicalChannelConfig__logicalChannelSR_Restriction_r15_PR {
+	LogicalChannelConfig__logicalChannelSR_Restriction_r15_PR_NOTHING,	/* No components present */
+	LogicalChannelConfig__logicalChannelSR_Restriction_r15_PR_release,
+	LogicalChannelConfig__logicalChannelSR_Restriction_r15_PR_setup
+} LogicalChannelConfig__logicalChannelSR_Restriction_r15_PR;
+typedef enum LogicalChannelConfig__logicalChannelSR_Restriction_r15__setup {
+	LogicalChannelConfig__logicalChannelSR_Restriction_r15__setup_spucch	= 0,
+	LogicalChannelConfig__logicalChannelSR_Restriction_r15__setup_pucch	= 1
+} e_LogicalChannelConfig__logicalChannelSR_Restriction_r15__setup;
+typedef enum LogicalChannelConfig__channellAccessPriority_r15_PR {
+	LogicalChannelConfig__channellAccessPriority_r15_PR_NOTHING,	/* No components present */
+	LogicalChannelConfig__channellAccessPriority_r15_PR_release,
+	LogicalChannelConfig__channellAccessPriority_r15_PR_setup
+} LogicalChannelConfig__channellAccessPriority_r15_PR;
 
 /* LogicalChannelConfig */
 typedef struct LogicalChannelConfig {
@@ -65,6 +101,47 @@ typedef struct LogicalChannelConfig {
 	 * This type is extensible,
 	 * possible extensions are below.
 	 */
+	long	*logicalChannelSR_Mask_r9	/* OPTIONAL */;
+	BOOLEAN_t	*logicalChannelSR_Prohibit_r12	/* OPTIONAL */;
+	BOOLEAN_t	*laa_UL_Allowed_r14	/* OPTIONAL */;
+	long	*bitRateQueryProhibitTimer_r14	/* OPTIONAL */;
+	struct LogicalChannelConfig__allowedTTI_Lengths_r15 {
+		LogicalChannelConfig__allowedTTI_Lengths_r15_PR present;
+		union LogicalChannelConfig__allowedTTI_Lengths_r15_u {
+			NULL_t	 release;
+			struct LogicalChannelConfig__allowedTTI_Lengths_r15__setup {
+				BOOLEAN_t	 shortTTI_r15;
+				BOOLEAN_t	 subframeTTI_r15;
+				
+				/* Context for parsing across buffer boundaries */
+				asn_struct_ctx_t _asn_ctx;
+			} setup;
+		} choice;
+		
+		/* Context for parsing across buffer boundaries */
+		asn_struct_ctx_t _asn_ctx;
+	} *allowedTTI_Lengths_r15;
+	struct LogicalChannelConfig__logicalChannelSR_Restriction_r15 {
+		LogicalChannelConfig__logicalChannelSR_Restriction_r15_PR present;
+		union LogicalChannelConfig__logicalChannelSR_Restriction_r15_u {
+			NULL_t	 release;
+			long	 setup;
+		} choice;
+		
+		/* Context for parsing across buffer boundaries */
+		asn_struct_ctx_t _asn_ctx;
+	} *logicalChannelSR_Restriction_r15;
+	struct LogicalChannelConfig__channellAccessPriority_r15 {
+		LogicalChannelConfig__channellAccessPriority_r15_PR present;
+		union LogicalChannelConfig__channellAccessPriority_r15_u {
+			NULL_t	 release;
+			long	 setup;
+		} choice;
+		
+		/* Context for parsing across buffer boundaries */
+		asn_struct_ctx_t _asn_ctx;
+	} *channellAccessPriority_r15;
+	BIT_STRING_t	*lch_CellRestriction_r15	/* OPTIONAL */;
 	
 	/* Context for parsing across buffer boundaries */
 	asn_struct_ctx_t _asn_ctx;
@@ -73,9 +150,12 @@ typedef struct LogicalChannelConfig {
 /* Implementation */
 /* extern asn_TYPE_descriptor_t asn_DEF_prioritisedBitRate_4;	// (Use -fall-defs-global to expose) */
 /* extern asn_TYPE_descriptor_t asn_DEF_bucketSizeDuration_21;	// (Use -fall-defs-global to expose) */
+/* extern asn_TYPE_descriptor_t asn_DEF_logicalChannelSR_Mask_r9_32;	// (Use -fall-defs-global to expose) */
+/* extern asn_TYPE_descriptor_t asn_DEF_bitRateQueryProhibitTimer_r14_36;	// (Use -fall-defs-global to expose) */
+/* extern asn_TYPE_descriptor_t asn_DEF_setup_52;	// (Use -fall-defs-global to expose) */
 extern asn_TYPE_descriptor_t asn_DEF_LogicalChannelConfig;
 extern asn_SEQUENCE_specifics_t asn_SPC_LogicalChannelConfig_specs_1;
-extern asn_TYPE_member_t asn_MBR_LogicalChannelConfig_1[1];
+extern asn_TYPE_member_t asn_MBR_LogicalChannelConfig_1[9];
 
 #ifdef __cplusplus
 }

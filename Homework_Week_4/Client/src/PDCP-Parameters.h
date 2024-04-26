@@ -12,8 +12,8 @@
 #include <asn_application.h>
 
 /* Including external dependencies */
+#include "ROHC-ProfileSupportList-r15.h"
 #include <NativeEnumerated.h>
-#include <BOOLEAN.h>
 #include <constr_SEQUENCE.h>
 
 #ifdef __cplusplus
@@ -42,20 +42,7 @@ typedef enum PDCP_Parameters__maxNumberROHC_ContextSessions {
 
 /* PDCP-Parameters */
 typedef struct PDCP_Parameters {
-	struct PDCP_Parameters__supportedROHC_Profiles {
-		BOOLEAN_t	 profile0x0001;
-		BOOLEAN_t	 profile0x0002;
-		BOOLEAN_t	 profile0x0003;
-		BOOLEAN_t	 profile0x0004;
-		BOOLEAN_t	 profile0x0006;
-		BOOLEAN_t	 profile0x0101;
-		BOOLEAN_t	 profile0x0102;
-		BOOLEAN_t	 profile0x0103;
-		BOOLEAN_t	 profile0x0104;
-		
-		/* Context for parsing across buffer boundaries */
-		asn_struct_ctx_t _asn_ctx;
-	} supportedROHC_Profiles;
+	ROHC_ProfileSupportList_r15_t	 supportedROHC_Profiles;
 	long	*maxNumberROHC_ContextSessions	/* DEFAULT 4 */;
 	/*
 	 * This type is extensible,
@@ -67,7 +54,7 @@ typedef struct PDCP_Parameters {
 } PDCP_Parameters_t;
 
 /* Implementation */
-/* extern asn_TYPE_descriptor_t asn_DEF_maxNumberROHC_ContextSessions_12;	// (Use -fall-defs-global to expose) */
+/* extern asn_TYPE_descriptor_t asn_DEF_maxNumberROHC_ContextSessions_3;	// (Use -fall-defs-global to expose) */
 extern asn_TYPE_descriptor_t asn_DEF_PDCP_Parameters;
 extern asn_SEQUENCE_specifics_t asn_SPC_PDCP_Parameters_specs_1;
 extern asn_TYPE_member_t asn_MBR_PDCP_Parameters_1[2];

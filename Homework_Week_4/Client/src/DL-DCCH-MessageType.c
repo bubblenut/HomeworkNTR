@@ -99,41 +99,41 @@ static asn_TYPE_member_t asn_MBR_c1_2[] = {
 		0, 0, /* No default value */
 		"counterCheck"
 		},
-	{ ATF_NOFLAGS, 0, offsetof(struct DL_DCCH_MessageType__c1, choice.spare7),
+	{ ATF_NOFLAGS, 0, offsetof(struct DL_DCCH_MessageType__c1, choice.ueInformationRequest_r9),
 		(ASN_TAG_CLASS_CONTEXT | (9 << 2)),
 		-1,	/* IMPLICIT tag at current level */
-		&asn_DEF_NULL,
+		&asn_DEF_UEInformationRequest_r9,
 		0,
 		{ 0, 0, 0 },
 		0, 0, /* No default value */
-		"spare7"
+		"ueInformationRequest-r9"
 		},
-	{ ATF_NOFLAGS, 0, offsetof(struct DL_DCCH_MessageType__c1, choice.spare6),
+	{ ATF_NOFLAGS, 0, offsetof(struct DL_DCCH_MessageType__c1, choice.loggedMeasurementConfiguration_r10),
 		(ASN_TAG_CLASS_CONTEXT | (10 << 2)),
 		-1,	/* IMPLICIT tag at current level */
-		&asn_DEF_NULL,
+		&asn_DEF_LoggedMeasurementConfiguration_r10,
 		0,
 		{ 0, 0, 0 },
 		0, 0, /* No default value */
-		"spare6"
+		"loggedMeasurementConfiguration-r10"
 		},
-	{ ATF_NOFLAGS, 0, offsetof(struct DL_DCCH_MessageType__c1, choice.spare5),
+	{ ATF_NOFLAGS, 0, offsetof(struct DL_DCCH_MessageType__c1, choice.rnReconfiguration_r10),
 		(ASN_TAG_CLASS_CONTEXT | (11 << 2)),
 		-1,	/* IMPLICIT tag at current level */
-		&asn_DEF_NULL,
+		&asn_DEF_RNReconfiguration_r10,
 		0,
 		{ 0, 0, 0 },
 		0, 0, /* No default value */
-		"spare5"
+		"rnReconfiguration-r10"
 		},
-	{ ATF_NOFLAGS, 0, offsetof(struct DL_DCCH_MessageType__c1, choice.spare4),
+	{ ATF_NOFLAGS, 0, offsetof(struct DL_DCCH_MessageType__c1, choice.rrcConnectionResume_r13),
 		(ASN_TAG_CLASS_CONTEXT | (12 << 2)),
 		-1,	/* IMPLICIT tag at current level */
-		&asn_DEF_NULL,
+		&asn_DEF_RRCConnectionResume_r13,
 		0,
 		{ 0, 0, 0 },
 		0, 0, /* No default value */
-		"spare4"
+		"rrcConnectionResume-r13"
 		},
 	{ ATF_NOFLAGS, 0, offsetof(struct DL_DCCH_MessageType__c1, choice.spare3),
 		(ASN_TAG_CLASS_CONTEXT | (13 << 2)),
@@ -173,10 +173,10 @@ static const asn_TYPE_tag2member_t asn_MAP_c1_tag2el_2[] = {
     { (ASN_TAG_CLASS_CONTEXT | (6 << 2)), 6, 0, 0 }, /* securityModeCommand */
     { (ASN_TAG_CLASS_CONTEXT | (7 << 2)), 7, 0, 0 }, /* ueCapabilityEnquiry */
     { (ASN_TAG_CLASS_CONTEXT | (8 << 2)), 8, 0, 0 }, /* counterCheck */
-    { (ASN_TAG_CLASS_CONTEXT | (9 << 2)), 9, 0, 0 }, /* spare7 */
-    { (ASN_TAG_CLASS_CONTEXT | (10 << 2)), 10, 0, 0 }, /* spare6 */
-    { (ASN_TAG_CLASS_CONTEXT | (11 << 2)), 11, 0, 0 }, /* spare5 */
-    { (ASN_TAG_CLASS_CONTEXT | (12 << 2)), 12, 0, 0 }, /* spare4 */
+    { (ASN_TAG_CLASS_CONTEXT | (9 << 2)), 9, 0, 0 }, /* ueInformationRequest-r9 */
+    { (ASN_TAG_CLASS_CONTEXT | (10 << 2)), 10, 0, 0 }, /* loggedMeasurementConfiguration-r10 */
+    { (ASN_TAG_CLASS_CONTEXT | (11 << 2)), 11, 0, 0 }, /* rnReconfiguration-r10 */
+    { (ASN_TAG_CLASS_CONTEXT | (12 << 2)), 12, 0, 0 }, /* rrcConnectionResume-r13 */
     { (ASN_TAG_CLASS_CONTEXT | (13 << 2)), 13, 0, 0 }, /* spare3 */
     { (ASN_TAG_CLASS_CONTEXT | (14 << 2)), 14, 0, 0 }, /* spare2 */
     { (ASN_TAG_CLASS_CONTEXT | (15 << 2)), 15, 0, 0 } /* spare1 */

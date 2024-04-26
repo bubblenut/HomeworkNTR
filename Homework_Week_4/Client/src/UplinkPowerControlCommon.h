@@ -13,7 +13,7 @@
 
 /* Including external dependencies */
 #include <NativeInteger.h>
-#include <NativeEnumerated.h>
+#include "Alpha-r12.h"
 #include "DeltaFList-PUCCH.h"
 #include <constr_SEQUENCE.h>
 
@@ -21,22 +21,10 @@
 extern "C" {
 #endif
 
-/* Dependencies */
-typedef enum UplinkPowerControlCommon__alpha {
-	UplinkPowerControlCommon__alpha_al0	= 0,
-	UplinkPowerControlCommon__alpha_al04	= 1,
-	UplinkPowerControlCommon__alpha_al05	= 2,
-	UplinkPowerControlCommon__alpha_al06	= 3,
-	UplinkPowerControlCommon__alpha_al07	= 4,
-	UplinkPowerControlCommon__alpha_al08	= 5,
-	UplinkPowerControlCommon__alpha_al09	= 6,
-	UplinkPowerControlCommon__alpha_al1	= 7
-} e_UplinkPowerControlCommon__alpha;
-
 /* UplinkPowerControlCommon */
 typedef struct UplinkPowerControlCommon {
 	long	 p0_NominalPUSCH;
-	long	 alpha;
+	Alpha_r12_t	 alpha;
 	long	 p0_NominalPUCCH;
 	DeltaFList_PUCCH_t	 deltaFList_PUCCH;
 	long	 deltaPreambleMsg3;
@@ -46,7 +34,6 @@ typedef struct UplinkPowerControlCommon {
 } UplinkPowerControlCommon_t;
 
 /* Implementation */
-/* extern asn_TYPE_descriptor_t asn_DEF_alpha_3;	// (Use -fall-defs-global to expose) */
 extern asn_TYPE_descriptor_t asn_DEF_UplinkPowerControlCommon;
 extern asn_SEQUENCE_specifics_t asn_SPC_UplinkPowerControlCommon_specs_1;
 extern asn_TYPE_member_t asn_MBR_UplinkPowerControlCommon_1[5];

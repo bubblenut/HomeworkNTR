@@ -31,6 +31,22 @@ struct SoundingRS_UL_ConfigCommon;
 struct UplinkPowerControlCommon;
 struct AntennaInfoCommon;
 struct TDD_Config;
+struct UplinkPowerControlCommon_v1020;
+struct TDD_Config_v1130;
+struct PUSCH_ConfigCommon_v1270;
+struct PRACH_Config_v1310;
+struct FreqHoppingParameters_r13;
+struct PDSCH_ConfigCommon_v1310;
+struct PUCCH_ConfigCommon_v1310;
+struct PUSCH_ConfigCommon_v1310;
+struct UplinkPowerControlCommon_v1310;
+struct HighSpeedConfig_r14;
+struct PRACH_Config_v1430;
+struct PUCCH_ConfigCommon_v1430;
+struct TDD_Config_v1430;
+struct TDD_Config_v1450;
+struct UplinkPowerControlCommon_v1530;
+struct HighSpeedConfig_v1530;
 
 /* RadioResourceConfigCommon */
 typedef struct RadioResourceConfigCommon {
@@ -50,6 +66,22 @@ typedef struct RadioResourceConfigCommon {
 	 * This type is extensible,
 	 * possible extensions are below.
 	 */
+	struct UplinkPowerControlCommon_v1020	*uplinkPowerControlCommon_v1020	/* OPTIONAL */;
+	struct TDD_Config_v1130	*tdd_Config_v1130	/* OPTIONAL */;
+	struct PUSCH_ConfigCommon_v1270	*pusch_ConfigCommon_v1270	/* OPTIONAL */;
+	struct PRACH_Config_v1310	*prach_Config_v1310	/* OPTIONAL */;
+	struct FreqHoppingParameters_r13	*freqHoppingParameters_r13	/* OPTIONAL */;
+	struct PDSCH_ConfigCommon_v1310	*pdsch_ConfigCommon_v1310	/* OPTIONAL */;
+	struct PUCCH_ConfigCommon_v1310	*pucch_ConfigCommon_v1310	/* OPTIONAL */;
+	struct PUSCH_ConfigCommon_v1310	*pusch_ConfigCommon_v1310	/* OPTIONAL */;
+	struct UplinkPowerControlCommon_v1310	*uplinkPowerControlCommon_v1310	/* OPTIONAL */;
+	struct HighSpeedConfig_r14	*highSpeedConfig_r14	/* OPTIONAL */;
+	struct PRACH_Config_v1430	*prach_Config_v1430	/* OPTIONAL */;
+	struct PUCCH_ConfigCommon_v1430	*pucch_ConfigCommon_v1430	/* OPTIONAL */;
+	struct TDD_Config_v1430	*tdd_Config_v1430	/* OPTIONAL */;
+	struct TDD_Config_v1450	*tdd_Config_v1450	/* OPTIONAL */;
+	struct UplinkPowerControlCommon_v1530	*uplinkPowerControlCommon_v1530	/* OPTIONAL */;
+	struct HighSpeedConfig_v1530	*highSpeedConfig_v1530	/* OPTIONAL */;
 	
 	/* Context for parsing across buffer boundaries */
 	asn_struct_ctx_t _asn_ctx;
@@ -58,7 +90,7 @@ typedef struct RadioResourceConfigCommon {
 /* Implementation */
 extern asn_TYPE_descriptor_t asn_DEF_RadioResourceConfigCommon;
 extern asn_SEQUENCE_specifics_t asn_SPC_RadioResourceConfigCommon_specs_1;
-extern asn_TYPE_member_t asn_MBR_RadioResourceConfigCommon_1[12];
+extern asn_TYPE_member_t asn_MBR_RadioResourceConfigCommon_1[28];
 
 #ifdef __cplusplus
 }

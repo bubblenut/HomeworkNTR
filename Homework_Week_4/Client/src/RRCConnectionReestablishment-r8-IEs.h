@@ -20,15 +20,14 @@
 extern "C" {
 #endif
 
+/* Forward declarations */
+struct RRCConnectionReestablishment_v8a0_IEs;
+
 /* RRCConnectionReestablishment-r8-IEs */
 typedef struct RRCConnectionReestablishment_r8_IEs {
 	RadioResourceConfigDedicated_t	 radioResourceConfigDedicated;
 	NextHopChainingCount_t	 nextHopChainingCount;
-	struct RRCConnectionReestablishment_r8_IEs__nonCriticalExtension {
-		
-		/* Context for parsing across buffer boundaries */
-		asn_struct_ctx_t _asn_ctx;
-	} *nonCriticalExtension;
+	struct RRCConnectionReestablishment_v8a0_IEs	*nonCriticalExtension	/* OPTIONAL */;
 	
 	/* Context for parsing across buffer boundaries */
 	asn_struct_ctx_t _asn_ctx;

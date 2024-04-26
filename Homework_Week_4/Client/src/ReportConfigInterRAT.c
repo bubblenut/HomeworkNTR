@@ -7,6 +7,20 @@
 
 #include "ReportConfigInterRAT.h"
 
+#include "ReportQuantityWLAN-r13.h"
+#include "ReportQuantityNR-r15.h"
+/*
+ * This type is implemented using NativeEnumerated,
+ * so here we adjust the DEF accordingly.
+ */
+/*
+ * This type is implemented using NativeEnumerated,
+ * so here we adjust the DEF accordingly.
+ */
+/*
+ * This type is implemented using NativeEnumerated,
+ * so here we adjust the DEF accordingly.
+ */
 /*
  * This type is implemented using NativeEnumerated,
  * so here we adjust the DEF accordingly.
@@ -40,6 +54,31 @@ memb_maxReportCells_constraint_1(const asn_TYPE_descriptor_t *td, const void *sp
 	}
 }
 
+static int
+memb_maxReportRS_Index_r15_constraint_1(const asn_TYPE_descriptor_t *td, const void *sptr,
+			asn_app_constraint_failed_f *ctfailcb, void *app_key) {
+	long value;
+	
+	if(!sptr) {
+		ASN__CTFAIL(app_key, td, sptr,
+			"%s: value not given (%s:%d)",
+			td->name, __FILE__, __LINE__);
+		return -1;
+	}
+	
+	value = *(const long *)sptr;
+	
+	if((value >= 0 && value <= 32)) {
+		/* Constraint check succeeded */
+		return 0;
+	} else {
+		ASN__CTFAIL(app_key, td, sptr,
+			"%s: constraint failed (%s:%d)",
+			td->name, __FILE__, __LINE__);
+		return -1;
+	}
+}
+
 static asn_per_constraints_t asn_PER_type_b1_Threshold_constr_6 CC_NOTUSED = {
 	{ APC_CONSTRAINED,	 2,  2,  0,  2 }	/* (0..2) */,
 	{ APC_UNCONSTRAINED,	-1, -1,  0,  0 },
@@ -55,7 +94,7 @@ static asn_per_constraints_t asn_PER_type_eventId_constr_4 CC_NOTUSED = {
 	{ APC_UNCONSTRAINED,	-1, -1,  0,  0 },
 	0, 0	/* No PER value map */
 };
-static asn_per_constraints_t asn_PER_type_purpose_constr_20 CC_NOTUSED = {
+static asn_per_constraints_t asn_PER_type_purpose_constr_34 CC_NOTUSED = {
 	{ APC_CONSTRAINED,	 2,  2,  0,  2 }	/* (0..2) */,
 	{ APC_UNCONSTRAINED,	-1, -1,  0,  0 },
 	0, 0	/* No PER value map */
@@ -65,13 +104,38 @@ static asn_per_constraints_t asn_PER_type_triggerType_constr_2 CC_NOTUSED = {
 	{ APC_UNCONSTRAINED,	-1, -1,  0,  0 },
 	0, 0	/* No PER value map */
 };
-static asn_per_constraints_t asn_PER_type_reportAmount_constr_26 CC_NOTUSED = {
+static asn_per_constraints_t asn_PER_type_reportAmount_constr_40 CC_NOTUSED = {
 	{ APC_CONSTRAINED,	 3,  3,  0,  7 }	/* (0..7) */,
 	{ APC_UNCONSTRAINED,	-1, -1,  0,  0 },
 	0, 0	/* No PER value map */
 };
-static asn_per_constraints_t asn_PER_memb_maxReportCells_constr_24 CC_NOTUSED = {
+static asn_per_constraints_t asn_PER_type_si_RequestForHO_r9_constr_50 CC_NOTUSED = {
+	{ APC_CONSTRAINED,	 0,  0,  0,  0 }	/* (0..0) */,
+	{ APC_UNCONSTRAINED,	-1, -1,  0,  0 },
+	0, 0	/* No PER value map */
+};
+static asn_per_constraints_t asn_PER_type_reportQuantityUTRA_FDD_r10_constr_52 CC_NOTUSED = {
+	{ APC_CONSTRAINED,	 0,  0,  0,  0 }	/* (0..0) */,
+	{ APC_UNCONSTRAINED,	-1, -1,  0,  0 },
+	0, 0	/* No PER value map */
+};
+static asn_per_constraints_t asn_PER_type_b2_Threshold1_v1250_constr_55 CC_NOTUSED = {
+	{ APC_CONSTRAINED,	 1,  1,  0,  1 }	/* (0..1) */,
+	{ APC_UNCONSTRAINED,	-1, -1,  0,  0 },
+	0, 0	/* No PER value map */
+};
+static asn_per_constraints_t asn_PER_type_reportSFTD_Meas_r15_constr_64 CC_NOTUSED = {
+	{ APC_CONSTRAINED,	 1,  1,  0,  1 }	/* (0..1) */,
+	{ APC_UNCONSTRAINED,	-1, -1,  0,  0 },
+	0, 0	/* No PER value map */
+};
+static asn_per_constraints_t asn_PER_memb_maxReportCells_constr_38 CC_NOTUSED = {
 	{ APC_CONSTRAINED,	 3,  3,  1,  8 }	/* (1..8) */,
+	{ APC_UNCONSTRAINED,	-1, -1,  0,  0 },
+	0, 0	/* No PER value map */
+};
+static asn_per_constraints_t asn_PER_memb_maxReportRS_Index_r15_constr_61 CC_NOTUSED = {
+	{ APC_CONSTRAINED,	 6,  6,  0,  32 }	/* (0..32) */,
 	{ APC_UNCONSTRAINED,	-1, -1,  0,  0 },
 	0, 0	/* No PER value map */
 };
@@ -289,6 +353,261 @@ asn_TYPE_descriptor_t asn_DEF_eventB2_10 = {
 	&asn_SPC_eventB2_specs_10	/* Additional specs */
 };
 
+static asn_TYPE_member_t asn_MBR_eventW1_r13_17[] = {
+	{ ATF_NOFLAGS, 0, offsetof(struct ReportConfigInterRAT__triggerType__event__eventId__eventW1_r13, w1_Threshold_r13),
+		(ASN_TAG_CLASS_CONTEXT | (0 << 2)),
+		-1,	/* IMPLICIT tag at current level */
+		&asn_DEF_WLAN_RSSI_Range_r13,
+		0,
+		{ 0, 0, 0 },
+		0, 0, /* No default value */
+		"w1-Threshold-r13"
+		},
+};
+static const ber_tlv_tag_t asn_DEF_eventW1_r13_tags_17[] = {
+	(ASN_TAG_CLASS_CONTEXT | (2 << 2)),
+	(ASN_TAG_CLASS_UNIVERSAL | (16 << 2))
+};
+static const asn_TYPE_tag2member_t asn_MAP_eventW1_r13_tag2el_17[] = {
+    { (ASN_TAG_CLASS_CONTEXT | (0 << 2)), 0, 0, 0 } /* w1-Threshold-r13 */
+};
+static asn_SEQUENCE_specifics_t asn_SPC_eventW1_r13_specs_17 = {
+	sizeof(struct ReportConfigInterRAT__triggerType__event__eventId__eventW1_r13),
+	offsetof(struct ReportConfigInterRAT__triggerType__event__eventId__eventW1_r13, _asn_ctx),
+	asn_MAP_eventW1_r13_tag2el_17,
+	1,	/* Count of tags in the map */
+	0, 0, 0,	/* Optional elements (not needed) */
+	-1,	/* First extension addition */
+};
+static /* Use -fall-defs-global to expose */
+asn_TYPE_descriptor_t asn_DEF_eventW1_r13_17 = {
+	"eventW1-r13",
+	"eventW1-r13",
+	&asn_OP_SEQUENCE,
+	asn_DEF_eventW1_r13_tags_17,
+	sizeof(asn_DEF_eventW1_r13_tags_17)
+		/sizeof(asn_DEF_eventW1_r13_tags_17[0]) - 1, /* 1 */
+	asn_DEF_eventW1_r13_tags_17,	/* Same as above */
+	sizeof(asn_DEF_eventW1_r13_tags_17)
+		/sizeof(asn_DEF_eventW1_r13_tags_17[0]), /* 2 */
+	{ 0, 0, SEQUENCE_constraint },
+	asn_MBR_eventW1_r13_17,
+	1,	/* Elements count */
+	&asn_SPC_eventW1_r13_specs_17	/* Additional specs */
+};
+
+static asn_TYPE_member_t asn_MBR_eventW2_r13_19[] = {
+	{ ATF_NOFLAGS, 0, offsetof(struct ReportConfigInterRAT__triggerType__event__eventId__eventW2_r13, w2_Threshold1_r13),
+		(ASN_TAG_CLASS_CONTEXT | (0 << 2)),
+		-1,	/* IMPLICIT tag at current level */
+		&asn_DEF_WLAN_RSSI_Range_r13,
+		0,
+		{ 0, 0, 0 },
+		0, 0, /* No default value */
+		"w2-Threshold1-r13"
+		},
+	{ ATF_NOFLAGS, 0, offsetof(struct ReportConfigInterRAT__triggerType__event__eventId__eventW2_r13, w2_Threshold2_r13),
+		(ASN_TAG_CLASS_CONTEXT | (1 << 2)),
+		-1,	/* IMPLICIT tag at current level */
+		&asn_DEF_WLAN_RSSI_Range_r13,
+		0,
+		{ 0, 0, 0 },
+		0, 0, /* No default value */
+		"w2-Threshold2-r13"
+		},
+};
+static const ber_tlv_tag_t asn_DEF_eventW2_r13_tags_19[] = {
+	(ASN_TAG_CLASS_CONTEXT | (3 << 2)),
+	(ASN_TAG_CLASS_UNIVERSAL | (16 << 2))
+};
+static const asn_TYPE_tag2member_t asn_MAP_eventW2_r13_tag2el_19[] = {
+    { (ASN_TAG_CLASS_CONTEXT | (0 << 2)), 0, 0, 0 }, /* w2-Threshold1-r13 */
+    { (ASN_TAG_CLASS_CONTEXT | (1 << 2)), 1, 0, 0 } /* w2-Threshold2-r13 */
+};
+static asn_SEQUENCE_specifics_t asn_SPC_eventW2_r13_specs_19 = {
+	sizeof(struct ReportConfigInterRAT__triggerType__event__eventId__eventW2_r13),
+	offsetof(struct ReportConfigInterRAT__triggerType__event__eventId__eventW2_r13, _asn_ctx),
+	asn_MAP_eventW2_r13_tag2el_19,
+	2,	/* Count of tags in the map */
+	0, 0, 0,	/* Optional elements (not needed) */
+	-1,	/* First extension addition */
+};
+static /* Use -fall-defs-global to expose */
+asn_TYPE_descriptor_t asn_DEF_eventW2_r13_19 = {
+	"eventW2-r13",
+	"eventW2-r13",
+	&asn_OP_SEQUENCE,
+	asn_DEF_eventW2_r13_tags_19,
+	sizeof(asn_DEF_eventW2_r13_tags_19)
+		/sizeof(asn_DEF_eventW2_r13_tags_19[0]) - 1, /* 1 */
+	asn_DEF_eventW2_r13_tags_19,	/* Same as above */
+	sizeof(asn_DEF_eventW2_r13_tags_19)
+		/sizeof(asn_DEF_eventW2_r13_tags_19[0]), /* 2 */
+	{ 0, 0, SEQUENCE_constraint },
+	asn_MBR_eventW2_r13_19,
+	2,	/* Elements count */
+	&asn_SPC_eventW2_r13_specs_19	/* Additional specs */
+};
+
+static asn_TYPE_member_t asn_MBR_eventW3_r13_22[] = {
+	{ ATF_NOFLAGS, 0, offsetof(struct ReportConfigInterRAT__triggerType__event__eventId__eventW3_r13, w3_Threshold_r13),
+		(ASN_TAG_CLASS_CONTEXT | (0 << 2)),
+		-1,	/* IMPLICIT tag at current level */
+		&asn_DEF_WLAN_RSSI_Range_r13,
+		0,
+		{ 0, 0, 0 },
+		0, 0, /* No default value */
+		"w3-Threshold-r13"
+		},
+};
+static const ber_tlv_tag_t asn_DEF_eventW3_r13_tags_22[] = {
+	(ASN_TAG_CLASS_CONTEXT | (4 << 2)),
+	(ASN_TAG_CLASS_UNIVERSAL | (16 << 2))
+};
+static const asn_TYPE_tag2member_t asn_MAP_eventW3_r13_tag2el_22[] = {
+    { (ASN_TAG_CLASS_CONTEXT | (0 << 2)), 0, 0, 0 } /* w3-Threshold-r13 */
+};
+static asn_SEQUENCE_specifics_t asn_SPC_eventW3_r13_specs_22 = {
+	sizeof(struct ReportConfigInterRAT__triggerType__event__eventId__eventW3_r13),
+	offsetof(struct ReportConfigInterRAT__triggerType__event__eventId__eventW3_r13, _asn_ctx),
+	asn_MAP_eventW3_r13_tag2el_22,
+	1,	/* Count of tags in the map */
+	0, 0, 0,	/* Optional elements (not needed) */
+	-1,	/* First extension addition */
+};
+static /* Use -fall-defs-global to expose */
+asn_TYPE_descriptor_t asn_DEF_eventW3_r13_22 = {
+	"eventW3-r13",
+	"eventW3-r13",
+	&asn_OP_SEQUENCE,
+	asn_DEF_eventW3_r13_tags_22,
+	sizeof(asn_DEF_eventW3_r13_tags_22)
+		/sizeof(asn_DEF_eventW3_r13_tags_22[0]) - 1, /* 1 */
+	asn_DEF_eventW3_r13_tags_22,	/* Same as above */
+	sizeof(asn_DEF_eventW3_r13_tags_22)
+		/sizeof(asn_DEF_eventW3_r13_tags_22[0]), /* 2 */
+	{ 0, 0, SEQUENCE_constraint },
+	asn_MBR_eventW3_r13_22,
+	1,	/* Elements count */
+	&asn_SPC_eventW3_r13_specs_22	/* Additional specs */
+};
+
+static asn_TYPE_member_t asn_MBR_eventB1_NR_r15_24[] = {
+	{ ATF_NOFLAGS, 0, offsetof(struct ReportConfigInterRAT__triggerType__event__eventId__eventB1_NR_r15, b1_ThresholdNR_r15),
+		(ASN_TAG_CLASS_CONTEXT | (0 << 2)),
+		+1,	/* EXPLICIT tag at current level */
+		&asn_DEF_ThresholdNR_r15,
+		0,
+		{ 0, 0, 0 },
+		0, 0, /* No default value */
+		"b1-ThresholdNR-r15"
+		},
+	{ ATF_NOFLAGS, 0, offsetof(struct ReportConfigInterRAT__triggerType__event__eventId__eventB1_NR_r15, reportOnLeave_r15),
+		(ASN_TAG_CLASS_CONTEXT | (1 << 2)),
+		-1,	/* IMPLICIT tag at current level */
+		&asn_DEF_BOOLEAN,
+		0,
+		{ 0, 0, 0 },
+		0, 0, /* No default value */
+		"reportOnLeave-r15"
+		},
+};
+static const ber_tlv_tag_t asn_DEF_eventB1_NR_r15_tags_24[] = {
+	(ASN_TAG_CLASS_CONTEXT | (5 << 2)),
+	(ASN_TAG_CLASS_UNIVERSAL | (16 << 2))
+};
+static const asn_TYPE_tag2member_t asn_MAP_eventB1_NR_r15_tag2el_24[] = {
+    { (ASN_TAG_CLASS_CONTEXT | (0 << 2)), 0, 0, 0 }, /* b1-ThresholdNR-r15 */
+    { (ASN_TAG_CLASS_CONTEXT | (1 << 2)), 1, 0, 0 } /* reportOnLeave-r15 */
+};
+static asn_SEQUENCE_specifics_t asn_SPC_eventB1_NR_r15_specs_24 = {
+	sizeof(struct ReportConfigInterRAT__triggerType__event__eventId__eventB1_NR_r15),
+	offsetof(struct ReportConfigInterRAT__triggerType__event__eventId__eventB1_NR_r15, _asn_ctx),
+	asn_MAP_eventB1_NR_r15_tag2el_24,
+	2,	/* Count of tags in the map */
+	0, 0, 0,	/* Optional elements (not needed) */
+	-1,	/* First extension addition */
+};
+static /* Use -fall-defs-global to expose */
+asn_TYPE_descriptor_t asn_DEF_eventB1_NR_r15_24 = {
+	"eventB1-NR-r15",
+	"eventB1-NR-r15",
+	&asn_OP_SEQUENCE,
+	asn_DEF_eventB1_NR_r15_tags_24,
+	sizeof(asn_DEF_eventB1_NR_r15_tags_24)
+		/sizeof(asn_DEF_eventB1_NR_r15_tags_24[0]) - 1, /* 1 */
+	asn_DEF_eventB1_NR_r15_tags_24,	/* Same as above */
+	sizeof(asn_DEF_eventB1_NR_r15_tags_24)
+		/sizeof(asn_DEF_eventB1_NR_r15_tags_24[0]), /* 2 */
+	{ 0, 0, SEQUENCE_constraint },
+	asn_MBR_eventB1_NR_r15_24,
+	2,	/* Elements count */
+	&asn_SPC_eventB1_NR_r15_specs_24	/* Additional specs */
+};
+
+static asn_TYPE_member_t asn_MBR_eventB2_NR_r15_27[] = {
+	{ ATF_NOFLAGS, 0, offsetof(struct ReportConfigInterRAT__triggerType__event__eventId__eventB2_NR_r15, b2_Threshold1_r15),
+		(ASN_TAG_CLASS_CONTEXT | (0 << 2)),
+		+1,	/* EXPLICIT tag at current level */
+		&asn_DEF_ThresholdEUTRA,
+		0,
+		{ 0, 0, 0 },
+		0, 0, /* No default value */
+		"b2-Threshold1-r15"
+		},
+	{ ATF_NOFLAGS, 0, offsetof(struct ReportConfigInterRAT__triggerType__event__eventId__eventB2_NR_r15, b2_Threshold2NR_r15),
+		(ASN_TAG_CLASS_CONTEXT | (1 << 2)),
+		+1,	/* EXPLICIT tag at current level */
+		&asn_DEF_ThresholdNR_r15,
+		0,
+		{ 0, 0, 0 },
+		0, 0, /* No default value */
+		"b2-Threshold2NR-r15"
+		},
+	{ ATF_NOFLAGS, 0, offsetof(struct ReportConfigInterRAT__triggerType__event__eventId__eventB2_NR_r15, reportOnLeave_r15),
+		(ASN_TAG_CLASS_CONTEXT | (2 << 2)),
+		-1,	/* IMPLICIT tag at current level */
+		&asn_DEF_BOOLEAN,
+		0,
+		{ 0, 0, 0 },
+		0, 0, /* No default value */
+		"reportOnLeave-r15"
+		},
+};
+static const ber_tlv_tag_t asn_DEF_eventB2_NR_r15_tags_27[] = {
+	(ASN_TAG_CLASS_CONTEXT | (6 << 2)),
+	(ASN_TAG_CLASS_UNIVERSAL | (16 << 2))
+};
+static const asn_TYPE_tag2member_t asn_MAP_eventB2_NR_r15_tag2el_27[] = {
+    { (ASN_TAG_CLASS_CONTEXT | (0 << 2)), 0, 0, 0 }, /* b2-Threshold1-r15 */
+    { (ASN_TAG_CLASS_CONTEXT | (1 << 2)), 1, 0, 0 }, /* b2-Threshold2NR-r15 */
+    { (ASN_TAG_CLASS_CONTEXT | (2 << 2)), 2, 0, 0 } /* reportOnLeave-r15 */
+};
+static asn_SEQUENCE_specifics_t asn_SPC_eventB2_NR_r15_specs_27 = {
+	sizeof(struct ReportConfigInterRAT__triggerType__event__eventId__eventB2_NR_r15),
+	offsetof(struct ReportConfigInterRAT__triggerType__event__eventId__eventB2_NR_r15, _asn_ctx),
+	asn_MAP_eventB2_NR_r15_tag2el_27,
+	3,	/* Count of tags in the map */
+	0, 0, 0,	/* Optional elements (not needed) */
+	-1,	/* First extension addition */
+};
+static /* Use -fall-defs-global to expose */
+asn_TYPE_descriptor_t asn_DEF_eventB2_NR_r15_27 = {
+	"eventB2-NR-r15",
+	"eventB2-NR-r15",
+	&asn_OP_SEQUENCE,
+	asn_DEF_eventB2_NR_r15_tags_27,
+	sizeof(asn_DEF_eventB2_NR_r15_tags_27)
+		/sizeof(asn_DEF_eventB2_NR_r15_tags_27[0]) - 1, /* 1 */
+	asn_DEF_eventB2_NR_r15_tags_27,	/* Same as above */
+	sizeof(asn_DEF_eventB2_NR_r15_tags_27)
+		/sizeof(asn_DEF_eventB2_NR_r15_tags_27[0]), /* 2 */
+	{ 0, 0, SEQUENCE_constraint },
+	asn_MBR_eventB2_NR_r15_27,
+	3,	/* Elements count */
+	&asn_SPC_eventB2_NR_r15_specs_27	/* Additional specs */
+};
+
 static asn_TYPE_member_t asn_MBR_eventId_4[] = {
 	{ ATF_NOFLAGS, 0, offsetof(struct ReportConfigInterRAT__triggerType__event__eventId, choice.eventB1),
 		(ASN_TAG_CLASS_CONTEXT | (0 << 2)),
@@ -308,10 +627,60 @@ static asn_TYPE_member_t asn_MBR_eventId_4[] = {
 		0, 0, /* No default value */
 		"eventB2"
 		},
+	{ ATF_NOFLAGS, 0, offsetof(struct ReportConfigInterRAT__triggerType__event__eventId, choice.eventW1_r13),
+		(ASN_TAG_CLASS_CONTEXT | (2 << 2)),
+		0,
+		&asn_DEF_eventW1_r13_17,
+		0,
+		{ 0, 0, 0 },
+		0, 0, /* No default value */
+		"eventW1-r13"
+		},
+	{ ATF_NOFLAGS, 0, offsetof(struct ReportConfigInterRAT__triggerType__event__eventId, choice.eventW2_r13),
+		(ASN_TAG_CLASS_CONTEXT | (3 << 2)),
+		0,
+		&asn_DEF_eventW2_r13_19,
+		0,
+		{ 0, 0, 0 },
+		0, 0, /* No default value */
+		"eventW2-r13"
+		},
+	{ ATF_NOFLAGS, 0, offsetof(struct ReportConfigInterRAT__triggerType__event__eventId, choice.eventW3_r13),
+		(ASN_TAG_CLASS_CONTEXT | (4 << 2)),
+		0,
+		&asn_DEF_eventW3_r13_22,
+		0,
+		{ 0, 0, 0 },
+		0, 0, /* No default value */
+		"eventW3-r13"
+		},
+	{ ATF_NOFLAGS, 0, offsetof(struct ReportConfigInterRAT__triggerType__event__eventId, choice.eventB1_NR_r15),
+		(ASN_TAG_CLASS_CONTEXT | (5 << 2)),
+		0,
+		&asn_DEF_eventB1_NR_r15_24,
+		0,
+		{ 0, 0, 0 },
+		0, 0, /* No default value */
+		"eventB1-NR-r15"
+		},
+	{ ATF_NOFLAGS, 0, offsetof(struct ReportConfigInterRAT__triggerType__event__eventId, choice.eventB2_NR_r15),
+		(ASN_TAG_CLASS_CONTEXT | (6 << 2)),
+		0,
+		&asn_DEF_eventB2_NR_r15_27,
+		0,
+		{ 0, 0, 0 },
+		0, 0, /* No default value */
+		"eventB2-NR-r15"
+		},
 };
 static const asn_TYPE_tag2member_t asn_MAP_eventId_tag2el_4[] = {
     { (ASN_TAG_CLASS_CONTEXT | (0 << 2)), 0, 0, 0 }, /* eventB1 */
-    { (ASN_TAG_CLASS_CONTEXT | (1 << 2)), 1, 0, 0 } /* eventB2 */
+    { (ASN_TAG_CLASS_CONTEXT | (1 << 2)), 1, 0, 0 }, /* eventB2 */
+    { (ASN_TAG_CLASS_CONTEXT | (2 << 2)), 2, 0, 0 }, /* eventW1-r13 */
+    { (ASN_TAG_CLASS_CONTEXT | (3 << 2)), 3, 0, 0 }, /* eventW2-r13 */
+    { (ASN_TAG_CLASS_CONTEXT | (4 << 2)), 4, 0, 0 }, /* eventW3-r13 */
+    { (ASN_TAG_CLASS_CONTEXT | (5 << 2)), 5, 0, 0 }, /* eventB1-NR-r15 */
+    { (ASN_TAG_CLASS_CONTEXT | (6 << 2)), 6, 0, 0 } /* eventB2-NR-r15 */
 };
 static asn_CHOICE_specifics_t asn_SPC_eventId_specs_4 = {
 	sizeof(struct ReportConfigInterRAT__triggerType__event__eventId),
@@ -319,7 +688,7 @@ static asn_CHOICE_specifics_t asn_SPC_eventId_specs_4 = {
 	offsetof(struct ReportConfigInterRAT__triggerType__event__eventId, present),
 	sizeof(((struct ReportConfigInterRAT__triggerType__event__eventId *)0)->present),
 	asn_MAP_eventId_tag2el_4,
-	2,	/* Count of tags in the map */
+	7,	/* Count of tags in the map */
 	0, 0,
 	2	/* Extensions start */
 };
@@ -334,7 +703,7 @@ asn_TYPE_descriptor_t asn_DEF_eventId_4 = {
 	0,	/* No tags (count) */
 	{ 0, &asn_PER_type_eventId_constr_4, CHOICE_constraint },
 	asn_MBR_eventId_4,
-	2,	/* Elements count */
+	7,	/* Elements count */
 	&asn_SPC_eventId_specs_4	/* Additional specs */
 };
 
@@ -401,86 +770,86 @@ asn_TYPE_descriptor_t asn_DEF_event_3 = {
 	&asn_SPC_event_specs_3	/* Additional specs */
 };
 
-static const asn_INTEGER_enum_map_t asn_MAP_purpose_value2enum_20[] = {
+static const asn_INTEGER_enum_map_t asn_MAP_purpose_value2enum_34[] = {
 	{ 0,	20,	"reportStrongestCells" },
 	{ 1,	26,	"reportStrongestCellsForSON" },
 	{ 2,	9,	"reportCGI" }
 };
-static const unsigned int asn_MAP_purpose_enum2value_20[] = {
+static const unsigned int asn_MAP_purpose_enum2value_34[] = {
 	2,	/* reportCGI(2) */
 	0,	/* reportStrongestCells(0) */
 	1	/* reportStrongestCellsForSON(1) */
 };
-static const asn_INTEGER_specifics_t asn_SPC_purpose_specs_20 = {
-	asn_MAP_purpose_value2enum_20,	/* "tag" => N; sorted by tag */
-	asn_MAP_purpose_enum2value_20,	/* N => "tag"; sorted by N */
+static const asn_INTEGER_specifics_t asn_SPC_purpose_specs_34 = {
+	asn_MAP_purpose_value2enum_34,	/* "tag" => N; sorted by tag */
+	asn_MAP_purpose_enum2value_34,	/* N => "tag"; sorted by N */
 	3,	/* Number of elements in the maps */
 	0,	/* Enumeration is not extensible */
 	1,	/* Strict enumeration */
 	0,	/* Native long size */
 	0
 };
-static const ber_tlv_tag_t asn_DEF_purpose_tags_20[] = {
+static const ber_tlv_tag_t asn_DEF_purpose_tags_34[] = {
 	(ASN_TAG_CLASS_CONTEXT | (0 << 2)),
 	(ASN_TAG_CLASS_UNIVERSAL | (10 << 2))
 };
 static /* Use -fall-defs-global to expose */
-asn_TYPE_descriptor_t asn_DEF_purpose_20 = {
+asn_TYPE_descriptor_t asn_DEF_purpose_34 = {
 	"purpose",
 	"purpose",
 	&asn_OP_NativeEnumerated,
-	asn_DEF_purpose_tags_20,
-	sizeof(asn_DEF_purpose_tags_20)
-		/sizeof(asn_DEF_purpose_tags_20[0]) - 1, /* 1 */
-	asn_DEF_purpose_tags_20,	/* Same as above */
-	sizeof(asn_DEF_purpose_tags_20)
-		/sizeof(asn_DEF_purpose_tags_20[0]), /* 2 */
-	{ 0, &asn_PER_type_purpose_constr_20, NativeEnumerated_constraint },
+	asn_DEF_purpose_tags_34,
+	sizeof(asn_DEF_purpose_tags_34)
+		/sizeof(asn_DEF_purpose_tags_34[0]) - 1, /* 1 */
+	asn_DEF_purpose_tags_34,	/* Same as above */
+	sizeof(asn_DEF_purpose_tags_34)
+		/sizeof(asn_DEF_purpose_tags_34[0]), /* 2 */
+	{ 0, &asn_PER_type_purpose_constr_34, NativeEnumerated_constraint },
 	0, 0,	/* Defined elsewhere */
-	&asn_SPC_purpose_specs_20	/* Additional specs */
+	&asn_SPC_purpose_specs_34	/* Additional specs */
 };
 
-static asn_TYPE_member_t asn_MBR_periodical_19[] = {
+static asn_TYPE_member_t asn_MBR_periodical_33[] = {
 	{ ATF_NOFLAGS, 0, offsetof(struct ReportConfigInterRAT__triggerType__periodical, purpose),
 		(ASN_TAG_CLASS_CONTEXT | (0 << 2)),
 		-1,	/* IMPLICIT tag at current level */
-		&asn_DEF_purpose_20,
+		&asn_DEF_purpose_34,
 		0,
 		{ 0, 0, 0 },
 		0, 0, /* No default value */
 		"purpose"
 		},
 };
-static const ber_tlv_tag_t asn_DEF_periodical_tags_19[] = {
+static const ber_tlv_tag_t asn_DEF_periodical_tags_33[] = {
 	(ASN_TAG_CLASS_CONTEXT | (1 << 2)),
 	(ASN_TAG_CLASS_UNIVERSAL | (16 << 2))
 };
-static const asn_TYPE_tag2member_t asn_MAP_periodical_tag2el_19[] = {
+static const asn_TYPE_tag2member_t asn_MAP_periodical_tag2el_33[] = {
     { (ASN_TAG_CLASS_CONTEXT | (0 << 2)), 0, 0, 0 } /* purpose */
 };
-static asn_SEQUENCE_specifics_t asn_SPC_periodical_specs_19 = {
+static asn_SEQUENCE_specifics_t asn_SPC_periodical_specs_33 = {
 	sizeof(struct ReportConfigInterRAT__triggerType__periodical),
 	offsetof(struct ReportConfigInterRAT__triggerType__periodical, _asn_ctx),
-	asn_MAP_periodical_tag2el_19,
+	asn_MAP_periodical_tag2el_33,
 	1,	/* Count of tags in the map */
 	0, 0, 0,	/* Optional elements (not needed) */
 	-1,	/* First extension addition */
 };
 static /* Use -fall-defs-global to expose */
-asn_TYPE_descriptor_t asn_DEF_periodical_19 = {
+asn_TYPE_descriptor_t asn_DEF_periodical_33 = {
 	"periodical",
 	"periodical",
 	&asn_OP_SEQUENCE,
-	asn_DEF_periodical_tags_19,
-	sizeof(asn_DEF_periodical_tags_19)
-		/sizeof(asn_DEF_periodical_tags_19[0]) - 1, /* 1 */
-	asn_DEF_periodical_tags_19,	/* Same as above */
-	sizeof(asn_DEF_periodical_tags_19)
-		/sizeof(asn_DEF_periodical_tags_19[0]), /* 2 */
+	asn_DEF_periodical_tags_33,
+	sizeof(asn_DEF_periodical_tags_33)
+		/sizeof(asn_DEF_periodical_tags_33[0]) - 1, /* 1 */
+	asn_DEF_periodical_tags_33,	/* Same as above */
+	sizeof(asn_DEF_periodical_tags_33)
+		/sizeof(asn_DEF_periodical_tags_33[0]), /* 2 */
 	{ 0, 0, SEQUENCE_constraint },
-	asn_MBR_periodical_19,
+	asn_MBR_periodical_33,
 	1,	/* Elements count */
-	&asn_SPC_periodical_specs_19	/* Additional specs */
+	&asn_SPC_periodical_specs_33	/* Additional specs */
 };
 
 static asn_TYPE_member_t asn_MBR_triggerType_2[] = {
@@ -496,7 +865,7 @@ static asn_TYPE_member_t asn_MBR_triggerType_2[] = {
 	{ ATF_NOFLAGS, 0, offsetof(struct ReportConfigInterRAT__triggerType, choice.periodical),
 		(ASN_TAG_CLASS_CONTEXT | (1 << 2)),
 		0,
-		&asn_DEF_periodical_19,
+		&asn_DEF_periodical_33,
 		0,
 		{ 0, 0, 0 },
 		0, 0, /* No default value */
@@ -532,7 +901,7 @@ asn_TYPE_descriptor_t asn_DEF_triggerType_2 = {
 	&asn_SPC_triggerType_specs_2	/* Additional specs */
 };
 
-static const asn_INTEGER_enum_map_t asn_MAP_reportAmount_value2enum_26[] = {
+static const asn_INTEGER_enum_map_t asn_MAP_reportAmount_value2enum_40[] = {
 	{ 0,	2,	"r1" },
 	{ 1,	2,	"r2" },
 	{ 2,	2,	"r4" },
@@ -542,7 +911,7 @@ static const asn_INTEGER_enum_map_t asn_MAP_reportAmount_value2enum_26[] = {
 	{ 6,	3,	"r64" },
 	{ 7,	8,	"infinity" }
 };
-static const unsigned int asn_MAP_reportAmount_enum2value_26[] = {
+static const unsigned int asn_MAP_reportAmount_enum2value_40[] = {
 	7,	/* infinity(7) */
 	0,	/* r1(0) */
 	4,	/* r16(4) */
@@ -552,33 +921,189 @@ static const unsigned int asn_MAP_reportAmount_enum2value_26[] = {
 	6,	/* r64(6) */
 	3	/* r8(3) */
 };
-static const asn_INTEGER_specifics_t asn_SPC_reportAmount_specs_26 = {
-	asn_MAP_reportAmount_value2enum_26,	/* "tag" => N; sorted by tag */
-	asn_MAP_reportAmount_enum2value_26,	/* N => "tag"; sorted by N */
+static const asn_INTEGER_specifics_t asn_SPC_reportAmount_specs_40 = {
+	asn_MAP_reportAmount_value2enum_40,	/* "tag" => N; sorted by tag */
+	asn_MAP_reportAmount_enum2value_40,	/* N => "tag"; sorted by N */
 	8,	/* Number of elements in the maps */
 	0,	/* Enumeration is not extensible */
 	1,	/* Strict enumeration */
 	0,	/* Native long size */
 	0
 };
-static const ber_tlv_tag_t asn_DEF_reportAmount_tags_26[] = {
+static const ber_tlv_tag_t asn_DEF_reportAmount_tags_40[] = {
 	(ASN_TAG_CLASS_CONTEXT | (3 << 2)),
 	(ASN_TAG_CLASS_UNIVERSAL | (10 << 2))
 };
 static /* Use -fall-defs-global to expose */
-asn_TYPE_descriptor_t asn_DEF_reportAmount_26 = {
+asn_TYPE_descriptor_t asn_DEF_reportAmount_40 = {
 	"reportAmount",
 	"reportAmount",
 	&asn_OP_NativeEnumerated,
-	asn_DEF_reportAmount_tags_26,
-	sizeof(asn_DEF_reportAmount_tags_26)
-		/sizeof(asn_DEF_reportAmount_tags_26[0]) - 1, /* 1 */
-	asn_DEF_reportAmount_tags_26,	/* Same as above */
-	sizeof(asn_DEF_reportAmount_tags_26)
-		/sizeof(asn_DEF_reportAmount_tags_26[0]), /* 2 */
-	{ 0, &asn_PER_type_reportAmount_constr_26, NativeEnumerated_constraint },
+	asn_DEF_reportAmount_tags_40,
+	sizeof(asn_DEF_reportAmount_tags_40)
+		/sizeof(asn_DEF_reportAmount_tags_40[0]) - 1, /* 1 */
+	asn_DEF_reportAmount_tags_40,	/* Same as above */
+	sizeof(asn_DEF_reportAmount_tags_40)
+		/sizeof(asn_DEF_reportAmount_tags_40[0]), /* 2 */
+	{ 0, &asn_PER_type_reportAmount_constr_40, NativeEnumerated_constraint },
 	0, 0,	/* Defined elsewhere */
-	&asn_SPC_reportAmount_specs_26	/* Additional specs */
+	&asn_SPC_reportAmount_specs_40	/* Additional specs */
+};
+
+static const asn_INTEGER_enum_map_t asn_MAP_si_RequestForHO_r9_value2enum_50[] = {
+	{ 0,	5,	"setup" }
+};
+static const unsigned int asn_MAP_si_RequestForHO_r9_enum2value_50[] = {
+	0	/* setup(0) */
+};
+static const asn_INTEGER_specifics_t asn_SPC_si_RequestForHO_r9_specs_50 = {
+	asn_MAP_si_RequestForHO_r9_value2enum_50,	/* "tag" => N; sorted by tag */
+	asn_MAP_si_RequestForHO_r9_enum2value_50,	/* N => "tag"; sorted by N */
+	1,	/* Number of elements in the maps */
+	0,	/* Enumeration is not extensible */
+	1,	/* Strict enumeration */
+	0,	/* Native long size */
+	0
+};
+static const ber_tlv_tag_t asn_DEF_si_RequestForHO_r9_tags_50[] = {
+	(ASN_TAG_CLASS_CONTEXT | (4 << 2)),
+	(ASN_TAG_CLASS_UNIVERSAL | (10 << 2))
+};
+static /* Use -fall-defs-global to expose */
+asn_TYPE_descriptor_t asn_DEF_si_RequestForHO_r9_50 = {
+	"si-RequestForHO-r9",
+	"si-RequestForHO-r9",
+	&asn_OP_NativeEnumerated,
+	asn_DEF_si_RequestForHO_r9_tags_50,
+	sizeof(asn_DEF_si_RequestForHO_r9_tags_50)
+		/sizeof(asn_DEF_si_RequestForHO_r9_tags_50[0]) - 1, /* 1 */
+	asn_DEF_si_RequestForHO_r9_tags_50,	/* Same as above */
+	sizeof(asn_DEF_si_RequestForHO_r9_tags_50)
+		/sizeof(asn_DEF_si_RequestForHO_r9_tags_50[0]), /* 2 */
+	{ 0, &asn_PER_type_si_RequestForHO_r9_constr_50, NativeEnumerated_constraint },
+	0, 0,	/* Defined elsewhere */
+	&asn_SPC_si_RequestForHO_r9_specs_50	/* Additional specs */
+};
+
+static const asn_INTEGER_enum_map_t asn_MAP_reportQuantityUTRA_FDD_r10_value2enum_52[] = {
+	{ 0,	4,	"both" }
+};
+static const unsigned int asn_MAP_reportQuantityUTRA_FDD_r10_enum2value_52[] = {
+	0	/* both(0) */
+};
+static const asn_INTEGER_specifics_t asn_SPC_reportQuantityUTRA_FDD_r10_specs_52 = {
+	asn_MAP_reportQuantityUTRA_FDD_r10_value2enum_52,	/* "tag" => N; sorted by tag */
+	asn_MAP_reportQuantityUTRA_FDD_r10_enum2value_52,	/* N => "tag"; sorted by N */
+	1,	/* Number of elements in the maps */
+	0,	/* Enumeration is not extensible */
+	1,	/* Strict enumeration */
+	0,	/* Native long size */
+	0
+};
+static const ber_tlv_tag_t asn_DEF_reportQuantityUTRA_FDD_r10_tags_52[] = {
+	(ASN_TAG_CLASS_CONTEXT | (5 << 2)),
+	(ASN_TAG_CLASS_UNIVERSAL | (10 << 2))
+};
+static /* Use -fall-defs-global to expose */
+asn_TYPE_descriptor_t asn_DEF_reportQuantityUTRA_FDD_r10_52 = {
+	"reportQuantityUTRA-FDD-r10",
+	"reportQuantityUTRA-FDD-r10",
+	&asn_OP_NativeEnumerated,
+	asn_DEF_reportQuantityUTRA_FDD_r10_tags_52,
+	sizeof(asn_DEF_reportQuantityUTRA_FDD_r10_tags_52)
+		/sizeof(asn_DEF_reportQuantityUTRA_FDD_r10_tags_52[0]) - 1, /* 1 */
+	asn_DEF_reportQuantityUTRA_FDD_r10_tags_52,	/* Same as above */
+	sizeof(asn_DEF_reportQuantityUTRA_FDD_r10_tags_52)
+		/sizeof(asn_DEF_reportQuantityUTRA_FDD_r10_tags_52[0]), /* 2 */
+	{ 0, &asn_PER_type_reportQuantityUTRA_FDD_r10_constr_52, NativeEnumerated_constraint },
+	0, 0,	/* Defined elsewhere */
+	&asn_SPC_reportQuantityUTRA_FDD_r10_specs_52	/* Additional specs */
+};
+
+static asn_TYPE_member_t asn_MBR_b2_Threshold1_v1250_55[] = {
+	{ ATF_NOFLAGS, 0, offsetof(struct ReportConfigInterRAT__b2_Threshold1_v1250, choice.release),
+		(ASN_TAG_CLASS_CONTEXT | (0 << 2)),
+		-1,	/* IMPLICIT tag at current level */
+		&asn_DEF_NULL,
+		0,
+		{ 0, 0, 0 },
+		0, 0, /* No default value */
+		"release"
+		},
+	{ ATF_NOFLAGS, 0, offsetof(struct ReportConfigInterRAT__b2_Threshold1_v1250, choice.setup),
+		(ASN_TAG_CLASS_CONTEXT | (1 << 2)),
+		-1,	/* IMPLICIT tag at current level */
+		&asn_DEF_RSRQ_Range_v1250,
+		0,
+		{ 0, 0, 0 },
+		0, 0, /* No default value */
+		"setup"
+		},
+};
+static const asn_TYPE_tag2member_t asn_MAP_b2_Threshold1_v1250_tag2el_55[] = {
+    { (ASN_TAG_CLASS_CONTEXT | (0 << 2)), 0, 0, 0 }, /* release */
+    { (ASN_TAG_CLASS_CONTEXT | (1 << 2)), 1, 0, 0 } /* setup */
+};
+static asn_CHOICE_specifics_t asn_SPC_b2_Threshold1_v1250_specs_55 = {
+	sizeof(struct ReportConfigInterRAT__b2_Threshold1_v1250),
+	offsetof(struct ReportConfigInterRAT__b2_Threshold1_v1250, _asn_ctx),
+	offsetof(struct ReportConfigInterRAT__b2_Threshold1_v1250, present),
+	sizeof(((struct ReportConfigInterRAT__b2_Threshold1_v1250 *)0)->present),
+	asn_MAP_b2_Threshold1_v1250_tag2el_55,
+	2,	/* Count of tags in the map */
+	0, 0,
+	-1	/* Extensions start */
+};
+static /* Use -fall-defs-global to expose */
+asn_TYPE_descriptor_t asn_DEF_b2_Threshold1_v1250_55 = {
+	"b2-Threshold1-v1250",
+	"b2-Threshold1-v1250",
+	&asn_OP_CHOICE,
+	0,	/* No effective tags (pointer) */
+	0,	/* No effective tags (count) */
+	0,	/* No tags (pointer) */
+	0,	/* No tags (count) */
+	{ 0, &asn_PER_type_b2_Threshold1_v1250_constr_55, CHOICE_constraint },
+	asn_MBR_b2_Threshold1_v1250_55,
+	2,	/* Elements count */
+	&asn_SPC_b2_Threshold1_v1250_specs_55	/* Additional specs */
+};
+
+static const asn_INTEGER_enum_map_t asn_MAP_reportSFTD_Meas_r15_value2enum_64[] = {
+	{ 0,	6,	"pSCell" },
+	{ 1,	13,	"neighborCells" }
+};
+static const unsigned int asn_MAP_reportSFTD_Meas_r15_enum2value_64[] = {
+	1,	/* neighborCells(1) */
+	0	/* pSCell(0) */
+};
+static const asn_INTEGER_specifics_t asn_SPC_reportSFTD_Meas_r15_specs_64 = {
+	asn_MAP_reportSFTD_Meas_r15_value2enum_64,	/* "tag" => N; sorted by tag */
+	asn_MAP_reportSFTD_Meas_r15_enum2value_64,	/* N => "tag"; sorted by N */
+	2,	/* Number of elements in the maps */
+	0,	/* Enumeration is not extensible */
+	1,	/* Strict enumeration */
+	0,	/* Native long size */
+	0
+};
+static const ber_tlv_tag_t asn_DEF_reportSFTD_Meas_r15_tags_64[] = {
+	(ASN_TAG_CLASS_CONTEXT | (14 << 2)),
+	(ASN_TAG_CLASS_UNIVERSAL | (10 << 2))
+};
+static /* Use -fall-defs-global to expose */
+asn_TYPE_descriptor_t asn_DEF_reportSFTD_Meas_r15_64 = {
+	"reportSFTD-Meas-r15",
+	"reportSFTD-Meas-r15",
+	&asn_OP_NativeEnumerated,
+	asn_DEF_reportSFTD_Meas_r15_tags_64,
+	sizeof(asn_DEF_reportSFTD_Meas_r15_tags_64)
+		/sizeof(asn_DEF_reportSFTD_Meas_r15_tags_64[0]) - 1, /* 1 */
+	asn_DEF_reportSFTD_Meas_r15_tags_64,	/* Same as above */
+	sizeof(asn_DEF_reportSFTD_Meas_r15_tags_64)
+		/sizeof(asn_DEF_reportSFTD_Meas_r15_tags_64[0]), /* 2 */
+	{ 0, &asn_PER_type_reportSFTD_Meas_r15_constr_64, NativeEnumerated_constraint },
+	0, 0,	/* Defined elsewhere */
+	&asn_SPC_reportSFTD_Meas_r15_specs_64	/* Additional specs */
 };
 
 asn_TYPE_member_t asn_MBR_ReportConfigInterRAT_1[] = {
@@ -596,7 +1121,7 @@ asn_TYPE_member_t asn_MBR_ReportConfigInterRAT_1[] = {
 		-1,	/* IMPLICIT tag at current level */
 		&asn_DEF_NativeInteger,
 		0,
-		{ 0, &asn_PER_memb_maxReportCells_constr_24,  memb_maxReportCells_constraint_1 },
+		{ 0, &asn_PER_memb_maxReportCells_constr_38,  memb_maxReportCells_constraint_1 },
 		0, 0, /* No default value */
 		"maxReportCells"
 		},
@@ -612,13 +1137,113 @@ asn_TYPE_member_t asn_MBR_ReportConfigInterRAT_1[] = {
 	{ ATF_NOFLAGS, 0, offsetof(struct ReportConfigInterRAT, reportAmount),
 		(ASN_TAG_CLASS_CONTEXT | (3 << 2)),
 		-1,	/* IMPLICIT tag at current level */
-		&asn_DEF_reportAmount_26,
+		&asn_DEF_reportAmount_40,
 		0,
 		{ 0, 0, 0 },
 		0, 0, /* No default value */
 		"reportAmount"
 		},
+	{ ATF_POINTER, 11, offsetof(struct ReportConfigInterRAT, si_RequestForHO_r9),
+		(ASN_TAG_CLASS_CONTEXT | (4 << 2)),
+		-1,	/* IMPLICIT tag at current level */
+		&asn_DEF_si_RequestForHO_r9_50,
+		0,
+		{ 0, 0, 0 },
+		0, 0, /* No default value */
+		"si-RequestForHO-r9"
+		},
+	{ ATF_POINTER, 10, offsetof(struct ReportConfigInterRAT, reportQuantityUTRA_FDD_r10),
+		(ASN_TAG_CLASS_CONTEXT | (5 << 2)),
+		-1,	/* IMPLICIT tag at current level */
+		&asn_DEF_reportQuantityUTRA_FDD_r10_52,
+		0,
+		{ 0, 0, 0 },
+		0, 0, /* No default value */
+		"reportQuantityUTRA-FDD-r10"
+		},
+	{ ATF_POINTER, 9, offsetof(struct ReportConfigInterRAT, includeLocationInfo_r11),
+		(ASN_TAG_CLASS_CONTEXT | (6 << 2)),
+		-1,	/* IMPLICIT tag at current level */
+		&asn_DEF_BOOLEAN,
+		0,
+		{ 0, 0, 0 },
+		0, 0, /* No default value */
+		"includeLocationInfo-r11"
+		},
+	{ ATF_POINTER, 8, offsetof(struct ReportConfigInterRAT, b2_Threshold1_v1250),
+		(ASN_TAG_CLASS_CONTEXT | (7 << 2)),
+		+1,	/* EXPLICIT tag at current level */
+		&asn_DEF_b2_Threshold1_v1250_55,
+		0,
+		{ 0, 0, 0 },
+		0, 0, /* No default value */
+		"b2-Threshold1-v1250"
+		},
+	{ ATF_POINTER, 7, offsetof(struct ReportConfigInterRAT, reportQuantityWLAN_r13),
+		(ASN_TAG_CLASS_CONTEXT | (8 << 2)),
+		-1,	/* IMPLICIT tag at current level */
+		&asn_DEF_ReportQuantityWLAN_r13,
+		0,
+		{ 0, 0, 0 },
+		0, 0, /* No default value */
+		"reportQuantityWLAN-r13"
+		},
+	{ ATF_POINTER, 6, offsetof(struct ReportConfigInterRAT, reportAnyWLAN_r14),
+		(ASN_TAG_CLASS_CONTEXT | (9 << 2)),
+		-1,	/* IMPLICIT tag at current level */
+		&asn_DEF_BOOLEAN,
+		0,
+		{ 0, 0, 0 },
+		0, 0, /* No default value */
+		"reportAnyWLAN-r14"
+		},
+	{ ATF_POINTER, 5, offsetof(struct ReportConfigInterRAT, reportQuantityCellNR_r15),
+		(ASN_TAG_CLASS_CONTEXT | (10 << 2)),
+		-1,	/* IMPLICIT tag at current level */
+		&asn_DEF_ReportQuantityNR_r15,
+		0,
+		{ 0, 0, 0 },
+		0, 0, /* No default value */
+		"reportQuantityCellNR-r15"
+		},
+	{ ATF_POINTER, 4, offsetof(struct ReportConfigInterRAT, maxReportRS_Index_r15),
+		(ASN_TAG_CLASS_CONTEXT | (11 << 2)),
+		-1,	/* IMPLICIT tag at current level */
+		&asn_DEF_NativeInteger,
+		0,
+		{ 0, &asn_PER_memb_maxReportRS_Index_r15_constr_61,  memb_maxReportRS_Index_r15_constraint_1 },
+		0, 0, /* No default value */
+		"maxReportRS-Index-r15"
+		},
+	{ ATF_POINTER, 3, offsetof(struct ReportConfigInterRAT, reportQuantityRS_IndexNR_r15),
+		(ASN_TAG_CLASS_CONTEXT | (12 << 2)),
+		-1,	/* IMPLICIT tag at current level */
+		&asn_DEF_ReportQuantityNR_r15,
+		0,
+		{ 0, 0, 0 },
+		0, 0, /* No default value */
+		"reportQuantityRS-IndexNR-r15"
+		},
+	{ ATF_POINTER, 2, offsetof(struct ReportConfigInterRAT, reportRS_IndexResultsNR),
+		(ASN_TAG_CLASS_CONTEXT | (13 << 2)),
+		-1,	/* IMPLICIT tag at current level */
+		&asn_DEF_BOOLEAN,
+		0,
+		{ 0, 0, 0 },
+		0, 0, /* No default value */
+		"reportRS-IndexResultsNR"
+		},
+	{ ATF_POINTER, 1, offsetof(struct ReportConfigInterRAT, reportSFTD_Meas_r15),
+		(ASN_TAG_CLASS_CONTEXT | (14 << 2)),
+		-1,	/* IMPLICIT tag at current level */
+		&asn_DEF_reportSFTD_Meas_r15_64,
+		0,
+		{ 0, 0, 0 },
+		0, 0, /* No default value */
+		"reportSFTD-Meas-r15"
+		},
 };
+static const int asn_MAP_ReportConfigInterRAT_oms_1[] = { 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14 };
 static const ber_tlv_tag_t asn_DEF_ReportConfigInterRAT_tags_1[] = {
 	(ASN_TAG_CLASS_UNIVERSAL | (16 << 2))
 };
@@ -626,14 +1251,26 @@ static const asn_TYPE_tag2member_t asn_MAP_ReportConfigInterRAT_tag2el_1[] = {
     { (ASN_TAG_CLASS_CONTEXT | (0 << 2)), 0, 0, 0 }, /* triggerType */
     { (ASN_TAG_CLASS_CONTEXT | (1 << 2)), 1, 0, 0 }, /* maxReportCells */
     { (ASN_TAG_CLASS_CONTEXT | (2 << 2)), 2, 0, 0 }, /* reportInterval */
-    { (ASN_TAG_CLASS_CONTEXT | (3 << 2)), 3, 0, 0 } /* reportAmount */
+    { (ASN_TAG_CLASS_CONTEXT | (3 << 2)), 3, 0, 0 }, /* reportAmount */
+    { (ASN_TAG_CLASS_CONTEXT | (4 << 2)), 4, 0, 0 }, /* si-RequestForHO-r9 */
+    { (ASN_TAG_CLASS_CONTEXT | (5 << 2)), 5, 0, 0 }, /* reportQuantityUTRA-FDD-r10 */
+    { (ASN_TAG_CLASS_CONTEXT | (6 << 2)), 6, 0, 0 }, /* includeLocationInfo-r11 */
+    { (ASN_TAG_CLASS_CONTEXT | (7 << 2)), 7, 0, 0 }, /* b2-Threshold1-v1250 */
+    { (ASN_TAG_CLASS_CONTEXT | (8 << 2)), 8, 0, 0 }, /* reportQuantityWLAN-r13 */
+    { (ASN_TAG_CLASS_CONTEXT | (9 << 2)), 9, 0, 0 }, /* reportAnyWLAN-r14 */
+    { (ASN_TAG_CLASS_CONTEXT | (10 << 2)), 10, 0, 0 }, /* reportQuantityCellNR-r15 */
+    { (ASN_TAG_CLASS_CONTEXT | (11 << 2)), 11, 0, 0 }, /* maxReportRS-Index-r15 */
+    { (ASN_TAG_CLASS_CONTEXT | (12 << 2)), 12, 0, 0 }, /* reportQuantityRS-IndexNR-r15 */
+    { (ASN_TAG_CLASS_CONTEXT | (13 << 2)), 13, 0, 0 }, /* reportRS-IndexResultsNR */
+    { (ASN_TAG_CLASS_CONTEXT | (14 << 2)), 14, 0, 0 } /* reportSFTD-Meas-r15 */
 };
 asn_SEQUENCE_specifics_t asn_SPC_ReportConfigInterRAT_specs_1 = {
 	sizeof(struct ReportConfigInterRAT),
 	offsetof(struct ReportConfigInterRAT, _asn_ctx),
 	asn_MAP_ReportConfigInterRAT_tag2el_1,
-	4,	/* Count of tags in the map */
-	0, 0, 0,	/* Optional elements (not needed) */
+	15,	/* Count of tags in the map */
+	asn_MAP_ReportConfigInterRAT_oms_1,	/* Optional members */
+	0, 11,	/* Root/Additions */
 	4,	/* First extension addition */
 };
 asn_TYPE_descriptor_t asn_DEF_ReportConfigInterRAT = {
@@ -648,7 +1285,7 @@ asn_TYPE_descriptor_t asn_DEF_ReportConfigInterRAT = {
 		/sizeof(asn_DEF_ReportConfigInterRAT_tags_1[0]), /* 1 */
 	{ 0, 0, SEQUENCE_constraint },
 	asn_MBR_ReportConfigInterRAT_1,
-	4,	/* Elements count */
+	15,	/* Elements count */
 	&asn_SPC_ReportConfigInterRAT_specs_1	/* Additional specs */
 };
 

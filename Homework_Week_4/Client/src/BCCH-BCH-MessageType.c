@@ -26,7 +26,7 @@ asn_TYPE_descriptor_t asn_DEF_BCCH_BCH_MessageType = {
 		/sizeof(asn_DEF_BCCH_BCH_MessageType_tags_1[0]), /* 1 */
 	{ 0, 0, SEQUENCE_constraint },
 	asn_MBR_MasterInformationBlock_1,
-	4,	/* Elements count */
+	6,	/* Elements count */
 	&asn_SPC_MasterInformationBlock_specs_1	/* Additional specs */
 };
 

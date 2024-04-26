@@ -69,7 +69,7 @@ typedef enum DRX_Config__setup__drx_InactivityTimer {
 	DRX_Config__setup__drx_InactivityTimer_psf1280	= 19,
 	DRX_Config__setup__drx_InactivityTimer_psf1920	= 20,
 	DRX_Config__setup__drx_InactivityTimer_psf2560	= 21,
-	DRX_Config__setup__drx_InactivityTimer_spare10	= 22,
+	DRX_Config__setup__drx_InactivityTimer_psf0_v1020	= 22,
 	DRX_Config__setup__drx_InactivityTimer_spare9	= 23,
 	DRX_Config__setup__drx_InactivityTimer_spare8	= 24,
 	DRX_Config__setup__drx_InactivityTimer_spare7	= 25,

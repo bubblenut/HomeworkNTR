@@ -23,6 +23,19 @@
 #include "SystemInformationBlockType9.h"
 #include "SystemInformationBlockType10.h"
 #include "SystemInformationBlockType11.h"
+#include "SystemInformationBlockType12-r9.h"
+#include "SystemInformationBlockType13-r9.h"
+#include "SystemInformationBlockType14-r11.h"
+#include "SystemInformationBlockType15-r11.h"
+#include "SystemInformationBlockType16-r11.h"
+#include "SystemInformationBlockType17-r12.h"
+#include "SystemInformationBlockType18-r12.h"
+#include "SystemInformationBlockType19-r12.h"
+#include "SystemInformationBlockType20-r13.h"
+#include "SystemInformationBlockType21-r14.h"
+#include "SystemInformationBlockType24-r15.h"
+#include "SystemInformationBlockType25-r15.h"
+#include "SystemInformationBlockType26-r15.h"
 #include <constr_CHOICE.h>
 #include <constr_SEQUENCE_OF.h>
 #include <constr_SEQUENCE.h>
@@ -43,10 +56,25 @@ typedef enum SystemInformation_r8_IEs__sib_TypeAndInfo__Member_PR {
 	SystemInformation_r8_IEs__sib_TypeAndInfo__Member_PR_sib8,
 	SystemInformation_r8_IEs__sib_TypeAndInfo__Member_PR_sib9,
 	SystemInformation_r8_IEs__sib_TypeAndInfo__Member_PR_sib10,
-	SystemInformation_r8_IEs__sib_TypeAndInfo__Member_PR_sib11
+	SystemInformation_r8_IEs__sib_TypeAndInfo__Member_PR_sib11,
 	/* Extensions may appear below */
-	
+	SystemInformation_r8_IEs__sib_TypeAndInfo__Member_PR_sib12_v920,
+	SystemInformation_r8_IEs__sib_TypeAndInfo__Member_PR_sib13_v920,
+	SystemInformation_r8_IEs__sib_TypeAndInfo__Member_PR_sib14_v1130,
+	SystemInformation_r8_IEs__sib_TypeAndInfo__Member_PR_sib15_v1130,
+	SystemInformation_r8_IEs__sib_TypeAndInfo__Member_PR_sib16_v1130,
+	SystemInformation_r8_IEs__sib_TypeAndInfo__Member_PR_sib17_v1250,
+	SystemInformation_r8_IEs__sib_TypeAndInfo__Member_PR_sib18_v1250,
+	SystemInformation_r8_IEs__sib_TypeAndInfo__Member_PR_sib19_v1250,
+	SystemInformation_r8_IEs__sib_TypeAndInfo__Member_PR_sib20_v1310,
+	SystemInformation_r8_IEs__sib_TypeAndInfo__Member_PR_sib21_v1430,
+	SystemInformation_r8_IEs__sib_TypeAndInfo__Member_PR_sib24_v1530,
+	SystemInformation_r8_IEs__sib_TypeAndInfo__Member_PR_sib25_v1530,
+	SystemInformation_r8_IEs__sib_TypeAndInfo__Member_PR_sib26_v1530
 } SystemInformation_r8_IEs__sib_TypeAndInfo__Member_PR;
+
+/* Forward declarations */
+struct SystemInformation_v8a0_IEs;
 
 /* Forward definitions */
 typedef struct SystemInformation_r8_IEs__sib_TypeAndInfo__Member {
@@ -66,6 +94,19 @@ typedef struct SystemInformation_r8_IEs__sib_TypeAndInfo__Member {
 		 * This type is extensible,
 		 * possible extensions are below.
 		 */
+		SystemInformationBlockType12_r9_t	 sib12_v920;
+		SystemInformationBlockType13_r9_t	 sib13_v920;
+		SystemInformationBlockType14_r11_t	 sib14_v1130;
+		SystemInformationBlockType15_r11_t	 sib15_v1130;
+		SystemInformationBlockType16_r11_t	 sib16_v1130;
+		SystemInformationBlockType17_r12_t	 sib17_v1250;
+		SystemInformationBlockType18_r12_t	 sib18_v1250;
+		SystemInformationBlockType19_r12_t	 sib19_v1250;
+		SystemInformationBlockType20_r13_t	 sib20_v1310;
+		SystemInformationBlockType21_r14_t	 sib21_v1430;
+		SystemInformationBlockType24_r15_t	 sib24_v1530;
+		SystemInformationBlockType25_r15_t	 sib25_v1530;
+		SystemInformationBlockType26_r15_t	 sib26_v1530;
 	} choice;
 	
 	/* Context for parsing across buffer boundaries */
@@ -80,11 +121,7 @@ typedef struct SystemInformation_r8_IEs {
 		/* Context for parsing across buffer boundaries */
 		asn_struct_ctx_t _asn_ctx;
 	} sib_TypeAndInfo;
-	struct SystemInformation_r8_IEs__nonCriticalExtension {
-		
-		/* Context for parsing across buffer boundaries */
-		asn_struct_ctx_t _asn_ctx;
-	} *nonCriticalExtension;
+	struct SystemInformation_v8a0_IEs	*nonCriticalExtension	/* OPTIONAL */;
 	
 	/* Context for parsing across buffer boundaries */
 	asn_struct_ctx_t _asn_ctx;

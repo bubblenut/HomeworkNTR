@@ -18,24 +18,24 @@ asn_per_constraints_t asn_PER_type_AccessStratumRelease_constr_1 CC_NOTUSED = {
 };
 static const asn_INTEGER_enum_map_t asn_MAP_AccessStratumRelease_value2enum_1[] = {
 	{ 0,	4,	"rel8" },
-	{ 1,	6,	"spare7" },
-	{ 2,	6,	"spare6" },
-	{ 3,	6,	"spare5" },
-	{ 4,	6,	"spare4" },
-	{ 5,	6,	"spare3" },
-	{ 6,	6,	"spare2" },
-	{ 7,	6,	"spare1" }
+	{ 1,	4,	"rel9" },
+	{ 2,	5,	"rel10" },
+	{ 3,	5,	"rel11" },
+	{ 4,	5,	"rel12" },
+	{ 5,	5,	"rel13" },
+	{ 6,	5,	"rel14" },
+	{ 7,	5,	"rel15" }
 	/* This list is extensible */
 };
 static const unsigned int asn_MAP_AccessStratumRelease_enum2value_1[] = {
+	2,	/* rel10(2) */
+	3,	/* rel11(3) */
+	4,	/* rel12(4) */
+	5,	/* rel13(5) */
+	6,	/* rel14(6) */
+	7,	/* rel15(7) */
 	0,	/* rel8(0) */
-	7,	/* spare1(7) */
-	6,	/* spare2(6) */
-	5,	/* spare3(5) */
-	4,	/* spare4(4) */
-	3,	/* spare5(3) */
-	2,	/* spare6(2) */
-	1	/* spare7(1) */
+	1	/* rel9(1) */
 	/* This list is extensible */
 };
 const asn_INTEGER_specifics_t asn_SPC_AccessStratumRelease_specs_1 = {

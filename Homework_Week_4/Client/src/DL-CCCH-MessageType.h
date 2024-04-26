@@ -17,6 +17,8 @@
 #include "RRCConnectionReject.h"
 #include "RRCConnectionSetup.h"
 #include <constr_CHOICE.h>
+#include "RRCEarlyDataComplete-r15.h"
+#include <NULL.h>
 #include <constr_SEQUENCE.h>
 
 #ifdef __cplusplus
@@ -36,6 +38,18 @@ typedef enum DL_CCCH_MessageType__c1_PR {
 	DL_CCCH_MessageType__c1_PR_rrcConnectionReject,
 	DL_CCCH_MessageType__c1_PR_rrcConnectionSetup
 } DL_CCCH_MessageType__c1_PR;
+typedef enum DL_CCCH_MessageType__messageClassExtension_PR {
+	DL_CCCH_MessageType__messageClassExtension_PR_NOTHING,	/* No components present */
+	DL_CCCH_MessageType__messageClassExtension_PR_c2,
+	DL_CCCH_MessageType__messageClassExtension_PR_messageClassExtensionFuture_r15
+} DL_CCCH_MessageType__messageClassExtension_PR;
+typedef enum DL_CCCH_MessageType__messageClassExtension__c2_PR {
+	DL_CCCH_MessageType__messageClassExtension__c2_PR_NOTHING,	/* No components present */
+	DL_CCCH_MessageType__messageClassExtension__c2_PR_rrcEarlyDataComplete_r15,
+	DL_CCCH_MessageType__messageClassExtension__c2_PR_spare3,
+	DL_CCCH_MessageType__messageClassExtension__c2_PR_spare2,
+	DL_CCCH_MessageType__messageClassExtension__c2_PR_spare1
+} DL_CCCH_MessageType__messageClassExtension__c2_PR;
 
 /* DL-CCCH-MessageType */
 typedef struct DL_CCCH_MessageType {
@@ -54,6 +68,26 @@ typedef struct DL_CCCH_MessageType {
 			asn_struct_ctx_t _asn_ctx;
 		} c1;
 		struct DL_CCCH_MessageType__messageClassExtension {
+			DL_CCCH_MessageType__messageClassExtension_PR present;
+			union DL_CCCH_MessageType__messageClassExtension_u {
+				struct DL_CCCH_MessageType__messageClassExtension__c2 {
+					DL_CCCH_MessageType__messageClassExtension__c2_PR present;
+					union DL_CCCH_MessageType__messageClassExtension__c2_u {
+						RRCEarlyDataComplete_r15_t	 rrcEarlyDataComplete_r15;
+						NULL_t	 spare3;
+						NULL_t	 spare2;
+						NULL_t	 spare1;
+					} choice;
+					
+					/* Context for parsing across buffer boundaries */
+					asn_struct_ctx_t _asn_ctx;
+				} c2;
+				struct DL_CCCH_MessageType__messageClassExtension__messageClassExtensionFuture_r15 {
+					
+					/* Context for parsing across buffer boundaries */
+					asn_struct_ctx_t _asn_ctx;
+				} messageClassExtensionFuture_r15;
+			} choice;
 			
 			/* Context for parsing across buffer boundaries */
 			asn_struct_ctx_t _asn_ctx;

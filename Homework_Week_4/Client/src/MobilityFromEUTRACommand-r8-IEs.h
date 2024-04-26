@@ -29,6 +29,9 @@ typedef enum MobilityFromEUTRACommand_r8_IEs__purpose_PR {
 	MobilityFromEUTRACommand_r8_IEs__purpose_PR_cellChangeOrder
 } MobilityFromEUTRACommand_r8_IEs__purpose_PR;
 
+/* Forward declarations */
+struct MobilityFromEUTRACommand_v8a0_IEs;
+
 /* MobilityFromEUTRACommand-r8-IEs */
 typedef struct MobilityFromEUTRACommand_r8_IEs {
 	BOOLEAN_t	 cs_FallbackIndicator;
@@ -42,11 +45,7 @@ typedef struct MobilityFromEUTRACommand_r8_IEs {
 		/* Context for parsing across buffer boundaries */
 		asn_struct_ctx_t _asn_ctx;
 	} purpose;
-	struct MobilityFromEUTRACommand_r8_IEs__nonCriticalExtension {
-		
-		/* Context for parsing across buffer boundaries */
-		asn_struct_ctx_t _asn_ctx;
-	} *nonCriticalExtension;
+	struct MobilityFromEUTRACommand_v8a0_IEs	*nonCriticalExtension	/* OPTIONAL */;
 	
 	/* Context for parsing across buffer boundaries */
 	asn_struct_ctx_t _asn_ctx;

@@ -30,9 +30,26 @@ typedef enum MeasGapConfig_PR {
 typedef enum MeasGapConfig__setup__gapOffset_PR {
 	MeasGapConfig__setup__gapOffset_PR_NOTHING,	/* No components present */
 	MeasGapConfig__setup__gapOffset_PR_gp0,
-	MeasGapConfig__setup__gapOffset_PR_gp1
+	MeasGapConfig__setup__gapOffset_PR_gp1,
 	/* Extensions may appear below */
-	
+	MeasGapConfig__setup__gapOffset_PR_gp2_r14,
+	MeasGapConfig__setup__gapOffset_PR_gp3_r14,
+	MeasGapConfig__setup__gapOffset_PR_gp_ncsg0_r14,
+	MeasGapConfig__setup__gapOffset_PR_gp_ncsg1_r14,
+	MeasGapConfig__setup__gapOffset_PR_gp_ncsg2_r14,
+	MeasGapConfig__setup__gapOffset_PR_gp_ncsg3_r14,
+	MeasGapConfig__setup__gapOffset_PR_gp_nonUniform1_r14,
+	MeasGapConfig__setup__gapOffset_PR_gp_nonUniform2_r14,
+	MeasGapConfig__setup__gapOffset_PR_gp_nonUniform3_r14,
+	MeasGapConfig__setup__gapOffset_PR_gp_nonUniform4_r14,
+	MeasGapConfig__setup__gapOffset_PR_gp4_r15,
+	MeasGapConfig__setup__gapOffset_PR_gp5_r15,
+	MeasGapConfig__setup__gapOffset_PR_gp6_r15,
+	MeasGapConfig__setup__gapOffset_PR_gp7_r15,
+	MeasGapConfig__setup__gapOffset_PR_gp8_r15,
+	MeasGapConfig__setup__gapOffset_PR_gp9_r15,
+	MeasGapConfig__setup__gapOffset_PR_gp10_r15,
+	MeasGapConfig__setup__gapOffset_PR_gp11_r15
 } MeasGapConfig__setup__gapOffset_PR;
 
 /* MeasGapConfig */
@@ -50,6 +67,24 @@ typedef struct MeasGapConfig {
 					 * This type is extensible,
 					 * possible extensions are below.
 					 */
+					long	 gp2_r14;
+					long	 gp3_r14;
+					long	 gp_ncsg0_r14;
+					long	 gp_ncsg1_r14;
+					long	 gp_ncsg2_r14;
+					long	 gp_ncsg3_r14;
+					long	 gp_nonUniform1_r14;
+					long	 gp_nonUniform2_r14;
+					long	 gp_nonUniform3_r14;
+					long	 gp_nonUniform4_r14;
+					long	 gp4_r15;
+					long	 gp5_r15;
+					long	 gp6_r15;
+					long	 gp7_r15;
+					long	 gp8_r15;
+					long	 gp9_r15;
+					long	 gp10_r15;
+					long	 gp11_r15;
 				} choice;
 				
 				/* Context for parsing across buffer boundaries */

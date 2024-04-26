@@ -21,6 +21,10 @@
 #include "SecurityModeCommand.h"
 #include "UECapabilityEnquiry.h"
 #include "CounterCheck.h"
+#include "UEInformationRequest-r9.h"
+#include "LoggedMeasurementConfiguration-r10.h"
+#include "RNReconfiguration-r10.h"
+#include "RRCConnectionResume-r13.h"
 #include <NULL.h>
 #include <constr_CHOICE.h>
 #include <constr_SEQUENCE.h>
@@ -46,10 +50,10 @@ typedef enum DL_DCCH_MessageType__c1_PR {
 	DL_DCCH_MessageType__c1_PR_securityModeCommand,
 	DL_DCCH_MessageType__c1_PR_ueCapabilityEnquiry,
 	DL_DCCH_MessageType__c1_PR_counterCheck,
-	DL_DCCH_MessageType__c1_PR_spare7,
-	DL_DCCH_MessageType__c1_PR_spare6,
-	DL_DCCH_MessageType__c1_PR_spare5,
-	DL_DCCH_MessageType__c1_PR_spare4,
+	DL_DCCH_MessageType__c1_PR_ueInformationRequest_r9,
+	DL_DCCH_MessageType__c1_PR_loggedMeasurementConfiguration_r10,
+	DL_DCCH_MessageType__c1_PR_rnReconfiguration_r10,
+	DL_DCCH_MessageType__c1_PR_rrcConnectionResume_r13,
 	DL_DCCH_MessageType__c1_PR_spare3,
 	DL_DCCH_MessageType__c1_PR_spare2,
 	DL_DCCH_MessageType__c1_PR_spare1
@@ -71,10 +75,10 @@ typedef struct DL_DCCH_MessageType {
 				SecurityModeCommand_t	 securityModeCommand;
 				UECapabilityEnquiry_t	 ueCapabilityEnquiry;
 				CounterCheck_t	 counterCheck;
-				NULL_t	 spare7;
-				NULL_t	 spare6;
-				NULL_t	 spare5;
-				NULL_t	 spare4;
+				UEInformationRequest_r9_t	 ueInformationRequest_r9;
+				LoggedMeasurementConfiguration_r10_t	 loggedMeasurementConfiguration_r10;
+				RNReconfiguration_r10_t	 rnReconfiguration_r10;
+				RRCConnectionResume_r13_t	 rrcConnectionResume_r13;
 				NULL_t	 spare3;
 				NULL_t	 spare2;
 				NULL_t	 spare1;

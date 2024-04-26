@@ -8,6 +8,7 @@
 #include "SystemInformationBlockType1.h"
 
 #include "TDD-Config.h"
+#include "SystemInformationBlockType1-v890-IEs.h"
 /*
  * This type is implemented using NativeEnumerated,
  * so here we adjust the DEF accordingly.
@@ -16,37 +17,6 @@
  * This type is implemented using NativeEnumerated,
  * so here we adjust the DEF accordingly.
  */
-static int
-memb_csg_Identity_constraint_2(const asn_TYPE_descriptor_t *td, const void *sptr,
-			asn_app_constraint_failed_f *ctfailcb, void *app_key) {
-	const BIT_STRING_t *st = (const BIT_STRING_t *)sptr;
-	size_t size;
-	
-	if(!sptr) {
-		ASN__CTFAIL(app_key, td, sptr,
-			"%s: value not given (%s:%d)",
-			td->name, __FILE__, __LINE__);
-		return -1;
-	}
-	
-	if(st->size > 0) {
-		/* Size in bits */
-		size = 8 * st->size - (st->bits_unused & 0x07);
-	} else {
-		size = 0;
-	}
-	
-	if((size == 27)) {
-		/* Constraint check succeeded */
-		return 0;
-	} else {
-		ASN__CTFAIL(app_key, td, sptr,
-			"%s: constraint failed (%s:%d)",
-			td->name, __FILE__, __LINE__);
-		return -1;
-	}
-}
-
 static int
 memb_q_RxLevMinOffset_constraint_14(const asn_TYPE_descriptor_t *td, const void *sptr,
 			asn_app_constraint_failed_f *ctfailcb, void *app_key) {
@@ -76,31 +46,6 @@ memb_q_RxLevMinOffset_constraint_14(const asn_TYPE_descriptor_t *td, const void 
  * This type is implemented using NativeEnumerated,
  * so here we adjust the DEF accordingly.
  */
-static int
-memb_freqBandIndicator_constraint_1(const asn_TYPE_descriptor_t *td, const void *sptr,
-			asn_app_constraint_failed_f *ctfailcb, void *app_key) {
-	long value;
-	
-	if(!sptr) {
-		ASN__CTFAIL(app_key, td, sptr,
-			"%s: value not given (%s:%d)",
-			td->name, __FILE__, __LINE__);
-		return -1;
-	}
-	
-	value = *(const long *)sptr;
-	
-	if((value >= 1 && value <= 64)) {
-		/* Constraint check succeeded */
-		return 0;
-	} else {
-		ASN__CTFAIL(app_key, td, sptr,
-			"%s: constraint failed (%s:%d)",
-			td->name, __FILE__, __LINE__);
-		return -1;
-	}
-}
-
 static int
 memb_systemInfoValueTag_constraint_1(const asn_TYPE_descriptor_t *td, const void *sptr,
 			asn_app_constraint_failed_f *ctfailcb, void *app_key) {
@@ -136,11 +81,6 @@ static asn_per_constraints_t asn_PER_type_intraFreqReselection_constr_9 CC_NOTUS
 	{ APC_UNCONSTRAINED,	-1, -1,  0,  0 },
 	0, 0	/* No PER value map */
 };
-static asn_per_constraints_t asn_PER_memb_csg_Identity_constr_13 CC_NOTUSED = {
-	{ APC_UNCONSTRAINED,	-1, -1,  0,  0 },
-	{ APC_CONSTRAINED,	 0,  0,  27,  27 }	/* (SIZE(27..27)) */,
-	0, 0	/* No PER value map */
-};
 static asn_per_constraints_t asn_PER_memb_q_RxLevMinOffset_constr_16 CC_NOTUSED = {
 	{ APC_CONSTRAINED,	 3,  3,  1,  8 }	/* (1..8) */,
 	{ APC_UNCONSTRAINED,	-1, -1,  0,  0 },
@@ -148,11 +88,6 @@ static asn_per_constraints_t asn_PER_memb_q_RxLevMinOffset_constr_16 CC_NOTUSED 
 };
 static asn_per_constraints_t asn_PER_type_si_WindowLength_constr_21 CC_NOTUSED = {
 	{ APC_CONSTRAINED,	 3,  3,  0,  6 }	/* (0..6) */,
-	{ APC_UNCONSTRAINED,	-1, -1,  0,  0 },
-	0, 0	/* No PER value map */
-};
-static asn_per_constraints_t asn_PER_memb_freqBandIndicator_constr_18 CC_NOTUSED = {
-	{ APC_CONSTRAINED,	 6,  6,  1,  64 }	/* (1..64) */,
 	{ APC_UNCONSTRAINED,	-1, -1,  0,  0 },
 	0, 0	/* No PER value map */
 };
@@ -293,9 +228,9 @@ static asn_TYPE_member_t asn_MBR_cellAccessRelatedInfo_2[] = {
 	{ ATF_POINTER, 1, offsetof(struct SystemInformationBlockType1__cellAccessRelatedInfo, csg_Identity),
 		(ASN_TAG_CLASS_CONTEXT | (6 << 2)),
 		-1,	/* IMPLICIT tag at current level */
-		&asn_DEF_BIT_STRING,
+		&asn_DEF_CSG_Identity,
 		0,
-		{ 0, &asn_PER_memb_csg_Identity_constr_13,  memb_csg_Identity_constraint_2 },
+		{ 0, 0, 0 },
 		0, 0, /* No default value */
 		"csg-Identity"
 		},
@@ -442,34 +377,6 @@ asn_TYPE_descriptor_t asn_DEF_si_WindowLength_21 = {
 	&asn_SPC_si_WindowLength_specs_21	/* Additional specs */
 };
 
-static const ber_tlv_tag_t asn_DEF_nonCriticalExtension_tags_30[] = {
-	(ASN_TAG_CLASS_CONTEXT | (8 << 2)),
-	(ASN_TAG_CLASS_UNIVERSAL | (16 << 2))
-};
-static asn_SEQUENCE_specifics_t asn_SPC_nonCriticalExtension_specs_30 = {
-	sizeof(struct SystemInformationBlockType1__nonCriticalExtension),
-	offsetof(struct SystemInformationBlockType1__nonCriticalExtension, _asn_ctx),
-	0,	/* No top level tags */
-	0,	/* No tags in the map */
-	0, 0, 0,	/* Optional elements (not needed) */
-	-1,	/* First extension addition */
-};
-static /* Use -fall-defs-global to expose */
-asn_TYPE_descriptor_t asn_DEF_nonCriticalExtension_30 = {
-	"nonCriticalExtension",
-	"nonCriticalExtension",
-	&asn_OP_SEQUENCE,
-	asn_DEF_nonCriticalExtension_tags_30,
-	sizeof(asn_DEF_nonCriticalExtension_tags_30)
-		/sizeof(asn_DEF_nonCriticalExtension_tags_30[0]) - 1, /* 1 */
-	asn_DEF_nonCriticalExtension_tags_30,	/* Same as above */
-	sizeof(asn_DEF_nonCriticalExtension_tags_30)
-		/sizeof(asn_DEF_nonCriticalExtension_tags_30[0]), /* 2 */
-	{ 0, 0, SEQUENCE_constraint },
-	0, 0,	/* No members */
-	&asn_SPC_nonCriticalExtension_specs_30	/* Additional specs */
-};
-
 asn_TYPE_member_t asn_MBR_SystemInformationBlockType1_1[] = {
 	{ ATF_NOFLAGS, 0, offsetof(struct SystemInformationBlockType1, cellAccessRelatedInfo),
 		(ASN_TAG_CLASS_CONTEXT | (0 << 2)),
@@ -501,9 +408,9 @@ asn_TYPE_member_t asn_MBR_SystemInformationBlockType1_1[] = {
 	{ ATF_NOFLAGS, 0, offsetof(struct SystemInformationBlockType1, freqBandIndicator),
 		(ASN_TAG_CLASS_CONTEXT | (3 << 2)),
 		-1,	/* IMPLICIT tag at current level */
-		&asn_DEF_NativeInteger,
+		&asn_DEF_FreqBandIndicator,
 		0,
-		{ 0, &asn_PER_memb_freqBandIndicator_constr_18,  memb_freqBandIndicator_constraint_1 },
+		{ 0, 0, 0 },
 		0, 0, /* No default value */
 		"freqBandIndicator"
 		},
@@ -545,8 +452,8 @@ asn_TYPE_member_t asn_MBR_SystemInformationBlockType1_1[] = {
 		},
 	{ ATF_POINTER, 1, offsetof(struct SystemInformationBlockType1, nonCriticalExtension),
 		(ASN_TAG_CLASS_CONTEXT | (8 << 2)),
-		0,
-		&asn_DEF_nonCriticalExtension_30,
+		-1,	/* IMPLICIT tag at current level */
+		&asn_DEF_SystemInformationBlockType1_v890_IEs,
 		0,
 		{ 0, 0, 0 },
 		0, 0, /* No default value */

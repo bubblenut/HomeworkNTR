@@ -331,17 +331,17 @@ static const asn_INTEGER_enum_map_t asn_MAP_transmissionMode_value2enum_2[] = {
 	{ 4,	3,	"tm5" },
 	{ 5,	3,	"tm6" },
 	{ 6,	3,	"tm7" },
-	{ 7,	6,	"spare1" }
+	{ 7,	8,	"tm8-v920" }
 };
 static const unsigned int asn_MAP_transmissionMode_enum2value_2[] = {
-	7,	/* spare1(7) */
 	0,	/* tm1(0) */
 	1,	/* tm2(1) */
 	2,	/* tm3(2) */
 	3,	/* tm4(3) */
 	4,	/* tm5(4) */
 	5,	/* tm6(5) */
-	6	/* tm7(6) */
+	6,	/* tm7(6) */
+	7	/* tm8-v920(7) */
 };
 static const asn_INTEGER_specifics_t asn_SPC_transmissionMode_specs_2 = {
 	asn_MAP_transmissionMode_value2enum_2,	/* "tag" => N; sorted by tag */
